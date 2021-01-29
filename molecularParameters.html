@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PELE Molecular Parameters &#8212; PELE 1.6.0 documentation</title>
     <link rel="stylesheet" href="_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -72,8 +72,8 @@
 <div class="section" id="obc">
 <span id="sec-molecularparameters-obc"></span><h3>OBC<a class="headerlink" href="#obc" title="Permalink to this headline">¶</a></h3>
 <p>To run a PELE simulation using the OBC implicit solvent model, you need the atomic parameters for all the atoms in your system. PELE already includes the parameters for the atoms of the residues appearing in a macromolecule (DNA or protein), and for some small molecules. If your molecule is not parameterized (PELE will complain with an error message), you can create the parameters in the following way:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cp /path/to/my/template mytemplate
-<span class="gp">$</span> python /path/to/PELE-1.5/scripts/solventOBCParamsGenerator.py mytemplate
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>cp /path/to/my/template mytemplate
+<span class="gp">$ </span>python /path/to/PELE-1.5/scripts/solventOBCParamsGenerator.py mytemplate
 </pre></div>
 </div>
 <p>You will then obtain a file named <code class="file docutils literal notranslate"><span class="pre">mytemplate_OBCParams.txt</span></code> with a line per atom of your molecule, with the OBC parameters. Then, paste those lines at the end of PELE’s data file <code class="file docutils literal notranslate"><span class="pre">Data/OBC/solventParamsHCTOBC.txt</span></code> or, even better, make a copy of the <code class="file docutils literal notranslate"><span class="pre">solventParamsHCTOBC.txt</span></code> data file in your project’s directory, under <code class="file docutils literal notranslate"><span class="pre">./DataLocal/OBC/solventParamsHCTOBC.txt</span></code>, and paste the molecule parameters there, so that you don’t change your central data file, but instead use a local copy (PELE gives precedence to <code class="file docutils literal notranslate"><span class="pre">./DataLocal/</span></code> files over those in <code class="file docutils literal notranslate"><span class="pre">./Data/</span></code>).</p>
@@ -95,8 +95,8 @@
 <p>You can create the template and rotamer library files from either a file in PDB format or in MAE format. In any case, it may be helpful to check with Maestro the topology and charges of your ligand.</p>
 <p>In the following examples, we will assume Schrödinger software is installed under <code class="file docutils literal notranslate"><span class="pre">/opt/schrodinger/</span></code>, and that <strong class="program">PlopRotTemp.py</strong> is in <code class="file docutils literal notranslate"><span class="pre">/opt/pele/scripts/PlopRotTemp.py</span></code>.</p>
 <p>From a PDB file, run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> /opt/schrodinger/utilities/pdbconvert -ipdb myligand.pdb -omae myligand.mae
-<span class="gp">$</span> /opt/schrodinger/utilities/python /opt/pele/scripts/PlopRotTemp.py -OPLS<span class="o">=</span><span class="m">2005</span> myligand.mae
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>/opt/schrodinger/utilities/pdbconvert -ipdb myligand.pdb -omae myligand.mae
+<span class="gp">$ </span>/opt/schrodinger/utilities/python /opt/pele/scripts/PlopRotTemp.py -OPLS<span class="o">=</span><span class="m">2005</span> myligand.mae
 </pre></div>
 </div>
 <p>From a MAE file, first you have to make sure that your ligand has a PDB residue name assigned, and that all PDB atom names are unique. To do this:</p>
@@ -121,7 +121,7 @@
 <p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Dialog to set unique PDB atom names for your ligand in Maestro.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once you have your ligand in a MAE file, run:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> /opt/schrodinger/utilities/python /opt/pele/scripts/PlopRotTemp.py -OPLS<span class="o">=</span><span class="m">2005</span> myligand.mae
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>/opt/schrodinger/utilities/python /opt/pele/scripts/PlopRotTemp.py -OPLS<span class="o">=</span><span class="m">2005</span> myligand.mae
 </pre></div>
 </div>
 <p>If you have assigned special charges to your ligand (for example through a quantum calculation), then you can add the option <code class="docutils literal notranslate"><span class="pre">-mae_charges=yes</span></code> to preserve those charges.</p>
@@ -136,7 +136,7 @@
 </div>
 <div class="section" id="usage-documentation-for-ploprottemp-py">
 <h4>Usage documentation for <strong class="program">PlopRotTemp.py</strong><a class="headerlink" href="#usage-documentation-for-ploprottemp-py" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> python /path/to/scripts/PlopRotTemp.py
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python /path/to/scripts/PlopRotTemp.py
 
 <span class="gp">$</span>Revision: <span class="m">1</span>.13 $
 <span class="go">For ligands:</span>
@@ -240,7 +240,7 @@
 <h3>AMBER<a class="headerlink" href="#amber" title="Permalink to this headline">¶</a></h3>
 <p>A quick way to create a template file for any of the AMBER force fields used in PELE is by using the <code class="file docutils literal notranslate"><span class="pre">scripts/transformLigandOPLSTemplateToAmber.py</span></code> script that comes with PELE. Notice that this script needs an existing OPLS template file to work, and that it uses exactly the same parameters as in OPLS, but transforms them as needed by AMBER. This only affects the radii, which are expressed as diameters in OPLS, but as radii in AMBER. The OPLS parameters may, or may not, work for your system, so proceed with caution.</p>
 <p>To create the AMBER template for your ligand template <code class="docutils literal notranslate"><span class="pre">lig</span></code> (without the ending character <code class="docutils literal notranslate"><span class="pre">z</span></code>), run the script as:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> python /path/to/pele/scripts/transformLigandOPLSTemplateToAmber.py lig
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python /path/to/pele/scripts/transformLigandOPLSTemplateToAmber.py lig
 </pre></div>
 </div>
 <p>You will find your AMBER template as <code class="file docutils literal notranslate"><span class="pre">amberTemplatesResults/ligz</span></code>.</p>
@@ -250,7 +250,7 @@
 <h2>Hetero group rotamer library files<a class="headerlink" href="#hetero-group-rotamer-library-files" title="Permalink to this headline">¶</a></h2>
 <p>See also <a class="reference internal" href="fileFormats.html#sec-fileformats-ligandrotamers"><span class="std std-ref">Ligand rotamer library file</span></a> for information on the format of the generated file.</p>
 <p>If you have the template file for your molecule, but not the rotamer file, you can create it using, as before, <strong class="program">PlopRotTemp.py</strong> (see <a class="reference internal" href="#sec-molecularparameters-templateparameters-opls"><span class="std std-ref">OPLS</span></a>). Notice that, since <strong class="program">PlopRotTemp.py</strong> works with OPLS, your template file may need to be an OPLS template file (though the rotamer file will be useful for any force field). You will still need as input a MAE file. The output will be, again, a template file with the name of the ligand (this will be a copy of the input template file), and a rotamer file.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> python /path/to/scripts/PlopRotTemp.py -t<span class="o">=</span>myligand.template myligand.mae
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python /path/to/scripts/PlopRotTemp.py -t<span class="o">=</span>myligand.template myligand.mae
 </pre></div>
 </div>
 <p>As before (for the template and rotamer files generation), you can place your rotamer file inside <code class="file docutils literal notranslate"><span class="pre">./DataLocal/LigandRotamerLibs/</span></code>; use <code class="file docutils literal notranslate"><span class="pre">Data/</span></code> instead of <code class="file docutils literal notranslate"><span class="pre">./DataLocal/</span></code> if you are updating the central database.</p>
@@ -330,7 +330,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.2.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
     <a href="index.html#license">License</a>.
     </div>
   </body>

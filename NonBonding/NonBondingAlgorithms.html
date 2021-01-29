@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NonBonding in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -64,16 +64,16 @@ calculation.</p>
 <p>In this algorithm you only define one cutoff</p>
 <div class="section" id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;NonBonding&quot;:
-    {
-        &quot;nonBondingVersion&quot;: &quot;NB_GEN_2&quot;,
-        &quot;cutoffList&quot;:
-        [
-            {
-                &quot;cutoff_v2&quot;: 50
-            }
-        ]
-    }
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;NonBonding&quot;</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;nonBondingVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;NB_GEN_2&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;cutoffList&quot;</span><span class="p">:</span>
+        <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;cutoff_v2&quot;</span><span class="p">:</span> <span class="mi">50</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -86,37 +86,37 @@ algorithm for the NonBonding computations.</p>
 <div class="section" id="id1">
 <h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Example with the default cutoffs.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;NonBonding&quot;:
-    {
-               &quot;nonBondingVersion&quot;: &quot;NB_GEN_MSCALE&quot;,
-               &quot;cutoffList&quot;:
-               [
-                   {
-                       &quot;type&quot;: &quot;shortNeutrumNeutrum&quot;,
-                       &quot;value&quot;: 10
-                   },
-                   {
-                       &quot;type&quot;: &quot;shortChargedNeutrum&quot;,
-                       &quot;value&quot;: 10
-                   },
-                   {
-                       &quot;type&quot;: &quot;shortChargedCharged&quot;,
-                       &quot;value&quot;: 15
-                   },
-                   {
-                       &quot;type&quot;: &quot;longNeutrumNeutrum&quot;,
-                       &quot;value&quot;: 15
-                   },
-                   {
-                       &quot;type&quot;: &quot;longChargedNeutrum&quot;,
-                       &quot;value&quot;: 20
-                   },
-                   {
-                       &quot;type&quot;: &quot;longChargedCharged&quot;,
-                       &quot;value&quot;: 30
-                   }
-               ]
-            }
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;NonBonding&quot;</span><span class="p">:</span>
+    <span class="p">{</span>
+               <span class="nt">&quot;nonBondingVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;NB_GEN_MSCALE&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;cutoffList&quot;</span><span class="p">:</span>
+               <span class="p">[</span>
+                   <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;shortNeutrumNeutrum&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">10</span>
+                   <span class="p">},</span>
+                   <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;shortChargedNeutrum&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">10</span>
+                   <span class="p">},</span>
+                   <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;shortChargedCharged&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">15</span>
+                   <span class="p">},</span>
+                   <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;longNeutrumNeutrum&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">15</span>
+                   <span class="p">},</span>
+                   <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;longChargedNeutrum&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">20</span>
+                   <span class="p">},</span>
+                   <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;longChargedCharged&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="mi">30</span>
+                   <span class="p">}</span>
+               <span class="p">]</span>
+            <span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -192,7 +192,7 @@ algorithm for the NonBonding computations.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.2.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

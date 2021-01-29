@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jump Controller in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -62,22 +62,22 @@ defined at Task level.</p>
 <p>If you use the jumping functionality, you may want to enable the controller log file through the <a class="reference internal" href="../PELE/PeleOutput.html#sec-peleoutput-controllereventslogpath"><span class="std std-ref">PELE_Output controllerEventsLogPath</span></a> option.</p>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;jumpIf&quot;:
-[
-     &quot;diff_rmsd1 &gt; 1.1&quot;,
-     &quot;diff_rmsd2 &gt; 0.5&quot;
-],
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpIf&quot;</span><span class="p">:</span>
+<span class="p">[</span>
+     <span class="s2">&quot;diff_rmsd1 &gt; 1.1&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;diff_rmsd2 &gt; 0.5&quot;</span>
+<span class="p">],</span>
 
-&quot;jumpController&quot;:{
-    &quot;strategyToChooseBestExplorer&quot;:{
-        &quot;type&quot;: &quot;bestHasMinimumValueForOneSensor&quot;,
-        &quot;sensorTag&quot;: &quot;rmsd1&quot;
-    },
+<span class="nt">&quot;jumpController&quot;</span><span class="p">:{</span>
+    <span class="nt">&quot;strategyToChooseBestExplorer&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bestHasMinimumValueForOneSensor&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;sensorTag&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd1&quot;</span>
+    <span class="p">},</span>
 
-    &quot;jumpStrategy&quot;: {
-        &quot;type&quot;: &quot;jumpToBestExplorerCoordinates&quot;
-    }
-}
+    <span class="nt">&quot;jumpStrategy&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;jumpToBestExplorerCoordinates&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -108,22 +108,22 @@ in the whole simulation.</p>
 <p class="admonition-title">Note</p>
 <p>In the current version it is not possible to mix absolute and
 relative conditions:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;jumpIf&quot;:
-[
-    &quot;rmsdSelection &gt; 1.1 and diff_rmsd1 &gt; 0.5&quot;
-]
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpIf&quot;</span><span class="p">:</span>
+<span class="p">[</span>
+    <span class="s2">&quot;rmsdSelection &gt; 1.1 and diff_rmsd1 &gt; 0.5&quot;</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example1">
 <h3>Example1<a class="headerlink" href="#example1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;jumpIf&quot;:[ &quot;rmsdSelection &gt; 1.1&quot; ]
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpIf&quot;</span><span class="p">:[</span> <span class="s2">&quot;rmsdSelection &gt; 1.1&quot;</span> <span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example2">
 <h3>Example2<a class="headerlink" href="#example2" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;jumpIf&quot;:[ &quot;diff_rmsd1 &gt; 0.5&quot; ]
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpIf&quot;</span><span class="p">:[</span> <span class="s2">&quot;diff_rmsd1 &gt; 0.5&quot;</span> <span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -138,15 +138,15 @@ explorer/step in the simulation.</p></li>
 </ul>
 <div class="section" id="id1">
 <h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;jumpController&quot;:{
-    &quot;strategyToChooseBestExplorer&quot;:{
-        &quot;type&quot;: &quot;bestHasMinimumValueForOneSensor&quot;,
-         &quot;sensorTag&quot;: &quot;rmsd1&quot;
-    },
-    &quot;jumpStrategy&quot;: {
-        &quot;type&quot;: &quot;jumpToBestExplorerCoordinates&quot;
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpController&quot;</span><span class="p">:{</span>
+    <span class="nt">&quot;strategyToChooseBestExplorer&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bestHasMinimumValueForOneSensor&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;sensorTag&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd1&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;jumpStrategy&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;jumpToBestExplorerCoordinates&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -156,10 +156,10 @@ explorer/step in the simulation.</p></li>
 <li><p>bestHasMinimumValueForOneSensor: The best explorer will have the
 smaller value for one sensor. The sensor is specified with
 “sensorTag”.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;strategyToChooseBestExplorer&quot;:{
-    &quot;type&quot;: &quot;bestHasMinimumValueForOneSensor&quot;,
-    &quot;sensorTag&quot;: &quot;rmsd1&quot;
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;strategyToChooseBestExplorer&quot;</span><span class="p">:{</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bestHasMinimumValueForOneSensor&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sensorTag&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd1&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
@@ -167,14 +167,14 @@ smaller value for one sensor. The sensor is specified with
 calculated using more than one sensor, each one with a certain weight
 associated to it. It is specified with a block named “sensorWeights”
 that consists of the pairs <cite>tag:weight</cite>.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;strategyToChooseBestExplorer&quot;:{
-    &quot;type&quot;:&quot;bestHasMinimumValueForWeightedSensors&quot;,
-    &quot;sensorWeights&quot;:{
-        &quot;rmsd1&quot;: 1,
-        &quot;rmsd2&quot;: 2,
-        &quot;rmsd3&quot;: 4
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;strategyToChooseBestExplorer&quot;</span><span class="p">:{</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bestHasMinimumValueForWeightedSensors&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sensorWeights&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;rmsd1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;rmsd2&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nt">&quot;rmsd3&quot;</span><span class="p">:</span> <span class="mi">4</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>We compare the current explorer with the best one by assigning a
@@ -257,18 +257,18 @@ we add:</p>
 </pre></div>
 </div>
 <p>In the same task, we add the “jumpIf” block:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;jumpIf&quot;: [
-    &quot;diff_distance &gt; 10&quot;
-],
-&quot;jumpController&quot;: {
-    &quot;strategyToChooseBestExplorer&quot;: {
-        &quot;type&quot;: &quot;bestHasMinimumValueForOneSensor&quot;,
-        &quot;sensorTag&quot;: &quot;distance&quot;
-    },
-    &quot;jumpStrategy&quot;: {
-        &quot;type&quot;: &quot;jumpToBestExplorerCoordinates&quot;
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpIf&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;diff_distance &gt; 10&quot;</span>
+<span class="p">],</span>
+<span class="nt">&quot;jumpController&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;strategyToChooseBestExplorer&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bestHasMinimumValueForOneSensor&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;sensorTag&quot;</span><span class="p">:</span> <span class="s2">&quot;distance&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;jumpStrategy&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;jumpToBestExplorerCoordinates&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>This way, when a explorer is <span class="math notranslate nohighlight">\(10 \AA{}\)</span> further to the point than the closest
@@ -281,18 +281,18 @@ is NOT the distance between the two explorers.</p>
 <p>The example is essentialy the same as the previous example. The only
 difference is that now the best explorer is the one that is the furthest
 away.The jump controller is now:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;jumpIf&quot;: [
-    &quot;diff_distance &gt; 10&quot;
-],
-&quot;jumpController&quot;: {
-    &quot;strategyToChooseBestExplorer&quot;: {
-        &quot;type&quot;: &quot;bestHasMaximumValueForOneSensor&quot;,
-        &quot;sensorTag&quot;: &quot;distance&quot;
-    },
-    &quot;jumpStrategy&quot;: {
-        &quot;type&quot;: &quot;jumpToBestExplorerCoordinates&quot;
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpIf&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;diff_distance &gt; 10&quot;</span>
+<span class="p">],</span>
+<span class="nt">&quot;jumpController&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;strategyToChooseBestExplorer&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bestHasMaximumValueForOneSensor&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;sensorTag&quot;</span><span class="p">:</span> <span class="s2">&quot;distance&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;jumpStrategy&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;jumpToBestExplorerCoordinates&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -379,7 +379,7 @@ away.The jump controller is now:</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.2.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

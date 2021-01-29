@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selections By Example &#8212; PELE 1.6.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -93,11 +93,11 @@
 <p>The omit section works only at the atom, link or chain level. Therefore, all atoms selected under the omit “atoms” section will be removed from those atoms in the selection “atoms” section, but it won’t affect the atoms selected through the selection “links” or “chains” sections. Similarly happens for the omit “links” and “chains” sections. This behavior can be understood by studying the examples <a class="reference internal" href="#sec-selectionexamples-example13"><span class="std std-ref">Example 13</span></a>, <a class="reference internal" href="#sec-selectionexamples-example14"><span class="std std-ref">Example 14</span></a> and <a class="reference internal" href="#sec-selectionexamples-example16"><span class="std std-ref">Example 16</span></a>).</p>
 <div class="section" id="example-1">
 <h2>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;atoms&quot;: {
-        &quot;names&quot;: [ &quot;_N__&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;_N__&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting all the atoms in PDB the names of which
@@ -106,11 +106,11 @@ are ” N “. The underscores must be there because atom names in PDBs have
 </div>
 <div class="section" id="example-2">
 <h2>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;atoms&quot;: {
-        &quot;names&quot;: [ &quot;_N__&quot;, &quot;_C__&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;_N__&quot;</span><span class="p">,</span> <span class="s2">&quot;_C__&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting all the atoms in PDB the names of which
@@ -118,11 +118,11 @@ are ” N ” or ” C “.</p>
 </div>
 <div class="section" id="example-3">
 <h2>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;atoms&quot;: {
-        &quot;names&quot;: [ &quot;_N__&quot;, &quot;_CA_&quot;, &quot;_C__&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;_N__&quot;</span><span class="p">,</span> <span class="s2">&quot;_CA_&quot;</span><span class="p">,</span> <span class="s2">&quot;_C__&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting all the atoms in PDB the names of which
@@ -130,11 +130,11 @@ are ” N “, ” CA ” or ” C “.</p>
 </div>
 <div class="section" id="example-4">
 <h2>Example 4<a class="headerlink" href="#example-4" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;atoms&quot;: {
-        &quot;ids&quot;: [ &quot;A:8:_CB_&quot;, &quot;B:32:_H2&#39;&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;ids&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;A:8:_CB_&quot;</span><span class="p">,</span> <span class="s2">&quot;B:32:_H2&#39;&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting two atoms in the PDB indicated by its
@@ -149,11 +149,11 @@ by colons, “:”.</p>
 </div>
 <div class="section" id="example-5">
 <h2>Example 5<a class="headerlink" href="#example-5" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;chains&quot;: {
-        &quot;names&quot;: [ &quot;A&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;A&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting a chain indicating it in the PDB
@@ -162,11 +162,11 @@ indicated its unique identification (id) -&gt; “chain_name”.</p>
 </div>
 <div class="section" id="example-6">
 <h2>Example 6<a class="headerlink" href="#example-6" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;chains&quot;: {
-        &quot;names&quot;: [ &quot;B&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;B&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is also selecting a chain. In this case it is the “B”
@@ -174,9 +174,9 @@ chain.</p>
 </div>
 <div class="section" id="example-7">
 <span id="sec-selectionexamples-example7"></span><h2>Example 7<a class="headerlink" href="#example-7" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;chains&quot;: &quot;all&quot;
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting all the chains of the PDB.</p>
@@ -188,20 +188,20 @@ chain.</p>
 </ul>
 <p>Notice that a chain is considered a ligand if it has an hetero atom.</p>
 <p>For links, you can also select all links by using:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;links&quot;: &quot;all&quot;
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="s2">&quot;all&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Currently, only “all” is allowed for links.</p>
 </div>
 <div class="section" id="example-8">
 <h2>Example 8<a class="headerlink" href="#example-8" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;links&quot;: {
-        &quot;names&quot;: [ &quot;ALA_&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;ALA_&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting all the links (residues in this case) in
@@ -211,11 +211,11 @@ characters.</p>
 </div>
 <div class="section" id="example-9">
 <span id="sec-selectionexamples-example9"></span><h2>Example 9<a class="headerlink" href="#example-9" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;links&quot;: {
-        &quot;names&quot;: [ &quot;ASN_&quot;, &quot;MET_&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;ASN_&quot;</span><span class="p">,</span> <span class="s2">&quot;MET_&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting all the links (residues in this case) in
@@ -223,11 +223,11 @@ the PDB which have “ALA ” or “MET ” for a name.</p>
 </div>
 <div class="section" id="example-10">
 <h2>Example 10<a class="headerlink" href="#example-10" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;links&quot;: {
-        &quot;ids&quot;: [ &quot;_:5&quot;, &quot;_:26&quot;, &quot;_:31&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;ids&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;_:5&quot;</span><span class="p">,</span> <span class="s2">&quot;_:26&quot;</span><span class="p">,</span> <span class="s2">&quot;_:31&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting three links in the PDB indicated by its
@@ -239,11 +239,11 @@ by using an underscore.</p>
 </div>
 <div class="section" id="example-11">
 <span id="sec-selectionexamples-example11"></span><h2>Example 11<a class="headerlink" href="#example-11" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;links&quot;: {
-        &quot;ranges&quot;: [ &quot;A:1 A:4&quot;, &quot;B:3 B:5&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;ranges&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;A:1 A:4&quot;</span><span class="p">,</span> <span class="s2">&quot;B:3 B:5&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting two ranges of links in the PDB.</p>
@@ -257,11 +257,11 @@ the 4th and the links in the “B” chain from the 3rd to the 5th.</p>
 </div>
 <div class="section" id="example-12">
 <h2>Example 12<a class="headerlink" href="#example-12" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;links&quot;: {
-        &quot;ranges&quot;: [ &quot;A:1 A:4&quot;, &quot;B:19 B:23&quot; ]
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;ranges&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;A:1 A:4&quot;</span><span class="p">,</span> <span class="s2">&quot;B:19 B:23&quot;</span> <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Explanation: This is selecting the links in the “A” chain from the 1st
@@ -317,33 +317,33 @@ another generalization has to be written.</p>
 with 120 residues using omit (a version without is also possible, of
 course). This cannot be currently represented with the selection language.</p>
 <p>Imagine, however, that it could be done. In such a case, one could write:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;atoms&quot; : {
-        &quot;names&quot;:[&quot;_CA_&quot;]
-    },
-    &quot;omit&quot;:{
-        &quot;links&quot; : {
-            &quot;ranges&quot;:[&quot;A:101 A:120&quot;]
-        }
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;atoms&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;names&quot;</span><span class="p">:[</span><span class="s2">&quot;_CA_&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;omit&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;links&quot;</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;ranges&quot;</span><span class="p">:[</span><span class="s2">&quot;A:101 A:120&quot;</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>But it won’t work because the range containing all the links wasn’t
 defined. We should write instead:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-    &quot;atoms&quot; : {
-        &quot;names&quot;:[&quot;_CA_&quot;]
-    },
-    &quot;links&quot; : {
-        &quot;ranges&quot;:[&quot;A:1 A:120&quot;]
-    },
-    &quot;omit&quot;:{
-        &quot;links&quot; : {
-            &quot;ranges&quot;:[&quot;A:101 A:120&quot;]
-        }
-    }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;atoms&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;names&quot;</span><span class="p">:[</span><span class="s2">&quot;_CA_&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;links&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;ranges&quot;</span><span class="p">:[</span><span class="s2">&quot;A:1 A:120&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;omit&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;links&quot;</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;ranges&quot;</span><span class="p">:[</span><span class="s2">&quot;A:101 A:120&quot;</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Since the selection in PELE is additive, the previous example does not obtain the alpha carbons of residues 1-100 in chain A but, instead, it obtains all alpha carbons, as well as all atoms in residues 1-100 of chain A.</p>
@@ -351,7 +351,7 @@ defined. We should write instead:</p>
 <div class="section" id="example-15">
 <span id="sec-selectionexamples-example15"></span><h2>Example 15<a class="headerlink" href="#example-15" title="Permalink to this headline">¶</a></h2>
 <p>The empty selector can be expressed with the “empty” keyword:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: &quot;empty&quot;
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="s2">&quot;empty&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -359,12 +359,12 @@ defined. We should write instead:</p>
 <span id="sec-selectionexamples-example16"></span><h2>Example 16<a class="headerlink" href="#example-16" title="Permalink to this headline">¶</a></h2>
 <p>The omit clause works at the level of “atoms”, “links” and “chains”, and it doesn’t matter how those atoms, links or chains were selected (either by id, name, element, or range). However, remember that an omit for links only affects selection of “links”, and similarly for “atoms” and “chains”.</p>
 <p>The following example, where residue 2 is of type GLY, would end up selecting residues 1,3 and 4:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;selection&quot;: {
-  &quot;links&quot;: &quot;ranges&quot;:[&quot;A:1 A:4&quot;],
-  &quot;omit&quot;:{
-     &quot;links&quot; : {&quot;names&quot;:[&quot;GLY&quot;]}
-  }
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="nt">&quot;ranges&quot;</span><span class="p">:[</span><span class="s2">&quot;A:1 A:4&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;omit&quot;</span><span class="p">:{</span>
+     <span class="nt">&quot;links&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="nt">&quot;names&quot;</span><span class="p">:[</span><span class="s2">&quot;GLY&quot;</span><span class="p">]}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -446,7 +446,7 @@ defined. We should write instead:</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.2.1.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>
