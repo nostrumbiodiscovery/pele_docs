@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Generator in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Random Generator in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="../PELE/PeleTasks.html" title="PeleTasks"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Random Generator in Pele++ control file</a></li> 
@@ -53,11 +54,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="random-generator-in-pele-control-file">
+  <section id="random-generator-in-pele-control-file">
 <span id="sec-randomgenerator"></span><h1>Random Generator in Pele++ control file<a class="headerlink" href="#random-generator-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
 <p>Random numbers are generated using a Mersenne Twister pseudo random number generator. The generator can be initialized with a user-provided seed, or it may start at the state stored in a file, or, if none of the above options are given, it uses a seed created from the current time.</p>
 <p>If working with several trajectories, then you can only provide a seed or use the default seed based on the current time. Notice that each MPI process will use a different seed: rank 1 process gets the original seed (either provided in the configuration file, or obtained by using the current time), all other processes increment the seed according to their rank; for example, rank 3 process gets the original seed + 2. The MPI controller process does not require any random number generator.</p>
-<div class="section" id="example-using-a-seed">
+<section id="example-using-a-seed">
 <h2>Example using a seed<a class="headerlink" href="#example-using-a-seed" title="Permalink to this headline">¶</a></h2>
 <p>Seed range: [0, inf)</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;RandomGenerator&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -65,16 +66,16 @@
     <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="example-using-a-previous-random-generator-stored-in-a-file">
+</section>
+<section id="example-using-a-previous-random-generator-stored-in-a-file">
 <h2>Example using a previous random generator stored in a file<a class="headerlink" href="#example-using-a-previous-random-generator-stored-in-a-file" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;RandomGenerator&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;randomGeneratorFile&quot;</span><span class="p">:</span> <span class="s2">&quot;../example.txt&quot;</span>
     <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -131,7 +132,7 @@
         <li class="right" >
           <a href="../PELE/PeleTasks.html" title="PeleTasks"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Random Generator in Pele++ control file</a></li> 

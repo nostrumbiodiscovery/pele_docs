@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jump Controller in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Jump Controller in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -16,7 +17,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Changeable Parameters" href="../PELEDynamicChangesInSimulationParameters/ParametersThatCanChange.html" />
+    <link rel="next" title="Interaction Restrictions in Pele++ control file" href="../InteractionRestrictions/InteractionRestrictions.html" />
     <link rel="prev" title="StateTracker types in Pele++ control file" href="../Sensors/StateTrackerTypes.html" /> 
     <script type="text/javascript" >
     MathJax.Hub.Config({
@@ -36,12 +37,12 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../PELEDynamicChangesInSimulationParameters/ParametersThatCanChange.html" title="Changeable Parameters"
+          <a href="../InteractionRestrictions/InteractionRestrictions.html" title="Interaction Restrictions in Pele++ control file"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../Sensors/StateTrackerTypes.html" title="StateTracker types in Pele++ control file"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Jump Controller in Pele++ control file</a></li> 
@@ -53,14 +54,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="jump-controller-in-pele-control-file">
+  <section id="jump-controller-in-pele-control-file">
 <span id="sec-jumpcontroller"></span><h1>Jump Controller in Pele++ control file<a class="headerlink" href="#jump-controller-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
 <p>This page documents what is also known as the <em>jumping</em> or <em>spawning</em> functionality of Pele++.</p>
 <p>The jump controller is the responsible to change the explorer
 coordinates if some conditions are met in the task. Thus, the block is
 defined at Task level.</p>
 <p>If you use the jumping functionality, you may want to enable the controller log file through the <a class="reference internal" href="../PELE/PeleOutput.html#sec-peleoutput-controllereventslogpath"><span class="std std-ref">PELE_Output controllerEventsLogPath</span></a> option.</p>
-<div class="section" id="example">
+<section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpIf&quot;</span><span class="p">:</span>
 <span class="p">[</span>
@@ -80,8 +81,8 @@ defined at Task level.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="jumpif-section">
+</section>
+<section id="jumpif-section">
 <h2>jumpIf section<a class="headerlink" href="#jumpif-section" title="Permalink to this headline">¶</a></h2>
 <p>The jumpIf clause contains the jumping
 <a class="reference internal" href="../LogicalConditions/ConditionsByExample.html#sec-conditionsbyexample"><span class="std std-ref">conditions</span></a>. If any
@@ -115,20 +116,20 @@ relative conditions:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="example1">
+<section id="example1">
 <h3>Example1<a class="headerlink" href="#example1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpIf&quot;</span><span class="p">:[</span> <span class="s2">&quot;rmsdSelection &gt; 1.1&quot;</span> <span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="example2">
+</section>
+<section id="example2">
 <h3>Example2<a class="headerlink" href="#example2" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpIf&quot;</span><span class="p">:[</span> <span class="s2">&quot;diff_rmsd1 &gt; 0.5&quot;</span> <span class="p">]</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="jumpcontroller-section">
+</section>
+</section>
+<section id="jumpcontroller-section">
 <h2>jumpController section<a class="headerlink" href="#jumpcontroller-section" title="Permalink to this headline">¶</a></h2>
 <p>The jumpController section is comprised of two configuration blocks:</p>
 <ul class="simple">
@@ -136,7 +137,7 @@ relative conditions:</p>
 explorer/step in the simulation.</p></li>
 <li><p>jumpStrategy: the way we jump after the jumpIf condition is met.</p></li>
 </ul>
-<div class="section" id="id1">
+<section id="id1">
 <h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;jumpController&quot;</span><span class="p">:{</span>
     <span class="nt">&quot;strategyToChooseBestExplorer&quot;</span><span class="p">:{</span>
@@ -149,8 +150,8 @@ explorer/step in the simulation.</p></li>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="types-of-strategytochoosebestexplorer">
+</section>
+<section id="types-of-strategytochoosebestexplorer">
 <h3>Types of strategyToChooseBestExplorer<a class="headerlink" href="#types-of-strategytochoosebestexplorer" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>bestHasMinimumValueForOneSensor: The best explorer will have the
@@ -187,8 +188,8 @@ score = -1 - 0 - 0 = -1. Explorer2 score = -0 - 2 - 0= -2. Hence,
 Explorer2 is better than Explorer1.</p>
 </li>
 </ul>
-</div>
-<div class="section" id="types-of-jumpstrategy">
+</section>
+<section id="types-of-jumpstrategy">
 <h3>Types of jumpStrategy<a class="headerlink" href="#types-of-jumpstrategy" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>jumpToBestExplorerCoordinates: In case of jump, it will jump to the
@@ -201,15 +202,15 @@ coordinates of the best explorer.</p>
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="mpi-vs-serial-execution">
+</section>
+</section>
+<section id="mpi-vs-serial-execution">
 <h2>MPI vs Serial execution<a class="headerlink" href="#mpi-vs-serial-execution" title="Permalink to this headline">¶</a></h2>
 <p>The “strategyToChooseBestExplorer” in MPI chooses the best result so far
 of all the explorers. In Serial version, the best explorer is the best
 step of the serial execution.</p>
-</div>
-<div class="section" id="who-takes-the-decisions">
+</section>
+<section id="who-takes-the-decisions">
 <h2>Who takes the decisions<a class="headerlink" href="#who-takes-the-decisions" title="Permalink to this headline">¶</a></h2>
 <p>A jump can be caused by two factors:</p>
 <ul class="simple">
@@ -229,12 +230,12 @@ Those are the conditions not prefixed by “diff_”. The conditions which
 actually have a “diff_” prefix will be the ones that the controller,
 and only the controller, will evaluate in order to decide if an explorer
 has to jump.</p>
-</div>
-<div class="section" id="jumping-spawning">
+</section>
+<section id="jumping-spawning">
 <h2>Jumping (Spawning)<a class="headerlink" href="#jumping-spawning" title="Permalink to this headline">¶</a></h2>
 <p>With the previous tools we can make explorers spawn closer or further to
 a certain point.</p>
-<div class="section" id="example-bringing-the-ligand-close-to-a-point">
+<section id="example-bringing-the-ligand-close-to-a-point">
 <h3>Example: Bringing the ligand close to a point.<a class="headerlink" href="#example-bringing-the-ligand-close-to-a-point" title="Permalink to this headline">¶</a></h3>
 <p>We need to define the distance of the ligand to the point of interest.
 In the <a class="reference internal" href="../Sensors/MetricTypes.html#sec-metrictypes"><span class="std std-ref">metrics block</span></a> of the same task
@@ -275,8 +276,8 @@ we add:</p>
 explorer (i.e. <span class="math notranslate nohighlight">\(| \Delta \text{distance}| &gt; 10 \AA{}\)</span>, where <span class="math notranslate nohighlight">\(\Delta \text{distance} = \text{CurrentExplorer_distance} - \text{BestExplorer_distance}\)</span>), it jumps to the
 best explorer coordinates. It is worth emphazising that diff_distance
 is NOT the distance between the two explorers.</p>
-</div>
-<div class="section" id="example-moving-the-ligand-away-from-a-point">
+</section>
+<section id="example-moving-the-ligand-away-from-a-point">
 <h3>Example: Moving the ligand away from a point.<a class="headerlink" href="#example-moving-the-ligand-away-from-a-point" title="Permalink to this headline">¶</a></h3>
 <p>The example is essentialy the same as the previous example. The only
 difference is that now the best explorer is the one that is the furthest
@@ -295,9 +296,9 @@ away.The jump controller is now:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -336,8 +337,8 @@ away.The jump controller is now:</p>
   <p class="topless"><a href="../Sensors/StateTrackerTypes.html"
                         title="previous chapter">StateTracker types in Pele++ control file</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../PELEDynamicChangesInSimulationParameters/ParametersThatCanChange.html"
-                        title="next chapter">Changeable Parameters</a></p>
+  <p class="topless"><a href="../InteractionRestrictions/InteractionRestrictions.html"
+                        title="next chapter">Interaction Restrictions in Pele++ control file</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -366,12 +367,12 @@ away.The jump controller is now:</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../PELEDynamicChangesInSimulationParameters/ParametersThatCanChange.html" title="Changeable Parameters"
+          <a href="../InteractionRestrictions/InteractionRestrictions.html" title="Interaction Restrictions in Pele++ control file"
              >next</a> |</li>
         <li class="right" >
           <a href="../Sensors/StateTrackerTypes.html" title="StateTracker types in Pele++ control file"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Jump Controller in Pele++ control file</a></li> 

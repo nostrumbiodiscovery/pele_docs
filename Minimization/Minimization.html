@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimization in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Minimization in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="../SideChainPrediction/SideChainPrediction.html" title="SideChainPrediction Block in Pele++ control file"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Minimization in Pele++ control file</a></li> 
@@ -53,7 +54,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="minimization-in-pele-control-file">
+  <section id="minimization-in-pele-control-file">
 <span id="sec-minimization"></span><h1>Minimization in Pele++ control file<a class="headerlink" href="#minimization-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">&quot;Minimizer&quot;</span></code> block in a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code> command configures the final minimization of the relaxation phase. This block also configures the minimization in a <code class="docutils literal notranslate"><span class="pre">minimization</span></code> command. In a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code>, this phase will be active if either the side chain prediction phase is active, or if the <code class="docutils literal notranslate"><span class="pre">minimizationFrequency</span></code> PELE parameter says so (see <a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-minimizationfrequency"><span class="std std-ref">minimizationFrequency</span></a>). In particular, every time a side chain prediction is performed, a final minimization also happens; besides, every <code class="docutils literal notranslate"><span class="pre">minimizationFrequency</span></code> steps, a minimization is performed (if it is also a step where the side chain prediction is performed, only one minimization, after the prediction, is executed).</p>
 <p>There also exist minimization blocks for the minimizers used in the ANM phase (<a class="reference internal" href="../ANM/Anm.html#sec-anm"><span class="std std-ref">ANM Block in Pele++ control file</span></a>) and in the Side Chain Prediction phase (<a class="reference internal" href="../SideChainPrediction/SideChainPrediction.html#sec-sidechainprediction"><span class="std std-ref">SideChainPrediction Block in Pele++ control file</span></a>), where they are respectively called <code class="docutils literal notranslate"><span class="pre">&quot;anmMinimizer&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;sideChainMinimizer&quot;</span></code>. Unless noted, all parameters shown below can also be used when configuring those minimizers. The default values shown below correspond to the <code class="docutils literal notranslate"><span class="pre">&quot;Minimizer&quot;</span></code> block; see the ANM and Side Chain Prediction manual pages for the defaults used in their corresponding minimizers.</p>
@@ -69,9 +70,9 @@
 <li><p>Constraints on ANM nodes (see <a class="reference internal" href="../ANM/Anm.html#sec-anm-relaxationspringconstant"><span class="std std-ref">relaxationSpringConstant</span></a>).</p></li>
 <li><p>If the perturbation is active, constraints on the perturbed atoms to their center of mass (see <a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-perturbationcomconstraintconstant"><span class="std std-ref">perturbationCOMConstraintConstant</span></a>).</p></li>
 </ul>
-<div class="section" id="algorithm-selection">
+<section id="algorithm-selection">
 <h2>Algorithm selection<a class="headerlink" href="#algorithm-selection" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="algorithm">
+<section id="algorithm">
 <h3>algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h3>
 <p>Use: It sets the minimization algorithm that will be used.</p>
 <p>Possible options:</p>
@@ -85,9 +86,9 @@ conjugated-gradient algorithm.</p></li>
 method.</p></li>
 </ul>
 <p>Default value: “TruncatedNewton”</p>
-</div>
-</div>
-<div class="section" id="selection-of-links-to-minimize">
+</section>
+</section>
+<section id="selection-of-links-to-minimize">
 <h2>Selection of links to minimize<a class="headerlink" href="#selection-of-links-to-minimize" title="Permalink to this headline">¶</a></h2>
 <p>These selection options appear at the peleSimulation level. Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;commands&quot; : [
@@ -114,7 +115,7 @@ method.</p></li>
  ]
 </pre></div>
 </div>
-<div class="section" id="includeinminimization">
+<section id="includeinminimization">
 <span id="sec-minimization-includeinminimization"></span><h3>includeInMinimization<a class="headerlink" href="#includeinminimization" title="Permalink to this headline">¶</a></h3>
 <p>Use: Selection string used to select the atoms to which the minimization
 is going to be performed. Make sure this parameter does not interfere
@@ -125,8 +126,8 @@ Examples</span></a>).</p>
 <p>Parameter: Selector * doMinimizeSelector</p>
 <p>Default value: Select the whole system (equivalent to ‘{“chains”:
 “all”}’).</p>
-</div>
-<div class="section" id="donotincludeinminimization">
+</section>
+<section id="donotincludeinminimization">
 <span id="sec-minimization-donotincludeinminimization"></span><h3>doNotIncludeInMinimization<a class="headerlink" href="#donotincludeinminimization" title="Permalink to this headline">¶</a></h3>
 <p>Use: Selection string used to select the atoms that will be frozen
 during the minimization.</p>
@@ -137,11 +138,11 @@ the whole system.</p>
 <p>You can find examples of selections in (<a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selection Examples</span></a>).</p>
 <p>Parameter: Selector * doNotMinimizeSelector</p>
 <p>Default value: The empty selection (equivalent to ‘“empty”’).</p>
-</div>
-</div>
-<div class="section" id="parameters">
+</section>
+</section>
+<section id="parameters">
 <span id="sec-minimization-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="energydifference">
+<section id="energydifference">
 <h3>EnergyDifference<a class="headerlink" href="#energydifference" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: double energyTol</p>
 <p>Use: Used as a convergence criterion in the different minimization
@@ -153,8 +154,8 @@ TruncatedNewton::runMinimizationIterations.</p>
 <p>Range: [0, inf)</p>
 <p>Default value: 1.0</p>
 <p>Plop info: Not accessible from control file (hardcoded).</p>
-</div>
-<div class="section" id="minimumrms">
+</section>
+<section id="minimumrms">
 <h3>MinimumRMS<a class="headerlink" href="#minimumrms" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: double rmsMin</p>
 <p>Use: Used as a convergence criterion in the different minimization
@@ -170,8 +171,8 @@ SteepestDescent::minimize and TruncatedNewton::hasOuterLoopConverged.</p>
 <li><p>Plop parameter name: min_params%rmsmin</p></li>
 <li><p>Plop default value: 0.001</p></li>
 </ul>
-</div>
-<div class="section" id="maximumminimizationiterations">
+</section>
+<section id="maximumminimizationiterations">
 <h3>MaximumMinimizationIterations<a class="headerlink" href="#maximumminimizationiterations" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: unsigned int iterMax</p>
 <p>Use: Used as a convergence criterion in the different minimization
@@ -188,11 +189,11 @@ TruncatedNewton::runMinimizationIterations.</p>
 <li><p>Plop parameter name: min_params%iter_max</p></li>
 <li><p>Plop default value: 3</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="truncated-newton-parameters">
+</section>
+</section>
+<section id="truncated-newton-parameters">
 <h2>Truncated Newton Parameters<a class="headerlink" href="#truncated-newton-parameters" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="maximumnewtoniterations">
+<section id="maximumnewtoniterations">
 <h3>MaximumNewtonIterations<a class="headerlink" href="#maximumnewtoniterations" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: unsigned int maximumNewtonIterations</p>
 <p>Use: Number of times that the outer loop is going to be run.</p>
@@ -206,8 +207,8 @@ TruncatedNewton::runMinimizationIterations.</p>
 <li><p>Plop parameter name: min_params%mxitn</p></li>
 <li><p>Plop default value: 65</p></li>
 </ul>
-</div>
-<div class="section" id="nonbondinglistupdatedeachminstep">
+</section>
+<section id="nonbondinglistupdatedeachminstep">
 <h3>nonBondingListUpdatedEachMinStep<a class="headerlink" href="#nonbondinglistupdatedeachminstep" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: bool updateNblist</p>
 <p>Use: Controls whether the NB list is updated after each minimization
@@ -225,8 +226,8 @@ TruncatedNewton::runOneIteration.</p>
 <li><p>Plop parameter name: min_params%update_nblist</p></li>
 <li><p>Plop default value: True</p></li>
 </ul>
-</div>
-<div class="section" id="alphaupdated">
+</section>
+<section id="alphaupdated">
 <h3>alphaUpdated<a class="headerlink" href="#alphaupdated" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: bool updateAlpha</p>
 <p>Use: Controls whether the Born alpha radius is updated after each
@@ -242,8 +243,8 @@ TruncatedNewton::revertToPreviousValidStateInCaseOfMinimizationFailure.</p>
 <li><p>Plop parameter name: min_params%update_alpha</p></li>
 <li><p>Plop default value: False</p></li>
 </ul>
-</div>
-<div class="section" id="sgbupdated">
+</section>
+<section id="sgbupdated">
 <h3>sgbUpdated<a class="headerlink" href="#sgbupdated" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: bool updateSgb</p>
 <p>Use: Controls whether SGB cell list is updated after each minimization
@@ -259,8 +260,8 @@ TruncatedNewton::revertToPreviousValidStateInCaseOfMinimizationFailure.</p>
 <li><p>Plop parameter name: min_params%update_sgb</p></li>
 <li><p>Plop default value: True</p></li>
 </ul>
-</div>
-<div class="section" id="iterationsbetweennblistlongupdate">
+</section>
+<section id="iterationsbetweennblistlongupdate">
 <h3>iterationsBetweenNBlistLongUpdate<a class="headerlink" href="#iterationsbetweennblistlongupdate" title="Permalink to this headline">¶</a></h3>
 <p>This parameter is currently not assignable through the control file.</p>
 <p>Parameter: unsigned int iterationsBetweenNonBondingLongUpdate</p>
@@ -277,9 +278,9 @@ OuterLoop::prepareForNextIteration().</p>
 <li><p>Plop parameter name: min_params%nfull</p></li>
 <li><p>Plop default value: 2</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -357,7 +358,7 @@ OuterLoop::prepareForNextIteration().</p>
         <li class="right" >
           <a href="../SideChainPrediction/SideChainPrediction.html" title="SideChainPrediction Block in Pele++ control file"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Minimization in Pele++ control file</a></li> 

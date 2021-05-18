@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to run PELE in multicore platforms &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>How to run PELE in multicore platforms &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="../Selections/SelectionExamples.html" title="Selections By Example"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" accesskey="U">Reference Manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">How to run PELE in multicore platforms</a></li> 
       </ul>
@@ -52,7 +53,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="how-to-run-pele-in-multicore-platforms">
+  <section id="how-to-run-pele-in-multicore-platforms">
 <h1>How to run PELE in multicore platforms<a class="headerlink" href="#how-to-run-pele-in-multicore-platforms" title="Permalink to this headline">¶</a></h1>
 <p>PELE can take advantage of multicore platforms in different ways:</p>
 <ul class="simple">
@@ -69,7 +70,7 @@
 </ul>
 <p>Usually the meaning of each words depends on the context. It’s also used
 processor instead of core, etc.</p>
-<div class="section" id="openmp">
+<section id="openmp">
 <h2>OpenMP<a class="headerlink" href="#openmp" title="Permalink to this headline">¶</a></h2>
 <p>In OpenMP, all the processors are sharing the memory of the system.
 OpenMP allows us to use the multiple cores that are available in the
@@ -93,8 +94,8 @@ faster, doing some calculations in parallel.</p>
 <li><p>Run PELE</p></li>
 </ol>
 <p>It doesn’t need any anotation in the configuration file.</p>
-</div>
-<div class="section" id="mpi">
+</section>
+<section id="mpi">
 <h2>MPI<a class="headerlink" href="#mpi" title="Permalink to this headline">¶</a></h2>
 <p>MPI allows us to communicate different processors that are not sharing
 memory. We can also use MPI to comunicate the different cores or
@@ -134,8 +135,8 @@ dcp_recv(165)...................: Internal MPI error!  Cannot read from remote p
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nb">set</span> <span class="nv">I_MPI_SHM_LMT</span><span class="o">=</span>shm
 </pre></div>
 </div>
-</div>
-<div class="section" id="mpi-openmp">
+</section>
+<section id="mpi-openmp">
 <h2>MPI + OpenMP<a class="headerlink" href="#mpi-openmp" title="Permalink to this headline">¶</a></h2>
 <p>It combines the two previous methods. In brief, the combination of
 both technologies permit to have fastest explorers running at the same
@@ -146,7 +147,7 @@ have two configurations to use all the resources in an efficient way:</p>
 <li><p>10 MPI threads (explorers) with 4 OpenMP threads</p></li>
 <li><p>20 MPI threads (explorers) with 2 OpenMP threads</p></li>
 </ul>
-<div class="section" id="tips">
+<section id="tips">
 <h3>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>Don’t split an explorer to use OpenMP threads from a different
@@ -165,13 +166,13 @@ thread in other processor</p></li>
 </div></blockquote>
 </li>
 </ol>
-</div>
-</div>
-<div class="section" id="cuda-experimental">
+</section>
+</section>
+<section id="cuda-experimental">
 <h2>CUDA (Experimental)<a class="headerlink" href="#cuda-experimental" title="Permalink to this headline">¶</a></h2>
 <p>It’s very hardware dependent. Use OpenMP and MPI.</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -233,7 +234,7 @@ thread in other processor</p></li>
         <li class="right" >
           <a href="../Selections/SelectionExamples.html" title="Selections By Example"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">How to run PELE in multicore platforms</a></li> 
       </ul>

@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Water Perturbation Block in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Water Perturbation Block in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -16,7 +17,7 @@
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ANM Block in Pele++ control file" href="../ANM/Anm.html" />
+    <link rel="next" title="Conformation Perturbation Block in Pele++ control file" href="../ConformationPerturbation/ConformationPerturbation.html" />
     <link rel="prev" title="Perturbation Block in Pele++ control file" href="../Perturbation/Perturbation.html" /> 
     <script type="text/javascript" >
     MathJax.Hub.Config({
@@ -36,12 +37,12 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../ANM/Anm.html" title="ANM Block in Pele++ control file"
+          <a href="../ConformationPerturbation/ConformationPerturbation.html" title="Conformation Perturbation Block in Pele++ control file"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../Perturbation/Perturbation.html" title="Perturbation Block in Pele++ control file"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Water Perturbation Block in Pele++ control file</a></li> 
@@ -53,7 +54,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="water-perturbation-block-in-pele-control-file">
+  <section id="water-perturbation-block-in-pele-control-file">
 <span id="sec-water"></span><h1>Water Perturbation Block in Pele++ control file<a class="headerlink" href="#water-perturbation-block-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
 <p>This block configures the Water Perturbation in a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code>
 command. In a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code>, this phase will be active depending
@@ -80,7 +81,7 @@ simulation can be set in the PeleParameters section of the control file.
 See more information about this parameter at <a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-waterperturbationfrequency"><span class="std std-ref">waterPerturbationFrequency</span></a>.</p>
 <p>In case of questions or problems regarding the Water Perturbation algorithm
 contact the author at <a class="reference external" href="mailto:marti&#46;municoy&#37;&#52;&#48;bsc&#46;es">marti<span>&#46;</span>municoy<span>&#64;</span>bsc<span>&#46;</span>es</a>.</p>
-<div class="section" id="example">
+<section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>The WaterPerturbation block can be defined inside the pele simulation
 command block section as next. In this case, a perturbation on four
@@ -123,8 +124,8 @@ water site, will use the global box of water perturbation.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="global-selection-of-waters-to-perturb">
+</section>
+<section id="global-selection-of-waters-to-perturb">
 <span id="sec-waterperturbation-waterselection"></span><h2>Global selection of waters to perturb<a class="headerlink" href="#global-selection-of-waters-to-perturb" title="Permalink to this headline">¶</a></h2>
 <p>WaterPerturbation works on a set of selected water molecules. All water
 molecules defined in the global selector will be perturbed inside the
@@ -142,8 +143,8 @@ as long as it is a finite spherical box.</p>
 <li><p>Parameter: <code class="docutils literal notranslate"><span class="pre">watersToPerturb</span></code></p></li>
 <li><p>Type: Pele links selection (see more details at <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>)</p></li>
 </ul>
-</div>
-<div class="section" id="global-box">
+</section>
+<section id="global-box">
 <span id="sec-waterperturbation-box"></span><h2>Global box<a class="headerlink" href="#global-box" title="Permalink to this headline">¶</a></h2>
 <p>It is always recommended to define a global box for the perturbation algorithm.
 In this way, explicit water molecules would be perturbed inside a specific region
@@ -164,8 +165,8 @@ in any protein region indistinctly.</p>
 <li><p>Parameter: <code class="docutils literal notranslate"><span class="pre">Box</span></code></p></li>
 <li><p>Type: Pele box definition (see more details at <a class="reference internal" href="../Boxes/Boxes.html#sec-boxes"><span class="std std-ref">Boxes</span></a>)</p></li>
 </ul>
-</div>
-<div class="section" id="watersites">
+</section>
+<section id="watersites">
 <span id="sec-waterperturbation-watersites"></span><h2>waterSites<a class="headerlink" href="#watersites" title="Permalink to this headline">¶</a></h2>
 <p>Several boxes can be associated to specific water molecules through water sites.
 In this way, the user can choose to perturb some water molecules inside one
@@ -200,24 +201,24 @@ as they cannot get outside the perturbation box.</p>
 <li><p>Parameter: <code class="docutils literal notranslate"><span class="pre">waterSites</span></code></p></li>
 <li><p>Type: list of water site definitions. Each water site requires the definition of a set of water molecules, <code class="docutils literal notranslate"><span class="pre">watersToPerturb</span></code>,  and a perturbation box, <code class="docutils literal notranslate"><span class="pre">Box</span></code>.</p></li>
 </ul>
-<div class="section" id="waterstoperturb">
+<section id="waterstoperturb">
 <h3>watersToPerturb<a class="headerlink" href="#waterstoperturb" title="Permalink to this headline">¶</a></h3>
 <p>Selection of the explicit water molecules of each water site.</p>
 <ul class="simple">
 <li><p>Parameter: <code class="docutils literal notranslate"><span class="pre">watersToPerturb</span></code></p></li>
 <li><p>Type: Pele links selection (see more details at <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>)</p></li>
 </ul>
-</div>
-<div class="section" id="box">
+</section>
+<section id="box">
 <h3>Box<a class="headerlink" href="#box" title="Permalink to this headline">¶</a></h3>
 <p>Definition of the perturbation box of each water site.</p>
 <ul class="simple">
 <li><p>Parameter: <code class="docutils literal notranslate"><span class="pre">Box</span></code></p></li>
 <li><p>Type: Pele box definition (see more details at <a class="reference internal" href="../Boxes/Boxes.html#sec-boxes"><span class="std std-ref">Boxes</span></a>)</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="parameters">
+</section>
+</section>
+<section id="parameters">
 <span id="sec-waterperturbation-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
 <p>All the possible parameters that can be specified in this section are the following ones:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -233,7 +234,7 @@ as they cannot get outside the perturbation box.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="translationrange">
+<section id="translationrange">
 <span id="sec-waterperturbation-translationrange"></span><h3>translationRange<a class="headerlink" href="#translationrange" title="Permalink to this headline">¶</a></h3>
 <p>WaterPerturbation works by translating and minimazing the water molecule
 at each PELE step. The translation range of the water molecules can be define with
@@ -248,8 +249,8 @@ the following equation:</p>
 <li><p>Units: angstroms</p></li>
 <li><p>Range: (0, inf)</p></li>
 </ul>
-</div>
-<div class="section" id="overlapfactor">
+</section>
+<section id="overlapfactor">
 <span id="sec-waterperturbation-overlapfactor"></span><h3>overlapFactor<a class="headerlink" href="#overlapfactor" title="Permalink to this headline">¶</a></h3>
 <p>The overlap factor that is used when looking for initial cavities for perturbed
 water molecules without steric clashes. When this factor gets lower, a higher steric overlap
@@ -262,8 +263,8 @@ for more information about this parameter.</p>
 <li><p>Units: dimensionless</p></li>
 <li><p>Range: [0, 1]</p></li>
 </ul>
-</div>
-<div class="section" id="temperature">
+</section>
+<section id="temperature">
 <span id="sec-waterperturbation-temperature"></span><h3>temperature<a class="headerlink" href="#temperature" title="Permalink to this headline">¶</a></h3>
 <p>The temperature that is used in the Metropolis criterion to decide whether to accept
 the new location of a perturbed water or not. The higher the temperature is, the
@@ -276,8 +277,8 @@ but worse conformations will be generated.</p>
 <li><p>Units: Kelvin degrees</p></li>
 <li><p>Range: (0, inf)</p></li>
 </ul>
-</div>
-<div class="section" id="numberofsterictrials">
+</section>
+<section id="numberofsterictrials">
 <span id="sec-waterperturbation-numberofsterictrials"></span><h3>numberOfStericTrials<a class="headerlink" href="#numberofsterictrials" title="Permalink to this headline">¶</a></h3>
 <p>Number of trials that will be performed to look for steric-clashes-free
 cavities for the perturbed water molecules. For small pockets were
@@ -291,8 +292,8 @@ for more details.</p>
 <li><p>Units: dimensionless</p></li>
 <li><p>Range: [1, inf)</p></li>
 </ul>
-</div>
-<div class="section" id="comconstraintconstant">
+</section>
+<section id="comconstraintconstant">
 <span id="sec-waterperturbation-comconstraintconstant"></span><h3>COMConstraintConstant<a class="headerlink" href="#comconstraintconstant" title="Permalink to this headline">¶</a></h3>
 <p>Constraint on the center of mass (COM) of each atomset that will be applied
 on all water molecules that are perturbed, once they are in the new location.
@@ -307,8 +308,8 @@ final acceptance at the end of the Pele step could be lowered significantly.</p>
 <li><p>Units: <span class="math notranslate nohighlight">\(\text{kcal}/(\text{mol} \cdot \unicode{xC5}^{2})\)</span></p></li>
 <li><p>Range: [0, inf)</p></li>
 </ul>
-</div>
-<div class="section" id="waterstoperturbperstep">
+</section>
+<section id="waterstoperturbperstep">
 <span id="sec-waterperturbation-waterstoperturbperstep"></span><h3>watersToPerturbPerStep<a class="headerlink" href="#waterstoperturbperstep" title="Permalink to this headline">¶</a></h3>
 <p>Maximum number of water molecules that will be perturbed in a single water
 perturbation step. The default value, which is -1, perturbs all the water
@@ -321,9 +322,18 @@ control file.</p>
 <li><p>Units: dimensionless</p></li>
 <li><p>Range [-1, inf)</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+<section id="allowemptywaterselectors">
+<span id="sec-waterperturbation-allowemptywaterselectors"></span><h3>allowEmptyWaterSelectors<a class="headerlink" href="#allowemptywaterselectors" title="Permalink to this headline">¶</a></h3>
+<p>This flag prevents the algorithm to fail when one water molecule selected in the control file is not found in the current structure. In this way, when set to true, the algorithm will skip any selected water molecule that is missing in the complex.</p>
+<ul class="simple">
+<li><p>Parameter: <code class="docutils literal notranslate"><span class="pre">allowEmptyWaterSelectors</span></code></p></li>
+<li><p>Type: boolean</p></li>
+<li><p>Default: false</p></li>
+</ul>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -350,6 +360,7 @@ control file.</p>
 <li><a class="reference internal" href="#numberofsterictrials">numberOfStericTrials</a></li>
 <li><a class="reference internal" href="#comconstraintconstant">COMConstraintConstant</a></li>
 <li><a class="reference internal" href="#waterstoperturbperstep">watersToPerturbPerStep</a></li>
+<li><a class="reference internal" href="#allowemptywaterselectors">allowEmptyWaterSelectors</a></li>
 </ul>
 </li>
 </ul>
@@ -360,8 +371,8 @@ control file.</p>
   <p class="topless"><a href="../Perturbation/Perturbation.html"
                         title="previous chapter">Perturbation Block in Pele++ control file</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../ANM/Anm.html"
-                        title="next chapter">ANM Block in Pele++ control file</a></p>
+  <p class="topless"><a href="../ConformationPerturbation/ConformationPerturbation.html"
+                        title="next chapter">Conformation Perturbation Block in Pele++ control file</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -390,12 +401,12 @@ control file.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../ANM/Anm.html" title="ANM Block in Pele++ control file"
+          <a href="../ConformationPerturbation/ConformationPerturbation.html" title="Conformation Perturbation Block in Pele++ control file"
              >next</a> |</li>
         <li class="right" >
           <a href="../Perturbation/Perturbation.html" title="Perturbation Block in Pele++ control file"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Water Perturbation Block in Pele++ control file</a></li> 

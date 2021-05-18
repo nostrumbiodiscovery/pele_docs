@@ -13,9 +13,9 @@ three parts:
 -  The specific parameters for that type of Metric (each metric has its
    own parameters).
 -  A tag which is a name to identify the Metric in logical conditions
-   (see :ref:`Conditions By Example <sec-conditionsByExample>`). The tag 
+   (see :ref:`Conditions By Example <sec-conditionsByExample>`). The tag
    cannot contain spaces. This part is optional; if present, it is used
-   to identify the metric in the report file; otherwise, a generic 
+   to identify the metric in the report file; otherwise, a generic
    description is used.
 -  A boolean value indicating if you want the Metric to be logged or
    not. This is also optional. By default all Metrics are logged (it's
@@ -138,6 +138,7 @@ The currently available metrics are:
 -  :ref:`Distance to point <sec-metricTypes-distanceToPoint>`
 -  :ref:`Random number <sec-metricTypes-randomNumber>`
 -  :ref:`RMSD <sec-metricTypes-RMSD>`
+-  :ref:`Local non-bonding energy <sec-metricTypes-localNonBondingEnergy>`
 
 .. _sec-metricTypes-bindingEnergy:
 
@@ -177,7 +178,7 @@ Distance between centers of mass
 It computes the distance between the center of masses of two groups of
 atoms. Each group of atoms is defined by a selection block, see
 :ref:`Selections By Example <sec-selectionExamples>` to see
-different examples of selection blocks. 
+different examples of selection blocks.
 
 Example
 """""""
@@ -236,7 +237,7 @@ It computes the distance from a fixed point to the center of mass of a
 group of atoms. The group of atoms is defined used a selection block,
 see :ref:`Selections By Example <sec-selectionExamples>` to
 see different examples of selection blocks, whereas the point is given
-as a list of coordinates. 
+as a list of coordinates.
 
 Example
 """""""
@@ -247,7 +248,7 @@ Example
        "type":"distanceToPoint",
        "point": [0.5, 0.1, 0.0],
        "atoms": {
-           "links" : { "ids":["A:2"]} 
+           "links" : { "ids":["A:2"]}
        }
    }
 
@@ -409,14 +410,14 @@ Complex, as we show in the following example:
        "Native": {
            "path": "src/Molecules/Test/Data/AIN/native_fixed.pdb"
        },
-       "selection": { 
+       "selection": {
            "chains": {
-               "names": [ "L" ] 
+               "names": [ "L" ]
            }
        }
-       "superpositionSelection": { 
+       "superpositionSelection": {
            "atoms": {
-               "names": [ "_CA_" ] 
+               "names": [ "_CA_" ]
            }
        }
    }
@@ -444,10 +445,68 @@ disabled by setting the "doSuperposition" parameter to false.
            "path": "src/Molecules/Test/Data/AIN/native_fixed.pdb"
        },
        "selection": {
-           "chains": { 
+           "chains": {
                "names": ["L"]
            }
        },
        "doSuperposition": false
    }
 
+.. _sec-metricTypes-localNonBondingEnergy:
+
+Local non-bonding energy
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+It computes the local non-bonding energy of a link.
+
+Example 1
+"""""""""
+
+.. code-block:: json
+
+   {
+       "type": "localNonBondingEnergy",
+       "selection": { "links": { "ids": ["L:1"] } },
+       "radius": 20
+   }
+
+In this example, we are indicating that we want to compute the local non-bonding energy of the link "L". The main difference between this metric and the :ref:`Binding Energy <sec-metricTypes-bindingEnergy>` is that it calculates the interaction energy without deleting any atomset. Thus, it can work with links which are covalently connected to other atoms. For example, we can calculate the interaction energy between a protein residue and its neighboring atoms.
+
+The algorithm requires two parameters, the selection of the link and the radius that is used to search for its nearest neighbors. For more information regarding the "selection" block, see :ref:`Selections By Example <sec-selectionExamples>` to see different
+examples of selection blocks. However, the algorithm will complain when any atomset different from a link is selected as it is designed to work only with a single link.
+
+When the link is covalently linked to other atoms that belong to a different link, the algorithm ignores the non-bonding interaction between atoms that are within a 2-bond distance. Moreover, any inner interaction between two atoms from the link is ignored as we are only interested on computing the interaction between the link and its surroundings. The algorithm also ignores covalent contributions between the selected link and any external atom.
+
+
+.. _sec-metricTypes-atomsAngle:
+
+Angle between three atoms
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+It computes the angle between three atoms. Each atom is defined by a selection block and each selection block must contain a single atom, see
+:ref:`Selections By Example <sec-selectionExamples>` to see
+different examples of selection blocks.
+
+Example
+"""""""
+
+.. code-block:: json
+
+  {
+      "type":"atomsAngle",
+      "tag":"angle",
+      "selection_group_1":{
+          "atoms": { "ids":["A:6:_O__"]}
+      },
+      "selection_group_2":{
+          "atoms": { "ids":["A:5:_N__"]}
+      },
+      "selection_group_3":{
+          "atoms": { "ids":["A:5:_OH_"]}
+      }
+  }
+
+In this example, we are indicating that we want to compute the angle
+between three atoms from chain A.

@@ -69,6 +69,24 @@ Default value: 3
 Note: If waterPerturbationFrequency = 0, the water perturbation will never be performed.
 
 
+.. _sec-peleParameters-conformationPerturbationFrequency:
+
+conformationPerturbationFrequency
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Parameter: unsigned int conformationPerturbationFrequency
+
+Use: Period to perform conformation perturbation
+
+Note for developers: Used in PeleParameters::testIsTimeToRunConformationPerturbation
+
+Units: Dimensionless (# of steps)
+
+Range: [0, inf)
+
+Default value: 0
+
+Note: If conformationPerturbationFrequency = 0, the conformation perturbation will never be performed.
 
 .. _sec-peleParameters-anmFrequency:
 

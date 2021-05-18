@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Conformation Perturbation Block in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
+    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ANM Block in Pele++ control file" href="../ANM/Anm.html" />
+    <link rel="prev" title="Water Perturbation Block in Pele++ control file" href="../WaterPerturbation/Waterperturbation.html" /> 
+    <script type="text/javascript" >
+    MathJax.Hub.Config({
+        TeX: { 
+	  Macros: {
+	    AA: '{\\unicode{xC5}}'
+	  }
+	}
+    });
+    </script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ANM/Anm.html" title="ANM Block in Pele++ control file"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../WaterPerturbation/Waterperturbation.html" title="Water Perturbation Block in Pele++ control file"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Conformation Perturbation Block in Pele++ control file</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="conformation-perturbation-block-in-pele-control-file">
+<span id="sec-conformation-pert"></span><h1>Conformation Perturbation Block in Pele++ control file<a class="headerlink" href="#conformation-perturbation-block-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
+<p>This block configures the Conformation Perturbation in a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code>
+command. In a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code>, this phase will be active depending
+whether the <code class="docutils literal notranslate"><span class="pre">ConformationPerturbation</span></code> block is present and whether a conformation
+library for the ligand is present. If defined, an extra perturbation step
+focused on changing the conformation of the ligand will be performed after
+the ligand perturbation. This applies a translation to each atom with respect
+to the root atom (the first atom in the template) as specified in the conformation
+library to adopt one of the conformations defined there. Afterwards, the PELE step
+will proceed as specified in the control file.
+If no conformation can be applied due to clashes, the step will be rejected on
+account of that, and the reason will be specified in the log file.</p>
+<p>Note that the frequency with which this algorithm is performed in a Pele
+simulation can be set in the PeleParameters section of the control file.
+See more information about this parameter at <a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-conformationperturbationfrequency"><span class="std std-ref">conformationPerturbationFrequency</span></a>.</p>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>The ConformationPerturbation block can be defined inside the pele simulation
+command block section. In this case, a perturbation with an overlapFactor of
+0.65 is defined. At each Pele step, it will reproduce one of the conformations
+specified in the conformation library until one without clashes is found.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;ConformationPerturbation&quot;</span><span class="p">:</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;parameters&quot;</span><span class="p">:</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;overlapFactor&quot;</span><span class="p">:</span> <span class="mf">0.65</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="parameters">
+<span id="sec-conformationperturbation-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>All the possible parameters that can be specified in this section are the following ones:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;parameters&quot;</span><span class="p">:</span>
+    <span class="p">{</span>
+            <span class="nt">&quot;overlapFactor&quot;</span><span class="p">:</span> <span class="mf">0.65</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="overlapfactor">
+<span id="sec-conformationperturbation-overlapfactor"></span><h3>overlapFactor<a class="headerlink" href="#overlapfactor" title="Permalink to this headline">¶</a></h3>
+<p>The overlap factor that is used when looking for steric clashes of the resulting
+conformation. When this factor gets lower, a higher steric overlap
+is accepted. See <a class="reference internal" href="../SideChainPrediction/SideChainPrediction.html#sec-sidechainprediction-parameters-overlapfactor"><span class="std std-ref">Overlap factor</span></a>
+for more information about this parameter.</p>
+<ul class="simple">
+<li><p>Parameter: <code class="docutils literal notranslate"><span class="pre">overlapFactor</span></code></p></li>
+<li><p>Type: float</p></li>
+<li><p>Default: 0.65</p></li>
+<li><p>Units: dimensionless</p></li>
+<li><p>Range: [0, 1]</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Conformation Perturbation Block in Pele++ control file</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a><ul>
+<li><a class="reference internal" href="#overlapfactor">overlapFactor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../WaterPerturbation/Waterperturbation.html"
+                        title="previous chapter">Water Perturbation Block in Pele++ control file</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../ANM/Anm.html"
+                        title="next chapter">ANM Block in Pele++ control file</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/ConformationPerturbation/ConformationPerturbation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ANM/Anm.html" title="ANM Block in Pele++ control file"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../WaterPerturbation/Waterperturbation.html" title="Water Perturbation Block in Pele++ control file"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Conformation Perturbation Block in Pele++ control file</a></li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+    <a href="../index.html#license">License</a>.
+    </div>
+  </body>
+</html>

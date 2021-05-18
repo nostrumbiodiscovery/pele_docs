@@ -4,7 +4,7 @@
 PELE Molecular Parameters
 *************************
 
-The parameters for the force fields used in PELE and the rotamer libraries used during side chain prediction (and the side chain exploration done when needed during the perturbation), are located in the :file:`Data/` directory or, for non-standard molecules and residues, in your :file:`DataLocal/` directory. In particular:
+The parameters for the force fields used in PELE, the rotamer libraries used during side chain prediction (and the side chain exploration done when needed during the perturbation), and conformation libraries used during conformation perturbation (when applicable) are located in the :file:`Data/` directory or, for non-standard molecules and residues, in your :file:`DataLocal/` directory. In particular:
 
 - :file:`<DataDir>/Templates/<forcefield>/HeteroAtoms/` contains the force field parameters for non-protein and non-nucleic acid residues (ligands, water molecules, etc.).
 - :file:`<DataDir>/Templates/<forcefield>/DNA/` contains the force field parameters for DNA residues.
@@ -14,10 +14,11 @@ The parameters for the force fields used in PELE and the rotamer libraries used 
 - :file:`<DataDir>/OBC/solventParamsHCTOBC.txt` contains parameters for the solvent-related energy when using OBC (see :ref:`sec-solvent-solventType`).
 - :file:`<DataDir>/LigandRotamerLibs/` contains the rotamer libraries for non-protein and non-nucleic acid residues (usually ligands and cofactors).
 - :file:`<DataDir>/RotamerLibs/` contains the rotamer libraries for DNA, RNA and protein residues.
+- :file:`<DataDir>/Conformations/` contains the conformation libraries.
 
 where ``<DataDir>`` refers to either :file:`Data/` or :file:`DataLocal/`, and the ``<forcefield>`` directory is one of the currently supported ones (see :ref:`sec-initialization-general-forcefield`).
 
-If you use an hetero group not included in the data directories, then you should create and add both the template file with the force field parameters (under :file:`<DataDir>/Templates/<forcefield>/HeteroAtoms/`), the OBC parameters for that group at the end of :file:`solventParamsHCTOBC.txt` (only if you use the OBC solvent model),  and the rotamer library definition file (at :file:`<DataDir>/LigandRotamerLibs/`). The following sections explain how to generate the different data needed.
+If you use an hetero group not included in the data directories, then you should create and add both the template file with the force field parameters (under :file:`<DataDir>/Templates/<forcefield>/HeteroAtoms/`), the OBC parameters for that group at the end of :file:`solventParamsHCTOBC.txt` (only if you use the OBC solvent model), the rotamer library definition file (at :file:`<DataDir>/LigandRotamerLibs/`) or the conformation library definition file (at :file:`<DataDir>/Conformations`). The following sections explain how to generate the different data needed.
 
 Solvent parameters
 ==================
@@ -51,6 +52,7 @@ You can find a description of the file formats used at:
 - PELE Custom format (for inter-residue parameters): :ref:`sec-fileFormats-PELECustom`.
 - Non-ligand rotamer library: :ref:`sec-fileFormats-nonligandRotamers`.
 - Ligand rotamer library: :ref:`sec-fileFormats-ligandRotamers`.
+- Conformation library: :ref:`sec-fileFormats-conformationLibrary`.
 
 .. _sec-molecularParameters-templateParameters-OPLS:
 
@@ -243,3 +245,16 @@ If you have the template file for your molecule, but not the rotamer file, you c
 As before (for the template and rotamer files generation), you can place your rotamer file inside :file:`./DataLocal/LigandRotamerLibs/`; use :file:`Data/` instead of :file:`./DataLocal/` if you are updating the central database.
 
 
+Conformation library files
+======================
+
+See also :ref:`sec-fileFormats-conformationLibrary` for information on the format of the generated file.
+
+To create a conformation library file you need to use the `peleffy package <https://github.com/martimunicoy/peleffy>`_ and have the output of a run of the
+`Bioactive Conformational Ensemble (BCE) server <https://mmb.irbbarcelona.org/BCE/>`_. If we assume that peleffy is installed and the output of the BCE server is in BCE_output and the ligand structure is in input.pdb, the dihedral library could be generated using the following command:
+
+.. code-block:: console
+
+    $ python -m peleffy.main input.pdb --conformations_info_path BCE_output/ --as_datalocal -c opls2005 -f OPLS2005
+
+This command would generate a DataLocal folder with the conformation library inside the Conformations subfolder, as well as the OPLS template for the ligand. For more information about peleffy  visit their `documentation <https://martimunicoy.github.io/peleffy/>`_.

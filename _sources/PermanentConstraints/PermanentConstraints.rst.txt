@@ -119,3 +119,23 @@ Example:
 Notes: "toCenterOfMassesOf" can be any valid selection block, see
 :ref:`Selections By Example <sec-selectionExamples>`.
 
+Harmonic constraint on Dihedral
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It's a harmonic constraint on a selected dihedral.
+
+Example:
+
+.. code-block:: json
+
+   {
+       "type": "constrainAtomsToDihedral",
+       "springConstant": 2.2,
+       "equilibriumAngle": 3.3,
+       "firstAtom":  "A:1:_C1_",
+       "secondAtom":  "A:1:_C2_",
+       "thirdAtom":  "A:1:_C3_",
+       "fourthAtom":  "A:1:_C4_",
+   }
+
+Notes: "equilibriumAngle" needs to be in Degrees, not radians.

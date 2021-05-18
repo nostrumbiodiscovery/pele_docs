@@ -15,6 +15,7 @@ Contents:
     ../NonBonding/NonBondingAlgorithms
     ../Perturbation/Perturbation
     ../WaterPerturbation/Waterperturbation
+    ../ConformationPerturbation/ConformationPerturbation
     ../ANM/Anm
     ../ANM/EigenvectorsAndEigenvalues
     ../SideChainPrediction/SideChainPrediction
@@ -22,6 +23,7 @@ Contents:
     ../PermanentConstraints/PermanentConstraints
     ../Sensors/Sensors
     ../JumpController/JumpController
+    ../InteractionRestrictions/InteractionRestrictions
     ../PELEDynamicChangesInSimulationParameters/ParametersThatCanChange
     ../PELEDynamicChangesInSimulationParameters/PELEDynamicChangesInSimulationParameters
     ../ExitConditions/ExitConditions

@@ -74,6 +74,39 @@ In the first group, the weight distribution for _C9_ _C8_ would be 10, for _C8_ 
 
 To configure the type of perturbation to perform, check :ref:`sec-perturbation-perturbationSelection` and :ref:`sec-perturbation-parameters`.
 
+.. _sec-side_chain_perturbation:
+
+Side Chain Perturbation Block in Pele++ control file
+=========================================
+
+
+Example
+-------
+
+.. code-block:: json
+
+    "SideChainPerturbation": {
+        "sideChainsToPerturb": { "links": {"ids": ["A:145"] } },
+            "parameters":{                                      
+                    "overlapFactor": 0.5,                                         
+                    "numberOfTrials": 20,                        
+                    "atLeastOneSelectedTrial": true,
+                    "maxTrialsForAtLeastOne": 50,
+                    "refinementAngle": 10
+            }     
+    }
+
+    
+The side chain perturbation can be performed to perturb any sidechain in the protein. This was though to perform perturbations of a covalent ligand. As contrary as the standard perturbation,
+in this algorithm, clashes with side chains will be ignored. This will allow the desired side chain to push the neigbours side chains, perturbing the system. Also, since a side chain
+cant have a translation and rotation, there is no use of steric trials. Every trial will be a random pose of the side chain.
+
+The refinement angle is an optional parameter. If it is enabled, the side chain perturbation will perform a very soft perturbation of a random angle between [-refinementAngle, +refinementAngle]
+on the previous geometrical situation of the side chain to all the rotamers, so the side chain will have very little movements. This is ideal if you want to explore better an already found minima. 
+This is not expected to work properly with high angles.
+
+The rest of the parameters works exactly in the same way than in the standard perturbation.
+
 .. _sec-perturbation-steering:
 
 Steering

@@ -1,5 +1,5 @@
 ======================
-PELE 1.6 documentation
+PELE 1.7 documentation
 ======================
 
 Contents:
@@ -17,6 +17,7 @@ Contents:
   adaptive
   fragpele
   msm
+  peleOutputInfo
   referenceManual
   howToContributeToDocs
   references

@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Pele Output &#8212; PELE 1.7.0 documentation</title>
+    <link rel="stylesheet" href="_static/naturemodified.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Reference Manual" href="referenceManual.html" />
+    <link rel="prev" title="MSM PELE" href="msm.html" /> 
+    <script type="text/javascript" >
+    MathJax.Hub.Config({
+        TeX: { 
+	  Macros: {
+	    AA: '{\\unicode{xC5}}'
+	  }
+	}
+    });
+    </script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="referenceManual.html" title="Reference Manual"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="msm.html" title="MSM PELE"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Pele Output</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="pele-output">
+<span id="sec-peleoutputinfo"></span><h1>Pele Output<a class="headerlink" href="#pele-output" title="Permalink to this headline">¶</a></h1>
+<section id="report-file">
+<h2>Report file<a class="headerlink" href="#report-file" title="Permalink to this headline">¶</a></h2>
+<p>Text file where the Sensors (metrics and tracked variables) values are stored. The first data line corresponds to the initial state (marked with a value of 0 for both Step and AcceptedSteps). Then, there is a data line per accepted step (both Step and AcceptedSteps start counting at 1).</p>
+<p>To configure path and filename see <a class="reference external" href="PELE/PeleOutput.html#reportpath">reportPath</a>.</p>
+<p>In multicore runs, a report file is generated for each browser (with a suffix number).</p>
+<p>Example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#Task    Step    numberOfAcceptedPeleSteps    currentEnergy    Binding Energy    sasaLig    distance
+1    0    0    -16102.1    -22.254    0.415516    4.6652
+1    1    1    -19365.8    -11.5598    0.649762    7.74731
+1    2    2    -19408.9    -6.45269    0.831063    10.4285
+1    3    3    -19436.8    -7.41441    0.738071    11.3591
+1    4    4    -19454.6    -2.23691    0.815661    10.4208
+1    5    5    -19489.9    -13.5019    0.709215    10.3476
+</pre></div>
+</div>
+</section>
+<section id="trajectory-file">
+<h2>Trajectory file<a class="headerlink" href="#trajectory-file" title="Permalink to this headline">¶</a></h2>
+<p>Pdb file where all the accepted models are saved to form a trajectory:</p>
+<ul class="simple">
+<li><p>Model 1 always corresponds to the initial state.</p></li>
+<li><p>Model 2 corresponds to the first recorded accepted step (see <a class="reference external" href="PELE/PeleOutput.html#savingfrequencyforacceptedsteps">saveFrequencyForAcceptedSteps</a>).</p></li>
+<li><p>Model 3 to the second recorded accepted step, and so on.</p></li>
+</ul>
+<p>It’s only used in <strong>savingTrajectory</strong> and <strong>savingBoth</strong>  <a class="reference external" href="PELE/PeleOutput.html#savingmode">saving mode</a> options.</p>
+<p>To configure path and filename see <a class="reference external" href="PELE/PeleOutput.html#trajectorypath">trajectoryPath</a>.</p>
+<p>In multicore runs, a trajectory file is generated for each browser (with a suffix number).</p>
+</section>
+<section id="steps-folder">
+<h2>Steps folder<a class="headerlink" href="#steps-folder" title="Permalink to this headline">¶</a></h2>
+<p>Folder where all the accepted models are saved in separated pdb files. The file numbered as 0 is the initial state. For all other files, the number is the accepted step (thus, n corresponds to the nth accepted step; if <a class="reference external" href="PELE/PeleOutput.html#savingfrequencyforacceptedsteps">saveFrequencyForAcceptedSteps</a>) is 2, the values for n will be 2, 4, 6, etc.).</p>
+<p>It’s only used in <strong>savingSteps</strong> and <strong>savingBoth</strong>  <a class="reference external" href="PELE/PeleOutput.html#savingmode">saving mode</a>  options.</p>
+<p>To configure folder path see <a class="reference external" href="PELE/PeleOutput.html#stepsfolder">stepsFolder</a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Pele Output</a><ul>
+<li><a class="reference internal" href="#report-file">Report file</a></li>
+<li><a class="reference internal" href="#trajectory-file">Trajectory file</a></li>
+<li><a class="reference internal" href="#steps-folder">Steps folder</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="msm.html"
+                        title="previous chapter">MSM PELE</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="referenceManual.html"
+                        title="next chapter">Reference Manual</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/peleOutputInfo.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="referenceManual.html" title="Reference Manual"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="msm.html" title="MSM PELE"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Pele Output</a></li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+    <a href="index.html#license">License</a>.
+    </div>
+  </body>
+</html>

@@ -4,7 +4,7 @@ Water Perturbation Block in Pele++ control file
 =====================================================
 
 This block configures the Water Perturbation in a ``peleSimulation``
-command. In a ``peleSimulation``, this phase will be active depending 
+command. In a ``peleSimulation``, this phase will be active depending
 whether the ``WaterPerturbation`` block is present or not. If defined,
 an extra MC perturbation step focused on explicit water molecules will
 be performed after the ligand perturbation. This consists in a
@@ -14,7 +14,7 @@ conformation is only accepted if it fulfills the Metropolis criterion.
 The user can decide whether to move a single water molecules or more
 than one by defining them explicitly in the control file. In order to
 assess how many water molecules to use we are currently building a new
-methodology. 
+methodology.
 
 It is also possible to defined different water sites and associate a
 certain set of explicit water molecules and boxes to each. Those water
@@ -23,7 +23,7 @@ corresponds to that water site. Those water molecules that need to be
 perturbed but are not included in a water site will be perturbed within
 the general box of water perturbation, if any is defined. In case there
 is not a general box defined, they will be perturbed in an infinite
-box (no box will be applied to them). 
+box (no box will be applied to them).
 
 Note that the frequency with which this algorithm is performed in a Pele
 simulation can be set in the PeleParameters section of the control file.
@@ -167,7 +167,7 @@ as they cannot get outside the perturbation box.
                  "watersToPerturb": {"links": {"ids": ["W:5", "W:6"] }},
                  "Box": {"radius": 6, "fixedCenter": [16, 6, 21], "type": "sphericalBox"}
             }
-        ] 
+        ]
     }
 
 
@@ -328,3 +328,14 @@ control file.
 - Units: dimensionless
 - Range [-1, inf)
 
+
+.. _sec-waterperturbation-allowEmptyWaterSelectors:
+
+allowEmptyWaterSelectors
+^^^^^^^^^^^^^^^^^^^^^^
+
+This flag prevents the algorithm to fail when one water molecule selected in the control file is not found in the current structure. In this way, when set to true, the algorithm will skip any selected water molecule that is missing in the complex.
+
+- Parameter: ``allowEmptyWaterSelectors``
+- Type: boolean
+- Default: false

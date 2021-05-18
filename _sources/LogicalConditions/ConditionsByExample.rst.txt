@@ -184,4 +184,4 @@ Configuration blocks where logical conditions are used
 -  :ref:`JumpController's conditions to jump <sec-jumpController>`
 -  :ref:`Dynamic changes in simulation parameters <sec-PELEDynamicChangesInSimulationParameters>`
 -  :ref:`Exit conditions <sec-exitConditions>`
-
+-  :ref:`Interaction restrictions <sec-interactionRestrictions>`

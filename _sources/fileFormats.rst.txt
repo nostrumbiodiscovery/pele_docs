@@ -739,6 +739,105 @@ As in the example shown above, if a given side chain (as copied below) has sever
 
 In this example, the side chain has three dihedral angles, all of them consecutive (since each one shares one atom with the previous dihedral angle).
 
+.. _sec-fileFormats-conformationLibrary:
+
+Conformation library file
+=====================
+
+Conformation library files are under Data/Conformations, and are named as the link name
+in uppercase, plus the suffix `.conformation`. For example, a theoretical
+conformation library file for benzamidine would be :file:`Data/Conformations/BEN.conformation`.
+
+Conformation libraries are composed by a global header, followed by a collection
+header, atom offsets and collection ending. A conformation library may have one
+or more collections, and is terminated by a single `END` line.
+
+This is an example for a conformation library with 2 collections and 4 atoms
+per collection:
+
+.. code-block:: text
+
+    * CONFORMATIONS LIBRARY FILE
+    * File generated with peleffy-1.0.0+164.g06140f6
+    * File: PELEPipelineSanja/6Y81-LIG/CLUSTERS/CL7/cluster7.min.imaged.pdb
+    LIG 4 2
+    _N2_ 2.970000 -3.750000 -2.780000
+    _H2_ 2.610000 -2.910000 -3.340000
+    _H3_ 2.840000 -4.590000 -3.410000
+    _H4_ 2.330000 -3.880000 -2.040000
+    ENDCONFORMATION
+    * File: PELEPipelineSanja/6Y81-LIG/CLUSTERS/CL2/cluster2.min.imaged.pdb
+    LIG 4 2
+    _N2_ -5.330000 -2.690000 -2.210000
+    _H2_ -5.240000 -1.790000 -2.740000
+    _H3_ -4.380000 -3.100000 -2.250000
+    _H4_ -6.030000 -3.220000 -2.760000
+    ENDCONFORMATION
+    END
+
+Global header
+------------
+
+The global header is composed of two lines, which start with a  `*`, meaning
+that the lines do not contain conformation information. The first line
+indicates that the file is a conformation library, while the second line
+specifies the version of the program used to generate the library. The
+global header has the following format: 
+
+.. code-block:: text
+
+    * CONFORMATIONS LIBRARY FILE
+    * File generated with peleffy-1.0.0+164.g06140f6
+
+Collection header
+-----------------
+
+After the global header there are one or more collections, composed by
+a collection header, body and end tag. The collection header consists of two
+lines. The first line starts with a `*` and contains the path to the pdb file
+that defines the conformation contained by the collection. The second line
+contains three space-separated fields: the link name, the number of atoms
+and the number of collections in the conformation library. The format of this
+header is like this:
+
+.. code-block:: text
+
+    * File: PELEPipelineSanja/6Y81-LIG/CLUSTERS/CL7/cluster7.min.imaged.pdb
+    LIG 4 2
+
+Collection body
+---------------
+
+The collection body contains the atom coordinates, one per line. Each line
+contains four space separated fields. The first corresponds to the PDB atom
+names of the atom, with spaces indicated by underscores. The three remaining 
+values are the coordinates. An example of an atom line can be found below:
+
+.. code-block:: text
+
+    _H3_ -4.380000 -3.100000 -2.250000
+
+Collection end
+--------------
+
+After all the atoms coordinates have been specified, the collection is terminated
+by the use of `ENDCONFORMATION` tag, as shown below:
+
+.. code-block:: text
+
+    ENDCONFORMATION
+
+Global end
+----------
+
+After a `ENDCONFORMATION` there can be a collection header for a new collection,
+or and `END` tag. This tag marks the end of the conformation library, as shown
+below:
+
+.. code-block:: text
+
+    END
+
 Elements Parameters file
 ========================
 

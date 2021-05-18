@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeleTasks &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PeleTasks &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="PeleParameters.html" title="PELE parameters in Pele++ control file"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">PeleTasks</a></li> 
@@ -53,22 +54,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="peletasks">
+  <section id="peletasks">
 <span id="sec-peletasks"></span><h1>PeleTasks<a class="headerlink" href="#peletasks" title="Permalink to this headline">¶</a></h1>
 <p>A peleSimulation has a “PeleTasks” block. It is an array comprised of all
 the tasks that the program has to carry out before a command (usually a
 simulation) is considered to be finished <a class="footnote-reference brackets" href="#f1" id="id1">1</a>. Each task is a block, so it
 should be enclosed in curly braces.</p>
-<div class="section" id="contents">
+<section id="contents">
 <h2>Contents:<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="pele-parameters-and-algorithms">
+<section id="pele-parameters-and-algorithms">
 <h3>Pele_parameters and algorithms<a class="headerlink" href="#pele-parameters-and-algorithms" title="Permalink to this headline">¶</a></h3>
 <p>It can redefine both Pele_parameters and algorithms (e.g.
 ligandPerturbation, ANM, sideChainPrediction, Minimization…).</p>
 <p>If an algorithm is defined at PeleTask level, it uses this one instead
 of the one at peleSimulation level.</p>
-</div>
-<div class="section" id="example">
+</section>
+<section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <p>Side chain prediction is defined at peleSimulation level, so, unless
 overriden, this algorithm is going to be used thorughout all the
@@ -105,32 +106,32 @@ is going to be used for that specific task.</p>
 ]
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="constraints">
+</section>
+</section>
+<section id="constraints">
 <h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
 <p>A PELE Task can include additional constraints to those already defined
 for the complete PELE simulation. Check the <a class="reference internal" href="../PermanentConstraints/PermanentConstraints.html#sec-permanentconstraints"><span class="std std-ref">Constraints section</span></a>.</p>
-</div>
-<div class="section" id="metrics">
+</section>
+<section id="metrics">
 <h2>metrics<a class="headerlink" href="#metrics" title="Permalink to this headline">¶</a></h2>
 <p>It is an array that contains all the metrics to be measured in that
 task.</p>
 <p>Check the <a class="reference internal" href="../Sensors/MetricTypes.html#sec-metrictypes"><span class="std std-ref">metrics documentation</span></a> for
 more information.</p>
-</div>
-<div class="section" id="jumpif-jumpcontroller-block">
+</section>
+<section id="jumpif-jumpcontroller-block">
 <h2>jumpif/jumpController block<a class="headerlink" href="#jumpif-jumpcontroller-block" title="Permalink to this headline">¶</a></h2>
 <p>Makes explorer jump if certain conditions are met.</p>
 <p>Check the <a class="reference internal" href="../JumpController/JumpController.html#sec-jumpcontroller"><span class="std std-ref">jumpController documentation</span></a> for more
 information.</p>
-</div>
-<div class="section" id="parameterschanges">
+</section>
+<section id="parameterschanges">
 <h2>parametersChanges<a class="headerlink" href="#parameterschanges" title="Permalink to this headline">¶</a></h2>
 <p>Array of conditions that make some defined parameters to be changed.</p>
 <p>Check the <a class="reference internal" href="../PELEDynamicChangesInSimulationParameters/PELEDynamicChangesInSimulationParameters.html#sec-peledynamicchangesinsimulationparameters"><span class="std std-ref">dynamic changes section</span></a> for more information.</p>
-</div>
-<div class="section" id="exitcondition">
+</section>
+<section id="exitcondition">
 <h2>exitCondition<a class="headerlink" href="#exitcondition" title="Permalink to this headline">¶</a></h2>
 <p>When the condition is met, it makes the task finish.</p>
 <p>Check the <a class="reference internal" href="../ExitConditions/ExitConditions.html#sec-exitconditions"><span class="std std-ref">exit conditions section</span></a> for more information.</p>
@@ -140,8 +141,8 @@ information.</p>
 <dd><p>It can also finish because numberOfPeleSteps is reached.</p>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -206,7 +207,7 @@ information.</p>
         <li class="right" >
           <a href="PeleParameters.html" title="PELE parameters in Pele++ control file"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">PeleTasks</a></li> 

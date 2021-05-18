@@ -161,6 +161,28 @@ Note for developers: It's defined in PeleOutputParameters class.
 
 Default value: "".
 
+useInterStepLogger
+^^^^^^^^^^^^^^^^^^
+
+Use: Activates the InterStepLogger functionality, which allows taking structural and simulation data within the different stages of a step. It is useful for debugging purposes. Generates a new report and trajectory file, with a suffix to distinguish them from the default outputs, in the subdirectory ``InterStepLogs``.
+
+Parameter: bool useInterStepLogger
+
+Note for developers: It's defined in PeleOutputParameters class.
+
+Default value: false.
+
+interStepLoggerSuffix
+^^^^^^^^^^^^^^^^^^^^^
+
+Use: Suffix to add to the default output files to generate the names of the interStepLogger output files.
+
+Parameter: std::string interStepLoggerSuffix;
+
+Note for developers: It's defined in PeleOutputParameters class.
+
+Default value: "_interStep".
+
 Example
 -------
 
@@ -177,7 +199,8 @@ Example
        "finalPdbPath": "../../theFinal.pdb",
        "simulationLogPath": "../../simulationLog.txt",
        "controllerEventsLogPath": "../../controllerEventsLog.txt",
-       "flushingFrequency": 5
+       "flushingFrequency": 5,
+       "useInterStepLogger": true
    }           
 
 Simulations using MPI

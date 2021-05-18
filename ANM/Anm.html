@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANM Block in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ANM Block in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -17,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Treatment of eigenvector and eigenvalues by the PELE ANM module" href="EigenvectorsAndEigenvalues.html" />
-    <link rel="prev" title="Water Perturbation Block in Pele++ control file" href="../WaterPerturbation/Waterperturbation.html" /> 
+    <link rel="prev" title="Conformation Perturbation Block in Pele++ control file" href="../ConformationPerturbation/ConformationPerturbation.html" /> 
     <script type="text/javascript" >
     MathJax.Hub.Config({
         TeX: { 
@@ -39,9 +40,9 @@
           <a href="EigenvectorsAndEigenvalues.html" title="Treatment of eigenvector and eigenvalues by the PELE ANM module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../WaterPerturbation/Waterperturbation.html" title="Water Perturbation Block in Pele++ control file"
+          <a href="../ConformationPerturbation/ConformationPerturbation.html" title="Conformation Perturbation Block in Pele++ control file"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">ANM Block in Pele++ control file</a></li> 
@@ -53,18 +54,18 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="anm-block-in-pele-control-file">
+  <section id="anm-block-in-pele-control-file">
 <span id="sec-anm"></span><h1>ANM Block in Pele++ control file<a class="headerlink" href="#anm-block-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
 <p>This block configures the ANM phase in a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code> command, or the ANM execution of an <code class="docutils literal notranslate"><span class="pre">anmComputation</span></code> command. In a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code>, this phase will be active depending on the <code class="docutils literal notranslate"><span class="pre">anmFrequency</span></code> PELE parameter (<a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-anmfrequency"><span class="std std-ref">anmFrequency</span></a>).</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Even if ANM is deactivated in your simulation, its configuration may affect the relaxation phase minimization in a PELE simulation, since the ANM nodes are constrained according to the <cite>relaxationSpringConstant</cite> parameter (<a class="reference internal" href="#sec-anm-relaxationspringconstant"><span class="std std-ref">relaxationSpringConstant</span></a>).</p>
 </div>
-<div class="section" id="location">
+<section id="location">
 <h2>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
 <p>The ANM block can be defined, as all algorithms, at two different
 levels:</p>
-<div class="section" id="inside-the-pelesimulation-command-block">
+<section id="inside-the-pelesimulation-command-block">
 <h3>Inside the PeleSimulation command block<a class="headerlink" href="#inside-the-pelesimulation-command-block" title="Permalink to this headline">¶</a></h3>
 <p>The parameters defined at PeleSimulation level will be common for all
 the tasks.</p>
@@ -121,8 +122,8 @@ the tasks.</p>
 ]
 </pre></div>
 </div>
-</div>
-<div class="section" id="inside-a-peletask-block">
+</section>
+<section id="inside-a-peletask-block">
 <h3>Inside a PeleTask block<a class="headerlink" href="#inside-a-peletask-block" title="Permalink to this headline">¶</a></h3>
 <p>The parameters defined at PeleTask level will be used only by the
 PeleTask in which they are defined.</p>
@@ -182,19 +183,19 @@ PeleTask in which they are defined.</p>
 ]
 </pre></div>
 </div>
-</div>
-<div class="section" id="in-both-pelesimulation-command-block-and-peletask-block">
+</section>
+<section id="in-both-pelesimulation-command-block-and-peletask-block">
 <h3>In both PeleSimulation command block and PeleTask block<a class="headerlink" href="#in-both-pelesimulation-command-block-and-peletask-block" title="Permalink to this headline">¶</a></h3>
 <p>In this case, the parameters defined at PeleSimulation level will be
 common for all the tasks, while the parameters defined at PeleTask level
 will be used only by the PeleTask in which they are defined.</p>
 <p>If a given parameter is defined in both blocks, the value defiened in
 the PeleTask level has preference.</p>
-</div>
-</div>
-<div class="section" id="algorithm-selection">
+</section>
+</section>
+<section id="algorithm-selection">
 <h2>Algorithm selection<a class="headerlink" href="#algorithm-selection" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="algorithm">
+<section id="algorithm">
 <h3>algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h3>
 <p>Use: It sets the ANM algorithm that will be used.</p>
 <p>Possible options:</p>
@@ -208,9 +209,9 @@ are only Cα.</p></li>
 load the eigenvalues and eigenvectors from a file. See “Modes
 computation” below.</p>
 <p>Default value: “ALPHACARBONS”</p>
-</div>
-</div>
-<div class="section" id="nodes-selection">
+</section>
+</section>
+<section id="nodes-selection">
 <h2>Nodes selection<a class="headerlink" href="#nodes-selection" title="Permalink to this headline">¶</a></h2>
 <p>ANM works on a set of nodes. First, a set of links is created by removing the <code class="docutils literal notranslate"><span class="pre">linksToOmit</span></code> (<a class="reference internal" href="#sec-anm-linkstoomit"><span class="std std-ref">linksToOmit</span></a>) from the <code class="docutils literal notranslate"><span class="pre">linksToInclude</span></code> (<a class="reference internal" href="#sec-anm-linkstoinclude"><span class="std std-ref">linksToInclude</span></a>) set. Then:</p>
 <ul class="simple">
@@ -218,11 +219,11 @@ computation” below.</p>
 <li><p>for the <code class="docutils literal notranslate"><span class="pre">CARTESIANS</span></code> algorithm, the <code class="docutils literal notranslate"><span class="pre">nodes</span></code> selection is applied to that set of links, and will be used as nodes for ANM.</p></li>
 </ul>
 <p>Notice that the <code class="docutils literal notranslate"><span class="pre">nodes</span></code> are disposed linearly, as they appear in the input PDB, and that consecutive <code class="docutils literal notranslate"><span class="pre">nodes</span></code> are considered bonded if they are interacting (that is, under the given <a class="reference internal" href="#sec-anm-cutoff"><span class="std std-ref">cutoff</span></a>). This makes sense in the general case; also notice that this is only significant when the elastic network model used is “powerContactModel” (see <a class="reference internal" href="#sec-anm-elasticnetworkmodel"><span class="std std-ref">Elastic network model</span></a>) and the <a class="reference internal" href="#sec-anm-bondedconstantforhessian"><span class="std std-ref">bondedConstantForHessian</span></a> is greater than zero. For multichain systems, this implies that the last node from a chain and the first node from the next chain may be considered bonded. Also, if the <a class="reference internal" href="../Initialization/Initialization_general.html#sec-initialization-general-allowmissingterminals"><span class="std std-ref">allowMissingTerminals</span></a> option of the <a class="reference internal" href="../Initialization/Initialization_general.html#sec-initialization-general"><span class="std std-ref">General description</span></a> section is active, it considers as bonded those nodes opening and closing a gap, depending on <a class="reference internal" href="#sec-anm-cutoff"><span class="std std-ref">cutoff</span></a>.</p>
-<div class="section" id="nodes">
+<section id="nodes">
 <h3>nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h3>
 <p>Use: String used to select the nodes that the ANM will use (see <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>). This parameter is not available for “ALPHACARBONS”, since in this case it is equivalent to selecting all <span class="math notranslate nohighlight">\(C\alpha\)</span>, as shown in example 2 below.</p>
 <p>Default value: All atoms for <code class="docutils literal notranslate"><span class="pre">CARTESIANS</span></code>.</p>
-<div class="section" id="example-1">
+<section id="example-1">
 <h4>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h4>
 <p>This is an example of an ANM simulation with DNA:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;ANM&quot;:
@@ -241,8 +242,8 @@ computation” below.</p>
 }
 </pre></div>
 </div>
-</div>
-<div class="section" id="example-2">
+</section>
+<section id="example-2">
 <h4>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;algorithm&quot;</span><span class="p">:</span> <span class="s2">&quot;ALPHACARBONS&quot;</span>
 </pre></div>
@@ -262,12 +263,12 @@ computation” below.</p>
 }
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="modes-computation">
+</section>
+</section>
+</section>
+<section id="modes-computation">
 <h2>Modes computation<a class="headerlink" href="#modes-computation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="preloadedmodesin">
+<section id="preloadedmodesin">
 <span id="sec-anm-preloadedmodesin"></span><h3>preloadedModesIn<a class="headerlink" href="#preloadedmodesin" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: string preloadedModesIn</p>
 <p>Use: By default, PELE computes the eigenvalues and eigenvectors.
@@ -287,7 +288,7 @@ has the same nodes as the ones that you indicate in your control file.</p>
 <p>Units: Path to a nmd/prody file</p>
 <p>Default value: No value.</p>
 <p>More information about the input format at <a class="reference internal" href="../fileFormats.html#sec-fileformats-nmd"><span class="std std-ref">Normal modes file format (NMD)</span></a>.</p>
-<div class="section" id="example">
+<section id="example">
 <h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
 <p>As an example of the warning above, if you specify the following block
 in your control file, then your nmd file must contain the information
@@ -311,14 +312,14 @@ for all the alphacarbons of the system, except for those from link 71 to
 }
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="options">
+</section>
+</section>
+</section>
+<section id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="main-mode-selection">
+<section id="main-mode-selection">
 <h3>Main mode selection<a class="headerlink" href="#main-mode-selection" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="pickingcase">
+<section id="pickingcase">
 <h4>pickingCase<a class="headerlink" href="#pickingcase" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: PickingType pickingType</p>
 <p>Use: It is used to choose the picking method to select a mode.</p>
@@ -342,8 +343,8 @@ function.</p>
 </ul>
 <p>There is no mapping between Plop and Pele++ because direction and
 picking are mixed in Plop producing a “case explosion”.</p>
-</div>
-<div class="section" id="definedmode">
+</section>
+<section id="definedmode">
 <h4>definedMode<a class="headerlink" href="#definedmode" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: unsigned int definedMode</p>
 <p>Use: Index of the chosen mode. It is only used when the “DEFINED_MODE”
@@ -366,11 +367,11 @@ for instance:</p>
 <li><p>Plop parameter name: anm_params%mode</p></li>
 <li><p>Plop default value: 1</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="direction-generation">
+</section>
+</section>
+<section id="direction-generation">
 <h3>Direction generation<a class="headerlink" href="#direction-generation" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="directiongeneration">
+<section id="directiongeneration">
 <h4>directionGeneration<a class="headerlink" href="#directiongeneration" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: DirectionCase directionCase</p>
 <p>Use: It selects the method to generate the direction of the move vector.</p>
@@ -387,8 +388,8 @@ The initial direction is indicated by “initialDirection”</p></li>
 <p>Default value: “random”</p>
 <p>Plop info: In Plop the direction generation is mixed with other features
 producing a “case explosion”.</p>
-</div>
-<div class="section" id="initialdirection">
+</section>
+<section id="initialdirection">
 <h4>initialDirection<a class="headerlink" href="#initialdirection" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: double initialDirection</p>
 <p>Use: Initial direction of the move vector. It is required when you use
@@ -399,11 +400,11 @@ producing a “case explosion”.</p>
 <p>Default value: 1.0</p>
 <p>Plop info: There is no equivalence in Plop (see “directionGeneration”
 Plop info)</p>
-</div>
-</div>
-<div class="section" id="modes-mixing">
+</section>
+</section>
+<section id="modes-mixing">
 <h3>Modes mixing<a class="headerlink" href="#modes-mixing" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="modesmixingoption">
+<section id="modesmixingoption">
 <h4>modesMixingOption<a class="headerlink" href="#modesmixingoption" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: MixCase mixCase</p>
 <p>Use: Selects the method to mix the modes.</p>
@@ -432,11 +433,11 @@ anm_params%xmoddir is true -&gt; “mixAllModesEquallyRandom”</p>
 “mixMainModeWithOthersModes”</p>
 <p>default behaviour -&gt; “doNotMixModes”</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="movement-magnitude-computation">
+</section>
+</section>
+<section id="movement-magnitude-computation">
 <h3>Movement magnitude computation<a class="headerlink" href="#movement-magnitude-computation" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="movemagnitudegeneration">
+<section id="movemagnitudegeneration">
 <h4>moveMagnitudeGeneration<a class="headerlink" href="#movemagnitudegeneration" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: MoveMagnitudeGenerationOption moveMagnitudeGenerationOption</p>
 <p>Use: Selects the method to generate the movement magnitude that will be
@@ -470,9 +471,9 @@ random number in [0.0, 1.0)</p></li>
 <li><p>2 -&gt; “scaledBiasedRandom”</p></li>
 <li><p>3 -&gt; “random”</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="elastic-network-model">
+</section>
+</section>
+<section id="elastic-network-model">
 <span id="sec-anm-elasticnetworkmodel"></span><h3>Elastic network model<a class="headerlink" href="#elastic-network-model" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: elasticNetworkModel</p>
 <p>Use: Sets the elastic network model that will be applied for the ANM
@@ -493,13 +494,13 @@ adjust the exponent’s value.</p></li>
 <p>Default value: “powerContactModel”</p>
 <p>Plop info:</p>
 <p>Mapping between Plop and Pele++:</p>
-</div>
-</div>
-<div class="section" id="parameters">
+</section>
+</section>
+<section id="parameters">
 <span id="sec-anm-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
+<section id="id1">
 <h3>Movement magnitude computation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="displacementfactor">
+<section id="displacementfactor">
 <h4>displacementFactor<a class="headerlink" href="#displacementfactor" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: double displacement</p>
 <p>Use: Nodes displacement factor.</p>
@@ -514,11 +515,11 @@ AnmMagnitudeCalculator::computeDisplacementMagnitude.</p>
 <li><p>Plop parameter name: anm_params%move_ca</p></li>
 <li><p>Plop default value: 0.5</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="hessian-matrix-computation-and-diagonalization">
+</section>
+</section>
+<section id="hessian-matrix-computation-and-diagonalization">
 <h3>Hessian matrix computation and diagonalization<a class="headerlink" href="#hessian-matrix-computation-and-diagonalization" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="numberofmodes">
+<section id="numberofmodes">
 <h4>numberOfModes<a class="headerlink" href="#numberofmodes" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: unsigned int numberOfModes</p>
 <p>Use: Number of desired eigen values.</p>
@@ -531,8 +532,8 @@ AnmMagnitudeCalculator::computeDisplacementMagnitude.</p>
 <li><p>Plop parameter name:anm_params%neig</p></li>
 <li><p>Plop default value: 6</p></li>
 </ul>
-</div>
-<div class="section" id="thermalscaling">
+</section>
+<section id="thermalscaling">
 <h4>thermalScaling<a class="headerlink" href="#thermalscaling" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: bool useThermalScalingInPicking</p>
 <p>Use: If true, the eigenvectors are thermally scaled, otherwise, they are
@@ -547,8 +548,8 @@ the kind of normalization to apply to the eigenvectors.</p>
 <li><p>Plop parameter name: anm_params%thermal</p></li>
 <li><p>Plop default value: true</p></li>
 </ul>
-</div>
-<div class="section" id="cutoff">
+</section>
+<section id="cutoff">
 <span id="sec-anm-cutoff"></span><h4>cutoff<a class="headerlink" href="#cutoff" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: double cutoff</p>
 <p>Use: Used to determine the pairs of nodes that have a harmonic
@@ -563,8 +564,8 @@ interaction between them in the ANM Hessian matrix generation.</p>
 <li><p>Plop parameter name: anm_params%cutoff</p></li>
 <li><p>Plop default value: 12.0</p></li>
 </ul>
-</div>
-<div class="section" id="bondedconstantforhessian">
+</section>
+<section id="bondedconstantforhessian">
 <span id="sec-anm-bondedconstantforhessian"></span><h4>bondedConstantForHessian<a class="headerlink" href="#bondedconstantforhessian" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: double bondedConstantForHessian</p>
 <p>Use: Spring constant used to compute the forces between nodes to
@@ -581,8 +582,8 @@ function.</p>
 <li><p>Plop parameter name: anm_params%bkcons</p></li>
 <li><p>Plop default value: 0.0</p></li>
 </ul>
-</div>
-<div class="section" id="decayconstant">
+</section>
+<section id="decayconstant">
 <h4>decayConstant<a class="headerlink" href="#decayconstant" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: double springConstantDecay</p>
 <p>Use: Exponent of the decay (kx2./springConstantDecay) with the distance
@@ -600,8 +601,8 @@ function.</p>
 <li><p>Plop parameter name: anm_params%kdecay</p></li>
 <li><p>Plop default value: 1.0</p></li>
 </ul>
-</div>
-<div class="section" id="constantforhessian">
+</section>
+<section id="constantforhessian">
 <span id="sec-anm-constantforhessian"></span><h4>constantForHessian<a class="headerlink" href="#constantforhessian" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: double constantForHessian</p>
 <p>Use: Spring constant used to compute the forces between nodes to
@@ -618,11 +619,11 @@ function.</p>
 <li><p>Plop parameter name: anm_params%kcons</p></li>
 <li><p>Plop default value: 1.667</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="constraints">
+</section>
+</section>
+<section id="constraints">
 <span id="sec-anm-constraints"></span><h3>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="steeringforce">
+<section id="steeringforce">
 <h4>steeringForce<a class="headerlink" href="#steeringforce" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: double steeringForce</p>
 <p>Use: Force for the constraints used in the ANM inner minimization. It is
@@ -639,8 +640,8 @@ steeringForce/displacementMagnitude</p>
 <li><p>Plop parameter name: anm_params%fsteer</p></li>
 <li><p>Plop default value: 20.0</p></li>
 </ul>
-</div>
-<div class="section" id="relaxationspringconstant">
+</section>
+<section id="relaxationspringconstant">
 <span id="sec-anm-relaxationspringconstant"></span><h4>relaxationSpringConstant<a class="headerlink" href="#relaxationspringconstant" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: double relaxationSpringConstant</p>
 <p>Use: Anm constraints spring constant for relaxation step minimization.
@@ -658,8 +659,8 @@ relaxation step minimization.</p>
 <li><p>Plop parameter name: anm_params%caconst</p></li>
 <li><p>Plop default value: 0.0</p></li>
 </ul>
-</div>
-<div class="section" id="equilibriumparameter">
+</section>
+<section id="equilibriumparameter">
 <h4>equilibriumParameter<a class="headerlink" href="#equilibriumparameter" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: double equilibriumParameter</p>
 <p>Use: Elastic constraints equilibrium position. It might be a distance or
@@ -670,11 +671,11 @@ AnmCalculator::minimize functions.</p>
 <p>Range: (-inf, inf)</p>
 <p>Default value: 0.0</p>
 <p>Plop info: No equivalent in Plop</p>
-</div>
-</div>
-<div class="section" id="frequencies">
+</section>
+</section>
+<section id="frequencies">
 <h3>Frequencies<a class="headerlink" href="#frequencies" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="eigenupdatefrequency">
+<section id="eigenupdatefrequency">
 <h4>eigenUpdateFrequency<a class="headerlink" href="#eigenupdatefrequency" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: unsigned int eigenUpdateFrequency</p>
 <p>Use: It is the frequency with which the eigen values and eigenvectors of
@@ -690,8 +691,8 @@ function.</p>
 <li><p>Plop parameter name: liga_params%anm_eig_freq</p></li>
 <li><p>Plop default value: 1</p></li>
 </ul>
-</div>
-<div class="section" id="modeschangefrequency">
+</section>
+<section id="modeschangefrequency">
 <h4>modesChangeFrequency<a class="headerlink" href="#modeschangefrequency" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: unsigned int modesChangeFrequency</p>
 <p>Use: It is the frequency with which a new mode is selected.</p>
@@ -708,11 +709,11 @@ function.</p>
 </ul>
 <p>Note: The eigenUpdateFrequency must be greater than or equal to the
 modesChangeFrequency.</p>
-</div>
-</div>
-<div class="section" id="id2">
+</section>
+</section>
+<section id="id2">
 <h3>Modes mixing<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="mainmodeweightformixmodes">
+<section id="mainmodeweightformixmodes">
 <h4>mainModeWeightForMixModes<a class="headerlink" href="#mainmodeweightformixmodes" title="Permalink to this headline">¶</a></h4>
 <p>Parameter: double mainModeWeightForMixModes</p>
 <p>Use: It is used to add some contribution of the non selected modes to
@@ -727,9 +728,9 @@ the move vector. It represents the weight of the chosen mode.</p>
 <li><p>Plop parameter name: anm_params%mix_modes</p></li>
 <li><p>Plop default value: -1.0d0</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="exponentialdistancedecay">
+</section>
+</section>
+<section id="exponentialdistancedecay">
 <h3>exponentialDistanceDecay<a class="headerlink" href="#exponentialdistancedecay" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: double exponentialDistanceDecay</p>
 <p>Use: It applies only if the option “elasticNetworkModel” has been set to
@@ -747,14 +748,14 @@ ExponentialConstForceCalculator::calculateConstForce.</p>
 <p>Units: No units</p>
 <p>Default value: 5.0</p>
 <p>Plop info:</p>
-</div>
-</div>
-<div class="section" id="linkstoinclude">
+</section>
+</section>
+<section id="linkstoinclude">
 <span id="sec-anm-linkstoinclude"></span><h2>linksToInclude<a class="headerlink" href="#linkstoinclude" title="Permalink to this headline">¶</a></h2>
 <p>Selection of links to include in the ANM (see <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>).</p>
 <p>Default: Everything but ligands (<code class="docutils literal notranslate"><span class="pre">&quot;chains&quot;:</span> <span class="pre">&quot;everythingButLigands&quot;</span></code>).</p>
-</div>
-<div class="section" id="linkstoomit">
+</section>
+<section id="linkstoomit">
 <span id="sec-anm-linkstoomit"></span><h2>linksToOmit<a class="headerlink" href="#linkstoomit" title="Permalink to this headline">¶</a></h2>
 <p>Selection of links not to include in the ANM (see <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>).</p>
 <p>Default: No selection (<code class="docutils literal notranslate"><span class="pre">&quot;empty&quot;</span></code>).</p>
@@ -776,8 +777,8 @@ ExponentialConstForceCalculator::calculateConstForce.</p>
 }
 </pre></div>
 </div>
-</div>
-<div class="section" id="anmminimizer">
+</section>
+<section id="anmminimizer">
 <span id="sec-anm-anmminimizer"></span><h2>anmMinimizer<a class="headerlink" href="#anmminimizer" title="Permalink to this headline">¶</a></h2>
 <p>Minimizer block.</p>
 <p>Check the minimization block documentation (<a class="reference internal" href="../Minimization/Minimization.html#sec-minimization"><span class="std std-ref">Minimization in Pele++ control file</span></a>) for more information.</p>
@@ -794,8 +795,8 @@ ExponentialConstForceCalculator::calculateConstForce.</p>
 </ul>
 <p>The same atoms as those shown in the minimization block documentation are considered for minimization, except that the top side links and nearby links are not added to the list of atoms/links to minimize.</p>
 <p>This minimization makes the actual ANM movement by constraining the ANM nodes to target coordinates (see <a class="reference internal" href="#sec-anm-constraints"><span class="std std-ref">Constraints</span></a>). If the perturbation is active, also the perturbation constraints will be on (see <a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-perturbationcomconstraintconstant"><span class="std std-ref">perturbationCOMConstraintConstant</span></a>). The permanent constraints (<a class="reference internal" href="../PermanentConstraints/PermanentConstraints.html#sec-permanentconstraints"><span class="std std-ref">Permanent constraints in Pele++ control file</span></a>) are also on.</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -894,8 +895,8 @@ ExponentialConstForceCalculator::calculateConstForce.</p>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../WaterPerturbation/Waterperturbation.html"
-                        title="previous chapter">Water Perturbation Block in Pele++ control file</a></p>
+  <p class="topless"><a href="../ConformationPerturbation/ConformationPerturbation.html"
+                        title="previous chapter">Conformation Perturbation Block in Pele++ control file</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="EigenvectorsAndEigenvalues.html"
                         title="next chapter">Treatment of eigenvector and eigenvalues by the PELE ANM module</a></p>
@@ -930,9 +931,9 @@ ExponentialConstForceCalculator::calculateConstForce.</p>
           <a href="EigenvectorsAndEigenvalues.html" title="Treatment of eigenvector and eigenvalues by the PELE ANM module"
              >next</a> |</li>
         <li class="right" >
-          <a href="../WaterPerturbation/Waterperturbation.html" title="Water Perturbation Block in Pele++ control file"
+          <a href="../ConformationPerturbation/ConformationPerturbation.html" title="Conformation Perturbation Block in Pele++ control file"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">ANM Block in Pele++ control file</a></li> 

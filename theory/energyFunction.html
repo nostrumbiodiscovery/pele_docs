@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Energy Function &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Energy Function &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="overview.html" title="Overview"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="theory.html" accesskey="U">PELE Theory</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Energy Function</a></li> 
       </ul>
@@ -52,7 +53,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="energy-function">
+  <section id="energy-function">
 <span id="sec-energyfunction"></span><h1>Energy Function<a class="headerlink" href="#energy-function" title="Permalink to this headline">¶</a></h1>
 <p>Energy calculation is at the core of PELE. It is performed during minimization, ANM, ligand perturbation, side chain prediction and the Metropolis evaluation. Though different approximations are considered in each phase, the function we describe here is the general one. Notice that this section does not yet discuss the binding energy that PELE provides.</p>
 <p>The general energy function in PELE has the form:</p>
@@ -86,7 +87,7 @@
    &amp;+ \sum_{i &lt; j} \left[ \text{scale}_{\text{coulomb}}\frac{q_i^{s} q_j^{s}}{\varepsilon_{\text{in}(ij)}r_{ij}} + \epsilon_{i}^{s}\epsilon_{j}^{s} \left( \left( \frac{\sigma_{ij}^{s}}{r_{ij}} \right)^{12} - \left( \frac{\sigma_{ij}^{s}}{r_{ij}}\right)^{6} \right) \right] f_{ij} \\
    &amp;- \sum_{i&lt;j} {(\frac{1}{\varepsilon_{\text{in}(ij)}} - \frac{e^{-\kappa f_{\text{GB}}}}{\varepsilon_{\text{solv}}}) \frac{q_{i}^{s}q_{j}^{s}}{f_{\text{GB}}}} - \frac{1}{2} \sum_{i} {(\frac{1}{\varepsilon_{\text{in}(ii)}} - \frac{e^{-\kappa \alpha_{i}}}{\varepsilon_{\text{solv}}}) \frac{(q_{i}^{s})^2}{f_{\alpha_{i}}}} + 4\pi \sum_{i} {\sigma_{i} (R_{i} + R_{s})^{2} \left( \frac{R_{i}}{\alpha_{i}} \right)^{6}} \\
    &amp;+ E_{\text{constraints}}\end{split}\]</div>
-<div class="section" id="the-molecular-mechanics-energy-terms">
+<section id="the-molecular-mechanics-energy-terms">
 <span id="sec-energyfunction-molecularmechanicsenergyterms"></span><h2>The Molecular Mechanics energy terms<a class="headerlink" href="#the-molecular-mechanics-energy-terms" title="Permalink to this headline">¶</a></h2>
 <p>The different force fields used in PELE (see <a class="reference internal" href="../Initialization/Initialization_general.html#sec-initialization-general-forcefield"><span class="std std-ref">ForceField</span></a>) all use the same functional form, though they differ in the parameters, scaling factors, and in some of the expansion terms (such as <span class="math notranslate nohighlight">\(E_{\text{torsion}}\)</span>).</p>
 <p>Here come the references for the force fields available in PELE. For further checks, consult Schrödinger’s IMPACT, <a class="reference internal" href="../references.html#hornak-2006" id="id1"><span>[hornak:2006]</span></a>, <a class="reference external" href="http://www.cgl.ucsf.edu/chimera/docs/ContributedSoftware/addcharge/addcharge.html">Chimera addcharge documentation</a> and the AMBER manual.</p>
@@ -134,8 +135,8 @@
 <p class="admonition-title">Note</p>
 <p>The VDGBNP solvent model affects the <span class="math notranslate nohighlight">\(E_{\text{nb}}\)</span> term through <span class="math notranslate nohighlight">\(\varepsilon_{\text{in}(ij)}\)</span> (see <a class="reference internal" href="../references.html#zhu-2007" id="id15"><span>[zhu:2007]</span></a>). For all other models (including vacuum), this internal permittivity constant is 1.</p>
 </div>
-</div>
-<div class="section" id="the-solvation-energy">
+</section>
+<section id="the-solvation-energy">
 <h2>The solvation energy<a class="headerlink" href="#the-solvation-energy" title="Permalink to this headline">¶</a></h2>
 <p>PELE allows working with implicit solvent (otherwise, it works in vacuum), in particular the Generalized Born approximation (see <a class="reference internal" href="../references.html#bashford-2000" id="id16"><span>[bashford:2000]</span></a>). The configuration is described at <a class="reference internal" href="../Solvent/Solvent.html#sec-solvent"><span class="std std-ref">Solvent Block in Pele++ control file</span></a>.</p>
 <p>When in vacuum, the <span class="math notranslate nohighlight">\(\Delta G_{\text{solv}}\)</span> term is zero. With implicit solvent, the user can select among the following variants:</p>
@@ -144,7 +145,7 @@
 <li><p><em>Variable-Dielectric Generalized Born + Non-Polar</em> (VDGBNP): <a class="reference internal" href="../references.html#zhu-2007" id="id19"><span>[zhu:2007]</span></a>; uses the same non polar term as SGBNP.</p></li>
 <li><p>OBC: <a class="reference internal" href="../references.html#onufriev-2004" id="id20"><span>[onufriev:2004]</span></a> (based on the HCT model of <a class="reference internal" href="../references.html#hawkins-1996" id="id21"><span>[hawkins:1996]</span></a>. The actual formulas for calculating the original HCT alphas in the model appears in <a class="reference internal" href="../references.html#hawkins-1995" id="id22"><span>[hawkins:1995]</span></a>). It uses the non polar term of <a class="reference internal" href="../references.html#schaefer-1998" id="id23"><span>[schaefer:1998]</span></a> as implemented in Tinker.</p></li>
 </ul>
-<div class="section" id="the-polar-energy-term">
+<section id="the-polar-energy-term">
 <h3>The polar energy term<a class="headerlink" href="#the-polar-energy-term" title="Permalink to this headline">¶</a></h3>
 <p>All implicit solvent models in PELE use the same formula for the <span class="math notranslate nohighlight">\(\Delta G_{\text{solv,pol}}\)</span> term (see, for instance, eq. 2 in <a class="reference internal" href="../references.html#onufriev-2004" id="id24"><span>[onufriev:2004]</span></a>, eq. 2 in <a class="reference internal" href="../references.html#zhu-2007" id="id25"><span>[zhu:2007]</span></a>, and eq. 19 for <a class="reference internal" href="../references.html#ghosh-1998" id="id26"><span>[ghosh:1998]</span></a>), varying in how the dielectic permittivity constant is calculated. Notice that the formula is sometimes called the <em>Still energy</em> from <a class="reference internal" href="../references.html#still-1990" id="id27"><span>[still:1990]</span></a>.</p>
 <div class="math notranslate nohighlight">
@@ -162,7 +163,7 @@
 <p class="admonition-title">Warning</p>
 <p>Despite eq. 6 of <a class="reference internal" href="../references.html#gallicchio-2002" id="id31"><span>[gallicchio:2002]</span></a>, it can be noticed in file <code class="file docutils literal notranslate"><span class="pre">f14_sgbnp.param</span></code> that this equation is not always applied, at least in OPLS2005. For example, both atom types <code class="docutils literal notranslate"><span class="pre">CA</span></code> and <code class="docutils literal notranslate"><span class="pre">CA2</span></code> (aromatic C) have a standard OPLS radius of <span class="math notranslate nohighlight">\(1.775\AA{}\)</span>, but the radii used to calculate Born radii differ for both types (<span class="math notranslate nohighlight">\(2.002\AA{}\)</span> and <span class="math notranslate nohighlight">\(2.500\AA{}\)</span> respectively, in Schrödinger 2017-1 release), following eq. 6 only in the first case.</p>
 </div>
-<div class="section" id="the-penalty-term">
+<section id="the-penalty-term">
 <h4>The penalty term<a class="headerlink" href="#the-penalty-term" title="Permalink to this headline">¶</a></h4>
 <p>This term corrects the tendency to form salt bridges of implicit solvent models (see <a class="reference internal" href="../references.html#yu-2004" id="id32"><span>[yu:2004]</span></a>). In PELE, this term is only present for the SGB solvent, since it is already included in the VDGBNP model through the internal dielectric constants. The OBC model does not use this penalty term either. The penalties are only calculated for 1-4 or non-bonded interactions.</p>
 <p>The formula for the penalty term is:</p>
@@ -174,8 +175,8 @@ w_{i} w_{j} V_{\text{max},ij} (0.25 \text{scale}^3 - 0.75 \text{scale} + 0.5) &a
 \end{cases}</div><p>where</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}w_{i} = \max (0.0, a_{0,ij} + a_{1,ij} \alpha_{i})\\w_{j} = \max (0.0, a_{0,ij} + a_{1,ij} \alpha_{j})\\\text{scale} = \frac{2.0 r_{ij} - (\text{cutoff}^{H}_{ij} + \text{cutoff}^{L}_{ij})}{\text{cutoff}^{H}_{ij} - \text{cutoff}^{L}_{ij}}\end{aligned}\end{align} \]</div>
-</div>
-<div class="section" id="the-variable-dielectric">
+</section>
+<section id="the-variable-dielectric">
 <h4>The variable dielectric<a class="headerlink" href="#the-variable-dielectric" title="Permalink to this headline">¶</a></h4>
 <p>The variable dielectric solvent model modifies the internal dielectric of the protein for specific atoms (see <a class="reference internal" href="../references.html#zhu-2007" id="id33"><span>[zhu:2007]</span></a>). This affects the polar part of the solvation energy, as well as the molecular mechanics interactions through the <span class="math notranslate nohighlight">\(\varepsilon_{\text{in}(ij)}\)</span> parameter, which follows this formula:</p>
 <div class="math notranslate nohighlight">
@@ -198,28 +199,28 @@ w_{i} w_{j} V_{\text{max},ij} (0.25 \text{scale}^3 - 0.75 \text{scale} + 0.5) &a
 </ul>
 </div></blockquote>
 <p>As said above, and following <a class="reference internal" href="../references.html#zhu-2007" id="id35"><span>[zhu:2007]</span></a>, a value of 1 is used for the dielectric constant of all other atoms (in this case, it corresponds with an inverse value of 1) on the theory that optical polarization of the protein is incorporated into the force field</p>
-</div>
-</div>
-<div class="section" id="the-non-polar-energy-term">
+</section>
+</section>
+<section id="the-non-polar-energy-term">
 <h3>The non polar energy term<a class="headerlink" href="#the-non-polar-energy-term" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="sgb-and-vdgbnp-models">
+<section id="sgb-and-vdgbnp-models">
 <h4>SGB and VDGBNP models<a class="headerlink" href="#sgb-and-vdgbnp-models" title="Permalink to this headline">¶</a></h4>
 <p>These solvent models follow the SGB/NP model (eq. 13 of <a class="reference internal" href="../references.html#gallicchio-2002" id="id36"><span>[gallicchio:2002]</span></a>):</p>
 <div class="math notranslate nohighlight">
 \[\Delta G_{solv,npol} = \sum_{i} {C_{\gamma,i} \text{SASA}_{i} + C_{\alpha,i} S(a/\alpha_{i})}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C_{\gamma, i}\)</span> and <span class="math notranslate nohighlight">\(C_{\alpha,i}\)</span> are atomic parameters, <span class="math notranslate nohighlight">\(\text{SASA}_{i}\)</span> is the solvent accessible surface area (in <span class="math notranslate nohighlight">\(\AA{}^{2}\)</span>) of atom <span class="math notranslate nohighlight">\(i\)</span> (calculated using radii stated for eq. 7 in <a class="reference internal" href="../references.html#gallicchio-2002" id="id37"><span>[gallicchio:2002]</span></a>, and listed in column <em>Rad. Non Polar Type</em> of the <em>NBON</em> section in the template files, see <a class="reference internal" href="../fileFormats.html#sec-fileformats-impact"><span class="std std-ref">IMPACT template file format</span></a>), <span class="math notranslate nohighlight">\(S()\)</span> is a switching function, <span class="math notranslate nohighlight">\(\alpha_{i}\)</span> is the Born radius of atom <span class="math notranslate nohighlight">\(i\)</span>, and the adjustable parameters have values <span class="math notranslate nohighlight">\(a=1.5 \AA{}\)</span>, (and <span class="math notranslate nohighlight">\(b = 0.4\)</span> and <span class="math notranslate nohighlight">\(c = 12\)</span>, not shown).</p>
-</div>
-<div class="section" id="obc-model">
+</section>
+<section id="obc-model">
 <h4>OBC model<a class="headerlink" href="#obc-model" title="Permalink to this headline">¶</a></h4>
 <p>This solvent model follows the ACE model of <a class="reference internal" href="../references.html#schaefer-1998" id="id38"><span>[schaefer:1998]</span></a> (eq. 2) as implemented in Tinker (for example, in Tinker 7.1.2), which uses an exponent of 6 for the term <span class="math notranslate nohighlight">\(\frac{R_{i}}{\alpha_{i}}\)</span>, as well as uses per atom <span class="math notranslate nohighlight">\(\sigma\)</span> parameters (see <a class="reference external" href="https://simtk.org/forum/message.php?msg_id=6151">https://simtk.org/forum/message.php?msg_id=6151</a> commenting how OpenMM implements the <em>Tinker</em> version of ACE non-polar solvation).</p>
 <p>The actual formula used in PELE:</p>
 <div class="math notranslate nohighlight">
 \[\Delta G_{solv,npol} = 4\pi \sum_{i} {\sigma_{i} (R_{i} + R_{s})^{2} \left( \frac{R_{i}}{\alpha_{i}} \right)^{6}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(R_{i}\)</span> is the atomic radii as parameterized for ACE, <span class="math notranslate nohighlight">\(\sigma_{i}\)</span> is a coefficient, <span class="math notranslate nohighlight">\(R_{s}\)</span> is the solvent probe molecule radius (<span class="math notranslate nohighlight">\(1.4 \AA{}\)</span>), and <span class="math notranslate nohighlight">\(\alpha_{i}\)</span> is the atom Born radius.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -288,7 +289,7 @@ w_{i} w_{j} V_{\text{max},ij} (0.25 \text{scale}^3 - 0.75 \text{scale} + 0.5) &a
         <li class="right" >
           <a href="overview.html" title="Overview"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="theory.html" >PELE Theory</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Energy Function</a></li> 
       </ul>

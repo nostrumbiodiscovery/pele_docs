@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SideChainPrediction Block in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SideChainPrediction Block in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="../ANM/EigenvectorsAndEigenvalues.html" title="Treatment of eigenvector and eigenvalues by the PELE ANM module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">SideChainPrediction Block in Pele++ control file</a></li> 
@@ -53,7 +54,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sidechainprediction-block-in-pele-control-file">
+  <section id="sidechainprediction-block-in-pele-control-file">
 <span id="sec-sidechainprediction"></span><h1>SideChainPrediction Block in Pele++ control file<a class="headerlink" href="#sidechainprediction-block-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
 <p>This block configures the Side Chain Prediction phase in a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code> command, or the Side Chain Prediction execution of a <code class="docutils literal notranslate"><span class="pre">sideChainSimulation</span></code> command. In a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code>, this phase will be active depending on the <code class="docutils literal notranslate"><span class="pre">sideChainPredictionFrequency</span></code> PELE parameter (<a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-sidechainpredictionfrequency"><span class="std std-ref">sideChainPredictionFrequency</span></a>).</p>
 <p>The side chain prediction will be applied to the set of links formed by:</p>
@@ -64,9 +65,9 @@
 <li><p>removing, from all the links previously selected, those links in <code class="docutils literal notranslate"><span class="pre">selectionToOmit</span></code> (<a class="reference internal" href="#sec-sidechainprediction-selectiontoomit"><span class="std std-ref">selectionToOmit</span></a>).</p></li>
 </ul>
 <p>Notice that links without side chains and cross linked cysteines are not considered in the side chain prediction.</p>
-<div class="section" id="algorithm-selection">
+<section id="algorithm-selection">
 <h2>Algorithm selection<a class="headerlink" href="#algorithm-selection" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="algorithm">
+<section id="algorithm">
 <h3>algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h3>
 <p>Use: It sets the side chain prediction algorithm that will be used.</p>
 <p>Possible options:</p>
@@ -77,8 +78,8 @@ conformation for each link until it reaches convergence</p></li>
 the Boltzmann distribution at a given temperature T</p></li>
 </ul>
 <p>Default value: <code class="docutils literal notranslate"><span class="pre">&quot;zhexin&quot;</span></code>.</p>
-</div>
-<div class="section" id="brief-description-of-the-algorithms">
+</section>
+<section id="brief-description-of-the-algorithms">
 <h3>Brief description of the algorithms<a class="headerlink" href="#brief-description-of-the-algorithms" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Zhexin algorithm: It is an iterative algorithm that tries to find the
@@ -91,11 +92,11 @@ Boltzmann distribution. For all the non-clashing rotamers, their
 energies are evaluated and assigned their Boltzmann weight
 <span class="math notranslate nohighlight">\(\frac{e^{-\beta E}}{\sum e^{-\beta E}}\)</span>. One is chosen according to this weight.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="links-selection">
+</section>
+</section>
+<section id="links-selection">
 <h2>Links selection<a class="headerlink" href="#links-selection" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="selectiontoinclude">
+<section id="selectiontoinclude">
 <span id="sec-sidechainprediction-selectiontoinclude"></span><h3>selectionToInclude<a class="headerlink" href="#selectiontoinclude" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: Selector* selector</p>
 <p>Use: String used to select the links to which the side chain prediction
@@ -106,8 +107,8 @@ is going to be performed.</p>
 </pre></div>
 </div>
 <p>For a more detailed description, see <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>.</p>
-</div>
-<div class="section" id="selectiontoomit">
+</section>
+<section id="selectiontoomit">
 <span id="sec-sidechainprediction-selectiontoomit"></span><h3>selectionToOmit<a class="headerlink" href="#selectiontoomit" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: Selector* omit</p>
 <p>Use: String used to select the links to which the side chain prediction
@@ -115,11 +116,11 @@ is never going to be performed.</p>
 <p>Note: It uses the standard jSon format. Omit prevails over include, i.e.
 if a link is chosen in both lists, it is omitted.</p>
 <p>See <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>.</p>
-</div>
-</div>
-<div class="section" id="parameters">
+</section>
+</section>
+<section id="parameters">
 <span id="sec-sidechainprediction-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="resolution">
+<section id="resolution">
 <h3>resolution<a class="headerlink" href="#resolution" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: double gridres</p>
 <p>Use: Resolution of the rotamer library to be used for the ‘non-polar’
@@ -141,8 +142,8 @@ link, which is 10 in the standard protein residues.</p>
 <li><p>Plop parameter name: ‘side_params%gridres’</p></li>
 <li><p>Plop default value: 10</p></li>
 </ul>
-</div>
-<div class="section" id="overlap-factor">
+</section>
+<section id="overlap-factor">
 <span id="sec-sidechainprediction-parameters-overlapfactor"></span><h3>Overlap factor<a class="headerlink" href="#overlap-factor" title="Permalink to this headline">¶</a></h3>
 <p>We consider that two atoms are clashing when:</p>
 <p>d12 &lt; overlap_factor * (rvdw,1 + rvdw,2)</p>
@@ -153,8 +154,8 @@ factor = initial overlap factor. If it does not find any suitable
 rotamer (i.e. the algorithm failed), it decreases its value
 deltaOverlapFactor (=0.05). The process is repeated until overlap factor
 = minimal overlap factor.</p>
-</div>
-<div class="section" id="initialoverlapfactor">
+</section>
+<section id="initialoverlapfactor">
 <h3>initialOverlapFactor<a class="headerlink" href="#initialoverlapfactor" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: double initialOverlapFactor</p>
 <p>Use: Initial overlap factor.</p>
@@ -167,8 +168,8 @@ deltaOverlapFactor (=0.05). The process is repeated until overlap factor
 <li><p>Plop parameter name: ‘tree_params%ofac_init’</p></li>
 <li><p>Plop default value: 0.75</p></li>
 </ul>
-</div>
-<div class="section" id="minimaloverlapfactor">
+</section>
+<section id="minimaloverlapfactor">
 <h3>minimalOverlapFactor<a class="headerlink" href="#minimaloverlapfactor" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: double minimalOverlapFactor</p>
 <p>Use: Minimal overlap factor. It is also used when we want a loose
@@ -183,8 +184,8 @@ failed.</p>
 <li><p>Plop parameter name: ‘tree_params%ofac_min’</p></li>
 <li><p>Plop default value: 0.7</p></li>
 </ul>
-</div>
-<div class="section" id="randomize">
+</section>
+<section id="randomize">
 <h3>randomize<a class="headerlink" href="#randomize" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: bool randomize</p>
 <p>Use: It only makes sense when the ‘zhexin’ algorithm is used. It
@@ -200,8 +201,8 @@ ZhexinSideChainAlgorithm::findMinimumInEnergyUsingRotamerLibrary</p>
 <li><p>Plop parameter name: ‘side_params%randomize’</p></li>
 <li><p>Plop default value: False</p></li>
 </ul>
-</div>
-<div class="section" id="discardhighenergysolutions">
+</section>
+<section id="discardhighenergysolutions">
 <h3>discardHighEnergySolutions<a class="headerlink" href="#discardhighenergysolutions" title="Permalink to this headline">¶</a></h3>
 <p>Parameter bool discardHighEnergySolutions</p>
 <p>Use: If the side chain prediction does not have backbone clashes (though
@@ -216,8 +217,8 @@ initial structure is retained.</p>
 <li><p>Plop parameter name: ‘side_params%failsafe’</p></li>
 <li><p>Plop default value: True</p></li>
 </ul>
-</div>
-<div class="section" id="numberofiterations">
+</section>
+<section id="numberofiterations">
 <h3>numberOfIterations<a class="headerlink" href="#numberofiterations" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: unsigned int numberOfIterations</p>
 <p>Use: Number of iterations that the ‘zhexin’ algorithm is going to
@@ -233,8 +234,8 @@ ZhexinSideChainAlgorithm::findMinimumInEnergyUsingRotamerLibrary</p>
 <li><p>Plop parameter name: ‘side_params%niter’</p></li>
 <li><p>Plop default value: 1</p></li>
 </ul>
-</div>
-<div class="section" id="temperature">
+</section>
+<section id="temperature">
 <h3>temperature<a class="headerlink" href="#temperature" title="Permalink to this headline">¶</a></h3>
 <p>Parameter: double temperature</p>
 <p>Use: Temperature to sample the rotamers in the ‘boltzmannSampling’
@@ -248,9 +249,9 @@ SideChain::computeNonClashingRotamersProbabilities</p>
 <li><p>Plop parameter name: -</p></li>
 <li><p>Plop default value: -</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="sidechainminimizer">
+</section>
+</section>
+<section id="sidechainminimizer">
 <span id="sec-sidechainprediction-sidechainpredictionminimizer"></span><h2>sideChainMinimizer<a class="headerlink" href="#sidechainminimizer" title="Permalink to this headline">¶</a></h2>
 <p>Minimizer block.</p>
 <p>If this block is not present, then no side chain prediction minimization is run.</p>
@@ -268,8 +269,8 @@ SideChain::computeNonClashingRotamersProbabilities</p>
 </ul>
 <p>If the perturbation is active, also the perturbation constraints will be on (see <a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-perturbationcomconstraintconstant"><span class="std std-ref">perturbationCOMConstraintConstant</span></a>). The permanent constraints (<a class="reference internal" href="../PermanentConstraints/PermanentConstraints.html#sec-permanentconstraints"><span class="std std-ref">Permanent constraints in Pele++ control file</span></a>) are also on.</p>
 <p>A final relaxation minimization is executed at the end of the side chain prediction phase in a PELE simulation, but this is configured in the <code class="docutils literal notranslate"><span class="pre">&quot;Minimizer&quot;</span></code> section of such command (see <a class="reference internal" href="../Minimization/Minimization.html#sec-minimization"><span class="std std-ref">Minimization in Pele++ control file</span></a>).</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -346,7 +347,7 @@ SideChain::computeNonClashingRotamersProbabilities</p>
         <li class="right" >
           <a href="../ANM/EigenvectorsAndEigenvalues.html" title="Treatment of eigenvector and eigenvalues by the PELE ANM module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">SideChainPrediction Block in Pele++ control file</a></li> 

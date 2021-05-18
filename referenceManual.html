@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reference Manual &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Reference Manual &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -17,7 +18,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="General Structure of a control file in Pele++" href="GeneralStructure/GeneralStructure.html" />
-    <link rel="prev" title="MSM PELE" href="msm.html" /> 
+    <link rel="prev" title="Pele Output" href="peleOutputInfo.html" /> 
     <script type="text/javascript" >
     MathJax.Hub.Config({
         TeX: { 
@@ -39,9 +40,9 @@
           <a href="GeneralStructure/GeneralStructure.html" title="General Structure of a control file in Pele++"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="msm.html" title="MSM PELE"
+          <a href="peleOutputInfo.html" title="Pele Output"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.7.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Reference Manual</a></li> 
       </ul>
     </div>  
@@ -51,7 +52,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="reference-manual">
+  <section id="reference-manual">
 <h1>Reference Manual<a class="headerlink" href="#reference-manual" title="Permalink to this headline">¶</a></h1>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
@@ -81,7 +82,9 @@
 <li class="toctree-l2"><a class="reference internal" href="RandomGenerator/RandomGenerator.html">Random Generator in Pele++ control file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="NonBonding/NonBondingAlgorithms.html">NonBonding in Pele++ control file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Perturbation/Perturbation.html">Perturbation Block in Pele++ control file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Perturbation/Perturbation.html#side-chain-perturbation-block-in-pele-control-file">Side Chain Perturbation Block in Pele++ control file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WaterPerturbation/Waterperturbation.html">Water Perturbation Block in Pele++ control file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConformationPerturbation/ConformationPerturbation.html">Conformation Perturbation Block in Pele++ control file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ANM/Anm.html">ANM Block in Pele++ control file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ANM/EigenvectorsAndEigenvalues.html">Treatment of eigenvector and eigenvalues by the PELE ANM module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SideChainPrediction/SideChainPrediction.html">SideChainPrediction Block in Pele++ control file</a></li>
@@ -89,6 +92,7 @@
 <li class="toctree-l2"><a class="reference internal" href="PermanentConstraints/PermanentConstraints.html">Permanent constraints in Pele++ control file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Sensors/Sensors.html">Sensors Block in Pele++ control file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="JumpController/JumpController.html">Jump Controller in Pele++ control file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InteractionRestrictions/InteractionRestrictions.html">Interaction Restrictions in Pele++ control file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PELEDynamicChangesInSimulationParameters/ParametersThatCanChange.html">Changeable Parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PELEDynamicChangesInSimulationParameters/PELEDynamicChangesInSimulationParameters.html">PELE: Dynamic Changes in simulation parameters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ExitConditions/ExitConditions.html">Exit Conditions</a></li>
@@ -139,6 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fileFormats.html#pele-custom-template-file-format">PELE custom template file format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fileFormats.html#non-ligand-rotamer-library-file">Non-ligand rotamer library file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fileFormats.html#ligand-rotamer-library-file">Ligand rotamer library file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fileFormats.html#conformation-library-file">Conformation library file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fileFormats.html#elements-parameters-file">Elements Parameters file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fileFormats.html#solvent-parameters-for-sgb">Solvent parameters for SGB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fileFormats.html#solvent-penalty-terms">Solvent penalty terms</a></li>
@@ -155,7 +160,7 @@
 </li>
 </ul>
 </div>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -165,8 +170,8 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="msm.html"
-                        title="previous chapter">MSM PELE</a></p>
+  <p class="topless"><a href="peleOutputInfo.html"
+                        title="previous chapter">Pele Output</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="GeneralStructure/GeneralStructure.html"
                         title="next chapter">General Structure of a control file in Pele++</a></p>
@@ -201,9 +206,9 @@
           <a href="GeneralStructure/GeneralStructure.html" title="General Structure of a control file in Pele++"
              >next</a> |</li>
         <li class="right" >
-          <a href="msm.html" title="MSM PELE"
+          <a href="peleOutputInfo.html" title="Pele Output"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.7.0 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Reference Manual</a></li> 
       </ul>
     </div>

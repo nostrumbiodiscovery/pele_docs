@@ -3,6 +3,27 @@ Release notes
 #############
 
 *******************************
+Version 1.7
+*******************************
+- **Open Force** Field integration:
+    - A new force field class (OpenForceField) is added to PELE.
+    - A new template reader for the ACE method.
+    - Solvent parameters setter for the new template reader.
+- Implemented a new type of perturbation algorithm, **Side Chain Perturbation**.
+- Added a new rectriction to PELE called **Interaction Restriction**.
+- Implementation of a new perturbation type: **Conformation Perturbation**.
+- Implementation of a **non-bonding energy calculator**.
+- Implementation of 3 new constraints: **Angle Constraint**, **Dihedral Constraint** and **Variable Dihedral Constraint**.
+- Added a new metric to compute angle between three atoms.
+- Added a new logging functionally, called Inter Step logger.
+- A **new flag at WaterPerturbation::parameters** section can manage PELE exceptions when water selectors are empty.
+- Fixed minor memory leaks introduced in the 1.6.1 version, related to rotamers and water sites.
+- Now EXIT_FAILURES errors will be **printed in console**.
+- Implemented PELE **coverage** calculation.
+- Fixed more tests.
+
+
+*******************************
 Version 1.6.1
 *******************************
 - New algorithm is performed when doing a Ligand Perturbation, if the Ligand has a large number of rotable bonds. The rotable bonds now will be **randomly selected** following a freedom criteria. This is done in **each group**.

@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PELE output parameters in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PELE output parameters in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="PELESimulation.html" title="PeleSimulation block in PELE++"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">PELE output parameters in Pele++ control file</a></li> 
@@ -53,16 +54,16 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="pele-output-parameters-in-pele-control-file">
+  <section id="pele-output-parameters-in-pele-control-file">
 <span id="sec-peleoutput"></span><h1>PELE output parameters in Pele++ control file<a class="headerlink" href="#pele-output-parameters-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
 <p>The “PELE_Output” block defines the output options and the paths for
 all the output files.</p>
 <p>The “PELE_Output” block must be defined inside the PeleSimulation
 command as this parameters must remain the same during the entire Pele
 simulation.</p>
-<div class="section" id="output-options-and-parameters">
+<section id="output-options-and-parameters">
 <h2>Output options and parameters.<a class="headerlink" href="#output-options-and-parameters" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="savingmode">
+<section id="savingmode">
 <h3>savingMode<a class="headerlink" href="#savingmode" title="Permalink to this headline">¶</a></h3>
 <p>Use: It tells Pele++ how the accepted models must be saved to disk.</p>
 <p>Parameter: ConfigurationSavingMode savingMode</p>
@@ -78,8 +79,8 @@ initial state.</p></li>
 <li><p>“savingBoth”: It does both previous things.</p></li>
 </ul>
 <p>Default value: “savingTrajectory”</p>
-</div>
-<div class="section" id="trajectorypath">
+</section>
+<section id="trajectorypath">
 <h3>trajectoryPath<a class="headerlink" href="#trajectorypath" title="Permalink to this headline">¶</a></h3>
 <p>Use: Path of the file where all the models are saved to form a
 trajectory. Model 1 always corresponds to the initial state. Model 2
@@ -91,8 +92,8 @@ trajectory, but the execution of the program proceeds.</p>
 <p>Parameter: std::string trajectoryFilePath</p>
 <p>Note for developers: It’s defined in PeleOutputParameters class.</p>
 <p>Default value: “../../trajectory.pdb”</p>
-</div>
-<div class="section" id="stepsfolder">
+</section>
+<section id="stepsfolder">
 <h3>stepsFolder<a class="headerlink" href="#stepsfolder" title="Permalink to this headline">¶</a></h3>
 <p>Use: Path of the folder where all the accepted models are saved in
 separated files. The file numbered as 0 is the initial state. For all
@@ -103,8 +104,8 @@ for n will be 2, 4, 6, etc.). It’s only used in “savingSteps” and
 <p>Parameter: std::string stepsFolder</p>
 <p>Note for developers: It’s defined in PeleOutputParameters class.</p>
 <p>Default value: “”</p>
-</div>
-<div class="section" id="savingfrequencyforacceptedsteps">
+</section>
+<section id="savingfrequencyforacceptedsteps">
 <h3>savingFrequencyForAcceptedSteps<a class="headerlink" href="#savingfrequencyforacceptedsteps" title="Permalink to this headline">¶</a></h3>
 <p>Use: Accepted steps are saved only if they are multiples of this
 parameter. Thus, besides the initial state, which is always saved, if
@@ -114,8 +115,8 @@ are saved.</p>
 <p>Note for developers: It’s defined in PeleOutputParameters class.</p>
 <p>Range: (1, inf)</p>
 <p>Default value: 1, which means that every accepted step is saved.</p>
-</div>
-<div class="section" id="reportpath">
+</section>
+<section id="reportpath">
 <h3>reportPath<a class="headerlink" href="#reportpath" title="Permalink to this headline">¶</a></h3>
 <p>Use: Path of the file where the <a class="reference internal" href="../Sensors/Sensors.html#sec-sensors"><span class="std std-ref">Sensors</span></a>
 (metrics and tracked variables) values are stored. The first data line
@@ -126,8 +127,8 @@ the execution of the program is aborted.</p>
 <p>Parameter: std::string fileReportPath</p>
 <p>Note for developers: It’s defined in PeleOutputParameters class.</p>
 <p>Default value: “../../test_report.txt”.</p>
-</div>
-<div class="section" id="initialpdbpath">
+</section>
+<section id="initialpdbpath">
 <h3>initialPdbPath<a class="headerlink" href="#initialpdbpath" title="Permalink to this headline">¶</a></h3>
 <p>Use: Path of the file where the initial PDB is stored. If the route is
 invalid, the program cannot write the initial structure, but the
@@ -136,8 +137,8 @@ created nor PDB is stored.</p>
 <p>Parameter: std::string initialPDBPath</p>
 <p>Note for developers: It’s defined in PeleOutputParameters class.</p>
 <p>Default value: “”.</p>
-</div>
-<div class="section" id="finalpdbpath">
+</section>
+<section id="finalpdbpath">
 <h3>finalPdbPath<a class="headerlink" href="#finalpdbpath" title="Permalink to this headline">¶</a></h3>
 <p>Use: Path of the file where the final PDB is stored. If the route is
 invalid, the program cannot write the final structure, but the program
@@ -146,8 +147,8 @@ created nor PDB is stored.</p>
 <p>Parameter: std::string finalPDBPath</p>
 <p>Note for developers: It’s defined in PeleOutputParameters class.</p>
 <p>Default value: “”.</p>
-</div>
-<div class="section" id="flushingfrequency">
+</section>
+<section id="flushingfrequency">
 <h3>flushingFrequency<a class="headerlink" href="#flushingfrequency" title="Permalink to this headline">¶</a></h3>
 <p>Use: When the number of report data lines is a multiple of
 “flushingFrequency” the report file buffer is flushed to the file. There
@@ -158,8 +159,8 @@ will see your results in the belonging log.</p>
 <p>Note for developers: It’s defined in PeleOutputParameters class.</p>
 <p>Range: (1, inf)</p>
 <p>Default value: 50.</p>
-</div>
-<div class="section" id="controllereventslogpath">
+</section>
+<section id="controllereventslogpath">
 <span id="sec-peleoutput-controllereventslogpath"></span><h3>controllerEventsLogPath<a class="headerlink" href="#controllereventslogpath" title="Permalink to this headline">¶</a></h3>
 <p>Use: Path of the log file where all ExplorationController events are
 logged. Examples of this are: parameter changes, new best explorer
@@ -169,9 +170,23 @@ defined in the control file.</p>
 <p>Parameter: std::string controllerEventsLogPath</p>
 <p>Note for developers: It’s defined in PeleOutputParameters class.</p>
 <p>Default value: “”.</p>
-</div>
-</div>
-<div class="section" id="example">
+</section>
+<section id="useintersteplogger">
+<h3>useInterStepLogger<a class="headerlink" href="#useintersteplogger" title="Permalink to this headline">¶</a></h3>
+<p>Use: Activates the InterStepLogger functionality, which allows taking structural and simulation data within the different stages of a step. It is useful for debugging purposes. Generates a new report and trajectory file, with a suffix to distinguish them from the default outputs, in the subdirectory <code class="docutils literal notranslate"><span class="pre">InterStepLogs</span></code>.</p>
+<p>Parameter: bool useInterStepLogger</p>
+<p>Note for developers: It’s defined in PeleOutputParameters class.</p>
+<p>Default value: false.</p>
+</section>
+<section id="intersteploggersuffix">
+<h3>interStepLoggerSuffix<a class="headerlink" href="#intersteploggersuffix" title="Permalink to this headline">¶</a></h3>
+<p>Use: Suffix to add to the default output files to generate the names of the interStepLogger output files.</p>
+<p>Parameter: std::string interStepLoggerSuffix;</p>
+<p>Note for developers: It’s defined in PeleOutputParameters class.</p>
+<p>Default value: “_interStep”.</p>
+</section>
+</section>
+<section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;PELE_Output&quot;</span><span class="p">:</span>
 <span class="p">{</span>
@@ -184,19 +199,20 @@ defined in the control file.</p>
     <span class="nt">&quot;finalPdbPath&quot;</span><span class="p">:</span> <span class="s2">&quot;../../theFinal.pdb&quot;</span><span class="p">,</span>
     <span class="nt">&quot;simulationLogPath&quot;</span><span class="p">:</span> <span class="s2">&quot;../../simulationLog.txt&quot;</span><span class="p">,</span>
     <span class="nt">&quot;controllerEventsLogPath&quot;</span><span class="p">:</span> <span class="s2">&quot;../../controllerEventsLog.txt&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;flushingFrequency&quot;</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="nt">&quot;flushingFrequency&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="nt">&quot;useInterStepLogger&quot;</span><span class="p">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="simulations-using-mpi">
+</section>
+<section id="simulations-using-mpi">
 <h2>Simulations using MPI<a class="headerlink" href="#simulations-using-mpi" title="Permalink to this headline">¶</a></h2>
 <p>In simulations using MPI the same parameters are used. Pele++ adds a
 suffix to all file and folder names to separate the output of each
 Explorer. The controller process (rank 0) does not output any of these
 files. Explorers start being numbered at 1 (following their MPI rank).</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -218,6 +234,8 @@ files. Explorers start being numbered at 1 (following their MPI rank).</p>
 <li><a class="reference internal" href="#finalpdbpath">finalPdbPath</a></li>
 <li><a class="reference internal" href="#flushingfrequency">flushingFrequency</a></li>
 <li><a class="reference internal" href="#controllereventslogpath">controllerEventsLogPath</a></li>
+<li><a class="reference internal" href="#useintersteplogger">useInterStepLogger</a></li>
+<li><a class="reference internal" href="#intersteploggersuffix">interStepLoggerSuffix</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#example">Example</a></li>
@@ -265,7 +283,7 @@ files. Explorers start being numbered at 1 (following their MPI rank).</p>
         <li class="right" >
           <a href="PELESimulation.html" title="PeleSimulation block in PELE++"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">PELE output parameters in Pele++ control file</a></li> 

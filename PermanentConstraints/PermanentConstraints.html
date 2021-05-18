@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Permanent constraints in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Permanent constraints in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="../Minimization/Minimization.html" title="Minimization in Pele++ control file"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Permanent constraints in Pele++ control file</a></li> 
@@ -53,7 +54,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="permanent-constraints-in-pele-control-file">
+  <section id="permanent-constraints-in-pele-control-file">
 <span id="sec-permanentconstraints"></span><h1>Permanent constraints in Pele++ control file<a class="headerlink" href="#permanent-constraints-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
 <p>Constraints are applied in all minimizations during a Pele simulation. A
 constraints list is specified within an array (a “[ ]” delimited block)
@@ -101,9 +102,9 @@ constraints. The following snippet shows how to include them:</p>
 </pre></div>
 </div>
 <p>Below are examples of specific contraint’s configuration</p>
-<div class="section" id="constraint-types">
+<section id="constraint-types">
 <h2>Constraint types<a class="headerlink" href="#constraint-types" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="harmonic-constraint-on-atom">
+<section id="harmonic-constraint-on-atom">
 <h3>Harmonic constraint on atom<a class="headerlink" href="#harmonic-constraint-on-atom" title="Permalink to this headline">¶</a></h3>
 <p>It’s a harmonic constraint on an Atom using a target position</p>
 <p>Example:</p>
@@ -118,8 +119,8 @@ constraints. The following snippet shows how to include them:</p>
 </div>
 <p>Notice that if the “toThisPoint” key is not specified, by default PELE
 will constrain the atom to its original position</p>
-</div>
-<div class="section" id="harmonic-constraint-on-distance">
+</section>
+<section id="harmonic-constraint-on-distance">
 <h3>Harmonic constraint on distance<a class="headerlink" href="#harmonic-constraint-on-distance" title="Permalink to this headline">¶</a></h3>
 <p>It’s a harmonic constraint on the distance between two Atoms</p>
 <p>Example:</p>
@@ -132,8 +133,8 @@ will constrain the atom to its original position</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="harmonic-constraint-on-distance-to-center-of-masses">
+</section>
+<section id="harmonic-constraint-on-distance-to-center-of-masses">
 <h3>Harmonic constraint on distance to center of masses<a class="headerlink" href="#harmonic-constraint-on-distance-to-center-of-masses" title="Permalink to this headline">¶</a></h3>
 <p>It’s a harmonic constraint on the distance between an Atom and the
 center of masses of a group of Atoms</p>
@@ -153,9 +154,26 @@ center of masses of a group of Atoms</p>
 </div>
 <p>Notes: “toCenterOfMassesOf” can be any valid selection block, see
 <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>.</p>
+</section>
+<section id="harmonic-constraint-on-dihedral">
+<h3>Harmonic constraint on Dihedral<a class="headerlink" href="#harmonic-constraint-on-dihedral" title="Permalink to this headline">¶</a></h3>
+<p>It’s a harmonic constraint on a selected dihedral.</p>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;constrainAtomsToDihedral&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;springConstant&quot;</span><span class="p">:</span> <span class="mf">2.2</span><span class="p">,</span>
+    <span class="nt">&quot;equilibriumAngle&quot;</span><span class="p">:</span> <span class="mf">3.3</span><span class="p">,</span>
+    <span class="nt">&quot;firstAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_C1_&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;secondAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_C2_&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;thirdAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_C3_&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;fourthAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_C4_&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-</div>
-</div>
+<p>Notes: “equilibriumAngle” needs to be in Degrees, not radians.</p>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -171,6 +189,7 @@ center of masses of a group of Atoms</p>
 <li><a class="reference internal" href="#harmonic-constraint-on-atom">Harmonic constraint on atom</a></li>
 <li><a class="reference internal" href="#harmonic-constraint-on-distance">Harmonic constraint on distance</a></li>
 <li><a class="reference internal" href="#harmonic-constraint-on-distance-to-center-of-masses">Harmonic constraint on distance to center of masses</a></li>
+<li><a class="reference internal" href="#harmonic-constraint-on-dihedral">Harmonic constraint on Dihedral</a></li>
 </ul>
 </li>
 </ul>
@@ -216,7 +235,7 @@ center of masses of a group of Atoms</p>
         <li class="right" >
           <a href="../Minimization/Minimization.html" title="Minimization in Pele++ control file"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Permanent constraints in Pele++ control file</a></li> 

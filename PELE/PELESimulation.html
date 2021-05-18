@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeleSimulation block in PELE++ &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PeleSimulation block in PELE++ &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="PELESimulation_index.html" title="PELESimulation command"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">PeleSimulation block in PELE++</a></li> 
@@ -53,16 +54,16 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="pelesimulation-block-in-pele">
+  <section id="pelesimulation-block-in-pele">
 <span id="sec-pelesimulation"></span><h1>PeleSimulation block in PELE++<a class="headerlink" href="#pelesimulation-block-in-pele" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="commandtype">
+<section id="commandtype">
 <h2>commandType<a class="headerlink" href="#commandtype" title="Permalink to this headline">¶</a></h2>
 <p>For a whole PELE simulation, it must be set to:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;commandType&quot;</span><span class="p">:</span> <span class="s2">&quot;peleSimulation&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="algorithms">
+</section>
+<section id="algorithms">
 <h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
 <p>Pele must have the following algorithms defined:
 <a class="reference internal" href="../Perturbation/Perturbation.html#sec-perturbation"><span class="std std-ref">Perturbation</span></a>,
@@ -72,25 +73,25 @@ Prediction</span></a> and
 defined at peleSimulation level it is going to be used throughout the
 whole simulation, unless it is overriden in a task by defining a new
 one.</p>
-</div>
-<div class="section" id="randomgenerator">
+</section>
+<section id="randomgenerator">
 <h2>RandomGenerator<a class="headerlink" href="#randomgenerator" title="Permalink to this headline">¶</a></h2>
 <p>For more information, check <a class="reference internal" href="../RandomGenerator/RandomGenerator.html#sec-randomgenerator"><span class="std std-ref">random generator</span></a>.</p>
-<div class="section" id="example">
+<section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;RandomGenerator&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;seed&quot;</span><span class="p">:</span> <span class="mi">100586</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="selectiontoperturb">
+</section>
+</section>
+<section id="selectiontoperturb">
 <h2>selectionToPerturb<a class="headerlink" href="#selectiontoperturb" title="Permalink to this headline">¶</a></h2>
 <p>Selects the ligands to be perturbed in the ligand perturbation. If no perturbation is performed (that is, the <code class="docutils literal notranslate"><span class="pre">Perturbation</span></code> block is empty), then the selection to perturb is empty for all purposes, and this parameter will be ignored.</p>
 <p>If the <code class="docutils literal notranslate"><span class="pre">Perturbation</span></code> block (<a class="reference internal" href="../Perturbation/Perturbation.html#sec-perturbation"><span class="std std-ref">Perturbation Block in Pele++ control file</span></a>) is non-empty (that is, perturbation is active), then you must provide this parameter, since it has no default value.</p>
 <p>The selection is done for whole chains.</p>
-<div class="section" id="id1">
+<section id="id1">
 <h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selectionToPerturb&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -99,8 +100,8 @@ one.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="perturbation-of-multiple-chains">
+</section>
+<section id="perturbation-of-multiple-chains">
 <h3>Perturbation of multiple chains.<a class="headerlink" href="#perturbation-of-multiple-chains" title="Permalink to this headline">¶</a></h3>
 <p>This feature does not have complete support in PELE (for example, you
 cannot use different options for different perturb chains; besides, the
@@ -124,39 +125,39 @@ input PDB.</p></li>
 appears first in the PDB file, then the first PELE step will perturb
 chain “M”, next step will perturb chain “L”, the step after that will
 perturb “M”, and so on.</p>
-</div>
-</div>
-<div class="section" id="nonbonding">
+</section>
+</section>
+<section id="nonbonding">
 <h2>NonBonding<a class="headerlink" href="#nonbonding" title="Permalink to this headline">¶</a></h2>
 <p>Configuration of the algorithm for non-bonding energy-related terms
 calculation.</p>
 <p>For more details see
 <a class="reference internal" href="../NonBonding/NonBondingAlgorithms.html#sec-nonbondingalgorithms"><span class="std std-ref">NonBonding</span></a>.</p>
-</div>
-<div class="section" id="pele-parameters">
+</section>
+<section id="pele-parameters">
 <h2>Pele_parameters<a class="headerlink" href="#pele-parameters" title="Permalink to this headline">¶</a></h2>
 <p>Parameters used by the Pele algorithm. They can be defined at
 PeleSimulation or PeleTask level.</p>
 <p>For more details see <a class="reference internal" href="PeleParameters.html#sec-peleparameters"><span class="std std-ref">Pele Parameters</span></a>.</p>
-</div>
-<div class="section" id="pele-output">
+</section>
+<section id="pele-output">
 <h2>Pele_Output<a class="headerlink" href="#pele-output" title="Permalink to this headline">¶</a></h2>
 <p>Parameters related to the output files generated in the simulation. They
 must be defined at the PeleSimulation level.</p>
 <p>For more details see <a class="reference internal" href="PeleOutput.html#sec-peleoutput"><span class="std std-ref">Pele Output Parameters</span></a>.</p>
-</div>
-<div class="section" id="constraints">
+</section>
+<section id="constraints">
 <h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
 <p>Constraints applied in all minimizations during a Pele simulation. Check
 the <a class="reference internal" href="../PermanentConstraints/PermanentConstraints.html#sec-permanentconstraints"><span class="std std-ref">Constraints section</span></a>.</p>
-</div>
-<div class="section" id="peletasks">
+</section>
+<section id="peletasks">
 <h2>PeleTasks<a class="headerlink" href="#peletasks" title="Permalink to this headline">¶</a></h2>
 <p>Serie of tasks that Pele has to carry out before a command (and usually
 a simulation) is considered to be finished.</p>
 <p>For more information check the <a class="reference internal" href="PeleTasks.html#sec-peletasks"><span class="std std-ref">Pele Tasks section</span></a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -227,7 +228,7 @@ a simulation) is considered to be finished.</p>
         <li class="right" >
           <a href="PELESimulation_index.html" title="PELESimulation command"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">PeleSimulation block in PELE++</a></li> 

@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General Structure of a control file in Pele++ &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>General Structure of a control file in Pele++ &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="../referenceManual.html" title="Reference Manual"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" accesskey="U">Reference Manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">General Structure of a control file in Pele++</a></li> 
       </ul>
@@ -52,13 +53,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="general-structure-of-a-control-file-in-pele">
+  <section id="general-structure-of-a-control-file-in-pele">
 <span id="sec-generalstructure"></span><h1>General Structure of a control file in Pele++<a class="headerlink" href="#general-structure-of-a-control-file-in-pele" title="Permalink to this headline">¶</a></h1>
 <p>It contains 3 blocks.</p>
-<div class="section" id="the-top-level-configuration-block">
+<section id="the-top-level-configuration-block">
 <h2>The top-level configuration block<a class="headerlink" href="#the-top-level-configuration-block" title="Permalink to this headline">¶</a></h2>
 <p>This contains a few global configuration variables.</p>
-<div class="section" id="licensedirectorypath">
+<section id="licensedirectorypath">
 <h3>licenseDirectoryPath<a class="headerlink" href="#licensedirectorypath" title="Permalink to this headline">¶</a></h3>
 <p>Path of the directory where the license file (and its digest file) are
 located. Default value is “/home/user”. It expects to find a
@@ -68,47 +69,47 @@ located. Default value is “/home/user”. It expects to find a
 </pre></div>
 </div>
 <p>Default value: Either the command-line provided directory path or, if not provided, “/home/user”.</p>
-</div>
-<div class="section" id="controlfilesavingpath">
+</section>
+<section id="controlfilesavingpath">
 <h3>controlFileSavingPath<a class="headerlink" href="#controlfilesavingpath" title="Permalink to this headline">¶</a></h3>
 <p>Saves the current control file in the given path.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;controlFileSavingPath&quot;</span> <span class="p">:</span> <span class="s2">&quot;../../simulations/ain/originalControlFile.conf&quot;</span>
 </pre></div>
 </div>
 <p>Default value: “” (no control file is saved)</p>
-</div>
-<div class="section" id="simulationlogpath">
+</section>
+<section id="simulationlogpath">
 <h3>simulationLogPath<a class="headerlink" href="#simulationlogpath" title="Permalink to this headline">¶</a></h3>
 <p>Use: Path of the log file where all the commands’ important information
 is logged.</p>
 <p>Parameter: std::string simulationLogPath</p>
 <p>Note for developers: It’s defined in SystemVars class.</p>
 <p>Default value: “” (no logging).</p>
-</div>
-<div class="section" id="commandfilepath">
+</section>
+<section id="commandfilepath">
 <span id="sec-generalstructure-commandfilepath"></span><h3>commandFilePath<a class="headerlink" href="#commandfilepath" title="Permalink to this headline">¶</a></h3>
 <p>Use: Path of the file where commands are programmatically sent to the application for Real Time Control. This should not be configured by the user. It is an error if the file exists before running the application.</p>
 <p>Default value: No default value. If commandFilePath and commandOutputFilePath are not present, Real Time Control is not activated. It is an error if only one of them is configured.</p>
-</div>
-<div class="section" id="commandoutputfilepath">
+</section>
+<section id="commandoutputfilepath">
 <span id="sec-generalstructure-commandoutputfilepath"></span><h3>commandOutputFilePath<a class="headerlink" href="#commandoutputfilepath" title="Permalink to this headline">¶</a></h3>
 <p>Use: Path of the file where the program will store the results of Real Time Control commands. This variables should be programmatically used by the GUI, and not configured by the user. It is an error if the file exists before running the application.</p>
 <p>Default value: No default value. If commandFilePath and commandOutputFilePath are not present, Real Time Control is not activated. It is an error if only one of them is configured.</p>
-</div>
-</div>
-<div class="section" id="initialization">
+</section>
+</section>
+<section id="initialization">
 <h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
 <p>Contains the setup of the system (typically pdb file(s), force field and
 solvent). To read more, check the <a class="reference internal" href="../Initialization/Initialization.html#sec-initialization"><span class="std std-ref">initialization
 document</span></a>.</p>
-</div>
-<div class="section" id="commands">
+</section>
+<section id="commands">
 <h2>commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <p>Array containing the set of commands to perform throughout the
 simulation. To read more, check the <a class="reference internal" href="../Commands/commands.html#sec-commands"><span class="std std-ref">commands
 document</span></a>.</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -173,7 +174,7 @@ document</span></a>.</p>
         <li class="right" >
           <a href="../referenceManual.html" title="Reference Manual"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">General Structure of a control file in Pele++</a></li> 
       </ul>

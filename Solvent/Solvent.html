@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solvent Block in Pele++ control file &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Solvent Block in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="../PELEinMulticorePlatforms/AdditionalFeaturesUsingMPI.html" title="Additional features in control file using MPI"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../Initialization/Initialization.html" accesskey="U">Initialization Block in Pele++ control file</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Solvent Block in Pele++ control file</a></li> 
@@ -53,9 +54,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="solvent-block-in-pele-control-file">
+  <section id="solvent-block-in-pele-control-file">
 <span id="sec-solvent"></span><h1>Solvent Block in Pele++ control file<a class="headerlink" href="#solvent-block-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="location">
+<section id="location">
 <h2>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h2>
 <p>The Solvent block must be defined inside the initialization block as
 shown in the following example:</p>
@@ -77,10 +78,10 @@ shown in the following example:</p>
 }
 </pre></div>
 </div>
-</div>
-<div class="section" id="options-and-parameters">
+</section>
+<section id="options-and-parameters">
 <h2>Options and parameters<a class="headerlink" href="#options-and-parameters" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="solventtype">
+<section id="solventtype">
 <span id="sec-solvent-solventtype"></span><h3>solventType<a class="headerlink" href="#solventtype" title="Permalink to this headline">¶</a></h3>
 <p>Uses: It sets the solvent type to be used throughout the whole
 simulation.</p>
@@ -92,15 +93,15 @@ simulation.</p>
 <li><p>“OBC”: OBC + ACE Non-Polar model.</p></li>
 </ul>
 <p>Default value: “SGBNP”, unless the “Solvent” block is not defined, in which case the “VACUUM” solvent is used.</p>
-</div>
-<div class="section" id="usedebyelength">
+</section>
+<section id="usedebyelength">
 <h3>useDebyeLength<a class="headerlink" href="#usedebyelength" title="Permalink to this headline">¶</a></h3>
 <p>Uses: Permits the use of ionic strength. This parameter only makes sense for non-vacuum solvent types. For vacuum, the value of this parameter is ignored.</p>
 <p>Default value: true</p>
 <p>Plop info: No direct correspondence, if ‘energy_params%kappa’ &gt; 0.001
 it is set to True.</p>
-</div>
-<div class="section" id="ionicstrength">
+</section>
+<section id="ionicstrength">
 <h3>ionicStrength<a class="headerlink" href="#ionicstrength" title="Permalink to this headline">¶</a></h3>
 <p>Use: If useDebyeLength is true, the ionic strenght to be used</p>
 <p>Default value: 0.15</p>
@@ -110,9 +111,9 @@ it is set to True.</p>
 <li><p>Plop parameter name: ‘energy_params%ionic_strength’</p></li>
 <li><p>Plop default value: 0</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -174,7 +175,7 @@ it is set to True.</p>
         <li class="right" >
           <a href="../PELEinMulticorePlatforms/AdditionalFeaturesUsingMPI.html" title="Additional features in control file using MPI"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../Initialization/Initialization.html" >Initialization Block in Pele++ control file</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Solvent Block in Pele++ control file</a></li> 

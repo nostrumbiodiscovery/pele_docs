@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Interaction Restrictions in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
+    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changeable Parameters" href="../PELEDynamicChangesInSimulationParameters/ParametersThatCanChange.html" />
+    <link rel="prev" title="Jump Controller in Pele++ control file" href="../JumpController/JumpController.html" /> 
+    <script type="text/javascript" >
+    MathJax.Hub.Config({
+        TeX: { 
+	  Macros: {
+	    AA: '{\\unicode{xC5}}'
+	  }
+	}
+    });
+    </script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../PELEDynamicChangesInSimulationParameters/ParametersThatCanChange.html" title="Changeable Parameters"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../JumpController/JumpController.html" title="Jump Controller in Pele++ control file"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Interaction Restrictions in Pele++ control file</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="interaction-restrictions-in-pele-control-file">
+<span id="sec-interactionrestrictions"></span><h1>Interaction Restrictions in Pele++ control file<a class="headerlink" href="#interaction-restrictions-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
+<p>This page documents the interaction restrictions functionality of Pele++.</p>
+<p>This functionality jumps to the next PELE step iteration and skips the final Minimization algorithm if the current perturbed pose of the ligand is detected as non interesting.</p>
+<p>Then, in a biased exploration, we can skip those non interesting poses and only spend time on minimizing the interesting ones for our particular study.</p>
+<p>To distinguish between interesting and non interesting poses we need to define the <a class="reference internal" href="../LogicalConditions/ConditionsByExample.html#sec-conditionsbyexample"><span class="std std-ref">conditions</span></a> required for the current exploration.</p>
+<section id="conditions">
+<h2>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline">¶</a></h2>
+<p>If all
+<a class="reference internal" href="../LogicalConditions/ConditionsByExample.html#sec-conditionsbyexample"><span class="std std-ref">conditions</span></a> are met,
+the current pose will be minimized and evaluated using Metropolis criterium.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The conditions are related to metrics already define in <a class="reference internal" href="../Sensors/MetricTypes.html#sec-metrictypes"><span class="std std-ref">metrics block</span></a>.</p>
+</div>
+</section>
+<section id="example1">
+<h2>Example1<a class="headerlink" href="#example1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;interactionRestrictions&quot;</span><span class="p">:</span>
+<span class="p">[</span>
+        <span class="s2">&quot;bdistance &lt; 4&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;h-bondAngle &gt; 90&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;h-bondAngle &lt; 180&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>In this first example, we show a configuration with three restrictions. All of them must be true to mimimize the current pose.</p>
+</section>
+<section id="example2">
+<h2>Example2<a class="headerlink" href="#example2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;interactionRestrictions&quot;</span><span class="p">:</span>
+<span class="p">[</span>
+        <span class="s2">&quot;bdistance &lt; 4&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>In this second example, we show a configuration with a single restriction, which must be true to minimize the current pose.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Interaction Restrictions in Pele++ control file</a><ul>
+<li><a class="reference internal" href="#conditions">Conditions</a></li>
+<li><a class="reference internal" href="#example1">Example1</a></li>
+<li><a class="reference internal" href="#example2">Example2</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../JumpController/JumpController.html"
+                        title="previous chapter">Jump Controller in Pele++ control file</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../PELEDynamicChangesInSimulationParameters/ParametersThatCanChange.html"
+                        title="next chapter">Changeable Parameters</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/InteractionRestrictions/InteractionRestrictions.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../PELEDynamicChangesInSimulationParameters/ParametersThatCanChange.html" title="Changeable Parameters"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../JumpController/JumpController.html" title="Jump Controller in Pele++ control file"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Interaction Restrictions in Pele++ control file</a></li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+    <a href="../index.html#license">License</a>.
+    </div>
+  </body>
+</html>

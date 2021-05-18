@@ -4,8 +4,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PELE default parameters &#8212; PELE 1.6.0 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PELE default parameters &#8212; PELE 1.7.0 documentation</title>
     <link rel="stylesheet" href="_static/naturemodified.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -41,7 +42,7 @@
         <li class="right" >
           <a href="fileFormats.html" title="PELE File Formats"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="referenceManual.html" accesskey="U">Reference Manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">PELE default parameters</a></li> 
       </ul>
@@ -52,7 +53,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="pele-default-parameters">
+  <section id="pele-default-parameters">
 <span id="sec-defaultparameters"></span><h1>PELE default parameters<a class="headerlink" href="#pele-default-parameters" title="Permalink to this headline">¶</a></h1>
 <p>This section shows a complete control file with the default values for all parameters in the control file, in the case of a PELE simulation. When each parameter is explained in the documentation, its default value is provided. This section wants to be a quick reference for all the default values of all parameters.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
@@ -113,6 +114,8 @@
        &quot;anmFrequency&quot;: 2,
        &quot;minimizationFrequency&quot;: 1,
        &quot;sideChainPredictionFrequency&quot;: 3,
+       &quot;waterPerturbationFrequency&quot;: 3,
+       &quot;conformationPerturbationFrequency&quot;: 0,
        // The following only make sense if side chain prediction is used
        &quot;numberOfTopSideSelectedLinks&quot;: 0,
        &quot;topSideRadius&quot;: 0,
@@ -214,6 +217,12 @@
 	 // A Box would come here as &quot;Box&quot;: {}
        }
      },
+     // ConformationPerturbation only happens if the conformation perturbation block is present.
+     &quot;ConformationPerturbation&quot;:{
+         &quot;parameters&quot;:{
+             &quot;overlapFactor&quot;: 0.65
+         }
+     }
      &quot;ANM&quot;: {
        &quot;algorithm&quot;: &quot;ALPHACARBONS&quot;,
        // When using &quot;CARTESIANS&quot; as algorithm, a &quot;nodes&quot; selection must be used
@@ -320,7 +329,7 @@
 }
 </pre></div>
 </div>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -368,7 +377,7 @@
         <li class="right" >
           <a href="fileFormats.html" title="PELE File Formats"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.6.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.7.0 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="referenceManual.html" >Reference Manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">PELE default parameters</a></li> 
       </ul>

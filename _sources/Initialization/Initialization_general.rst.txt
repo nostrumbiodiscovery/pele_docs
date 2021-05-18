@@ -120,9 +120,14 @@ Possible options:
 
 -  "AMBER99sbBSC0"
 
+-  :ref:`"OpenForceField" <sec-initialization-general-openforcefield>` (in beta stage)
+
 Defalut value: None, it must be specified
 
 Plop info: No correspondence, it just uses OPLS2005.
+
+
+.. _sec-initialization-general-useGPU:
 
 useGPU
 ^^^^^^
@@ -130,3 +135,21 @@ useGPU
 Use: Boolean that enables the use of GPUs. We remind that its in an
 experimental stage.
 
+
+.. _sec-initialization-general-openforcefield:
+
+Open Force Field
+----------------
+
+.. warning::
+   Please, note that the current Open Force Field implementation in PELE is in beta stage. Its validation is still under revision and it is very susceptible to change.
+
+`The Open Force Field initiative <openforcefield.org>`_ is an open source approach towards the development of better force fields. The idea behing their force fields is to skip atom types and work with a direct chemical perception by considering standard chemical substructures through `SMARTS <https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html>`_ and `SMIRKS <https://www.daylight.com/dayhtml/doc/theory/theory.smirks.html>`_ patterns. Thanks to their Python toolkit, we can parameterize small molecules using their force fields and the direct chemical perception technique. Besides, we plan to integrate a full protein force field in PELE in the future.
+
+The current implementation of Open Force Field requires the following three files to account for the parameters of a single link:
+
+- Link's rotamer library
+- Link's parameters template
+- Link's parameters template for the solvent (OBC)
+
+All these files can be generated with the `offPELE Python package <https://github.com/martimunicoy/offPELE>`_.
