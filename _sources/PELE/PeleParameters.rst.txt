@@ -48,6 +48,19 @@ Plop info:
 -  Plop parameter name: steps
 -  Plop default value: -
 
+.. _sec-peleParameters-activateMinimumSteps:
+
+activateMinimumSteps
+^^^^^^^^^^^^^^^^^^^^
+
+Parameter: bool minimumStepsActivated
+
+Use: Activates the minimum steps functionality, the explorers will continue running pele steps until all have reached the numberOfPeleSteps. **Only for MPI simulations**.
+
+Range: True or False
+
+Default value: false.
+
 
 .. _sec-peleParameters-waterPerturbationFrequency:
 

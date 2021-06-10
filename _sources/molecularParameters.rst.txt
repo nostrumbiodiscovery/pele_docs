@@ -244,9 +244,10 @@ If you have the template file for your molecule, but not the rotamer file, you c
 
 As before (for the template and rotamer files generation), you can place your rotamer file inside :file:`./DataLocal/LigandRotamerLibs/`; use :file:`Data/` instead of :file:`./DataLocal/` if you are updating the central database.
 
+.. _sec-molecularParameters-conformationLibrary:
 
 Conformation library files
-======================
+==========================
 
 See also :ref:`sec-fileFormats-conformationLibrary` for information on the format of the generated file.
 

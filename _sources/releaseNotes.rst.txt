@@ -3,6 +3,13 @@ Release notes
 #############
 
 *******************************
+Version 1.7.1
+*******************************
+- Implemented the PELE **MinimumSteps** feature.
+- Fixed rotamer libs (ASQ, PTR, SEP, TPO).
+- Fixes small issues in Side Chain Prediction and Side Chain Perturbation.
+
+*******************************
 Version 1.7
 *******************************
 - **Open Force** Field integration:
@@ -36,7 +43,7 @@ Version 1.6.1
 - Default **Steric Trial** value changed from 1000 to 50.
 - Fixed and refactored Tests.
 - Fixed some errors with Simbolic Link creation in MNIV and NORD3.
-- Some errors now are printed properly trhough cerr and not cout.
+- Some errors now are printed properly through cerr and not cout.
 - Fixed memory leaks.
 - Changed error outputs from cout to cerr. Errors now should be displayed in terminal.
 

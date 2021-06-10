@@ -1,7 +1,7 @@
 .. _sec-conformation-pert:
 
 Conformation Perturbation Block in Pele++ control file
-==================================================
+======================================================
 
 This block configures the Conformation Perturbation in a ``peleSimulation``
 command. In a ``peleSimulation``, this phase will be active depending 
@@ -18,6 +18,14 @@ account of that, and the reason will be specified in the log file.
 Note that the frequency with which this algorithm is performed in a Pele
 simulation can be set in the PeleParameters section of the control file.
 See more information about this parameter at :ref:`sec-peleParameters-conformationPerturbationFrequency`.
+
+Conformation libraries
+-------------------------
+Conformation libraries used during conformation perturbation are located in the :file:`Data/` directory.
+
+If you use non-standard molecules and residues not included in the data directories, then you should create and add the conformation library definition file in your :file:`DataLocal/` directory (at :file:`<DataLocal>/Conformations`).
+
+More information about create conformation libraries files in :ref:`sec-molecularParameters-conformationLibrary`.
 
 Example
 --------
