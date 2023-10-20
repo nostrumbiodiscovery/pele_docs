@@ -258,7 +258,27 @@ For a ligand, ion or cofactor, you should generate the parameters with :program:
 
 For a residue in a biomolecule, PELE should provide this data, so please contact PELE support for getting this issue fixed.
     
+
+Atom or Hetatom missmatch
+-------------------------
+
+Error message:
     
+.. code-block:: console
+    
+  terminate called after throwing an instance of 'PeleBuildException'
+    what():  /!\ Error in MacroBuilder::createMacro: /!\ Error in Ligand::makeTheAtomsTreeBeLikeInTemplate:ChainFactory::addLink!!!!
+
+There is a missmatch wheter an atom in the PDB is stablished as atom or hetatom.
+
+Example:
+
+- Original: HETATM14063  N1  LYP A 289     -10.384   4.603   5.115  1.00  0.00           N1+
+
+- Fixed   : ATOM  14063  N1  LYP A 289     -10.384   4.603   5.115  1.00  0.00           N1+
+
+
+
 Selection errors
 ================
 

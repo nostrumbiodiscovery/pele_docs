@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>PELE: Dynamic Changes in simulation parameters &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exit Conditions" href="../ExitConditions/ExitConditions.html" />
@@ -55,7 +51,7 @@
           <div class="body" role="main">
             
   <section id="pele-dynamic-changes-in-simulation-parameters">
-<span id="sec-peledynamicchangesinsimulationparameters"></span><h1>PELE: Dynamic Changes in simulation parameters<a class="headerlink" href="#pele-dynamic-changes-in-simulation-parameters" title="Permalink to this headline">¶</a></h1>
+<span id="sec-peledynamicchangesinsimulationparameters"></span><h1>PELE: Dynamic Changes in simulation parameters<a class="headerlink" href="#pele-dynamic-changes-in-simulation-parameters" title="Permalink to this heading">¶</a></h1>
 <p>Some PELE simulation parameters can be changed on the fly based on the
 evaluation of logical conditions that use values measured by PELE
 sensors (metrics and state trackers, see
@@ -70,40 +66,40 @@ PeleTask block.</p>
 <p>Let’s see an example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;parametersChanges&quot;</span><span class="p">:</span>
 <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;ifAnyIsTrue&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;rmsd &gt; 1.0 and rmsd &lt; 1.2&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;rmsd_CA &gt; 1&quot;</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;doThesechanges&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                <span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span> <span class="kc">false</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;ifAnyIsTrue&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;rmsd &lt; 1.0 or rmsd &lt;= 0.5&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;not (rmsd_CA &lt; 1 or currentEnergy &gt; 3.0)&quot;</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;doThesechanges&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;LigandPerturbation::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;rotationScalingFactor&quot;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
-                <span class="nt">&quot;translationRange&quot;</span><span class="p">:</span> <span class="mf">3.5</span>
-            <span class="p">},</span>
-            <span class="nt">&quot;ANM::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;thermalScaling&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-                <span class="nt">&quot;displacementFactor&quot;</span><span class="p">:</span> <span class="mf">1.5</span>
-            <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;otherwise&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span> <span class="kc">true</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ifAnyIsTrue&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;rmsd &gt; 1.0 and rmsd &lt; 1.2&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;rmsd_CA &gt; 1&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;doThesechanges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ifAnyIsTrue&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;rmsd &lt; 1.0 or rmsd &lt;= 0.5&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;not (rmsd_CA &lt; 1 or currentEnergy &gt; 3.0)&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;doThesechanges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;LigandPerturbation::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;rotationScalingFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;translationRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.5</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;ANM::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;thermalScaling&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;displacementFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;otherwise&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -112,41 +108,41 @@ define lists in JSON) of two parameter changes (each defined between
 curly brackets).</p>
 <p>The first parameters change block of the list in this example is:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;ifAnyIsTrue&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;rmsd &gt; 1.0 and rmsd &lt; 1.2&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;rmsd_CA &gt; 1&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;doThesechanges&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span> <span class="kc">false</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;ifAnyIsTrue&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;rmsd &gt; 1.0 and rmsd &lt; 1.2&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;rmsd_CA &gt; 1&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;doThesechanges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>and the second one is:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;ifAnyIsTrue&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;rmsd &lt; 1.0 or rmsd &lt;= 0.5&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;not (rmsd_CA &lt; 1 or currentEnergy &gt; 3.0)&quot;</span>
-    <span class="p">],</span>
-    <span class="nt">&quot;doThesechanges&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;LigandPerturbation::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;rotationScalingFactor&quot;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
-            <span class="nt">&quot;translationRange&quot;</span><span class="p">:</span> <span class="mf">3.5</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;ANM::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;thermalScaling&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="nt">&quot;displacementFactor&quot;</span><span class="p">:</span> <span class="mf">1.5</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;otherwise&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-            <span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span> <span class="kc">true</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;ifAnyIsTrue&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;rmsd &lt; 1.0 or rmsd &lt;= 0.5&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;not (rmsd_CA &lt; 1 or currentEnergy &gt; 3.0)&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;doThesechanges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;LigandPerturbation::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;rotationScalingFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;translationRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.5</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;ANM::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;thermalScaling&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;displacementFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;otherwise&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -163,8 +159,8 @@ evaluate to false.</p></li>
 by:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;ifAnyIsTrue&quot;</span><span class="p">:</span>
 <span class="p">[</span>
-    <span class="s2">&quot;rmsd&lt;1.0 or rmsd&lt;=0.5&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;not(rmsd_CA&lt;1 or currentEnergy&gt;3.0)&quot;</span>
+<span class="w">    </span><span class="s2">&quot;rmsd&lt;1.0 or rmsd&lt;=0.5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;not(rmsd_CA&lt;1 or currentEnergy&gt;3.0)&quot;</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -173,15 +169,15 @@ are defined between square brackets) evaluates to true, the changes will
 take place. To know how to write conditions check <a class="reference internal" href="../LogicalConditions/ConditionsByExample.html#sec-conditionsbyexample"><span class="std std-ref">Conditions By Example</span></a>.</p>
 <p>The block that defines the changes that take place when any of the
 previous conditions is true is:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;doThesechanges&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;LigandPerturbation::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;rotationScalingFactor&quot;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
-        <span class="nt">&quot;translationRange&quot;</span><span class="p">:</span> <span class="mf">3.5</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;ANM::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;thermalScaling&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nt">&quot;displacementFactor&quot;</span><span class="p">:</span> <span class="mf">1.5</span>
-    <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;doThesechanges&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;LigandPerturbation::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;rotationScalingFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;translationRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.5</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;ANM::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;thermalScaling&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;displacementFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -192,9 +188,9 @@ the different set of changes by indicating which parameters to change
 and which are the new values of the parameters.</p>
 <p>The different sets of parameters changes are separated by commas.</p>
 <p>For instance, the first set of changes is:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;LigandPerturbation::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;rotationScalingFactor&quot;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
-    <span class="nt">&quot;translationRange&quot;</span><span class="p">:</span> <span class="mf">3.5</span><span class="p">,</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;LigandPerturbation::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;rotationScalingFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;translationRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.5</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -202,9 +198,9 @@ and which are the new values of the parameters.</p>
 “rotationScalingFactor” and the “translationRange” of the
 LigandPerturbation, being their new values 0.4 and 3.5, respectively.</p>
 <p>Similarly, the second set of changes:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;ANM::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;thermalScaling&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;displacementFactor&quot;</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;ANM::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;thermalScaling&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;displacementFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -215,11 +211,11 @@ and the “displacementFactor” of the ANM with new values of false and
 <a class="reference internal" href="ParametersThatCanChange.html#sec-parametersthatcanchange"><span class="std std-ref">Parameters That Can Change</span></a>.</p>
 <p>Finally, there is a block, “otherwise”, that defines the changes that
 take place when none of the previous conditions is true:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;otherwise&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;otherwise&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -227,9 +223,9 @@ take place when none of the previous conditions is true:</p>
 place when all the conditions for the change are false. Inside it, you
 should define the different set of changes by indicating which
 parameters to change and which are the new values of the parameters.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span> <span class="kc">true</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Minimizer::parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -243,12 +239,16 @@ parameters to change and which are the new values of the parameters.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ParametersThatCanChange.html"
-                        title="previous chapter">Changeable Parameters</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../ExitConditions/ExitConditions.html"
-                        title="next chapter">Exit Conditions</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="ParametersThatCanChange.html"
+                          title="previous chapter">Changeable Parameters</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../ExitConditions/ExitConditions.html"
+                          title="next chapter">Exit Conditions</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -260,12 +260,12 @@ parameters to change and which are the new values of the parameters.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -290,7 +290,7 @@ parameters to change and which are the new values of the parameters.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

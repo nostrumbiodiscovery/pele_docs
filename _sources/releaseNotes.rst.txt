@@ -3,6 +3,25 @@ Release notes
 #############
 
 *******************************
+Version 1.8.0
+*******************************
+
+- New **Non Bonding Energy By Selection** metric.
+- New **Internal Energy** metric.
+- New **perturbAllAtOnce** flag to perturb a chain with all its components at the same time.
+- New **allowMultipleBindingSelection** flag to be able to select a chain with multiple parts for calculate the **Binding Energy**.
+- ANM modifications so it can run without a protein in the system. New ANM **NULL** can be set to enable this option. 
+- New **skipGlobalMinimization** flag in **SideChainPrediction** to ignore minimization after side chain prediction.
+- Modifications to dummy atom using OpenFF forcefield.
+- Fixed bugs with dummy atoms and vacuum simulations.
+- PELE now requires less memory to run.
+- New licensing system that uses LCC library can issue node-lock licenses.
+- Invalid geometries are now attempted to be fixed instead of raising a runtime exception.
+- Test fixes
+- Changed from frozenAtomSurfaceContribution matrix to on the fly calculation
+- Added test for **moveAllAtOnce**.
+
+*******************************
 Version 1.7.1
 *******************************
 - Implemented the PELE **MinimumSteps** feature.

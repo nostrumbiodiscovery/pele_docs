@@ -1,19 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>PELE parameters in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -55,11 +52,11 @@
           <div class="body" role="main">
             
   <section id="pele-parameters-in-pele-control-file">
-<span id="sec-peleparameters"></span><h1>PELE parameters in Pele++ control file<a class="headerlink" href="#pele-parameters-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
+<span id="sec-peleparameters"></span><h1>PELE parameters in Pele++ control file<a class="headerlink" href="#pele-parameters-in-pele-control-file" title="Permalink to this heading">¶</a></h1>
 <section id="parameters">
-<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h2>
 <section id="temperature">
-<h3>temperature<a class="headerlink" href="#temperature" title="Permalink to this headline">¶</a></h3>
+<h3>temperature<a class="headerlink" href="#temperature" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: double temperature</p>
 <p>Use: System temperature</p>
 <p>Note for developers: Used for the Metropolis criterion</p>
@@ -74,7 +71,7 @@
 </ul>
 </section>
 <section id="numberofpelesteps">
-<h3>numberOfPeleSteps<a class="headerlink" href="#numberofpelesteps" title="Permalink to this headline">¶</a></h3>
+<h3>numberOfPeleSteps<a class="headerlink" href="#numberofpelesteps" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: unsigned int numberOfPeleSteps</p>
 <p>Use: Number of Pele steps to complete the simulation.</p>
 <p>Note for developers: Used in PeleTask::hasTaskFinished</p>
@@ -89,14 +86,14 @@
 </ul>
 </section>
 <section id="activateminimumsteps">
-<span id="sec-peleparameters-activateminimumsteps"></span><h3>activateMinimumSteps<a class="headerlink" href="#activateminimumsteps" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-activateminimumsteps"></span><h3>activateMinimumSteps<a class="headerlink" href="#activateminimumsteps" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: bool minimumStepsActivated</p>
 <p>Use: Activates the minimum steps functionality, the explorers will continue running pele steps until all have reached the numberOfPeleSteps. <strong>Only for MPI simulations</strong>.</p>
 <p>Range: True or False</p>
 <p>Default value: false.</p>
 </section>
 <section id="waterperturbationfrequency">
-<span id="sec-peleparameters-waterperturbationfrequency"></span><h3>waterPerturbationFrequency<a class="headerlink" href="#waterperturbationfrequency" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-waterperturbationfrequency"></span><h3>waterPerturbationFrequency<a class="headerlink" href="#waterperturbationfrequency" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: unsigned int waterPerturnationFrequency</p>
 <p>Use: Period to perform water perturbation</p>
 <p>Note for developers: Used in PeleParameters::isTimeToRunWaterPerturbation</p>
@@ -106,7 +103,7 @@
 <p>Note: If waterPerturbationFrequency = 0, the water perturbation will never be performed.</p>
 </section>
 <section id="conformationperturbationfrequency">
-<span id="sec-peleparameters-conformationperturbationfrequency"></span><h3>conformationPerturbationFrequency<a class="headerlink" href="#conformationperturbationfrequency" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-conformationperturbationfrequency"></span><h3>conformationPerturbationFrequency<a class="headerlink" href="#conformationperturbationfrequency" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: unsigned int conformationPerturbationFrequency</p>
 <p>Use: Period to perform conformation perturbation</p>
 <p>Note for developers: Used in PeleParameters::testIsTimeToRunConformationPerturbation</p>
@@ -116,7 +113,7 @@
 <p>Note: If conformationPerturbationFrequency = 0, the conformation perturbation will never be performed.</p>
 </section>
 <section id="anmfrequency">
-<span id="sec-peleparameters-anmfrequency"></span><h3>anmFrequency<a class="headerlink" href="#anmfrequency" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-anmfrequency"></span><h3>anmFrequency<a class="headerlink" href="#anmfrequency" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: unsigned int anmStepFrequency</p>
 <p>Use: Period to perform ANM</p>
 <p>Note for developers: Used in PeleParameters::isTimeToRunAnm</p>
@@ -132,7 +129,7 @@
 <p>Note: If anmStepFrequency = 0, the ANM will never be performed.</p>
 </section>
 <section id="minimizationfrequency">
-<span id="sec-peleparameters-minimizationfrequency"></span><h3>minimizationFrequency<a class="headerlink" href="#minimizationfrequency" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-minimizationfrequency"></span><h3>minimizationFrequency<a class="headerlink" href="#minimizationfrequency" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: unsigned int constrainedMinimizationStepFrequency</p>
 <p>Use: Period to perform the constrained minimization (if side chain
 prediction was not performed in that step)</p>
@@ -151,7 +148,7 @@ PeleParameters::isTimeToRunTheConstrainedMinimization</p>
 minimization will never be performed (unless the side chain prediction happens, in which case a final minimization also happens).</p>
 </section>
 <section id="sidechainpredictionfrequency">
-<span id="sec-peleparameters-sidechainpredictionfrequency"></span><h3>sideChainPredictionFrequency<a class="headerlink" href="#sidechainpredictionfrequency" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-sidechainpredictionfrequency"></span><h3>sideChainPredictionFrequency<a class="headerlink" href="#sidechainpredictionfrequency" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: unsigned int sideChainPredictionFrequency</p>
 <p>Use: Period to perform the side chain prediction</p>
 <p>Note for developers: Used in
@@ -169,7 +166,7 @@ PeleParameters::isTimeToRunSideChainPrediction</p>
 will never be performed.</p>
 </section>
 <section id="numberoftopsideselectedlinks">
-<span id="sec-peleparameters-numberoftopsideselectedlinks"></span><h3>numberOfTopSideSelectedLinks<a class="headerlink" href="#numberoftopsideselectedlinks" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-numberoftopsideselectedlinks"></span><h3>numberOfTopSideSelectedLinks<a class="headerlink" href="#numberoftopsideselectedlinks" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: unsigned int numberOfTopSideSelectedLinks</p>
 <p>Use: Number of high energy links added to the Pele regions.</p>
 <p>Note for developers: Used in TopSideLinksSelection::addTopSideLinksTo.</p>
@@ -184,7 +181,7 @@ will never be performed.</p>
 </ul>
 </section>
 <section id="topsideradius">
-<span id="sec-peleparameters-topsideradius"></span><h3>topSideRadius<a class="headerlink" href="#topsideradius" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-topsideradius"></span><h3>topSideRadius<a class="headerlink" href="#topsideradius" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: double topSideRadius</p>
 <p>Use: Links within this range from any top side link are also added the
 Pele regions.</p>
@@ -200,7 +197,7 @@ Pele regions.</p>
 </ul>
 </section>
 <section id="minimizationregionradius">
-<span id="sec-peleparameters-minimizationregionradius"></span><h3>minimizationRegionRadius<a class="headerlink" href="#minimizationregionradius" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-minimizationregionradius"></span><h3>minimizationRegionRadius<a class="headerlink" href="#minimizationregionradius" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: double minimizationRegionRadius</p>
 <p>Use: Links within this radius from the ligand are added to the
 minimization Pele region. Make sure the includeInMinimization PELE
@@ -218,7 +215,7 @@ not interfere with this parameter.</p>
 </ul>
 </section>
 <section id="sidechainpredictionregionradius">
-<span id="sec-peleparameters-sidechainpredictionregionradius"></span><h3>sideChainPredictionRegionRadius<a class="headerlink" href="#sidechainpredictionregionradius" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-sidechainpredictionregionradius"></span><h3>sideChainPredictionRegionRadius<a class="headerlink" href="#sidechainpredictionregionradius" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: double sideChainPredictionRegionRadius</p>
 <p>Use: Links within this radius from the ligand are added to the side
 chain prediction Pele region.</p>
@@ -234,7 +231,7 @@ chain prediction Pele region.</p>
 </ul>
 </section>
 <section id="proximitydistance">
-<span id="sec-peleparameters-proximitydistance"></span><h3>proximityDistance<a class="headerlink" href="#proximitydistance" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-proximitydistance"></span><h3>proximityDistance<a class="headerlink" href="#proximitydistance" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: double proximityDistance</p>
 <p>Use: Criterion to decide whether a perturbed atomset (usually a ligand)
 is close enough to perform ANM, Side Chain Prediction, Minimization and
@@ -245,7 +242,7 @@ solvent updates.</p>
 <p>Default value: 5.0 (only if activateProximityDetection is true).</p>
 </section>
 <section id="activateproximitydetection">
-<h3>activateProximityDetection<a class="headerlink" href="#activateproximitydetection" title="Permalink to this headline">¶</a></h3>
+<h3>activateProximityDetection<a class="headerlink" href="#activateproximitydetection" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: bool proximityDetectionActivated</p>
 <p>Use: Activates the aforementioned distance criterion to perform ANM,
 Side Chain Prediction, Minimization and solvent updates.</p>
@@ -253,7 +250,7 @@ Side Chain Prediction, Minimization and solvent updates.</p>
 <p>Default value: true.</p>
 </section>
 <section id="perturbationcomconstraintconstant">
-<span id="sec-peleparameters-perturbationcomconstraintconstant"></span><h3>perturbationCOMConstraintConstant<a class="headerlink" href="#perturbationcomconstraintconstant" title="Permalink to this headline">¶</a></h3>
+<span id="sec-peleparameters-perturbationcomconstraintconstant"></span><h3>perturbationCOMConstraintConstant<a class="headerlink" href="#perturbationcomconstraintconstant" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: double perturbationCOMConstraintConstant</p>
 <p>Use: Adds a constraint to the center of mass of the perturbed atom set
 after the perturbation. This will affect the ANM, Side Chain prediction, and the minimization phases. The constraint will be removed before the Metropolis test.</p>
@@ -281,8 +278,9 @@ energy increases just when the perturbed backbone is moved.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">PELE parameters in Pele++ control file</a><ul>
 <li><a class="reference internal" href="#parameters">Parameters</a><ul>
 <li><a class="reference internal" href="#temperature">temperature</a></li>
@@ -306,12 +304,17 @@ energy increases just when the perturbed backbone is moved.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="PeleOutput.html"
-                        title="previous chapter">PELE output parameters in Pele++ control file</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="PeleTasks.html"
-                        title="next chapter">PeleTasks</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="PeleOutput.html"
+                          title="previous chapter">PELE output parameters in Pele++ control file</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="PeleTasks.html"
+                          title="next chapter">PeleTasks</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -323,12 +326,12 @@ energy increases just when the perturbed backbone is moved.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -353,7 +356,7 @@ energy increases just when the perturbed backbone is moved.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

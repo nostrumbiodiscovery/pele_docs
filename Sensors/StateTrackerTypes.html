@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>StateTracker types in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Jump Controller in Pele++ control file" href="../JumpController/JumpController.html" />
@@ -56,13 +52,13 @@
           <div class="body" role="main">
             
   <section id="statetracker-types-in-pele-control-file">
-<span id="sec-statetrackertypes"></span><h1>StateTracker types in Pele++ control file<a class="headerlink" href="#statetracker-types-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
+<span id="sec-statetrackertypes"></span><h1>StateTracker types in Pele++ control file<a class="headerlink" href="#statetracker-types-in-pele-control-file" title="Permalink to this heading">¶</a></h1>
 <p>The StateTrackers are defined inside the “track” block as is explained
 in <a class="reference internal" href="Sensors.html#sec-sensors"><span class="std std-ref">Sensors</span></a>.</p>
 <p>A general state tracker is define as follows:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;variable&quot;</span><span class="p">:</span> <span class="s2">&quot;variableName&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;logIt&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="w">    </span><span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;variableName&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;logIt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -88,33 +84,33 @@ configured).</p></li>
 </ul>
 <p>Following are the types of state trackers:</p>
 <section id="current-energy">
-<h2>Current energy<a class="headerlink" href="#current-energy" title="Permalink to this headline">¶</a></h2>
+<h2>Current energy<a class="headerlink" href="#current-energy" title="Permalink to this heading">¶</a></h2>
 <p>It tracks the current energy variable in PeleTask. Its variable name is
 currentEnergy.</p>
 <p>This tracker is active and logged by default, and its logging property
 cannot be changed.</p>
 </section>
 <section id="steps-since-last-accepted">
-<h2>Steps since last accepted<a class="headerlink" href="#steps-since-last-accepted" title="Permalink to this headline">¶</a></h2>
+<h2>Steps since last accepted<a class="headerlink" href="#steps-since-last-accepted" title="Permalink to this heading">¶</a></h2>
 <p>It tracks the steps of the simulation that has passed since the last
 accepted step. ###Example.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="s2">&quot;stepsSinceLastAccepted&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;logIt&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="w">    </span><span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="s2">&quot;stepsSinceLastAccepted&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;logIt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>In this case, the values of the current energy are not logged.</p>
 </section>
 <section id="current-step">
-<h2>Current step<a class="headerlink" href="#current-step" title="Permalink to this headline">¶</a></h2>
+<h2>Current step<a class="headerlink" href="#current-step" title="Permalink to this heading">¶</a></h2>
 <p>It tracks the steps of the simulation. When evaluated, it considers the
 number of the step just about to start.</p>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="s2">&quot;currentStep&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;logIt&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="w">    </span><span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="s2">&quot;currentStep&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;logIt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -125,23 +121,23 @@ column would be added, with the value of the step about to start).</p>
 </section>
 </section>
 <section id="number-of-accepted-pele-steps">
-<h2>Number of accepted PELE steps<a class="headerlink" href="#number-of-accepted-pele-steps" title="Permalink to this headline">¶</a></h2>
+<h2>Number of accepted PELE steps<a class="headerlink" href="#number-of-accepted-pele-steps" title="Permalink to this heading">¶</a></h2>
 <p>It tracks the number of accepted PELE steps during the simulation. Its
 variable name is numberOfAcceptedPeleSteps.</p>
 <p>This tracker is active and logged by default, and its logging property
 cannot be changed.</p>
 </section>
 <section id="statetrackers-block-example">
-<h2>StateTrackers block example<a class="headerlink" href="#statetrackers-block-example" title="Permalink to this headline">¶</a></h2>
+<h2>StateTrackers block example<a class="headerlink" href="#statetrackers-block-example" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;track&quot;</span><span class="p">:</span>
 <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;variable&quot;</span><span class="p">:</span> <span class="s2">&quot;currentEnergy&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;variable&quot;</span><span class="p">:</span> <span class="s2">&quot;stepsSinceLastAccepted&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;logIt&quot;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;currentEnergy&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stepsSinceLastAccepted&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;logIt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">},</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -149,7 +145,7 @@ cannot be changed.</p>
 list that contains the definition of two StateTrackers.</p>
 <p>The first StateTracker block of the list is:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;variable&quot;</span><span class="p">:</span> <span class="s2">&quot;currentEnergy&quot;</span>
+<span class="w">    </span><span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;currentEnergy&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -169,8 +165,8 @@ though, because its variable name acts as a unique identifier that is
 then used in logical conditions.</p>
 <p>The second StateTracker block is:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;variable&quot;</span><span class="p">:</span> <span class="s2">&quot;stepsSinceLastAccepted&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;logIt&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="w">    </span><span class="nt">&quot;variable&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stepsSinceLastAccepted&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;logIt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -190,8 +186,9 @@ logged unless you explicitly indicate otherwise.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">StateTracker types in Pele++ control file</a><ul>
 <li><a class="reference internal" href="#current-energy">Current energy</a></li>
 <li><a class="reference internal" href="#steps-since-last-accepted">Steps since last accepted</a></li>
@@ -205,12 +202,17 @@ logged unless you explicitly indicate otherwise.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="MetricTypes.html"
-                        title="previous chapter">Metrics block in Pele++ control file</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../JumpController/JumpController.html"
-                        title="next chapter">Jump Controller in Pele++ control file</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="MetricTypes.html"
+                          title="previous chapter">Metrics block in Pele++ control file</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../JumpController/JumpController.html"
+                          title="next chapter">Jump Controller in Pele++ control file</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -222,12 +224,12 @@ logged unless you explicitly indicate otherwise.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -253,7 +255,7 @@ logged unless you explicitly indicate otherwise.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

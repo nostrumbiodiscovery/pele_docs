@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>PeleSimulation block in PELE++ &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PELE output parameters in Pele++ control file" href="PeleOutput.html" />
@@ -55,16 +51,16 @@
           <div class="body" role="main">
             
   <section id="pelesimulation-block-in-pele">
-<span id="sec-pelesimulation"></span><h1>PeleSimulation block in PELE++<a class="headerlink" href="#pelesimulation-block-in-pele" title="Permalink to this headline">¶</a></h1>
+<span id="sec-pelesimulation"></span><h1>PeleSimulation block in PELE++<a class="headerlink" href="#pelesimulation-block-in-pele" title="Permalink to this heading">¶</a></h1>
 <section id="commandtype">
-<h2>commandType<a class="headerlink" href="#commandtype" title="Permalink to this headline">¶</a></h2>
+<h2>commandType<a class="headerlink" href="#commandtype" title="Permalink to this heading">¶</a></h2>
 <p>For a whole PELE simulation, it must be set to:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;commandType&quot;</span><span class="p">:</span> <span class="s2">&quot;peleSimulation&quot;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;commandType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;peleSimulation&quot;</span>
 </pre></div>
 </div>
 </section>
 <section id="algorithms">
-<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this heading">¶</a></h2>
 <p>Pele must have the following algorithms defined:
 <a class="reference internal" href="../Perturbation/Perturbation.html#sec-perturbation"><span class="std std-ref">Perturbation</span></a>,
 <a class="reference internal" href="../ANM/Anm.html#sec-anm"><span class="std std-ref">ANM</span></a>, <a class="reference internal" href="../SideChainPrediction/SideChainPrediction.html#sec-sidechainprediction"><span class="std std-ref">Side Chain
@@ -75,34 +71,34 @@ whole simulation, unless it is overriden in a task by defining a new
 one.</p>
 </section>
 <section id="randomgenerator">
-<h2>RandomGenerator<a class="headerlink" href="#randomgenerator" title="Permalink to this headline">¶</a></h2>
+<h2>RandomGenerator<a class="headerlink" href="#randomgenerator" title="Permalink to this heading">¶</a></h2>
 <p>For more information, check <a class="reference internal" href="../RandomGenerator/RandomGenerator.html#sec-randomgenerator"><span class="std std-ref">random generator</span></a>.</p>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;RandomGenerator&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;seed&quot;</span><span class="p">:</span> <span class="mi">100586</span>
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;RandomGenerator&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100586</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="selectiontoperturb">
-<h2>selectionToPerturb<a class="headerlink" href="#selectiontoperturb" title="Permalink to this headline">¶</a></h2>
+<h2>selectionToPerturb<a class="headerlink" href="#selectiontoperturb" title="Permalink to this heading">¶</a></h2>
 <p>Selects the ligands to be perturbed in the ligand perturbation. If no perturbation is performed (that is, the <code class="docutils literal notranslate"><span class="pre">Perturbation</span></code> block is empty), then the selection to perturb is empty for all purposes, and this parameter will be ignored.</p>
 <p>If the <code class="docutils literal notranslate"><span class="pre">Perturbation</span></code> block (<a class="reference internal" href="../Perturbation/Perturbation.html#sec-perturbation"><span class="std std-ref">Perturbation Block in Pele++ control file</span></a>) is non-empty (that is, perturbation is active), then you must provide this parameter, since it has no default value.</p>
 <p>The selection is done for whole chains.</p>
 <section id="id1">
-<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selectionToPerturb&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;L&quot;</span> <span class="p">]</span>
-    <span class="p">}</span>
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;selectionToPerturb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;L&quot;</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="perturbation-of-multiple-chains">
-<h3>Perturbation of multiple chains.<a class="headerlink" href="#perturbation-of-multiple-chains" title="Permalink to this headline">¶</a></h3>
+<h3>Perturbation of multiple chains.<a class="headerlink" href="#perturbation-of-multiple-chains" title="Permalink to this heading">¶</a></h3>
 <p>This feature does not have complete support in PELE (for example, you
 cannot use different options for different perturb chains; besides, the
 steering vector is shared between all perturb chains). By knowing which
@@ -128,31 +124,31 @@ perturb “M”, and so on.</p>
 </section>
 </section>
 <section id="nonbonding">
-<h2>NonBonding<a class="headerlink" href="#nonbonding" title="Permalink to this headline">¶</a></h2>
+<h2>NonBonding<a class="headerlink" href="#nonbonding" title="Permalink to this heading">¶</a></h2>
 <p>Configuration of the algorithm for non-bonding energy-related terms
 calculation.</p>
 <p>For more details see
 <a class="reference internal" href="../NonBonding/NonBondingAlgorithms.html#sec-nonbondingalgorithms"><span class="std std-ref">NonBonding</span></a>.</p>
 </section>
 <section id="pele-parameters">
-<h2>Pele_parameters<a class="headerlink" href="#pele-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Pele_parameters<a class="headerlink" href="#pele-parameters" title="Permalink to this heading">¶</a></h2>
 <p>Parameters used by the Pele algorithm. They can be defined at
 PeleSimulation or PeleTask level.</p>
 <p>For more details see <a class="reference internal" href="PeleParameters.html#sec-peleparameters"><span class="std std-ref">Pele Parameters</span></a>.</p>
 </section>
 <section id="pele-output">
-<h2>Pele_Output<a class="headerlink" href="#pele-output" title="Permalink to this headline">¶</a></h2>
+<h2>Pele_Output<a class="headerlink" href="#pele-output" title="Permalink to this heading">¶</a></h2>
 <p>Parameters related to the output files generated in the simulation. They
 must be defined at the PeleSimulation level.</p>
 <p>For more details see <a class="reference internal" href="PeleOutput.html#sec-peleoutput"><span class="std std-ref">Pele Output Parameters</span></a>.</p>
 </section>
 <section id="constraints">
-<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this heading">¶</a></h2>
 <p>Constraints applied in all minimizations during a Pele simulation. Check
 the <a class="reference internal" href="../PermanentConstraints/PermanentConstraints.html#sec-permanentconstraints"><span class="std std-ref">Constraints section</span></a>.</p>
 </section>
 <section id="peletasks">
-<h2>PeleTasks<a class="headerlink" href="#peletasks" title="Permalink to this headline">¶</a></h2>
+<h2>PeleTasks<a class="headerlink" href="#peletasks" title="Permalink to this heading">¶</a></h2>
 <p>Serie of tasks that Pele has to carry out before a command (and usually
 a simulation) is considered to be finished.</p>
 <p>For more information check the <a class="reference internal" href="PeleTasks.html#sec-peletasks"><span class="std std-ref">Pele Tasks section</span></a>.</p>
@@ -166,8 +162,9 @@ a simulation) is considered to be finished.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">PeleSimulation block in PELE++</a><ul>
 <li><a class="reference internal" href="#commandtype">commandType</a></li>
 <li><a class="reference internal" href="#algorithms">Algorithms</a></li>
@@ -189,12 +186,17 @@ a simulation) is considered to be finished.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="PELESimulation_index.html"
-                        title="previous chapter">PELESimulation command</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="PeleOutput.html"
-                        title="next chapter">PELE output parameters in Pele++ control file</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="PELESimulation_index.html"
+                          title="previous chapter">PELESimulation command</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="PeleOutput.html"
+                          title="next chapter">PELE output parameters in Pele++ control file</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -206,12 +208,12 @@ a simulation) is considered to be finished.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -236,7 +238,7 @@ a simulation) is considered to be finished.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

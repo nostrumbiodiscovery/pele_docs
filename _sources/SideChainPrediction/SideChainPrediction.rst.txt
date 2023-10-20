@@ -257,6 +257,19 @@ Plop info:
 -  Plop parameter name: -
 -  Plop default value: -
 
+
+skipGlobalMinimization
+^^^^^^^^^^^^^^^^^^^^^^
+
+Parameter: bool skipGlobalMinimization
+
+Use: Flag to activate or deactivate the final relaxation minimization performed at the end of a side chain prediction.
+
+Note for developers: Used in
+PeleStep::relax
+
+Default value: false
+
 .. _sec-sideChainPrediction-sideChainPredictionMinimizer:
 
 sideChainMinimizer
@@ -282,5 +295,5 @@ If this section is present, then this minimization is run at the end of each sid
 
 If the perturbation is active, also the perturbation constraints will be on (see :ref:`sec-peleParameters-perturbationCOMConstraintConstant`). The permanent constraints (:ref:`sec-permanentConstraints`) are also on.
 
-A final relaxation minimization is executed at the end of the side chain prediction phase in a PELE simulation, but this is configured in the ``"Minimizer"`` section of such command (see :ref:`sec-minimization`).
+By default, a final relaxation minimization is executed at the end of the side chain prediction phase in a PELE simulation, but this is configured in the ``"Minimizer"`` section of such command (see :ref:`sec-minimization`). This behaviour can be changed with the flag skipGlobalMinimization.
 

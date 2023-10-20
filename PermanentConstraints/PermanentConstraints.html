@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Permanent constraints in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Sensors Block in Pele++ control file" href="../Sensors/Sensors.html" />
@@ -55,7 +51,7 @@
           <div class="body" role="main">
             
   <section id="permanent-constraints-in-pele-control-file">
-<span id="sec-permanentconstraints"></span><h1>Permanent constraints in Pele++ control file<a class="headerlink" href="#permanent-constraints-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
+<span id="sec-permanentconstraints"></span><h1>Permanent constraints in Pele++ control file<a class="headerlink" href="#permanent-constraints-in-pele-control-file" title="Permalink to this heading">¶</a></h1>
 <p>Constraints are applied in all minimizations during a Pele simulation. A
 constraints list is specified within an array (a “[ ]” delimited block)
 called “constraints”, where each element of the array is a constraint’s
@@ -103,17 +99,17 @@ constraints. The following snippet shows how to include them:</p>
 </div>
 <p>Below are examples of specific contraint’s configuration</p>
 <section id="constraint-types">
-<h2>Constraint types<a class="headerlink" href="#constraint-types" title="Permalink to this headline">¶</a></h2>
+<h2>Constraint types<a class="headerlink" href="#constraint-types" title="Permalink to this heading">¶</a></h2>
 <section id="harmonic-constraint-on-atom">
-<h3>Harmonic constraint on atom<a class="headerlink" href="#harmonic-constraint-on-atom" title="Permalink to this headline">¶</a></h3>
+<h3>Harmonic constraint on atom<a class="headerlink" href="#harmonic-constraint-on-atom" title="Permalink to this heading">¶</a></h3>
 <p>It’s a harmonic constraint on an Atom using a target position</p>
 <p>Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;constrainAtomToPosition&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;springConstant&quot;</span><span class="p">:</span> <span class="mf">2.2</span><span class="p">,</span>
-    <span class="nt">&quot;equilibriumDistance&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span>
-    <span class="nt">&quot;constrainThisAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_CB_&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;toThisPoint&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.3</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">]</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;constrainAtomToPosition&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;springConstant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;equilibriumDistance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;constrainThisAtom&quot;</span><span class="p">:</span><span class="w">  </span><span class="s2">&quot;A:1:_CB_&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;toThisPoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">3.3</span><span class="p">,</span><span class="w"> </span><span class="mf">2.2</span><span class="p">,</span><span class="w"> </span><span class="mf">1.1</span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -121,34 +117,34 @@ constraints. The following snippet shows how to include them:</p>
 will constrain the atom to its original position</p>
 </section>
 <section id="harmonic-constraint-on-distance">
-<h3>Harmonic constraint on distance<a class="headerlink" href="#harmonic-constraint-on-distance" title="Permalink to this headline">¶</a></h3>
+<h3>Harmonic constraint on distance<a class="headerlink" href="#harmonic-constraint-on-distance" title="Permalink to this heading">¶</a></h3>
 <p>It’s a harmonic constraint on the distance between two Atoms</p>
 <p>Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;constrainAtomsDistance&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;springConstant&quot;</span><span class="p">:</span> <span class="mf">2.2</span><span class="p">,</span>
-    <span class="nt">&quot;equilibriumDistance&quot;</span><span class="p">:</span> <span class="mf">3.3</span><span class="p">,</span>
-    <span class="nt">&quot;constrainThisAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_CB_&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;toThisOtherAtom&quot;</span><span class="p">:</span> <span class="s2">&quot;A:2:_CA_&quot;</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;constrainAtomsDistance&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;springConstant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;equilibriumDistance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;constrainThisAtom&quot;</span><span class="p">:</span><span class="w">  </span><span class="s2">&quot;A:1:_CB_&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;toThisOtherAtom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A:2:_CA_&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="harmonic-constraint-on-distance-to-center-of-masses">
-<h3>Harmonic constraint on distance to center of masses<a class="headerlink" href="#harmonic-constraint-on-distance-to-center-of-masses" title="Permalink to this headline">¶</a></h3>
+<h3>Harmonic constraint on distance to center of masses<a class="headerlink" href="#harmonic-constraint-on-distance-to-center-of-masses" title="Permalink to this heading">¶</a></h3>
 <p>It’s a harmonic constraint on the distance between an Atom and the
 center of masses of a group of Atoms</p>
 <p>Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;constrainDistanceToCOM&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;springConstant&quot;</span><span class="p">:</span> <span class="mf">2.2</span><span class="p">,</span>
-    <span class="nt">&quot;equilibriumDistance&quot;</span><span class="p">:</span> <span class="mf">3.3</span><span class="p">,</span>
-    <span class="nt">&quot;constrainThisAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_CB_&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;toCenterOfMassesOf&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;B&quot;</span> <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;constrainDistanceToCOM&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;springConstant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;equilibriumDistance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;constrainThisAtom&quot;</span><span class="p">:</span><span class="w">  </span><span class="s2">&quot;A:1:_CB_&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;toCenterOfMassesOf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;B&quot;</span><span class="w"> </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -156,17 +152,17 @@ center of masses of a group of Atoms</p>
 <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>.</p>
 </section>
 <section id="harmonic-constraint-on-dihedral">
-<h3>Harmonic constraint on Dihedral<a class="headerlink" href="#harmonic-constraint-on-dihedral" title="Permalink to this headline">¶</a></h3>
+<h3>Harmonic constraint on Dihedral<a class="headerlink" href="#harmonic-constraint-on-dihedral" title="Permalink to this heading">¶</a></h3>
 <p>It’s a harmonic constraint on a selected dihedral.</p>
 <p>Example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;constrainAtomsToDihedral&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;springConstant&quot;</span><span class="p">:</span> <span class="mf">2.2</span><span class="p">,</span>
-    <span class="nt">&quot;equilibriumAngle&quot;</span><span class="p">:</span> <span class="mf">3.3</span><span class="p">,</span>
-    <span class="nt">&quot;firstAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_C1_&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;secondAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_C2_&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;thirdAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_C3_&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;fourthAtom&quot;</span><span class="p">:</span>  <span class="s2">&quot;A:1:_C4_&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;constrainAtomsToDihedral&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;springConstant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;equilibriumAngle&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;firstAtom&quot;</span><span class="p">:</span><span class="w">  </span><span class="s2">&quot;A:1:_C1_&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;secondAtom&quot;</span><span class="p">:</span><span class="w">  </span><span class="s2">&quot;A:1:_C2_&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;thirdAtom&quot;</span><span class="p">:</span><span class="w">  </span><span class="s2">&quot;A:1:_C3_&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fourthAtom&quot;</span><span class="p">:</span><span class="w">  </span><span class="s2">&quot;A:1:_C4_&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -182,8 +178,9 @@ center of masses of a group of Atoms</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Permanent constraints in Pele++ control file</a><ul>
 <li><a class="reference internal" href="#constraint-types">Constraint types</a><ul>
 <li><a class="reference internal" href="#harmonic-constraint-on-atom">Harmonic constraint on atom</a></li>
@@ -196,12 +193,17 @@ center of masses of a group of Atoms</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../Minimization/Minimization.html"
-                        title="previous chapter">Minimization in Pele++ control file</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../Sensors/Sensors.html"
-                        title="next chapter">Sensors Block in Pele++ control file</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../Minimization/Minimization.html"
+                          title="previous chapter">Minimization in Pele++ control file</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../Sensors/Sensors.html"
+                          title="next chapter">Sensors Block in Pele++ control file</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -213,12 +215,12 @@ center of masses of a group of Atoms</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -243,7 +245,7 @@ center of masses of a group of Atoms</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

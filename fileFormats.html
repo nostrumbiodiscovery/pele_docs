@@ -1,19 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>PELE File Formats &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=217710be"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -54,15 +51,15 @@
           <div class="body" role="main">
             
   <section id="pele-file-formats">
-<span id="sec-fileformats"></span><h1>PELE File Formats<a class="headerlink" href="#pele-file-formats" title="Permalink to this headline">¶</a></h1>
+<span id="sec-fileformats"></span><h1>PELE File Formats<a class="headerlink" href="#pele-file-formats" title="Permalink to this heading">¶</a></h1>
 <section id="impact-template-file-format">
-<span id="sec-fileformats-impact"></span><h2>IMPACT template file format<a class="headerlink" href="#impact-template-file-format" title="Permalink to this headline">¶</a></h2>
+<span id="sec-fileformats-impact"></span><h2>IMPACT template file format<a class="headerlink" href="#impact-template-file-format" title="Permalink to this heading">¶</a></h2>
 <p>This is one of the two file formats used for templates of chemical entities, and it corresponds to residue units. The other format, the <em>PELE Custom Template Format</em> is used for description of inter-residue parameters, such as disulfide bonds, peptide bonds, etc.</p>
 <p>This format originates in the IMPACT (<a class="reference internal" href="references.html#banks-2005" id="id1"><span>[banks:2005]</span></a>) software template file format.</p>
 <p>It follows a FORTRAN-like fixed columns style.</p>
 <p>For the application of these parameters in the energy function, check <a class="reference internal" href="theory/energyFunction.html#sec-energyfunction"><span class="std std-ref">Energy Function</span></a>.</p>
 <section id="file-name">
-<h3>File name<a class="headerlink" href="#file-name" title="Permalink to this headline">¶</a></h3>
+<h3>File name<a class="headerlink" href="#file-name" title="Permalink to this heading">¶</a></h3>
 <p>It corresponds to the residue 3-letter code, without spaces (for example, the template for calcium, <cite>CA_</cite>, the space is represented as an underscore, would be represented by file <code class="file docutils literal notranslate"><span class="pre">caz</span></code>, where the <cite>z</cite> is for saying it corresponds to an isolated residue).</p>
 <p>It may have an additional qualifying character, depending on its position in a chain:</p>
 <ul class="simple">
@@ -73,15 +70,15 @@
 </ul>
 </section>
 <section id="force-field">
-<h3>Force field<a class="headerlink" href="#force-field" title="Permalink to this headline">¶</a></h3>
+<h3>Force field<a class="headerlink" href="#force-field" title="Permalink to this heading">¶</a></h3>
 <p>Each template includes the parameters to work with a given residue in the specified template, which is one of those allowed by PELE.</p>
 </section>
 <section id="comments">
-<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this heading">¶</a></h3>
 <p>Lines with an asterisk (<cite>*</cite>) as the first character are considered comments and are ignored during processing.</p>
 </section>
 <section id="tags">
-<h3>Tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h3>
+<h3>Tags<a class="headerlink" href="#tags" title="Permalink to this heading">¶</a></h3>
 <p>The file is structured in several sections, each starting with a 4-character tag. All files have all the sections (even if empty) and the RESX section must be the first one:</p>
 <ul class="simple">
 <li><p>RESX (atom specification).</p></li>
@@ -94,7 +91,7 @@
 </ul>
 </section>
 <section id="header">
-<h3>Header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h3>
+<h3>Header<a class="headerlink" href="#header" title="Permalink to this heading">¶</a></h3>
 <p>It is a comment describing the file. Currently ignored.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>* LIGAND DATABASE FILE (OPLS2001)
 *
@@ -102,7 +99,7 @@
 </div>
 </section>
 <section id="resx">
-<h3>RESX<a class="headerlink" href="#resx" title="Permalink to this headline">¶</a></h3>
+<h3>RESX<a class="headerlink" href="#resx" title="Permalink to this heading">¶</a></h3>
 <p>It must appear as the first section in the file. Examples:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>LYS      22    21     38     51     110
 LYSB     24    23     43     57     123
@@ -191,7 +188,7 @@ Line:    0
 </div>
 </section>
 <section id="nbon">
-<h3>NBON<a class="headerlink" href="#nbon" title="Permalink to this headline">¶</a></h3>
+<h3>NBON<a class="headerlink" href="#nbon" title="Permalink to this heading">¶</a></h3>
 <p>This section stores the non-bonded parameters (van der Waals and electrostatic). Original OPLS parameters are in <a class="reference internal" href="references.html#jorgensen-1996" id="id2"><span>[jorgensen:1996]</span></a> (supplementary material).</p>
 <p>See <a class="reference internal" href="theory/energyFunction.html#sec-energyfunction-molecularmechanicsenergyterms"><span class="std std-ref">The Molecular Mechanics energy terms</span></a> for details on the meaning of the parameters.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>int(5) + &#39; &#39; + real(3.4) + &#39; &#39; + real(3.4) + &#39; &#39; + real(3.6) + &#39; &#39; + real(3.4) + &#39; &#39; + real(3.4) + &#39; &#39; + real(3.9) + &#39; &#39; + real(3.9)
@@ -215,7 +212,7 @@ Line:    0
 <p>The fourth parameter (charge) may be a real(3.6). This exception is easily found because the line has a length of 80 characters instead of 78.</p>
 </section>
 <section id="bond">
-<h3>BOND<a class="headerlink" href="#bond" title="Permalink to this headline">¶</a></h3>
+<h3>BOND<a class="headerlink" href="#bond" title="Permalink to this heading">¶</a></h3>
 <p>This section stores the parameters for atomic bonding (1-2 interactions).</p>
 <div class="math notranslate nohighlight">
 \[E_{\text{bond}} = \sum_{\text{bonds}} K_{r}(r - r_{\text{eq}})^{2}\]</div>
@@ -234,7 +231,7 @@ Line:    0
 </div>
 </section>
 <section id="thet">
-<h3>THET<a class="headerlink" href="#thet" title="Permalink to this headline">¶</a></h3>
+<h3>THET<a class="headerlink" href="#thet" title="Permalink to this heading">¶</a></h3>
 <p>This section stores the parameters for angles formed by 3 atoms (1-3 interactions).</p>
 <div class="math notranslate nohighlight">
 \[E_{\text{angle}} = \sum_{\text{angles}} K_{\theta} (\theta - \theta_{\text{eq}})^{2}\]</div>
@@ -256,7 +253,7 @@ Line:    0
 <p>Notice that the same angle ABC is actually defined whether atom 1 is A, atom 2 is B and atom 3 is C, than in reverse order, with atom 1 being C, atom 2 being B, and atom 3 being A.</p>
 </section>
 <section id="phi">
-<h3>PHI<a class="headerlink" href="#phi" title="Permalink to this headline">¶</a></h3>
+<h3>PHI<a class="headerlink" href="#phi" title="Permalink to this heading">¶</a></h3>
 <p>This section stores the parameters for dihedral angles formed by 4 atoms (1-4 interactions). Since it may have several terms, each line stores the values for one of the terms.</p>
 <div class="math notranslate nohighlight">
 \[E_{\text{torsion}} = \sum_{\text{angle}\, i} \sum_{j} {k_{j,1}^{i}[1 + k_{j,2} \cos (n_{j}\phi_{i})]}\]</div>
@@ -281,16 +278,16 @@ Line:    0
 <p>Notice that the same dihedral is defined either by atoms ABCD or atoms DCBA.</p>
 </section>
 <section id="iphi">
-<h3>IPHI<a class="headerlink" href="#iphi" title="Permalink to this headline">¶</a></h3>
+<h3>IPHI<a class="headerlink" href="#iphi" title="Permalink to this heading">¶</a></h3>
 <p>For improper dihedral angles. Just the same format as for the dihedrals (see PHI tag).</p>
 </section>
 <section id="end">
-<h3>END<a class="headerlink" href="#end" title="Permalink to this headline">¶</a></h3>
+<h3>END<a class="headerlink" href="#end" title="Permalink to this heading">¶</a></h3>
 <p>This is the final tag. Nothing will be read past this tag.</p>
 </section>
 </section>
 <section id="pele-custom-template-file-format">
-<span id="sec-fileformats-pelecustom"></span><h2>PELE custom template file format<a class="headerlink" href="#pele-custom-template-file-format" title="Permalink to this headline">¶</a></h2>
+<span id="sec-fileformats-pelecustom"></span><h2>PELE custom template file format<a class="headerlink" href="#pele-custom-template-file-format" title="Permalink to this heading">¶</a></h2>
 <p>This is the other file format used for templates of chemical entities, and corresponds to the description of inter-residue parameters, such as disulfide bonds, peptide bonds or bonds between nucleic acids. Notice that the parameters provided in these files apply to the same energy terms as those parameters in the IMPACT template files.</p>
 <p>The parameters for bonds, angles and dihedrals between atoms in different links or units appear in files using this format. These files are:</p>
 <ul class="simple">
@@ -345,7 +342,7 @@ ITOR   CA *  C     N  *  CD *  1.0000 -1.0 2  #??????? or (1)
 </pre></div>
 </div>
 <section id="name">
-<h3>NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h3>
+<h3>NAME<a class="headerlink" href="#name" title="Permalink to this heading">¶</a></h3>
 <p>There should be a single record of this type. It includes a single element, which is the name of the template, and should match one of these:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">PEPTIDE_BOND</span></code></p></li>
@@ -358,7 +355,7 @@ ITOR   CA *  C     N  *  CD *  1.0000 -1.0 2  #??????? or (1)
 </div>
 </section>
 <section id="atoid">
-<h3>ATOID<a class="headerlink" href="#atoid" title="Permalink to this headline">¶</a></h3>
+<h3>ATOID<a class="headerlink" href="#atoid" title="Permalink to this heading">¶</a></h3>
 <p>This record enumerates the atoms considered in the template.</p>
 <p>The format of this record is:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&quot;ATOID &quot; + int(2) + char(5)
@@ -375,7 +372,7 @@ ITOR   CA *  C     N  *  CD *  1.0000 -1.0 2  #??????? or (1)
 </div>
 </section>
 <section id="id7">
-<h3>BOND<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<h3>BOND<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h3>
 <p>This record identifies the bonds formed between atoms in the template.</p>
 <p>The format of this record is:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&quot;BOND  &quot; + char(5) + &#39; &#39; + char(5) + &#39; &#39; + real(7) + &#39; &#39; + real(7)
@@ -394,7 +391,7 @@ ITOR   CA *  C     N  *  CD *  1.0000 -1.0 2  #??????? or (1)
 </div>
 </section>
 <section id="angl">
-<h3>ANGL<a class="headerlink" href="#angl" title="Permalink to this headline">¶</a></h3>
+<h3>ANGL<a class="headerlink" href="#angl" title="Permalink to this heading">¶</a></h3>
 <p>This records identifies the angles formed between three atoms in the template.</p>
 <p>The format of this record is:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&quot;ANGL  &quot; + char(5) + &#39; &#39; + char(5) + &#39; &#39; + char(5) + &#39; &#39; + real(7) + &#39; &#39; + real(7)
@@ -414,7 +411,7 @@ ITOR   CA *  C     N  *  CD *  1.0000 -1.0 2  #??????? or (1)
 </div>
 </section>
 <section id="tors">
-<h3>TORS<a class="headerlink" href="#tors" title="Permalink to this headline">¶</a></h3>
+<h3>TORS<a class="headerlink" href="#tors" title="Permalink to this heading">¶</a></h3>
 <p>This record identifies the dihedral angles formed between four atoms in the template.</p>
 <p>The format of this record is:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&quot;TORS  &quot; + char(5) + &#39; &#39; + char(5) + &#39; &#39; + char(5) + &#39; &#39; + char(5) + &#39; &#39; + real() + &#39; &#39; + real() + &#39; &#39; + int()
@@ -438,7 +435,7 @@ ITOR   CA *  C     N  *  CD *  1.0000 -1.0 2  #??????? or (1)
 </div>
 </section>
 <section id="itor">
-<h3>ITOR<a class="headerlink" href="#itor" title="Permalink to this headline">¶</a></h3>
+<h3>ITOR<a class="headerlink" href="#itor" title="Permalink to this heading">¶</a></h3>
 <p>For improper dihedral angles. Just the same format as for the dihedrals, except the ITOR label is used to identify these records.</p>
 <p>Example:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Line:ITOR   CA    N  *  C     O     10.500 -1.0 2
@@ -447,7 +444,7 @@ ITOR   CA *  C     N  *  CD *  1.0000 -1.0 2  #??????? or (1)
 </section>
 </section>
 <section id="non-ligand-rotamer-library-file">
-<span id="sec-fileformats-nonligandrotamers"></span><h2>Non-ligand rotamer library file<a class="headerlink" href="#non-ligand-rotamer-library-file" title="Permalink to this headline">¶</a></h2>
+<span id="sec-fileformats-nonligandrotamers"></span><h2>Non-ligand rotamer library file<a class="headerlink" href="#non-ligand-rotamer-library-file" title="Permalink to this heading">¶</a></h2>
 <p>A rotamer library file lists rotamers for a given link side chain. Notice that this format only allows for single side chain links, differently from what can happen with a ligand link.</p>
 <p>These files are stored in directory <code class="file docutils literal notranslate"><span class="pre">Data/RotamerLibs/</span></code>, and each rotamer library file has the uppercase name of the residue, followed by the suffix <cite>.side</cite>. For example, the aspartic acid rotamer library file is <code class="file docutils literal notranslate"><span class="pre">Data/RotamerLibs/ASP.side</span></code>. Notice the existence of special rotamer libraries that start with <cite>FRE</cite>; these represent all possible angle values for a given resolution and for a single dihedral. More information about these files at the end of this section.</p>
 <p>An example file:</p>
@@ -504,7 +501,7 @@ _OD1
 </pre></div>
 </div>
 <section id="id8">
-<h3>Header<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<h3>Header<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h3>
 <p>The first line is the header. It has several fields separated by blanks. The fields are, in order:</p>
 <ul class="simple">
 <li><p>A star (‘*’) character.</p></li>
@@ -516,11 +513,11 @@ _OD1
 </ul>
 </section>
 <section id="atom-names">
-<h3>Atom names<a class="headerlink" href="#atom-names" title="Permalink to this headline">¶</a></h3>
+<h3>Atom names<a class="headerlink" href="#atom-names" title="Permalink to this heading">¶</a></h3>
 <p>After the header line, appear all atoms to apply the rotamer angles. For all dihedral angles of the side chain (chi1, chi2, etc.), being A-B-C-D the atoms defining that dihedral (see the Gold Book entry for torsion angle: <a class="reference external" href="http://goldbook.iupac.org/T06406.html">http://goldbook.iupac.org/T06406.html</a>), it is the D atoms those that appear in this list. The names correspond to the PELE convention, and have spaces substituted by underscore characters.</p>
 </section>
 <section id="polar-line">
-<h3>Polar line<a class="headerlink" href="#polar-line" title="Permalink to this headline">¶</a></h3>
+<h3>Polar line<a class="headerlink" href="#polar-line" title="Permalink to this heading">¶</a></h3>
 <p>If the link’s side chain has a polar part, then it follows this line, with the next items (separated by blanks):</p>
 <ul class="simple">
 <li><p>The <cite>POLARH</cite> string.</p></li>
@@ -549,12 +546,12 @@ _OD1
 </ul>
 </section>
 <section id="non-polar-rotamers">
-<h3>Non polar rotamers<a class="headerlink" href="#non-polar-rotamers" title="Permalink to this headline">¶</a></h3>
+<h3>Non polar rotamers<a class="headerlink" href="#non-polar-rotamers" title="Permalink to this heading">¶</a></h3>
 <p>One line per rotamer; exactly the same number as the number of rotamers stated in the header. Each line consists of rotamer angle values (as many as the number of angles defined in the rotamer), with each value in a 4-character field, right justified.</p>
 <p>Each rotamer angle value is stored as an integer factor of the rotamer library resolution.</p>
 </section>
 <section id="free-rotamer-libraries">
-<h3>Free rotamer libraries<a class="headerlink" href="#free-rotamer-libraries" title="Permalink to this headline">¶</a></h3>
+<h3>Free rotamer libraries<a class="headerlink" href="#free-rotamer-libraries" title="Permalink to this heading">¶</a></h3>
 <p>The allowed full-sampling rotamers for a single dihedral are stored in the following files:</p>
 <ul class="simple">
 <li><p><code class="file docutils literal notranslate"><span class="pre">FREE_5.side</span></code></p></li>
@@ -584,7 +581,7 @@ ATM1
 </section>
 </section>
 <section id="ligand-rotamer-library-file">
-<span id="sec-fileformats-ligandrotamers"></span><h2>Ligand rotamer library file<a class="headerlink" href="#ligand-rotamer-library-file" title="Permalink to this headline">¶</a></h2>
+<span id="sec-fileformats-ligandrotamers"></span><h2>Ligand rotamer library file<a class="headerlink" href="#ligand-rotamer-library-file" title="Permalink to this heading">¶</a></h2>
 <p>Ligand rotamer library files are under <code class="file docutils literal notranslate"><span class="pre">Data/LigandRotamerLibs/</span></code>, and are named as the link name in uppercase, plus the suffix <cite>.rot.assign</cite>. For example, benzamidine ligand rotamer library file is <code class="file docutils literal notranslate"><span class="pre">Data/ligandRotamerLibs/BEN.rot.assign</span></code>.</p>
 <p>All lines must end with an ampersand character (<cite>&amp;</cite>), and blank lines (which cannot be the first one) are ignored.</p>
 <p>This is an example for one ligand:</p>
@@ -599,7 +596,7 @@ ATM1
 </pre></div>
 </div>
 <section id="id9">
-<h3>Header<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3>Header<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h3>
 <p>This line, which must be the first one, is ignored. It has the format:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>rot assign res BEN &amp;
 </pre></div>
@@ -607,7 +604,7 @@ ATM1
 <p>which basically means: <em>assign the following rotameric information to residue BEN</em>.</p>
 </section>
 <section id="group-definition">
-<h3>Group definition<a class="headerlink" href="#group-definition" title="Permalink to this headline">¶</a></h3>
+<h3>Group definition<a class="headerlink" href="#group-definition" title="Permalink to this heading">¶</a></h3>
 <p>Each side chain is defined in a group definition block. The first side chain does not need any keyword to mark the group. All the following side chains must begin with the <cite>newgrp</cite> keyword, as this:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>newgrp &amp;
 </pre></div>
@@ -649,7 +646,7 @@ sidelib FREE10 _C22 _O5_ &amp;
 </section>
 </section>
 <section id="conformation-library-file">
-<span id="sec-fileformats-conformationlibrary"></span><h2>Conformation library file<a class="headerlink" href="#conformation-library-file" title="Permalink to this headline">¶</a></h2>
+<span id="sec-fileformats-conformationlibrary"></span><h2>Conformation library file<a class="headerlink" href="#conformation-library-file" title="Permalink to this heading">¶</a></h2>
 <p>Conformation library files are under Data/Conformations, and are named as the link name
 in uppercase, plus the suffix <cite>.conformation</cite>. For example, a theoretical
 conformation library file for benzamidine would be <code class="file docutils literal notranslate"><span class="pre">Data/Conformations/BEN.conformation</span></code>.</p>
@@ -678,7 +675,7 @@ END
 </pre></div>
 </div>
 <section id="global-header">
-<h3>Global header<a class="headerlink" href="#global-header" title="Permalink to this headline">¶</a></h3>
+<h3>Global header<a class="headerlink" href="#global-header" title="Permalink to this heading">¶</a></h3>
 <p>The global header is composed of two lines, which start with a  <cite>*</cite>, meaning
 that the lines do not contain conformation information. The first line
 indicates that the file is a conformation library, while the second line
@@ -690,7 +687,7 @@ global header has the following format:</p>
 </div>
 </section>
 <section id="collection-header">
-<h3>Collection header<a class="headerlink" href="#collection-header" title="Permalink to this headline">¶</a></h3>
+<h3>Collection header<a class="headerlink" href="#collection-header" title="Permalink to this heading">¶</a></h3>
 <p>After the global header there are one or more collections, composed by
 a collection header, body and end tag. The collection header consists of two
 lines. The first line starts with a <cite>*</cite> and contains the path to the pdb file
@@ -704,7 +701,7 @@ LIG 4 2
 </div>
 </section>
 <section id="collection-body">
-<h3>Collection body<a class="headerlink" href="#collection-body" title="Permalink to this headline">¶</a></h3>
+<h3>Collection body<a class="headerlink" href="#collection-body" title="Permalink to this heading">¶</a></h3>
 <p>The collection body contains the atom coordinates, one per line. Each line
 contains four space separated fields. The first corresponds to the PDB atom
 names of the atom, with spaces indicated by underscores. The three remaining
@@ -714,7 +711,7 @@ values are the coordinates. An example of an atom line can be found below:</p>
 </div>
 </section>
 <section id="collection-end">
-<h3>Collection end<a class="headerlink" href="#collection-end" title="Permalink to this headline">¶</a></h3>
+<h3>Collection end<a class="headerlink" href="#collection-end" title="Permalink to this heading">¶</a></h3>
 <p>After all the atoms coordinates have been specified, the collection is terminated
 by the use of <cite>ENDCONFORMATION</cite> tag, as shown below:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ENDCONFORMATION
@@ -722,7 +719,7 @@ by the use of <cite>ENDCONFORMATION</cite> tag, as shown below:</p>
 </div>
 </section>
 <section id="global-end">
-<h3>Global end<a class="headerlink" href="#global-end" title="Permalink to this headline">¶</a></h3>
+<h3>Global end<a class="headerlink" href="#global-end" title="Permalink to this heading">¶</a></h3>
 <p>After a <cite>ENDCONFORMATION</cite> there can be a collection header for a new collection,
 or and <cite>END</cite> tag. This tag marks the end of the conformation library, as shown
 below:</p>
@@ -732,7 +729,7 @@ below:</p>
 </section>
 </section>
 <section id="elements-parameters-file">
-<h2>Elements Parameters file<a class="headerlink" href="#elements-parameters-file" title="Permalink to this headline">¶</a></h2>
+<h2>Elements Parameters file<a class="headerlink" href="#elements-parameters-file" title="Permalink to this heading">¶</a></h2>
 <p>This file is <code class="file docutils literal notranslate"><span class="pre">Data/Atoms/elements_parameters.txt</span></code>.</p>
 <p>It has a line per chemical element. Each line contains 3 fields, separated by spaces:</p>
 <ul class="simple">
@@ -754,12 +751,12 @@ F    9   19.00
 </div>
 </section>
 <section id="solvent-parameters-for-sgb">
-<span id="sec-fileformats-sgb"></span><h2>Solvent parameters for SGB<a class="headerlink" href="#solvent-parameters-for-sgb" title="Permalink to this headline">¶</a></h2>
+<span id="sec-fileformats-sgb"></span><h2>Solvent parameters for SGB<a class="headerlink" href="#solvent-parameters-for-sgb" title="Permalink to this heading">¶</a></h2>
 <p>See file <code class="file docutils literal notranslate"><span class="pre">Data/SGB/solventParamsList.txt</span></code>.</p>
 <p>This file is simply a summary of the parameters used, and is not actually read by PELE. Instead, the parameters set in the NBON section of the IMPACT templates (<a class="reference internal" href="#sec-fileformats-impact"><span class="std std-ref">IMPACT template file format</span></a>), are used.</p>
 </section>
 <section id="solvent-penalty-terms">
-<span id="sec-fileformats-solventpenalties"></span><h2>Solvent penalty terms<a class="headerlink" href="#solvent-penalty-terms" title="Permalink to this headline">¶</a></h2>
+<span id="sec-fileformats-solventpenalties"></span><h2>Solvent penalty terms<a class="headerlink" href="#solvent-penalty-terms" title="Permalink to this heading">¶</a></h2>
 <p>See file <code class="file docutils literal notranslate"><span class="pre">Data/SGB/penaltyTerms</span></code>.</p>
 <p>First line of the file shows the number of atom pairs to apply the penalty term.</p>
 <p>Then, for each line, there are 9 fields:</p>
@@ -776,7 +773,7 @@ F    9   19.00
 </ul>
 </section>
 <section id="normal-modes-file-format-nmd">
-<span id="sec-fileformats-nmd"></span><h2>Normal modes file format (NMD)<a class="headerlink" href="#normal-modes-file-format-nmd" title="Permalink to this headline">¶</a></h2>
+<span id="sec-fileformats-nmd"></span><h2>Normal modes file format (NMD)<a class="headerlink" href="#normal-modes-file-format-nmd" title="Permalink to this heading">¶</a></h2>
 <p>This file is used to enter pre-calculated normal modes (whether ANM modes, or PCA modes, or modes from any other model that fit into the ANM pahse of a PELE simulation, see <a class="reference internal" href="ANM/Anm.html#sec-anm"><span class="std std-ref">ANM Block in Pele++ control file</span></a>).</p>
 <p>The input file must be in NMD format, like the files produced by ProDy: <a class="reference external" href="http://prody.csb.pitt.edu/manual/reference/dynamics/nmdfile.html">http://prody.csb.pitt.edu/manual/reference/dynamics/nmdfile.html</a>. This format has been slightly restricted in the way that, for each mode line, you must provide a scaling factor, and this factor is the square root of the eigenvalue (PELE will compute the actual eigenvalue from this).</p>
 <p>For PELE, the following lines in the NMD file are compulsory:</p>
@@ -789,7 +786,7 @@ F    9   19.00
 <li><p>mode: multiple lines, containing the normal modes to apply. These lines may contain an initial integer value as the normal mode index. Then, after the optional index, and before the actual normal mode vectorial components, comes the square root of the eigenvalue corresponding to that normal mode.</p></li>
 </ul>
 <section id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
 <p>The following NMD file contains the normal modes for a hexapeptide. Exact coordinate values are irrelevant, except for the actual number of coordinates, that determine the number of atoms to consider in the normal mode model. All <code class="docutils literal notranslate"><span class="pre">mode</span></code> lines start with the square root of the eigenvalue for that normal mode, and then are followed by the normal mode vector coordinates. Notice that lines <code class="docutils literal notranslate"><span class="pre">nmwiz_load</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> are ignored.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nmwiz_load non_sense_text
 name irrelevant
@@ -817,8 +814,9 @@ mode 1.07997 0.263504 0.13792 0.602361 -0.0294801 -0.00625519 -0.292769 -0.09638
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">PELE File Formats</a><ul>
 <li><a class="reference internal" href="#impact-template-file-format">IMPACT template file format</a><ul>
 <li><a class="reference internal" href="#file-name">File name</a></li>
@@ -876,12 +874,17 @@ mode 1.07997 0.263504 0.13792 0.602361 -0.0294801 -0.00625519 -0.292769 -0.09638
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="realTimeControl.html"
-                        title="previous chapter">Real Time Control of PELE simulations (experimental)</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="defaultParameters.html"
-                        title="next chapter">PELE default parameters</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="realTimeControl.html"
+                          title="previous chapter">Real Time Control of PELE simulations (experimental)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="defaultParameters.html"
+                          title="next chapter">PELE default parameters</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -893,12 +896,12 @@ mode 1.07997 0.263504 0.13792 0.602361 -0.0294801 -0.00625519 -0.292769 -0.09638
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -922,7 +925,7 @@ mode 1.07997 0.263504 0.13792 0.602361 -0.0294801 -0.00625519 -0.292769 -0.09638
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="index.html#license">License</a>.
     </div>
   </body>

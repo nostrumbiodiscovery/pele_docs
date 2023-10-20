@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>MgluR5: Pose Prediction on GPCRs &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=217710be"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Progesteron Receptor" href="../PRNHR/PR.html" />
@@ -54,7 +50,7 @@
           <div class="body" role="main">
             
   <section id="mglur5-pose-prediction-on-gpcrs">
-<h1>MgluR5: Pose Prediction on GPCRs<a class="headerlink" href="#mglur5-pose-prediction-on-gpcrs" title="Permalink to this headline">¶</a></h1>
+<h1>MgluR5: Pose Prediction on GPCRs<a class="headerlink" href="#mglur5-pose-prediction-on-gpcrs" title="Permalink to this heading">¶</a></h1>
 <p>Metabotropic glutamate receptors (mGluRs) are high-profile G-protein coupled receptors drug targets because of their involvement in several neurological disease states, and mGluR5 in particular is a subtype whose controlled allosteric modulation, both positive and negative, can potentially be useful for the treatment of schizophrenia and relief of chronic pain, respectively.</p>
 <figure class="align-center" id="id1">
 <img alt="../../_images/system1.png" src="../../_images/system1.png" />
@@ -63,21 +59,21 @@
 </figcaption>
 </figure>
 <section id="objective">
-<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this heading">¶</a></h2>
 <p>The aim of this project is to find the binding pose of MgluR5 complexed with a benzonitrile NAM.</p>
 </section>
 <section id="preparation">
-<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this heading">¶</a></h2>
 <p>To start the simulation we need complex.pdb and input.yaml</p>
 <section id="receptor">
-<h3>Receptor<a class="headerlink" href="#receptor" title="Permalink to this headline">¶</a></h3>
+<h3>Receptor<a class="headerlink" href="#receptor" title="Permalink to this heading">¶</a></h3>
 <p>PDB: 5cgc. The holo structure with the ligand crystal at the entrance of the GPCR was processed with Protein Preparation Wizard at pH 7.4 (Schrodinger).</p>
 </section>
 </section>
 <section id="procedure-adaptivepele-local-exploration">
-<h2>Procedure: AdaptivePELE Local Exploration<a class="headerlink" href="#procedure-adaptivepele-local-exploration" title="Permalink to this headline">¶</a></h2>
+<h2>Procedure: AdaptivePELE Local Exploration<a class="headerlink" href="#procedure-adaptivepele-local-exploration" title="Permalink to this heading">¶</a></h2>
 <section id="main-charachteristic-of-the-simulation">
-<h3>Main Charachteristic of the simulation<a class="headerlink" href="#main-charachteristic-of-the-simulation" title="Permalink to this headline">¶</a></h3>
+<h3>Main Charachteristic of the simulation<a class="headerlink" href="#main-charachteristic-of-the-simulation" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Bias towards the orthosteric site</p></li>
 <li><p>Starting pose for PELE Local Exploration (check box definition)</p></li>
@@ -86,28 +82,28 @@
 </ul>
 </section>
 <section id="controlfile-specifics">
-<h3>ControlFile specifics<a class="headerlink" href="#controlfile-specifics" title="Permalink to this headline">¶</a></h3>
+<h3>ControlFile specifics<a class="headerlink" href="#controlfile-specifics" title="Permalink to this heading">¶</a></h3>
 <p>Special required parameters for this simulation are:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">system</span><span class="p">:</span> <span class="s">&#39;5CGC_entrance.pdb&#39;</span> <span class="c1">#Input pdb with ligand-protein in the desired initial structure</span>
-<span class="nt">chain</span><span class="p">:</span> <span class="s">&#39;C&#39;</span> <span class="c1">#Ligand chain</span>
-<span class="nt">resname</span><span class="p">:</span> <span class="s">&#39;CGC&#39;</span> <span class="c1">#Ligand residue name</span>
-<span class="nt">box_radius</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">30.0</span> <span class="c1">#Radius of the box to explore with PELE</span>
-<span class="nt">seed</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12345</span> <span class="c1">#Seed of the job</span>
-<span class="nt">bias_sim</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span> <span class="c1">#This will create a bias the specified column of the report. IN thins case interaction energy</span>
-<span class="nt">bias_column</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span> <span class="c1">#Column of the report to make the bias to</span>
-<span class="nt">traj_name</span><span class="p">:</span> <span class="s">&#39;trajectory.xtc&#39;</span> <span class="c1">#Output files with xtc format and trajectory as name</span>
-<span class="nt">rmsd_pdb</span><span class="p">:</span> <span class="s">&#39;5CGC_native.pdb&#39;</span> <span class="c1">#At each PELE step generate the RMSD of the ligand in respect to the mentioned pdb</span>
-<span class="nt">cpus</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">100</span> <span class="c1">#Number of cpus. You will obtain as many trajectories as cpus-1</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">system</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;5CGC_entrance.pdb&#39;</span><span class="w"> </span><span class="c1">#Input pdb with ligand-protein in the desired initial structure</span>
+<span class="nt">chain</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;C&#39;</span><span class="w"> </span><span class="c1">#Ligand chain</span>
+<span class="nt">resname</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;CGC&#39;</span><span class="w"> </span><span class="c1">#Ligand residue name</span>
+<span class="nt">box_radius</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30.0</span><span class="w"> </span><span class="c1">#Radius of the box to explore with PELE</span>
+<span class="nt">seed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12345</span><span class="w"> </span><span class="c1">#Seed of the job</span>
+<span class="nt">bias_sim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1">#This will create a bias the specified column of the report. IN thins case interaction energy</span>
+<span class="nt">bias_column</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"> </span><span class="c1">#Column of the report to make the bias to</span>
+<span class="nt">traj_name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;trajectory.xtc&#39;</span><span class="w"> </span><span class="c1">#Output files with xtc format and trajectory as name</span>
+<span class="nt">rmsd_pdb</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;5CGC_native.pdb&#39;</span><span class="w"> </span><span class="c1">#At each PELE step generate the RMSD of the ligand in respect to the mentioned pdb</span>
+<span class="nt">cpus</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span><span class="w"> </span><span class="c1">#Number of cpus. You will obtain as many trajectories as cpus-1</span>
 </pre></div>
 </div>
 </section>
 <section id="results">
-<h3>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
+<h3>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h3>
 <p>To analyze the simulation we will:</p>
 </section>
 </section>
 <section id="plot-the-binding-energies-vs-rmsd">
-<h2>1) Plot the Binding Energies vs RMSD<a class="headerlink" href="#plot-the-binding-energies-vs-rmsd" title="Permalink to this headline">¶</a></h2>
+<h2>1) Plot the Binding Energies vs RMSD<a class="headerlink" href="#plot-the-binding-energies-vs-rmsd" title="Permalink to this heading">¶</a></h2>
 <p>Plot the Binding Energies vs RMSD to check whether there is a minima at low RSMDs. To know more about the command, check <a class="reference external" href="../../intro/AdaptiveMethodology/GeneralAnalysis/GeneralAnalysis.html#plot-metrics">here</a>.</p>
 <figure class="align-center" id="id2">
 <img alt="../../_images/entrance_plot.png" src="../../_images/entrance_plot.png" />
@@ -117,7 +113,7 @@
 </figure>
 </section>
 <section id="extract-the-best-structures-in-terms-of-be-and-rmsd">
-<h2>2) Extract the best structures in terms of BE and RMSD<a class="headerlink" href="#extract-the-best-structures-in-terms-of-be-and-rmsd" title="Permalink to this headline">¶</a></h2>
+<h2>2) Extract the best structures in terms of BE and RMSD<a class="headerlink" href="#extract-the-best-structures-in-terms-of-be-and-rmsd" title="Permalink to this heading">¶</a></h2>
 <p>Extract the best snapshots. For more on extracting the best snapshots with InteractivePlot, plese refere <a class="reference external" href="../../intro/AdaptiveMethodology/GeneralAnalysis/GeneralAnalysis.html#extract-the-best-structures-in-terms-of-be-and-rmsd">here</a>.</p>
 <figure class="align-center" id="id3">
 <img alt="../../_images/entrance_pose.png" src="../../_images/entrance_pose.png" />
@@ -127,7 +123,7 @@
 </figure>
 </section>
 <section id="extract-a-movie-from-the-best-structure">
-<h2>3) Extract a movie from the best structure<a class="headerlink" href="#extract-a-movie-from-the-best-structure" title="Permalink to this headline">¶</a></h2>
+<h2>3) Extract a movie from the best structure<a class="headerlink" href="#extract-a-movie-from-the-best-structure" title="Permalink to this heading">¶</a></h2>
 <p>To map the movement of residues along the ligand exit pathway, make a movie as described <a class="reference external" href="../../intro/AdaptiveMethodology/GeneralAnalysis/GeneralAnalysis.html#extract-the-movie-of-your-best-snapshot">here</a> and display all the residues close to the ligand in one Figure to see their fluctuations (see below).</p>
 <figure class="align-center" id="id4">
 <img alt="../../_images/entrance_path.png" src="../../_images/entrance_path.png" />
@@ -137,7 +133,7 @@
 </figure>
 </section>
 <section id="comparison-with-pele-simulation">
-<h2>4) Comparison with PELE simulation<a class="headerlink" href="#comparison-with-pele-simulation" title="Permalink to this headline">¶</a></h2>
+<h2>4) Comparison with PELE simulation<a class="headerlink" href="#comparison-with-pele-simulation" title="Permalink to this heading">¶</a></h2>
 <p>As we can see in the figure below Adaptive explores much more around the binding site area but also undersamples other parts of the energy landscape. Despite of having much more exploration in the binding site the energies are not so high as in the PELE simulation due to Adaptive clustering (At the end of the simulation we cannot create more clusters and we always repite the same steps). Finally, adaptive got to the binding sit in 20 min while PELE took 3-4h. Hence, if we know the binding site of the ligand we should use AdaptivePELE to reach the area and add a final induced fit PELE simulation to get the best possible energy.</p>
 <figure class="align-center" id="id5">
 <img alt="../../_images/pele_adaptive.png" src="../../_images/pele_adaptive.png" />
@@ -155,8 +151,9 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">MgluR5: Pose Prediction on GPCRs</a><ul>
 <li><a class="reference internal" href="#objective">Objective</a></li>
 <li><a class="reference internal" href="#preparation">Preparation</a><ul>
@@ -177,12 +174,17 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../Hemagglutinin/Hemagglutinin.html"
-                        title="previous chapter">Hemagglutinin: Pocket Detection</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../PRNHR/PR.html"
-                        title="next chapter">Progesteron Receptor</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../Hemagglutinin/Hemagglutinin.html"
+                          title="previous chapter">Hemagglutinin: Pocket Detection</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../PRNHR/PR.html"
+                          title="next chapter">Progesteron Receptor</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -194,12 +196,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -223,7 +225,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../../index.html#license">License</a>.
     </div>
   </body>

@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Real Time Control of PELE simulations (experimental) &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=217710be"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="PELE File Formats" href="fileFormats.html" />
@@ -54,7 +50,7 @@
           <div class="body" role="main">
             
   <section id="real-time-control-of-pele-simulations-experimental">
-<span id="sec-realtimecontrol"></span><h1>Real Time Control of PELE simulations (experimental)<a class="headerlink" href="#real-time-control-of-pele-simulations-experimental" title="Permalink to this headline">¶</a></h1>
+<span id="sec-realtimecontrol"></span><h1>Real Time Control of PELE simulations (experimental)<a class="headerlink" href="#real-time-control-of-pele-simulations-experimental" title="Permalink to this heading">¶</a></h1>
 <p>This is an experimental feature to allow real time control of an already started PELE simulation, in a similar way to <a class="reference internal" href="PELEDynamicChangesInSimulationParameters/ParametersThatCanChange.html#sec-parametersthatcanchange"><span class="std std-ref">Changeable Parameters</span></a>, but this time performing the change of parameters at the moment the user decides to issue the command. This feature is intended to be used indirectly by the user, with a middleware that will understand the user control commands and transform them into the low-level way of interacting with the PELE simulation.</p>
 <p>This feature is currently only available for MPI simulations; in those cases, only PELE simulation commands can be executed.</p>
 <p>The following commands are available:</p>
@@ -67,27 +63,27 @@
 </ul>
 <p>To use real time control of a PELE simulation, you must enable this through the control file. Then, you must write commands to the command input file, while you can see how the commands are processed at the command output file.</p>
 <section id="configure-real-time-control-of-a-pele-simulation">
-<h2>Configure real time control of a PELE simulation<a class="headerlink" href="#configure-real-time-control-of-a-pele-simulation" title="Permalink to this headline">¶</a></h2>
+<h2>Configure real time control of a PELE simulation<a class="headerlink" href="#configure-real-time-control-of-a-pele-simulation" title="Permalink to this heading">¶</a></h2>
 <p>To enable real time control of a PELE simulation, you must add the <code class="docutils literal notranslate"><span class="pre">commandFilePath</span></code> and <code class="docutils literal notranslate"><span class="pre">commandOutputFilePath</span></code> configuration variables to the top level of the control file (see <a class="reference internal" href="GeneralStructure/GeneralStructure.html#sec-generalstructure-commandfilepath"><span class="std std-ref">commandFilePath</span></a> and <a class="reference internal" href="GeneralStructure/GeneralStructure.html#sec-generalstructure-commandoutputfilepath"><span class="std std-ref">commandOutputFilePath</span></a>).</p>
 <p>For example:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
- &quot;commandFilePath&quot;: &quot;commands.txt&quot;,
- &quot;commandOutputFilePath&quot;: &quot;commandsOutput.txt&quot;,
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w"> </span><span class="nt">&quot;commandFilePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;commands.txt&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;commandOutputFilePath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;commandsOutput.txt&quot;</span><span class="p">,</span>
 
- // ...
-   &quot;commands&quot; : [
-      {
-         &quot;commandType&quot; : &quot;peleSimulation&quot;,
-      // ...
-      }
-  ]
-}
+<span class="w"> </span><span class="c1">// ...</span>
+<span class="w">   </span><span class="nt">&quot;commands&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;commandType&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;peleSimulation&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="c1">// ...</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>You must make sure that those files do not exist when you start the simulation, since PELE++ creates those files itself and, to make sure you write your commands in the right file, it will terminate execution if those files already existed.</p>
 </section>
 <section id="write-commands-to-the-command-input-file">
-<h2>Write commands to the command input file<a class="headerlink" href="#write-commands-to-the-command-input-file" title="Permalink to this headline">¶</a></h2>
+<h2>Write commands to the command input file<a class="headerlink" href="#write-commands-to-the-command-input-file" title="Permalink to this heading">¶</a></h2>
 <p>Once the application has started and created the command files, you can write to the command stream (<code class="docutils literal notranslate"><span class="pre">commandFilePath</span></code>), where each command is a JSON object with three fields, and to let the program know that the command is finished, a final line <code class="docutils literal notranslate"><span class="pre">*END</span></code> is added to terminate the command. The fields of the JSON command object are:</p>
 <ul class="simple">
 <li><p>commandId: A numeric identifier to match command output in the <code class="docutils literal notranslate"><span class="pre">commandOutputFilePath</span></code> to a given input command.</p></li>
@@ -151,8 +147,9 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Real Time Control of PELE simulations (experimental)</a><ul>
 <li><a class="reference internal" href="#configure-real-time-control-of-a-pele-simulation">Configure real time control of a PELE simulation</a></li>
 <li><a class="reference internal" href="#write-commands-to-the-command-input-file">Write commands to the command input file</a></li>
@@ -160,12 +157,17 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="pca.html"
-                        title="previous chapter">PCA for the perturbation phase of PELE</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="fileFormats.html"
-                        title="next chapter">PELE File Formats</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="pca.html"
+                          title="previous chapter">PCA for the perturbation phase of PELE</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="fileFormats.html"
+                          title="next chapter">PELE File Formats</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -177,12 +179,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -206,7 +208,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="index.html#license">License</a>.
     </div>
   </body>

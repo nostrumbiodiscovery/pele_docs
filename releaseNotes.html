@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Release notes &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=217710be"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="References" href="references.html" /> 
@@ -49,9 +45,28 @@
           <div class="body" role="main">
             
   <section id="release-notes">
-<h1>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<h1>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
+<section id="version-1-8-0">
+<h2>Version 1.8.0<a class="headerlink" href="#version-1-8-0" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>New <strong>Non Bonding Energy By Selection</strong> metric.</p></li>
+<li><p>New <strong>Internal Energy</strong> metric.</p></li>
+<li><p>New <strong>perturbAllAtOnce</strong> flag to perturb a chain with all its components at the same time.</p></li>
+<li><p>New <strong>allowMultipleBindingSelection</strong> flag to be able to select a chain with multiple parts for calculate the <strong>Binding Energy</strong>.</p></li>
+<li><p>ANM modifications so it can run without a protein in the system. New ANM <strong>NULL</strong> can be set to enable this option.</p></li>
+<li><p>New <strong>skipGlobalMinimization</strong> flag in <strong>SideChainPrediction</strong> to ignore minimization after side chain prediction.</p></li>
+<li><p>Modifications to dummy atom using OpenFF forcefield.</p></li>
+<li><p>Fixed bugs with dummy atoms and vacuum simulations.</p></li>
+<li><p>PELE now requires less memory to run.</p></li>
+<li><p>New licensing system that uses LCC library can issue node-lock licenses.</p></li>
+<li><p>Invalid geometries are now attempted to be fixed instead of raising a runtime exception.</p></li>
+<li><p>Test fixes</p></li>
+<li><p>Changed from frozenAtomSurfaceContribution matrix to on the fly calculation</p></li>
+<li><p>Added test for <strong>moveAllAtOnce</strong>.</p></li>
+</ul>
+</section>
 <section id="version-1-7-1">
-<h2>Version 1.7.1<a class="headerlink" href="#version-1-7-1" title="Permalink to this headline">¶</a></h2>
+<h2>Version 1.7.1<a class="headerlink" href="#version-1-7-1" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Implemented the PELE <strong>MinimumSteps</strong> feature.</p></li>
 <li><p>Fixed rotamer libs (ASQ, PTR, SEP, TPO).</p></li>
@@ -59,7 +74,7 @@
 </ul>
 </section>
 <section id="version-1-7">
-<h2>Version 1.7<a class="headerlink" href="#version-1-7" title="Permalink to this headline">¶</a></h2>
+<h2>Version 1.7<a class="headerlink" href="#version-1-7" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt><strong>Open Force</strong> Field integration:</dt><dd><ul>
@@ -85,7 +100,7 @@
 </ul>
 </section>
 <section id="version-1-6-1">
-<h2>Version 1.6.1<a class="headerlink" href="#version-1-6-1" title="Permalink to this headline">¶</a></h2>
+<h2>Version 1.6.1<a class="headerlink" href="#version-1-6-1" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><dl class="simple">
 <dt>New algorithm is performed when doing a Ligand Perturbation, if the Ligand has a large number of rotable bonds. The rotable bonds now will be <strong>randomly selected</strong> following a freedom criteria. This is done in <strong>each group</strong>.</dt><dd><ul>
@@ -113,7 +128,7 @@
 </ul>
 </section>
 <section id="version-1-6">
-<h2>Version 1.6<a class="headerlink" href="#version-1-6" title="Permalink to this headline">¶</a></h2>
+<h2>Version 1.6<a class="headerlink" href="#version-1-6" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><strong>Cylindrical boxes</strong> can be defined for the ligand perturbation with the new <em>CylindricalBox</em> option.</p></li>
 <li><p><strong>Multiple spherical</strong> boxes can also be defined for the ligand perturbation with the new <em>MultiSphericalBox</em> option.</p></li>
@@ -131,14 +146,14 @@
 </ul>
 </section>
 <section id="rev12510">
-<h2>rev12510<a class="headerlink" href="#rev12510" title="Permalink to this headline">¶</a></h2>
+<h2>rev12510<a class="headerlink" href="#rev12510" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fix problem with spawning in machines with MPI implementations different from OpenMPI, such as MareNostrum IV (rev. 12509).</p></li>
 <li><p>Included latest version of PlopRotTemp.py which now works with Maestro 2017 format (rev. 12500).</p></li>
 </ul>
 </section>
 <section id="rev12489">
-<h2>rev12489<a class="headerlink" href="#rev12489" title="Permalink to this headline">¶</a></h2>
+<h2>rev12489<a class="headerlink" href="#rev12489" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Reorganize installation directory structure.</p></li>
 <li><p>Add script calculatePCA4PELE.py to calculate PCA components for the PELE simulation (rev. 12484).</p></li>
@@ -147,7 +162,7 @@
 </ul>
 </section>
 <section id="rev12455">
-<h2>rev12455<a class="headerlink" href="#rev12455" title="Permalink to this headline">¶</a></h2>
+<h2>rev12455<a class="headerlink" href="#rev12455" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Allow real time control of the simulation (for PELE-GUI) (rev. 12416).</p></li>
 <li><p>Honor “tag” field in configuration of metrics. This affects the header of the report file; in particular, “AcceptedSteps” becomes “numberOfAcceptedPeleSteps” and “Energy” becomes “currentEnergy” (rev. 12377).</p></li>
@@ -156,7 +171,7 @@
 </ul>
 </section>
 <section id="rev12360">
-<h2>rev12360<a class="headerlink" href="#rev12360" title="Permalink to this headline">¶</a></h2>
+<h2>rev12360<a class="headerlink" href="#rev12360" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Partial support for insertion codes in PDB files, since selection still does not work in all cases (rev. 12311).</p></li>
 <li><p>More flexible templates allowed, with any number of spaces at the end of ATOM lines (rev. 12318).</p></li>
@@ -166,7 +181,7 @@
 </ul>
 </section>
 <section id="rev12308">
-<h2>rev12308<a class="headerlink" href="#rev12308" title="Permalink to this headline">¶</a></h2>
+<h2>rev12308<a class="headerlink" href="#rev12308" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Improvements in documentation and error reporting.</p></li>
 <li><p>Fix problem with steering non working right when being activated/deactivated through changeable parameters using a zero update frequency. Now, steering can be safely activated/deactived in that way (rev. 12251).</p></li>
@@ -176,7 +191,7 @@
 </ul>
 </section>
 <section id="rev12183">
-<h2>rev12183<a class="headerlink" href="#rev12183" title="Permalink to this headline">¶</a></h2>
+<h2>rev12183<a class="headerlink" href="#rev12183" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Improvements in documentation.</p></li>
 <li><p>Fix problem of automatic assignment of templates for HIS residues according to its protonation (rev. 12179).</p></li>
@@ -190,13 +205,13 @@
 </ul>
 </section>
 <section id="rev12025">
-<h2>rev12025<a class="headerlink" href="#rev12025" title="Permalink to this headline">¶</a></h2>
+<h2>rev12025<a class="headerlink" href="#rev12025" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Perturbation boxes now check for the center of mass of the atoms, instead of forcing that all atoms must be inside the box (rev. 12015).</p></li>
 </ul>
 </section>
 <section id="rev11996">
-<h2>rev11996<a class="headerlink" href="#rev11996" title="Permalink to this headline">¶</a></h2>
+<h2>rev11996<a class="headerlink" href="#rev11996" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fix: Energy calculation at step 0 when using SASA metric is now correct (rev. 11994).</p></li>
 <li><p>Improved control file checks and error messages (problems with selections, empty PDBs, duplicate atoms in PDB, missing template files, etc.).</p></li>
@@ -206,7 +221,7 @@
 </ul>
 </section>
 <section id="rev11893">
-<h2>rev11893<a class="headerlink" href="#rev11893" title="Permalink to this headline">¶</a></h2>
+<h2>rev11893<a class="headerlink" href="#rev11893" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Improved documentation.</p></li>
 <li><p>Improved log information about side chain prediction (when it fails), ANM parameters and chain charges (rev. 11890, 11756, 11729).</p></li>
@@ -221,13 +236,13 @@
 </ul>
 </section>
 <section id="rev11678">
-<h2>rev11678<a class="headerlink" href="#rev11678" title="Permalink to this headline">¶</a></h2>
+<h2>rev11678<a class="headerlink" href="#rev11678" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Boltzmann sampling Side Chain Prediction (rev. 11674).</p></li>
 </ul>
 </section>
 <section id="rev11670">
-<h2>rev11670<a class="headerlink" href="#rev11670" title="Permalink to this headline">¶</a></h2>
+<h2>rev11670<a class="headerlink" href="#rev11670" title="Permalink to this heading">¶</a></h2>
 <ul>
 <li><p>Change steering vector when perturbation steric try goes out of the box (rev. 11669).</p></li>
 <li><p>Reject PELE step when perturbed atom set ends out of the box (rev. 11669).</p></li>
@@ -245,7 +260,7 @@
 </ul>
 </section>
 <section id="rev11620">
-<h2>rev11620<a class="headerlink" href="#rev11620" title="Permalink to this headline">¶</a></h2>
+<h2>rev11620<a class="headerlink" href="#rev11620" title="Permalink to this heading">¶</a></h2>
 <ul>
 <li><p>Disulfide bonds excluded from side chain prediction (rev. 11563).</p></li>
 <li><p>Improved logging:</p>
@@ -264,7 +279,7 @@
 </ul>
 </section>
 <section id="rev11368">
-<h2>rev11368<a class="headerlink" href="#rev11368" title="Permalink to this headline">¶</a></h2>
+<h2>rev11368<a class="headerlink" href="#rev11368" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>In the “parametersChanges” section, if the value for updateSteeringFrequency is not different from the current one, then the change is ignored (that is, the internal counter to decide when to update the steering vector is not reset). (rev. 11368).</p></li>
 <li><p>Fixed updateSteeringFrequency as a changeable parameter, and deactivate steering when this parameter is 0 (rev. 11360).</p></li>
@@ -272,40 +287,40 @@
 </ul>
 </section>
 <section id="rev11362">
-<h2>rev11362<a class="headerlink" href="#rev11362" title="Permalink to this headline">¶</a></h2>
+<h2>rev11362<a class="headerlink" href="#rev11362" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Fixed updateSteeringFrequency as a changeable parameter, and deactivate steering when this parameter is 0 (rev. 11360).</p></li>
 <li><p>Added PELE version information to log, output, and –version command-line argument (rev. 11346).</p></li>
 </ul>
 </section>
 <section id="rev11335">
-<h2>rev11335<a class="headerlink" href="#rev11335" title="Permalink to this headline">¶</a></h2>
+<h2>rev11335<a class="headerlink" href="#rev11335" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Added steering to Metropolis perturbation (rev. 11335).</p></li>
 <li><p>New default of 200000 K for the <cite>temperature</cite> parameter of Metropolis perturbation (rev. 11263).</p></li>
 </ul>
 </section>
 <section id="rev11260">
-<h2>rev11260<a class="headerlink" href="#rev11260" title="Permalink to this headline">¶</a></h2>
+<h2>rev11260<a class="headerlink" href="#rev11260" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Parameter to force perturbation to keep trying until accepting at least one trial (rev. 11257).</p></li>
 </ul>
 </section>
 <section id="rev11227">
-<h2>rev11227<a class="headerlink" href="#rev11227" title="Permalink to this headline">¶</a></h2>
+<h2>rev11227<a class="headerlink" href="#rev11227" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Pele steps now start at 1, and the initial state is included in the report and trajectory (rev. 11151).</p></li>
 </ul>
 </section>
 <section id="rev11145">
-<h2>rev11145<a class="headerlink" href="#rev11145" title="Permalink to this headline">¶</a></h2>
+<h2>rev11145<a class="headerlink" href="#rev11145" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Proximity distance checks to skip unneeded updates (rev. 11140).</p></li>
 <li><p>Control file validation (rev. 11123).</p></li>
 </ul>
 </section>
 <section id="rev11122">
-<h2>rev11122<a class="headerlink" href="#rev11122" title="Permalink to this headline">¶</a></h2>
+<h2>rev11122<a class="headerlink" href="#rev11122" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><cite>./DataLocal/</cite> directory for overwriting data files (rev. 11107).</p></li>
 <li><p>Default overlapFactor of 0.7 (rev. 11102).</p></li>
@@ -314,7 +329,7 @@
 </ul>
 </section>
 <section id="rev11056">
-<h2>rev11056<a class="headerlink" href="#rev11056" title="Permalink to this headline">¶</a></h2>
+<h2>rev11056<a class="headerlink" href="#rev11056" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Reading ANM modes from file (rev. 11056).</p></li>
 </ul>
@@ -328,9 +343,11 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Release notes</a><ul>
+<li><a class="reference internal" href="#version-1-8-0">Version 1.8.0</a></li>
 <li><a class="reference internal" href="#version-1-7-1">Version 1.7.1</a></li>
 <li><a class="reference internal" href="#version-1-7">Version 1.7</a></li>
 <li><a class="reference internal" href="#version-1-6-1">Version 1.6.1</a></li>
@@ -359,9 +376,12 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="references.html"
-                        title="previous chapter">References</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="references.html"
+                          title="previous chapter">References</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -373,12 +393,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -398,7 +418,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="index.html#license">License</a>.
     </div>
   </body>

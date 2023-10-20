@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Metrics block in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="StateTracker types in Pele++ control file" href="StateTrackerTypes.html" />
@@ -56,7 +52,7 @@
           <div class="body" role="main">
             
   <section id="metrics-block-in-pele-control-file">
-<span id="sec-metrictypes"></span><h1>Metrics block in Pele++ control file<a class="headerlink" href="#metrics-block-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
+<span id="sec-metrictypes"></span><h1>Metrics block in Pele++ control file<a class="headerlink" href="#metrics-block-in-pele-control-file" title="Permalink to this heading">¶</a></h1>
 <p>Pele++ has different types of Metrics. Metrics are a type of Sensor,
 (see <a class="reference internal" href="Sensors.html#sec-sensors"><span class="std std-ref">Sensors</span></a>).</p>
 <p>In general a Metric declaration in the control file is comprised of
@@ -86,32 +82,32 @@ true by default).</p></li>
 </pre></div>
 </div>
 <section id="metrics-block-example">
-<h2>Metrics block example<a class="headerlink" href="#metrics-block-example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;metrics&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;Native&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;src/Molecules/Test/Data/plop_isr_out.pdb&quot;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;logIt&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="nt">&quot;Native&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;src/Molecules/Test/Data/plop_isr_out.pdb&quot;</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span>
-                    <span class="s2">&quot;_CA_&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;_C4&#39;&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;_C2_&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;_P__&quot;</span>
-                <span class="p">]</span>
-            <span class="p">}</span>
-        <span class="p">},</span>
-        <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;selectionRmsd&quot;</span>
-    <span class="p">}</span>
+<h2>Metrics block example<a class="headerlink" href="#metrics-block-example" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;metrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Native&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/Molecules/Test/Data/plop_isr_out.pdb&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;logIt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Native&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/Molecules/Test/Data/plop_isr_out.pdb&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;selection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="s2">&quot;_CA_&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;_C4&#39;&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;_C2_&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="s2">&quot;_P__&quot;</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;selectionRmsd&quot;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -120,10 +116,10 @@ a list (in <a class="reference external" href="http://www.json.org/">JSON</a> li
 by []) that contains two Metrics.</p>
 <p>The first metrics block of the list is:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;Native&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;src/Molecules/Test/Data/plop_isr_out.pdb&quot;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Native&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/Molecules/Test/Data/plop_isr_out.pdb&quot;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -131,22 +127,22 @@ by []) that contains two Metrics.</p>
 “Native” and its values are logged each step.</p>
 <p>The second metrics block of the list is:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;logIt&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&quot;Native&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;src/Molecules/Test/Data/plop_isr_out.pdb&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">&quot;_CA_&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;_C4&#39;&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;_C2_&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;_P__&quot;</span>
-            <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;selectionRmsd&quot;</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;logIt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Native&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/Molecules/Test/Data/plop_isr_out.pdb&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;selection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;_CA_&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;_C4&#39;&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;_C2_&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;_P__&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;selectionRmsd&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -163,7 +159,7 @@ uses this metrics values.</p>
 list, check below.</p>
 </section>
 <section id="metric-types">
-<h2>Metric types<a class="headerlink" href="#metric-types" title="Permalink to this headline">¶</a></h2>
+<h2>Metric types<a class="headerlink" href="#metric-types" title="Permalink to this heading">¶</a></h2>
 <p>Now we will show you an example of each type of metrics so you can see
 their names and specific parameters.</p>
 <p>The currently available metrics are:</p>
@@ -175,17 +171,19 @@ their names and specific parameters.</p>
 <li><p><a class="reference internal" href="#sec-metrictypes-randomnumber"><span class="std std-ref">Random number</span></a></p></li>
 <li><p><a class="reference internal" href="#sec-metrictypes-rmsd"><span class="std std-ref">RMSD</span></a></p></li>
 <li><p><a class="reference internal" href="#sec-metrictypes-localnonbondingenergy"><span class="std std-ref">Local non-bonding energy</span></a></p></li>
+<li><p><a class="reference internal" href="#sec-metrictypes-internalenergy"><span class="std std-ref">Internal energy</span></a></p></li>
+<li><p><a class="reference internal" href="#sec-metrictypes-nonbondingenergybyselection"><span class="std std-ref">Non-bonding energy by selection</span></a></p></li>
 </ul>
 <section id="binding-energy">
-<span id="sec-metrictypes-bindingenergy"></span><h3>Binding energy<a class="headerlink" href="#binding-energy" title="Permalink to this headline">¶</a></h3>
+<span id="sec-metrictypes-bindingenergy"></span><h3>Binding energy<a class="headerlink" href="#binding-energy" title="Permalink to this heading">¶</a></h3>
 <p>It computes the binding energy of a ligand.</p>
 <section id="example">
-<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bindingEnergy&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;boundPartSelection&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;L&quot;</span> <span class="p">]</span> <span class="p">}</span>
-        <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bindingEnergy&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;boundPartSelection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;L&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -196,25 +194,38 @@ examples of selection blocks. The calculation is done by dividing the
 system into two parts: that selected by the “boundPartSelection”
 selection, and the rest. The “boundPartSelection” must be a single
 chain, and it should correspond to the ligand, though it does not have
-to.</p>
+to. If that chain is a protein with several components, flag
+allowMultipleBindingSelection must be set to true.</p>
+</section>
+<section id="example-2">
+<h4>Example 2<a class="headerlink" href="#example-2" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;bindingEnergy&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;boundPartSelection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;L&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">     </span><span class="nt">&quot;allowMultipleBindingSelection&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="distance-between-centers-of-mass">
-<span id="sec-metrictypes-comdistance"></span><h3>Distance between centers of mass<a class="headerlink" href="#distance-between-centers-of-mass" title="Permalink to this headline">¶</a></h3>
+<span id="sec-metrictypes-comdistance"></span><h3>Distance between centers of mass<a class="headerlink" href="#distance-between-centers-of-mass" title="Permalink to this heading">¶</a></h3>
 <p>It computes the distance between the center of masses of two groups of
 atoms. Each group of atoms is defined by a selection block, see
 <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a> to see
 different examples of selection blocks.</p>
 <section id="id1">
-<h4>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>Example<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;com_distance&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selection_group_1&quot;</span><span class="p">:{</span>
-        <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:5&quot;</span><span class="p">]}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;selection_group_2&quot;</span><span class="p">:{</span>
-        <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:3&quot;</span><span class="p">]}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;com_distance&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;selection_group_1&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:5&quot;</span><span class="p">]}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;selection_group_2&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:3&quot;</span><span class="p">]}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -226,21 +237,21 @@ in each selection block.</p>
 </section>
 </section>
 <section id="sasa">
-<span id="sec-metrictypes-sasa"></span><h3>SASA<a class="headerlink" href="#sasa" title="Permalink to this headline">¶</a></h3>
+<span id="sec-metrictypes-sasa"></span><h3>SASA<a class="headerlink" href="#sasa" title="Permalink to this heading">¶</a></h3>
 <p>Computes the SASA for the indicated set of atoms. The SASA metric is a
 normalized value between 0 and 1, and is calculated as follows:
 SASAOfSelectedAtoms/SASAOfSelectedAtomsAlone. SASAOfSelectedAtomsAlone is the value calculated as if the selected
 atoms were alone in the system, so it is the maximum value for these
 atoms.</p>
 <section id="id2">
-<h4>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h4>Example<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;sasa&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selection&quot;</span> <span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;L&quot;</span> <span class="p">]</span>
-                <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;sasa&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;selection&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;L&quot;</span><span class="w"> </span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -248,20 +259,20 @@ atoms.</p>
 </section>
 </section>
 <section id="distance-to-point">
-<span id="sec-metrictypes-distancetopoint"></span><h3>Distance to point<a class="headerlink" href="#distance-to-point" title="Permalink to this headline">¶</a></h3>
+<span id="sec-metrictypes-distancetopoint"></span><h3>Distance to point<a class="headerlink" href="#distance-to-point" title="Permalink to this heading">¶</a></h3>
 <p>It computes the distance from a fixed point to the center of mass of a
 group of atoms. The group of atoms is defined used a selection block,
 see <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a> to
 see different examples of selection blocks, whereas the point is given
 as a list of coordinates.</p>
 <section id="id3">
-<h4>Example<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h4>Example<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;distanceToPoint&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;point&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
-    <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;links&quot;</span> <span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:2&quot;</span><span class="p">]}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;distanceToPoint&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;point&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;links&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:2&quot;</span><span class="p">]}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -273,22 +284,22 @@ selection block.</p>
 </section>
 </section>
 <section id="random-number">
-<span id="sec-metrictypes-randomnumber"></span><h3>Random number<a class="headerlink" href="#random-number" title="Permalink to this headline">¶</a></h3>
+<span id="sec-metrictypes-randomnumber"></span><h3>Random number<a class="headerlink" href="#random-number" title="Permalink to this heading">¶</a></h3>
 <p>This is a special Metric. It doesn’t actually compute anything. It just
 returns a random number. We’ve added it, because random numbers are
 often used in Pele++ simulations as part of logical conditions in
 dynamic parameter changes.</p>
 <section id="id4">
-<h4>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<h4>Example<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;random&quot;</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;random&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="rmsd">
-<span id="sec-metrictypes-rmsd"></span><h3>RMSD<a class="headerlink" href="#rmsd" title="Permalink to this headline">¶</a></h3>
+<span id="sec-metrictypes-rmsd"></span><h3>RMSD<a class="headerlink" href="#rmsd" title="Permalink to this heading">¶</a></h3>
 <p>It computes the RMSD between the Complex and a Native.</p>
 <p>Notice that due to the numerical nature of the RMSD calculation, you may
 sometimes obtain an almost-zero result (about 1e-15) for Complex and
@@ -297,13 +308,13 @@ To all extent, both results are the same and the metric calculation is
 right.</p>
 <p>You have to provide the following parameters:</p>
 <section id="native">
-<h4>Native<a class="headerlink" href="#native" title="Permalink to this headline">¶</a></h4>
+<h4>Native<a class="headerlink" href="#native" title="Permalink to this heading">¶</a></h4>
 <p>A section with a “path” element with the path to the PDB file containing
 the native structure.</p>
 <p>See <a class="reference internal" href="#sec-metrictypes-rmsd-example1"><span class="std std-ref">example</span></a>.</p>
 </section>
 <section id="selection">
-<h4>selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h4>
+<h4>selection<a class="headerlink" href="#selection" title="Permalink to this heading">¶</a></h4>
 <p>A selection of the atoms to use for doing the RMSD calculation (see
 <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>).</p>
 <p>If the “doSuperposition” parameter is true, then an RMSD calculation
@@ -320,7 +331,7 @@ one atom is needed for the metric calculation).</p>
 <p>Default value: all atoms comprise the selection.</p>
 </section>
 <section id="superpositionselection">
-<h4>superpositionSelection<a class="headerlink" href="#superpositionselection" title="Permalink to this headline">¶</a></h4>
+<h4>superpositionSelection<a class="headerlink" href="#superpositionselection" title="Permalink to this heading">¶</a></h4>
 <p>A selection of the atoms to use for doing the superposition before doing
 the actual RMSD calculation (see <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>).</p>
 <p>This parameter will only be used if the “doSuperposition” parameter is
@@ -336,7 +347,7 @@ and the non-native structure.</p>
 <p>Default value: the same atoms as in selection.</p>
 </section>
 <section id="dosuperposition">
-<h4>doSuperposition<a class="headerlink" href="#dosuperposition" title="Permalink to this headline">¶</a></h4>
+<h4>doSuperposition<a class="headerlink" href="#dosuperposition" title="Permalink to this heading">¶</a></h4>
 <p>This states whether a superposition must be done before calculation of
 the RMSD. Notice that this superposition is only done for the purpose of
 the RMSD calculation and does not affect the simulation coordinates.</p>
@@ -349,19 +360,19 @@ notice that, by default, “superpositionSelection” is the same as
 <p>Default value: true</p>
 </section>
 <section id="includehydrogens">
-<h4>includeHydrogens<a class="headerlink" href="#includehydrogens" title="Permalink to this headline">¶</a></h4>
+<h4>includeHydrogens<a class="headerlink" href="#includehydrogens" title="Permalink to this heading">¶</a></h4>
 <p>This states whether hydrogen atoms should be used for the RMSD
 calculation and the optional superposition.</p>
 <p>Range: true or false</p>
 <p>Default value: false</p>
 </section>
 <section id="example-1">
-<span id="sec-metrictypes-rmsd-example1"></span><h4>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h4>
+<span id="sec-metrictypes-rmsd-example1"></span><h4>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading">¶</a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;Native&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;src/Molecules/Test/Data/AIN/native_fixed.pdb&quot;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Native&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/Molecules/Test/Data/AIN/native_fixed.pdb&quot;</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -370,25 +381,25 @@ Native in the PDB stored in the indicated path. If you want to compute
 the RMSD to the initial position you just have to make the “path”
 parameter equal to the path of the initial PDB.</p>
 </section>
-<section id="example-2">
-<span id="sec-metrictypes-rmsd-example2"></span><h4>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h4>
+<section id="sec-metrictypes-rmsd-example2">
+<span id="id5"></span><h4>Example 2<a class="headerlink" href="#sec-metrictypes-rmsd-example2" title="Permalink to this heading">¶</a></h4>
 <p>The RMSD computation can also be limited to a given selection of the
 Complex, as we show in the following example:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;Native&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;src/Molecules/Test/Data/AIN/native_fixed.pdb&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;L&quot;</span> <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="nt">&quot;superpositionSelection&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;_CA_&quot;</span> <span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Native&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/Molecules/Test/Data/AIN/native_fixed.pdb&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;selection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;L&quot;</span><span class="w"> </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;superpositionSelection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;_CA_&quot;</span><span class="w"> </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -398,69 +409,188 @@ superposition of the CA atoms of the system (which are in the protein
 and not in the ligand).</p>
 </section>
 <section id="example-3">
-<span id="sec-metrictypes-rmsd-example3"></span><h4>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h4>
+<span id="sec-metrictypes-rmsd-example3"></span><h4>Example 3<a class="headerlink" href="#example-3" title="Permalink to this heading">¶</a></h4>
 <p>By default the RMSD is computed after superposing the selected atoms of
 the Complex and the Native. In the next example this superposition is
 disabled by setting the “doSuperposition” parameter to false.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;savingFrequency&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="nt">&quot;Native&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;src/Molecules/Test/Data/AIN/native_fixed.pdb&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;doSuperposition&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;savingFrequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Native&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/Molecules/Test/Data/AIN/native_fixed.pdb&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;selection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;doSuperposition&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="local-non-bonding-energy">
-<span id="sec-metrictypes-localnonbondingenergy"></span><h3>Local non-bonding energy<a class="headerlink" href="#local-non-bonding-energy" title="Permalink to this headline">¶</a></h3>
+<span id="sec-metrictypes-localnonbondingenergy"></span><h3>Local non-bonding energy<a class="headerlink" href="#local-non-bonding-energy" title="Permalink to this heading">¶</a></h3>
 <p>It computes the local non-bonding energy of a link.</p>
-<section id="id5">
-<h4>Example 1<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;localNonBondingEnergy&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;L:1&quot;</span><span class="p">]</span> <span class="p">}</span> <span class="p">},</span>
-    <span class="nt">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">20</span>
-<span class="p">}</span>
-</pre></div>
-</div>
+<section id="id6">
+<h4>Example 1<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h4>
 <p>In this example, we are indicating that we want to compute the local non-bonding energy of the link “L”. The main difference between this metric and the <a class="reference internal" href="#sec-metrictypes-bindingenergy"><span class="std std-ref">Binding Energy</span></a> is that it calculates the interaction energy without deleting any atomset. Thus, it can work with links which are covalently connected to other atoms. For example, we can calculate the interaction energy between a protein residue and its neighboring atoms.</p>
 <p>The algorithm requires two parameters, the selection of the link and the radius that is used to search for its nearest neighbors. For more information regarding the “selection” block, see <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a> to see different
 examples of selection blocks. However, the algorithm will complain when any atomset different from a link is selected as it is designed to work only with a single link.</p>
 <p>When the link is covalently linked to other atoms that belong to a different link, the algorithm ignores the non-bonding interaction between atoms that are within a 2-bond distance. Moreover, any inner interaction between two atoms from the link is ignored as we are only interested on computing the interaction between the link and its surroundings. The algorithm also ignores covalent contributions between the selected link and any external atom.</p>
 </section>
 </section>
+<section id="internal-energy">
+<span id="sec-metrictypes-internalenergy"></span><h3>Internal energy<a class="headerlink" href="#internal-energy" title="Permalink to this heading">¶</a></h3>
+<p>It computes the internal energy of a ligand.</p>
+<section id="id7">
+<h4>Example<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;internalEnergy&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;atomSetSelection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;L&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Basically it only considers the Ligand in the system, thus the energy calculated is the energy of the ligand alone.</p>
+</section>
+</section>
+<section id="non-bonding-energy-by-selection">
+<span id="sec-metrictypes-nonbondingenergybyselection"></span><h3>Non-bonding energy by selection<a class="headerlink" href="#non-bonding-energy-by-selection" title="Permalink to this heading">¶</a></h3>
+<section id="id8">
+<h4>Example 1<a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;nonBondingEnergyBySelection&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="s2">&quot;E_by_sel&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;typeOfContribution&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;all&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;selection_group_1&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;L:1&quot;</span><span class="p">]}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;selection_group_2&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:76&quot;</span><span class="p">]}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, we are are calculating the non-bonding energy by selection instead of radius. This means that this method is able to calculate the contributions from any selection that we can do with <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections</span></a>.</p>
+<p>This enable a complete freedom of selection for calculating non-bonding energy contribution between any group of atoms.</p>
+<p>Also, the energy calculation can be splitted. As PELE report system only enables to write a value instead seveal ones per column, you need to stablish several metrics.</p>
+<p>Still, if you want to know separately the Lennard-Jones, Electrostatic or SGB (and penalties) contributions, they can be selected under the <code class="docutils literal notranslate"><span class="pre">typeOfContribution</span></code> flag,
+with <code class="docutils literal notranslate"><span class="pre">lennard_jones</span></code>, <code class="docutils literal notranslate"><span class="pre">electrostatic</span></code> or <code class="docutils literal notranslate"><span class="pre">sgb</span></code> options.</p>
+<p>An example of all different calculations you can do can be the following one:</p>
+</section>
+<section id="id9">
+<h4>Example 2<a class="headerlink" href="#id9" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;metrics&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;nonBondingEnergyBySelection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="s2">&quot;enBySel&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;typeOfContribution&quot;</span><span class="p">:</span><span class="s2">&quot;all&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;selection_group_1&quot;</span><span class="p">:{</span>
+<span class="w">                </span><span class="nt">&quot;links&quot;</span><span class="p">:{</span>
+<span class="w">                    </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;L:1&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;selection_group_2&quot;</span><span class="p">:{</span>
+<span class="w">                </span><span class="nt">&quot;links&quot;</span><span class="p">:{</span>
+<span class="w">                    </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:76&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;nonBondingEnergyBySelection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="s2">&quot;Lennard&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;typeOfContribution&quot;</span><span class="p">:</span><span class="s2">&quot;lennard_jones&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;selection_group_1&quot;</span><span class="p">:{</span>
+<span class="w">                </span><span class="nt">&quot;links&quot;</span><span class="p">:{</span>
+<span class="w">                    </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;L:1&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;selection_group_2&quot;</span><span class="p">:{</span>
+<span class="w">                </span><span class="nt">&quot;links&quot;</span><span class="p">:{</span>
+<span class="w">                    </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:76&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;nonBondingEnergyBySelection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="s2">&quot;Electrostatic&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;typeOfContribution&quot;</span><span class="p">:</span><span class="s2">&quot;electrostatic&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;selection_group_1&quot;</span><span class="p">:{</span>
+<span class="w">                </span><span class="nt">&quot;links&quot;</span><span class="p">:{</span>
+<span class="w">                    </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;L:1&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;selection_group_2&quot;</span><span class="p">:{</span>
+<span class="w">                </span><span class="nt">&quot;links&quot;</span><span class="p">:{</span>
+<span class="w">                    </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:76&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;nonBondingEnergyBySelection&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="s2">&quot;SGB&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;typeOfContribution&quot;</span><span class="p">:</span><span class="s2">&quot;sgb&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;selection_group_1&quot;</span><span class="p">:{</span>
+<span class="w">                </span><span class="nt">&quot;links&quot;</span><span class="p">:{</span>
+<span class="w">                    </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;L:1&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;selection_group_2&quot;</span><span class="p">:{</span>
+<span class="w">                </span><span class="nt">&quot;links&quot;</span><span class="p">:{</span>
+<span class="w">                    </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:76&quot;</span><span class="p">]</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Since this can be even computed atom by atom, if it is desired to get many different metrics, it is recomended to use a Python script to set all of those in the JSON control file.</p>
+</section>
+</section>
 <section id="angle-between-three-atoms">
-<span id="sec-metrictypes-atomsangle"></span><h3>Angle between three atoms<a class="headerlink" href="#angle-between-three-atoms" title="Permalink to this headline">¶</a></h3>
+<span id="sec-metrictypes-atomsangle"></span><h3>Angle between three atoms<a class="headerlink" href="#angle-between-three-atoms" title="Permalink to this heading">¶</a></h3>
 <p>It computes the angle between three atoms. Each atom is defined by a selection block and each selection block must contain a single atom, see
 <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a> to see
 different examples of selection blocks.</p>
-<section id="id6">
-<h4>Example<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<section id="id10">
+<h4>Example<a class="headerlink" href="#id10" title="Permalink to this heading">¶</a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;atomsAngle&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="s2">&quot;angle&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;selection_group_1&quot;</span><span class="p">:{</span>
-        <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:6:_O__&quot;</span><span class="p">]}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;selection_group_2&quot;</span><span class="p">:{</span>
-        <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:5:_N__&quot;</span><span class="p">]}</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;selection_group_3&quot;</span><span class="p">:{</span>
-        <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:5:_OH_&quot;</span><span class="p">]}</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;atomsAngle&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="s2">&quot;angle&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;selection_group_1&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:6:_O__&quot;</span><span class="p">]}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;selection_group_2&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:5:_N__&quot;</span><span class="p">]}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;selection_group_3&quot;</span><span class="p">:{</span>
+<span class="w">        </span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;A:5:_OH_&quot;</span><span class="p">]}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>In this example, we are indicating that we want to compute the angle
 between three atoms from chain A.</p>
+</section>
+</section>
+<section id="dihedral-between-four-atoms">
+<span id="sec-metrictypes-atomsdihedral"></span><h3>Dihedral between four atoms<a class="headerlink" href="#dihedral-between-four-atoms" title="Permalink to this heading">¶</a></h3>
+<p>It computes the dihedral between four atoms. Atoms can be defined in a selection block. The selection block must contain four atoms, see
+<a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a> to see different examples of selection blocks.</p>
+<section id="id11">
+<h4>Example<a class="headerlink" href="#id11" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;atomsDihedral&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dihedral&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;selection_group_1&quot;</span><span class="p">:{</span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;ids&quot;</span><span class="p">:[</span><span class="s2">&quot;L:1:_C5_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;L:1:_O3_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;L:1:_C4_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;L:1:_C3_&quot;</span><span class="p">]}}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -473,13 +603,15 @@ between three atoms from chain A.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Metrics block in Pele++ control file</a><ul>
 <li><a class="reference internal" href="#metrics-block-example">Metrics block example</a></li>
 <li><a class="reference internal" href="#metric-types">Metric types</a><ul>
 <li><a class="reference internal" href="#binding-energy">Binding energy</a><ul>
 <li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#example-2">Example 2</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#distance-between-centers-of-mass">Distance between centers of mass</a><ul>
@@ -505,16 +637,29 @@ between three atoms from chain A.</p>
 <li><a class="reference internal" href="#dosuperposition">doSuperposition</a></li>
 <li><a class="reference internal" href="#includehydrogens">includeHydrogens</a></li>
 <li><a class="reference internal" href="#example-1">Example 1</a></li>
-<li><a class="reference internal" href="#example-2">Example 2</a></li>
+<li><a class="reference internal" href="#sec-metrictypes-rmsd-example2">Example 2</a></li>
 <li><a class="reference internal" href="#example-3">Example 3</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#local-non-bonding-energy">Local non-bonding energy</a><ul>
-<li><a class="reference internal" href="#id5">Example 1</a></li>
+<li><a class="reference internal" href="#id6">Example 1</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#internal-energy">Internal energy</a><ul>
+<li><a class="reference internal" href="#id7">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#non-bonding-energy-by-selection">Non-bonding energy by selection</a><ul>
+<li><a class="reference internal" href="#id8">Example 1</a></li>
+<li><a class="reference internal" href="#id9">Example 2</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#angle-between-three-atoms">Angle between three atoms</a><ul>
-<li><a class="reference internal" href="#id6">Example</a></li>
+<li><a class="reference internal" href="#id10">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dihedral-between-four-atoms">Dihedral between four atoms</a><ul>
+<li><a class="reference internal" href="#id11">Example</a></li>
 </ul>
 </li>
 </ul>
@@ -523,12 +668,17 @@ between three atoms from chain A.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="Sensors.html"
-                        title="previous chapter">Sensors Block in Pele++ control file</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="StateTrackerTypes.html"
-                        title="next chapter">StateTracker types in Pele++ control file</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="Sensors.html"
+                          title="previous chapter">Sensors Block in Pele++ control file</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="StateTrackerTypes.html"
+                          title="next chapter">StateTracker types in Pele++ control file</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -540,12 +690,12 @@ between three atoms from chain A.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -571,7 +721,7 @@ between three atoms from chain A.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

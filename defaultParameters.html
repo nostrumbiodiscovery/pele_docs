@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>PELE default parameters &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=217710be"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="PELE Error Messages" href="errorMessages.html" />
@@ -54,279 +50,279 @@
           <div class="body" role="main">
             
   <section id="pele-default-parameters">
-<span id="sec-defaultparameters"></span><h1>PELE default parameters<a class="headerlink" href="#pele-default-parameters" title="Permalink to this headline">¶</a></h1>
+<span id="sec-defaultparameters"></span><h1>PELE default parameters<a class="headerlink" href="#pele-default-parameters" title="Permalink to this heading">¶</a></h1>
 <p>This section shows a complete control file with the default values for all parameters in the control file, in the case of a PELE simulation. When each parameter is explained in the documentation, its default value is provided. This section wants to be a quick reference for all the default values of all parameters.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
- // Complete set of default PELE simulation parameters
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w"> </span><span class="c1">// Complete set of default PELE simulation parameters</span>
 
- &quot;simulationLogPath&quot;: &quot;&quot;,
- &quot;controlFileSavingPath&quot;: &quot;&quot;,
- &quot;Initialization&quot;: {
-   // Either the Complex or MultipleComplex sections must be present
-   // Here, only the Complex section is shown.
-   &quot;Complex&quot;: {
-      // There is no default for the Complex files, but, of course,
-      // the complex must be present. The following is an example:
-      &quot;files&quot;: [{&quot;path&quot;: &quot;complex.pdb&quot;}]
-   },
-   &quot;fixTrees&quot;: true,
-   &quot;fixChainNames&quot;: false,
-   &quot;allowMissingTerminals&quot;: false,
-   &quot;Solvent&quot;: {
-     // If the Solvent block is not defined, then the default
-     // solventType is VACUUM.
-     &quot;solventType&quot;: &quot;SGBNP&quot;,
-     &quot;useDebyeLength&quot;: true,
-     // ionicStrength only makes sense if useDebyeLength is true and
-     // the solvent is different from VACUUM.
-     &quot;ionicStrength&quot;: 0.15
-   },
-   &quot;ForceField&quot;: &quot;OPLS2005&quot;
- },
- &quot;commands&quot;: [
-   { 
-     &quot;commandType&quot;: &quot;peleSimulation&quot;,
+<span class="w"> </span><span class="nt">&quot;simulationLogPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;controlFileSavingPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;Initialization&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="c1">// Either the Complex or MultipleComplex sections must be present</span>
+<span class="w">   </span><span class="c1">// Here, only the Complex section is shown.</span>
+<span class="w">   </span><span class="nt">&quot;Complex&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="c1">// There is no default for the Complex files, but, of course,</span>
+<span class="w">      </span><span class="c1">// the complex must be present. The following is an example:</span>
+<span class="w">      </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;complex.pdb&quot;</span><span class="p">}]</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;fixTrees&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;fixChainNames&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;allowMissingTerminals&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;Solvent&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="c1">// If the Solvent block is not defined, then the default</span>
+<span class="w">     </span><span class="c1">// solventType is VACUUM.</span>
+<span class="w">     </span><span class="nt">&quot;solventType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SGBNP&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="nt">&quot;useDebyeLength&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">     </span><span class="c1">// ionicStrength only makes sense if useDebyeLength is true and</span>
+<span class="w">     </span><span class="c1">// the solvent is different from VACUUM.</span>
+<span class="w">     </span><span class="nt">&quot;ionicStrength&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span>
+<span class="w">   </span><span class="p">},</span>
+<span class="w">   </span><span class="nt">&quot;ForceField&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OPLS2005&quot;</span>
+<span class="w"> </span><span class="p">},</span>
+<span class="w"> </span><span class="nt">&quot;commands&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">   </span><span class="p">{</span><span class="w"> </span>
+<span class="w">     </span><span class="nt">&quot;commandType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;peleSimulation&quot;</span><span class="p">,</span>
 
-     // The selectionToPerturb has no default
-     // It must be the user who identifies the chain to perturb,
-     // in case there is something to perturb.
-     // In this example, it corresponds to chain L
-     &quot;selectionToPerturb&quot;: { &quot;chains&quot;: { &quot;names&quot;: [&quot;L&quot;] } },
-     &quot;NonBonding&quot;: {
-       &quot;nonBondingVersion&quot;: &quot;NB_GEN_MSCALE&quot;,
-       &quot;cutoffList&quot;:
-               [ {&quot;type&quot;: &quot;shortNeutrumNeutrum&quot;, &quot;value&quot;: 10},
-                 {&quot;type&quot;: &quot;shortChargedNeutrum&quot;, &quot;value&quot;: 10},
-                 {&quot;type&quot;: &quot;shortChargedCharged&quot;, &quot;value&quot;: 15},
-                 {&quot;type&quot;: &quot;longNeutrumNeutrum&quot;, &quot;value&quot;: 15},
-                 {&quot;type&quot;: &quot;longChargedNeutrum&quot;, &quot;value&quot;: 20},
-                 {&quot;type&quot;: &quot;longChargedCharged&quot;, &quot;value&quot;: 30}
-               ]
-     },
-     // The following is considered for all minimizations done
-     &quot;includeInMinimization&quot;: {&quot;chains&quot;: &quot;all&quot;},
-     &quot;doNotIncludeInMinimization&quot;: &quot;empty&quot;,
-     // end of minimization related selections
+<span class="w">     </span><span class="c1">// The selectionToPerturb has no default</span>
+<span class="w">     </span><span class="c1">// It must be the user who identifies the chain to perturb,</span>
+<span class="w">     </span><span class="c1">// in case there is something to perturb.</span>
+<span class="w">     </span><span class="c1">// In this example, it corresponds to chain L</span>
+<span class="w">     </span><span class="nt">&quot;selectionToPerturb&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;L&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">     </span><span class="nt">&quot;NonBonding&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nt">&quot;nonBondingVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NB_GEN_MSCALE&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;cutoffList&quot;</span><span class="p">:</span>
+<span class="w">               </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shortNeutrumNeutrum&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shortChargedNeutrum&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;shortChargedCharged&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;longNeutrumNeutrum&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;longChargedNeutrum&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">},</span>
+<span class="w">                 </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;longChargedCharged&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">}</span>
+<span class="w">               </span><span class="p">]</span>
+<span class="w">     </span><span class="p">},</span>
+<span class="w">     </span><span class="c1">// The following is considered for all minimizations done</span>
+<span class="w">     </span><span class="nt">&quot;includeInMinimization&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;all&quot;</span><span class="p">},</span>
+<span class="w">     </span><span class="nt">&quot;doNotIncludeInMinimization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;empty&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="c1">// end of minimization related selections</span>
 
-     &quot;PELE_Parameters&quot;: { 
-       &quot;temperature&quot;: 1000,
-       &quot;numberOfPeleSteps&quot;: 1000,
-       &quot;anmFrequency&quot;: 2,
-       &quot;minimizationFrequency&quot;: 1,
-       &quot;sideChainPredictionFrequency&quot;: 3,
-       &quot;waterPerturbationFrequency&quot;: 3,
-       &quot;conformationPerturbationFrequency&quot;: 0,
-       // The following only make sense if side chain prediction is used
-       &quot;numberOfTopSideSelectedLinks&quot;: 0,
-       &quot;topSideRadius&quot;: 0,
-       &quot;sideChainPredictionRegionRadius&quot;: 6.0,
-       // end of side chain prediction related fields
-       &quot;minimizationRegionRadius&quot;: 1000.0,
-       &quot;activateProximityDetection&quot;: true,
-       // proximityDistance is only considered when activateProximityDetection
-       // is true
-       &quot;proximityDistance&quot;: 5.0,
-       // perturbationCOMConstraintConstant only makes sense when 
-       // selectionToPerturb is defined
-       &quot;perturbationCOMConstraintConstant&quot;: 0
-     },
-     &quot;PELE_Output&quot;: {
-       // Notice that MPI executions will append the trajectory
-       // number to the trajectory and report paths.
-       &quot;savingMode&quot;: &quot;savingTrajectory&quot;,
-       &quot;trajectoryPath&quot;: &quot;../../trajectory.pdb&quot;,
-       // stepsFolder is only used when savingMode is either 
-       // savingSteps or savingBoth
-       &quot;stepsFolder&quot;: &quot;&quot;,
-       &quot;savingFrequencyForAcceptedSteps&quot;: 1,
-       &quot;reportPath&quot;: &quot;../../test_report.txt&quot;,
-       &quot;initialPdbPath&quot;: &quot;&quot;,
-       &quot;finalPdbPath&quot;: &quot;&quot;,
-       &quot;flushingFrequency&quot;: 50,
-       &quot;controllerEventsLogPath&quot;: &quot;&quot;
-     },
-     // constrains are needed for some simulations.
-     // constraints come here. There are no default values for the 
-     // different constraint types
-     &quot;constraints&quot;: [],
-     // PELE tasks come here. 
-     // If no tasks are included, 
-     // an empty list must be written, as is shown:
-     // example empty list: &quot;PeleTask&quot;: [],
-     &quot;PeleTasks&quot;: [
-       {
-         // metrics go here. This is an example for a single task.
-         &quot;metrics&quot;: [
-	  // Only the &quot;rmsd&quot; metric has default values.
-	  // For all metrics, &quot;logIt&quot; is true by default
-	  // In the metrics section, besides metrics,
-	  // also state trackers are allowed, but are not typically used
-	  {
-	    &quot;type&quot;: &quot;rmsd&quot;,
-	    // tags are optional
-	    // &quot;tag&quot;: &quot;rmsd1&quot;,
-	    &quot;logIt&quot;: true,
-	    // Native has no default, but must be specified:
-	    &quot;Native&quot;: { &quot;path&quot;: &quot;native.pdb&quot;},
-	    // By default, if no selection is specified,
-	    // all atoms are specified.
-	    // The following example selects chain L:
-	    // &quot;selection&quot;: { &quot;chains&quot;: { &quot;names&quot;: [&quot;L&quot;] } },
-	    &quot;selection&quot;: {&quot;chains&quot;: &quot;all&quot;},
-	    &quot;doSuperposition&quot;: true,
-	    // if not specified, superpositionSelection is the same as in
-	    // selection.
-	    // superpositionSelection is only used when doSuperposition
-	    // is true
-	    // &quot;superpositionSelection&quot;: { &quot;chains&quot;: { &quot;names&quot;: [&quot;L&quot;] } }
-	    &quot;includeHydrogens&quot;: false
-	  }
-	 ]
-       }
-     ],
-     // RandomGenerator can be used to force the same seed every time,
-     // allowing for reproducibility of results. By default,
-     // the time is used to generate the seed.
-     // An example RandomGenerator:
-     // &quot;RandomGenerator&quot;: { &quot;seed&quot;: 1234 },
-     
-     // Perturbation only happens if the perturbation block is present.
-     &quot;Perturbation&quot;: {
-       &quot;perturbationType&quot;: &quot;naive&quot;,
-       &quot;translationDirection&quot;: &quot;random&quot;,
-       &quot;translationRangeType&quot;: &quot;centered&quot;,
-       &quot;rotationAngles&quot;: &quot;nonCoupled&quot;,
-       &quot;parameters&quot;: {
-         // These parameters only make sense for perturbationType naive
-	 &quot;numberOfTrials&quot;: 10,
-	 &quot;numberOfStericTrials&quot;: 500,
-         // These parameters only make sense for perturbationType metropolis
-         &quot;numberOfSteps&quot;: 1000,
-	 &quot;temperature&quot;: 200000,
-	 // These parameters are common to all perturbationTypes
-	 &quot;atLeastOneSelectedTrial&quot;: false,
-	 // maxTrialsForAtLeastOne only makes sense if 
-	 // atLeastOneSelectedTrial is true
-	 &quot;maxTrialsForAtLeastOne&quot;: 1000,
-	 &quot;rotationScalingFactor&quot;: 0.5,
-	 &quot;rotationRangeFactor&quot;: 0.25,
-	 &quot;translationRange&quot;: 1,
-	 &quot;overlapFactor&quot;: 0.6,
-	 &quot;steeringUpdateFrequency&quot;: 2,
-	 &quot;gridResolution&quot;: 30
-	 // A Box would come here as &quot;Box&quot;: {}
-       }
-     },
-     // ConformationPerturbation only happens if the conformation perturbation block is present.
-     &quot;ConformationPerturbation&quot;:{
-         &quot;parameters&quot;:{
-             &quot;overlapFactor&quot;: 0.65
-         }
-     }
-     &quot;ANM&quot;: {
-       &quot;algorithm&quot;: &quot;ALPHACARBONS&quot;,
-       // When using &quot;CARTESIANS&quot; as algorithm, a &quot;nodes&quot; selection must be used
-       // By default, &quot;nodes&quot; selects all atoms (for &quot;CARTESIANS&quot;).
-       
-       // If loading modes from a file, you have to use &quot;preloadedModesIn&quot;,
-       // specifying the file
-       // &quot;preloadedModesIn&quot;: &quot;myfile&quot;,
-       &quot;linksToInclude&quot;: { &quot;chains&quot;: &quot;everythingButLigands&quot;},
-       &quot;linksToOmit&quot;: &quot;empty&quot;,
-       &quot;options&quot;: {
-         &quot;pickingCase&quot;: &quot;RANDOM_MODE&quot;,
-         &quot;definedMode&quot;: 1,
-         &quot;directionGeneration&quot;: &quot;random&quot;,
-         &quot;initialDirection&quot;: 1.0,
-         &quot;modesMixingOption&quot;: &quot;mixMainModeWithOthersModes&quot;,
-         &quot;moveMagnitudeGeneration&quot;: &quot;noRandom&quot;,
-         &quot;elasticNetworkModel&quot;: &quot;powerContactModel&quot;
-	 },
-       &quot;parameters&quot;: {
-         &quot;displacementFactor&quot;: 1.0,
-	 &quot;numberOfModes&quot;: 6,
-	 &quot;thermalScaling&quot;: true,
-	 &quot;cutoff&quot;: 12.0,
-	 &quot;bondedConstantForHessian&quot;: 0.0,
-	 &quot;decayConstant&quot;: 1.0,
-	 &quot;constantForHessian&quot;: 1.667,
-	 &quot;steeringForce&quot;: 20.0,
-	 &quot;relaxationSpringConstant&quot;: 0,
-	 &quot;equilibriumParameter&quot;: 0.0,
-	 // A very high frequency effectively means that it should only be 
-	 // calculated the first time
-	 &quot;eigenUpdateFrequency&quot;: 1000000,
-	 &quot;modesChangeFrequency&quot;: 6,
-	 // mainModeWeightForMixModes is only used when
-	 // modesMixingOption is mixMainModeWithOthersModes
-	 &quot;mainModeWeightForMixModes&quot;: 0.6,
-	 // exponentialDistanceDecay is only used when
-	 // elasticNetworkModel is set to exponentialNetworkModel
-	 &quot;exponentialDistanceDecay&quot;: 5.0
-       },
-       &quot;anmMinimizer&quot;: {
-         &quot;algorithm&quot;: &quot;TruncatedNewton&quot;,
-	 &quot;parameters&quot;: {
-	   &quot;EnergyDifference&quot;: 1.0,
-	   &quot;MinimumRMS&quot;: 0.1,
-	   &quot;MaximumMinimizationIterations&quot;: 1,
-	   // The following are Truncated Newton parameters
-	   &quot;MaximumNewtonIterations&quot;: 30,
-	   &quot;nonBondingListUpdatedEachMinStep&quot;: false,
-	   &quot;alphaUpdated&quot;: false,
-	   &quot;sgbUpdated&quot;: false,
-	   &quot;iterationsBetweenNBlistLongUpdate&quot;: 2
-	 }
-       }
-     },
-     &quot;SideChainPrediction&quot;: {
-       &quot;algorithm&quot;: &quot;zhexin&quot;,
-       &quot;selectionToInclude&quot;: &quot;empty&quot;,
-       &quot;selectionToOmit&quot;: &quot;empty&quot;,
-       &quot;parameters&quot;: {
-         &quot;resolution&quot;: 30,
-	 &quot;initialOverlapFactor&quot;: 0.75,
-	 &quot;minimalOverlapFactor&quot;: 0.7,
-	 &quot;randomize&quot;: false,
-	 &quot;discardHighEnergySolutions&quot;: false,
-	 &quot;numberOfIterations&quot;: 1,
-	 // only in &quot;boltzmann&quot; algorithm.
-	 &quot;temperature&quot;: 2000	 	 
-       },
-       // if no sideChainMinimizer block is present, no minimization is done
-       &quot;sideChainMinimizer&quot;:  {
-         &quot;algorithm&quot;: &quot;TruncatedNewton&quot;,
-	 &quot;parameters&quot;: {
-	   &quot;EnergyDifference&quot;: 1.0,
-	   &quot;MinimumRMS&quot;: 0.1,
-	   &quot;MaximumMinimizationIterations&quot;: 3,
-	   // The following are Truncated Newton parameters
-	   &quot;MaximumNewtonIterations&quot;: 65,
-	   &quot;nonBondingListUpdatedEachMinStep&quot;: true,
-	   &quot;alphaUpdated&quot;: false,
-	   &quot;sgbUpdated&quot;: true,
-	   &quot;iterationsBetweenNBlistLongUpdate&quot;: 2
-	 }
-       }
-     },
-     &quot;Minimizer&quot;: {
-         &quot;algorithm&quot;: &quot;TruncatedNewton&quot;,
-	 &quot;parameters&quot;: {
-	   &quot;EnergyDifference&quot;: 1.0,
-	   &quot;MinimumRMS&quot;: 0.1,
-	   &quot;MaximumMinimizationIterations&quot;: 3,
-	   // The following are Truncated Newton parameters
-	   &quot;MaximumNewtonIterations&quot;: 65,
-	   &quot;nonBondingListUpdatedEachMinStep&quot;: true,
-	   &quot;alphaUpdated&quot;: false,
-	   &quot;sgbUpdated&quot;: true,
-	   &quot;iterationsBetweenNBlistLongUpdate&quot;: 2
-	   }
-     }
-   }
- ]
+<span class="w">     </span><span class="nt">&quot;PELE_Parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">       </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;numberOfPeleSteps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;anmFrequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;minimizationFrequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;sideChainPredictionFrequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;waterPerturbationFrequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;conformationPerturbationFrequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">       </span><span class="c1">// The following only make sense if side chain prediction is used</span>
+<span class="w">       </span><span class="nt">&quot;numberOfTopSideSelectedLinks&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;topSideRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;sideChainPredictionRegionRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">6.0</span><span class="p">,</span>
+<span class="w">       </span><span class="c1">// end of side chain prediction related fields</span>
+<span class="w">       </span><span class="nt">&quot;minimizationRegionRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1000.0</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;activateProximityDetection&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">       </span><span class="c1">// proximityDistance is only considered when activateProximityDetection</span>
+<span class="w">       </span><span class="c1">// is true</span>
+<span class="w">       </span><span class="nt">&quot;proximityDistance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span>
+<span class="w">       </span><span class="c1">// perturbationCOMConstraintConstant only makes sense when </span>
+<span class="w">       </span><span class="c1">// selectionToPerturb is defined</span>
+<span class="w">       </span><span class="nt">&quot;perturbationCOMConstraintConstant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">     </span><span class="p">},</span>
+<span class="w">     </span><span class="nt">&quot;PELE_Output&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="c1">// Notice that MPI executions will append the trajectory</span>
+<span class="w">       </span><span class="c1">// number to the trajectory and report paths.</span>
+<span class="w">       </span><span class="nt">&quot;savingMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;savingTrajectory&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;trajectoryPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;../../trajectory.pdb&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="c1">// stepsFolder is only used when savingMode is either </span>
+<span class="w">       </span><span class="c1">// savingSteps or savingBoth</span>
+<span class="w">       </span><span class="nt">&quot;stepsFolder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;savingFrequencyForAcceptedSteps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;reportPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;../../test_report.txt&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;initialPdbPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;finalPdbPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;flushingFrequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;controllerEventsLogPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">     </span><span class="p">},</span>
+<span class="w">     </span><span class="c1">// constrains are needed for some simulations.</span>
+<span class="w">     </span><span class="c1">// constraints come here. There are no default values for the </span>
+<span class="w">     </span><span class="c1">// different constraint types</span>
+<span class="w">     </span><span class="nt">&quot;constraints&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">     </span><span class="c1">// PELE tasks come here. </span>
+<span class="w">     </span><span class="c1">// If no tasks are included, </span>
+<span class="w">     </span><span class="c1">// an empty list must be written, as is shown:</span>
+<span class="w">     </span><span class="c1">// example empty list: &quot;PeleTask&quot;: [],</span>
+<span class="w">     </span><span class="nt">&quot;PeleTasks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">       </span><span class="p">{</span>
+<span class="w">         </span><span class="c1">// metrics go here. This is an example for a single task.</span>
+<span class="w">         </span><span class="nt">&quot;metrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">	  </span><span class="c1">// Only the &quot;rmsd&quot; metric has default values.</span>
+<span class="w">	  </span><span class="c1">// For all metrics, &quot;logIt&quot; is true by default</span>
+<span class="w">	  </span><span class="c1">// In the metrics section, besides metrics,</span>
+<span class="w">	  </span><span class="c1">// also state trackers are allowed, but are not typically used</span>
+<span class="w">	  </span><span class="p">{</span>
+<span class="w">	    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
+<span class="w">	    </span><span class="c1">// tags are optional</span>
+<span class="w">	    </span><span class="c1">// &quot;tag&quot;: &quot;rmsd1&quot;,</span>
+<span class="w">	    </span><span class="nt">&quot;logIt&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">	    </span><span class="c1">// Native has no default, but must be specified:</span>
+<span class="w">	    </span><span class="nt">&quot;Native&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;native.pdb&quot;</span><span class="p">},</span>
+<span class="w">	    </span><span class="c1">// By default, if no selection is specified,</span>
+<span class="w">	    </span><span class="c1">// all atoms are specified.</span>
+<span class="w">	    </span><span class="c1">// The following example selects chain L:</span>
+<span class="w">	    </span><span class="c1">// &quot;selection&quot;: { &quot;chains&quot;: { &quot;names&quot;: [&quot;L&quot;] } },</span>
+<span class="w">	    </span><span class="nt">&quot;selection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;all&quot;</span><span class="p">},</span>
+<span class="w">	    </span><span class="nt">&quot;doSuperposition&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">	    </span><span class="c1">// if not specified, superpositionSelection is the same as in</span>
+<span class="w">	    </span><span class="c1">// selection.</span>
+<span class="w">	    </span><span class="c1">// superpositionSelection is only used when doSuperposition</span>
+<span class="w">	    </span><span class="c1">// is true</span>
+<span class="w">	    </span><span class="c1">// &quot;superpositionSelection&quot;: { &quot;chains&quot;: { &quot;names&quot;: [&quot;L&quot;] } }</span>
+<span class="w">	    </span><span class="nt">&quot;includeHydrogens&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">	  </span><span class="p">}</span>
+<span class="w">	 </span><span class="p">]</span>
+<span class="w">       </span><span class="p">}</span>
+<span class="w">     </span><span class="p">],</span>
+<span class="w">     </span><span class="c1">// RandomGenerator can be used to force the same seed every time,</span>
+<span class="w">     </span><span class="c1">// allowing for reproducibility of results. By default,</span>
+<span class="w">     </span><span class="c1">// the time is used to generate the seed.</span>
+<span class="w">     </span><span class="c1">// An example RandomGenerator:</span>
+<span class="w">     </span><span class="c1">// &quot;RandomGenerator&quot;: { &quot;seed&quot;: 1234 },</span>
+<span class="w">     </span>
+<span class="w">     </span><span class="c1">// Perturbation only happens if the perturbation block is present.</span>
+<span class="w">     </span><span class="nt">&quot;Perturbation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nt">&quot;perturbationType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;naive&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;translationDirection&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;random&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;translationRangeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;centered&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;rotationAngles&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nonCoupled&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="c1">// These parameters only make sense for perturbationType naive</span>
+<span class="w">	 </span><span class="nt">&quot;numberOfTrials&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;numberOfStericTrials&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<span class="w">         </span><span class="c1">// These parameters only make sense for perturbationType metropolis</span>
+<span class="w">         </span><span class="nt">&quot;numberOfSteps&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="p">,</span>
+<span class="w">	 </span><span class="c1">// These parameters are common to all perturbationTypes</span>
+<span class="w">	 </span><span class="nt">&quot;atLeastOneSelectedTrial&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">	 </span><span class="c1">// maxTrialsForAtLeastOne only makes sense if </span>
+<span class="w">	 </span><span class="c1">// atLeastOneSelectedTrial is true</span>
+<span class="w">	 </span><span class="nt">&quot;maxTrialsForAtLeastOne&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;rotationScalingFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;rotationRangeFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;translationRange&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;overlapFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;steeringUpdateFrequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;gridResolution&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">	 </span><span class="c1">// A Box would come here as &quot;Box&quot;: {}</span>
+<span class="w">       </span><span class="p">}</span>
+<span class="w">     </span><span class="p">},</span>
+<span class="w">     </span><span class="c1">// ConformationPerturbation only happens if the conformation perturbation block is present.</span>
+<span class="w">     </span><span class="nt">&quot;ConformationPerturbation&quot;</span><span class="p">:{</span>
+<span class="w">         </span><span class="nt">&quot;parameters&quot;</span><span class="p">:{</span>
+<span class="w">             </span><span class="nt">&quot;overlapFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.65</span>
+<span class="w">         </span><span class="p">}</span>
+<span class="w">     </span><span class="p">}</span>
+<span class="w">     </span><span class="nt">&quot;ANM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nt">&quot;algorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ALPHACARBONS&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="c1">// When using &quot;CARTESIANS&quot; as algorithm, a &quot;nodes&quot; selection must be used</span>
+<span class="w">       </span><span class="c1">// By default, &quot;nodes&quot; selects all atoms (for &quot;CARTESIANS&quot;).</span>
+<span class="w">       </span>
+<span class="w">       </span><span class="c1">// If loading modes from a file, you have to use &quot;preloadedModesIn&quot;,</span>
+<span class="w">       </span><span class="c1">// specifying the file</span>
+<span class="w">       </span><span class="c1">// &quot;preloadedModesIn&quot;: &quot;myfile&quot;,</span>
+<span class="w">       </span><span class="nt">&quot;linksToInclude&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;everythingButLigands&quot;</span><span class="p">},</span>
+<span class="w">       </span><span class="nt">&quot;linksToOmit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;empty&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;pickingCase&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RANDOM_MODE&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;definedMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;directionGeneration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;random&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;initialDirection&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;modesMixingOption&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mixMainModeWithOthersModes&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;moveMagnitudeGeneration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;noRandom&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;elasticNetworkModel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;powerContactModel&quot;</span>
+<span class="w">	 </span><span class="p">},</span>
+<span class="w">       </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;displacementFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;numberOfModes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;thermalScaling&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;cutoff&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">12.0</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;bondedConstantForHessian&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;decayConstant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;constantForHessian&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.667</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;steeringForce&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;relaxationSpringConstant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;equilibriumParameter&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span>
+<span class="w">	 </span><span class="c1">// A very high frequency effectively means that it should only be </span>
+<span class="w">	 </span><span class="c1">// calculated the first time</span>
+<span class="w">	 </span><span class="nt">&quot;eigenUpdateFrequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;modesChangeFrequency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">	 </span><span class="c1">// mainModeWeightForMixModes is only used when</span>
+<span class="w">	 </span><span class="c1">// modesMixingOption is mixMainModeWithOthersModes</span>
+<span class="w">	 </span><span class="nt">&quot;mainModeWeightForMixModes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6</span><span class="p">,</span>
+<span class="w">	 </span><span class="c1">// exponentialDistanceDecay is only used when</span>
+<span class="w">	 </span><span class="c1">// elasticNetworkModel is set to exponentialNetworkModel</span>
+<span class="w">	 </span><span class="nt">&quot;exponentialDistanceDecay&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="nt">&quot;anmMinimizer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;algorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TruncatedNewton&quot;</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	   </span><span class="nt">&quot;EnergyDifference&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;MinimumRMS&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;MaximumMinimizationIterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">	   </span><span class="c1">// The following are Truncated Newton parameters</span>
+<span class="w">	   </span><span class="nt">&quot;MaximumNewtonIterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;nonBondingListUpdatedEachMinStep&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;iterationsBetweenNBlistLongUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">	 </span><span class="p">}</span>
+<span class="w">       </span><span class="p">}</span>
+<span class="w">     </span><span class="p">},</span>
+<span class="w">     </span><span class="nt">&quot;SideChainPrediction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nt">&quot;algorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zhexin&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;selectionToInclude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;empty&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;selectionToOmit&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;empty&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;resolution&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;initialOverlapFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;minimalOverlapFactor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;randomize&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;discardHighEnergySolutions&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;numberOfIterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">	 </span><span class="c1">// only in &quot;boltzmann&quot; algorithm.</span>
+<span class="w">	 </span><span class="nt">&quot;temperature&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="w">	 	 </span>
+<span class="w">       </span><span class="p">},</span>
+<span class="w">       </span><span class="c1">// if no sideChainMinimizer block is present, no minimization is done</span>
+<span class="w">       </span><span class="nt">&quot;sideChainMinimizer&quot;</span><span class="p">:</span><span class="w">  </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;algorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TruncatedNewton&quot;</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	   </span><span class="nt">&quot;EnergyDifference&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;MinimumRMS&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;MaximumMinimizationIterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">	   </span><span class="c1">// The following are Truncated Newton parameters</span>
+<span class="w">	   </span><span class="nt">&quot;MaximumNewtonIterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;nonBondingListUpdatedEachMinStep&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;iterationsBetweenNBlistLongUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">	 </span><span class="p">}</span>
+<span class="w">       </span><span class="p">}</span>
+<span class="w">     </span><span class="p">},</span>
+<span class="w">     </span><span class="nt">&quot;Minimizer&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;algorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TruncatedNewton&quot;</span><span class="p">,</span>
+<span class="w">	 </span><span class="nt">&quot;parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	   </span><span class="nt">&quot;EnergyDifference&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;MinimumRMS&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;MaximumMinimizationIterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">	   </span><span class="c1">// The following are Truncated Newton parameters</span>
+<span class="w">	   </span><span class="nt">&quot;MaximumNewtonIterations&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">65</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;nonBondingListUpdatedEachMinStep&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;alphaUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;sgbUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">	   </span><span class="nt">&quot;iterationsBetweenNBlistLongUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">	   </span><span class="p">}</span>
+<span class="w">     </span><span class="p">}</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w"> </span><span class="p">]</span>
 
-}
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -338,12 +334,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="fileFormats.html"
-                        title="previous chapter">PELE File Formats</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="errorMessages.html"
-                        title="next chapter">PELE Error Messages</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="fileFormats.html"
+                          title="previous chapter">PELE File Formats</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="errorMessages.html"
+                          title="next chapter">PELE Error Messages</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -355,12 +355,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -384,7 +384,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="index.html#license">License</a>.
     </div>
   </body>

@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Random Generator in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="NonBonding in Pele++ control file" href="../NonBonding/NonBondingAlgorithms.html" />
@@ -55,23 +51,23 @@
           <div class="body" role="main">
             
   <section id="random-generator-in-pele-control-file">
-<span id="sec-randomgenerator"></span><h1>Random Generator in Pele++ control file<a class="headerlink" href="#random-generator-in-pele-control-file" title="Permalink to this headline">¶</a></h1>
+<span id="sec-randomgenerator"></span><h1>Random Generator in Pele++ control file<a class="headerlink" href="#random-generator-in-pele-control-file" title="Permalink to this heading">¶</a></h1>
 <p>Random numbers are generated using a Mersenne Twister pseudo random number generator. The generator can be initialized with a user-provided seed, or it may start at the state stored in a file, or, if none of the above options are given, it uses a seed created from the current time.</p>
 <p>If working with several trajectories, then you can only provide a seed or use the default seed based on the current time. Notice that each MPI process will use a different seed: rank 1 process gets the original seed (either provided in the configuration file, or obtained by using the current time), all other processes increment the seed according to their rank; for example, rank 3 process gets the original seed + 2. The MPI controller process does not require any random number generator.</p>
 <section id="example-using-a-seed">
-<h2>Example using a seed<a class="headerlink" href="#example-using-a-seed" title="Permalink to this headline">¶</a></h2>
+<h2>Example using a seed<a class="headerlink" href="#example-using-a-seed" title="Permalink to this heading">¶</a></h2>
 <p>Seed range: [0, inf)</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;RandomGenerator&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;seed&quot;</span><span class="p">:</span> <span class="mi">30786</span>
-    <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;RandomGenerator&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30786</span>
+<span class="w">    </span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="example-using-a-previous-random-generator-stored-in-a-file">
-<h2>Example using a previous random generator stored in a file<a class="headerlink" href="#example-using-a-previous-random-generator-stored-in-a-file" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;RandomGenerator&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;randomGeneratorFile&quot;</span><span class="p">:</span> <span class="s2">&quot;../example.txt&quot;</span>
-    <span class="p">}</span>
+<h2>Example using a previous random generator stored in a file<a class="headerlink" href="#example-using-a-previous-random-generator-stored-in-a-file" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;RandomGenerator&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;randomGeneratorFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;../example.txt&quot;</span>
+<span class="w">    </span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -84,8 +80,9 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Random Generator in Pele++ control file</a><ul>
 <li><a class="reference internal" href="#example-using-a-seed">Example using a seed</a></li>
 <li><a class="reference internal" href="#example-using-a-previous-random-generator-stored-in-a-file">Example using a previous random generator stored in a file</a></li>
@@ -93,12 +90,17 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../PELE/PeleTasks.html"
-                        title="previous chapter">PeleTasks</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../NonBonding/NonBondingAlgorithms.html"
-                        title="next chapter">NonBonding in Pele++ control file</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../PELE/PeleTasks.html"
+                          title="previous chapter">PeleTasks</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../NonBonding/NonBondingAlgorithms.html"
+                          title="next chapter">NonBonding in Pele++ control file</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -110,12 +112,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -140,7 +142,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

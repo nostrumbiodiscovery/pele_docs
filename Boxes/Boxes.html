@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Boxes &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
     <script type="text/javascript" >
@@ -45,7 +41,7 @@
           <div class="body" role="main">
             
   <section id="boxes">
-<span id="sec-boxes"></span><h1>Boxes<a class="headerlink" href="#boxes" title="Permalink to this headline">¶</a></h1>
+<span id="sec-boxes"></span><h1>Boxes<a class="headerlink" href="#boxes" title="Permalink to this heading">¶</a></h1>
 <p>In the control file we can define Boxes in which the ligand will move.</p>
 <p>These Boxes are added in the LigandPerturbation block, see
 <a class="reference internal" href="../Perturbation/Perturbation.html#sec-perturbation"><span class="std std-ref">Perturbation</span></a>.</p>
@@ -81,7 +77,7 @@ example, during the ANM or relaxation minimization) the ligand gets
 moved outside of the box, the PELE step will be rejected.</p>
 <p>There are three type of boxes:</p>
 <section id="spherical-boxes">
-<h2>Spherical Boxes<a class="headerlink" href="#spherical-boxes" title="Permalink to this headline">¶</a></h2>
+<h2>Spherical Boxes<a class="headerlink" href="#spherical-boxes" title="Permalink to this heading">¶</a></h2>
 <p>In this case the
 exploration will take place inside a sphere of a given radius which is
 centered either in a fixed point or in the center of masses of a given
@@ -90,92 +86,92 @@ selection of atoms.</p>
 would be the center of masses of all the atoms.</p>
 <p>You can find more examples of selections in <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>.</p>
 <p>Example centered in the center of masses of all atoms:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sphericalBox&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">45</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sphericalBox&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Example centered in the center of masses of a selection of atoms:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sphericalBox&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
-   <span class="nt">&quot;selectionOfAtomsForCOM&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="s2">&quot;everythingButLigands&quot;</span>
-   <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sphericalBox&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;selectionOfAtomsForCOM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;everythingButLigands&quot;</span>
+<span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Example centered in a fixed point:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sphericalBox&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;radius&quot;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span>
-   <span class="nt">&quot;fixedCenter&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">-5.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sphericalBox&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;fixedCenter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="prismatic-boxes">
-<h2>Prismatic Boxes<a class="headerlink" href="#prismatic-boxes" title="Permalink to this headline">¶</a></h2>
+<h2>Prismatic Boxes<a class="headerlink" href="#prismatic-boxes" title="Permalink to this heading">¶</a></h2>
 <p>In this case the exploration will take place inside a prismatic box of
 given dimensions which is centered either in a fixed point or in the
 center of masses of a given selection of atoms.</p>
 <p>Example centered in the center of masses of all atoms:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;prismaticBox&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;x_y_z&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prismaticBox&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;x_y_z&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Example centered in the center of masses of a selection of atoms:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;prismaticBox&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;x_y_z&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-   <span class="nt">&quot;selectionOfAtomsForCOM&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="s2">&quot;everythingButLigands&quot;</span>
-   <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prismaticBox&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;x_y_z&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">],</span>
+<span class="w">   </span><span class="nt">&quot;selectionOfAtomsForCOM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;everythingButLigands&quot;</span>
+<span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Example centered in a fixed point:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;prismaticBox&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;x_y_z&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-   <span class="nt">&quot;fixedCenter&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">-5.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prismaticBox&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;x_y_z&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">],</span>
+<span class="w">   </span><span class="nt">&quot;fixedCenter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="spherical-shell-boxes">
-<h2>Spherical Shell Boxes<a class="headerlink" href="#spherical-shell-boxes" title="Permalink to this headline">¶</a></h2>
+<h2>Spherical Shell Boxes<a class="headerlink" href="#spherical-shell-boxes" title="Permalink to this heading">¶</a></h2>
 <p>In this case the exploration will take place inside a shell between to
 concentric spheres of given radii which is centered either in a fixed
 point or in the center of masses of a given selection of atoms.</p>
 <p>Example centered in the center of masses of all atoms:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sphericalShellBox&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;innerRadius&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
-   <span class="nt">&quot;outerRadius&quot;</span><span class="p">:</span> <span class="mf">5.0</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sphericalShellBox&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;innerRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;outerRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Example centered in the center of masses of a selection of atoms:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sphericalShellBox&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;innerRadius&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
-   <span class="nt">&quot;outerRadius&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
-   <span class="nt">&quot;selectionOfAtomsForCOM&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="nt">&quot;chains&quot;</span><span class="p">:</span> <span class="s2">&quot;everythingButLigands&quot;</span>
-   <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sphericalShellBox&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;innerRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;outerRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;selectionOfAtomsForCOM&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="nt">&quot;chains&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;everythingButLigands&quot;</span>
+<span class="w">   </span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Example centered in a fixed point:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sphericalShellBox&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;innerRadius&quot;</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span>
-   <span class="nt">&quot;outerRadius&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
-   <span class="nt">&quot;fixedCenter&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">-5.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Box&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sphericalShellBox&quot;</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;innerRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;outerRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span>
+<span class="w">   </span><span class="nt">&quot;fixedCenter&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">-5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -189,8 +185,9 @@ point or in the center of masses of a given selection of atoms.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Boxes</a><ul>
 <li><a class="reference internal" href="#spherical-boxes">Spherical Boxes</a></li>
 <li><a class="reference internal" href="#prismatic-boxes">Prismatic Boxes</a></li>
@@ -199,6 +196,7 @@ point or in the center of masses of a given selection of atoms.</p>
 </li>
 </ul>
 
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -210,12 +208,12 @@ point or in the center of masses of a given selection of atoms.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -232,7 +230,7 @@ point or in the center of masses of a given selection of atoms.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

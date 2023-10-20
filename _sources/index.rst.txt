@@ -1,5 +1,5 @@
 ======================
-PELE 1.7 documentation
+PELE 1.8 documentation
 ======================
 
 Contents:

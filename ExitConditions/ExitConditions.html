@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Exit Conditions &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Conditions in Pele++ control file" href="../LogicalConditions/ConditionsByExample.html" />
@@ -55,31 +51,31 @@
           <div class="body" role="main">
             
   <section id="exit-conditions">
-<span id="sec-exitconditions"></span><h1>Exit Conditions<a class="headerlink" href="#exit-conditions" title="Permalink to this headline">¶</a></h1>
+<span id="sec-exitconditions"></span><h1>Exit Conditions<a class="headerlink" href="#exit-conditions" title="Permalink to this heading">¶</a></h1>
 <p>If any of the conditions in “exitConditions” list evaluates to true, the
 current PeleTask ends.</p>
 <p>Let’s see an example of a PeleTask that uses an “exitConditions” block:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;PeleTasks&quot;</span><span class="p">:</span>
 <span class="p">[</span>
-    <span class="p">{</span>
-        <span class="nt">&quot;metrics&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;rmsd_2&quot;</span><span class="p">,</span>
-                <span class="nt">&quot;Native&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;src/Molecules/Test/Data/plop_isr_out.pdb&quot;</span>
-                <span class="p">},</span>
-                <span class="nt">&quot;selection&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="nt">&quot;atoms&quot;</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="nt">&quot;names&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;_CA_&quot;</span><span class="p">,</span> <span class="s2">&quot;_C4&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;_C2_&quot;</span><span class="p">,</span> <span class="s2">&quot;_P__&quot;</span><span class="p">]</span>
-                    <span class="p">}</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">],</span>
-        <span class="nt">&quot;exitConditions&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;rmsd_2 &lt; 1.1&quot;</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;metrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rmsd&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rmsd_2&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;Native&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src/Molecules/Test/Data/plop_isr_out.pdb&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="nt">&quot;selection&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;atoms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;names&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;_CA_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;_C4&#39;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;_C2_&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;_P__&quot;</span><span class="p">]</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;exitConditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;rmsd_2 &lt; 1.1&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -98,8 +94,8 @@ condition in this case.</p>
 <p>Notice that the condition uses a Metric that has been previously tagged
 when it was defined in the <a class="reference internal" href="../Sensors/MetricTypes.html#sec-metrictypes"><span class="std std-ref">metrics block</span></a>. Conditions can only work with tagged Metrics or StateTrackers names. To learn more about conditions, check <a class="reference internal" href="../LogicalConditions/ConditionsByExample.html#sec-conditionsbyexample"><span class="std std-ref">Conditions By Example</span></a>.</p>
 <p>Another example using StateTrackers is:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;exitConditions&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;numberOfAcceptedPeleSteps &gt; 1&quot;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;exitConditions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;numberOfAcceptedPeleSteps &gt; 1&quot;</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -117,12 +113,16 @@ must have been defined and tagged before using them.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../PELEDynamicChangesInSimulationParameters/PELEDynamicChangesInSimulationParameters.html"
-                        title="previous chapter">PELE: Dynamic Changes in simulation parameters</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../LogicalConditions/ConditionsByExample.html"
-                        title="next chapter">Conditions in Pele++ control file</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../PELEDynamicChangesInSimulationParameters/PELEDynamicChangesInSimulationParameters.html"
+                          title="previous chapter">PELE: Dynamic Changes in simulation parameters</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../LogicalConditions/ConditionsByExample.html"
+                          title="next chapter">Conditions in Pele++ control file</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -134,12 +134,12 @@ must have been defined and tagged before using them.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -164,7 +164,7 @@ must have been defined and tagged before using them.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>
   </body>

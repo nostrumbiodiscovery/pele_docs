@@ -21,59 +21,55 @@ Inside the PeleSimulation command block
 The parameters defined at PeleSimulation level will be common for all
 the tasks.
 
+
 .. code-block:: json
 
-   ...
-   "commands":
-   [
-       {
-           "commandType": "peleSimulation",
+  {
+    "commands": [
+    {
+      "commandType": "peleSimulation",
+      ...
+      "ANM": {
+        "algorithm": "ALPHACARBONS",
+        "options": {
+          "moveMagnitudeGeneration": "noRandom",
+          "modesMixingOption": "doNotMixModes",
+          "pickingCase": "LOWEST_MODE",
+          "directionGeneration": "useAlwaysTheSame"
+        },
+        "parameters": {
+          "eigenUpdateFrequency": 1,
+          "modesChangeFrequency": 1,
+          "numberOfModes": 8,
+          "thermalScaling": true,
+          "displacementFactor": 1.5,
+          "cutoff": 12,
+          "normalMode": 0,
+          "bondedConstantForHessian": 1.667,
+          "relaxationSpringConstant": 40,
+          "equilibriumParameter": 0,
+          "steeringForce": 30
+        },
+        "Native": {
+          "path": "src/Molecules/Test/Data/plop_isr_out.pdb"
+        },
+        "anmMinimizer": {
+          "algorithm": "TruncatedNewton",
+          "parameters": {
+            "EnergyDifference": 1,
+            "MaximumMinimizationIterations": 1,
+            "MaximumNewtonIterations": 100,
+            "MinimumRMS": 0.01,
+            "nonBondingListUpdatedEachMinStep": false,
+            "alphaUpdated": false,
+            "sgbUpdated": false
+          }
+        }
+      }
+    }
+    ]
+  }
 
-           ...
-           ...
-
-          
-           "ANM": {
-               "algorithm": "ALPHACARBONS",
-               "options": {
-                   "moveMagnitudeGeneration": "noRandom",
-                   "modesMixingOption": "doNotMixModes",
-                   "pickingCase": "LOWEST_MODE",
-                   "directionGeneration": "useAlwaysTheSame"
-               },
-               "parameters": {
-                   "eigenUpdateFrequency": 1,
-                   "modesChangeFrequency": 1,
-                   "numberOfModes": 8,
-                   "thermalScaling": true,
-                   "displacementFactor": 1.5,
-                   "cutoff": 12,
-                   "normalMode": 0,
-                   "bondedConstantForHessian": 1.667,
-                   "relaxationSpringConstant": 40,
-                   "equilibriumParameter": 0,
-                   "steeringForce": 30
-               },
-               "Native": {
-                   "path": "src/Molecules/Test/Data/plop_isr_out.pdb"
-               },
-               "anmMinimizer": {
-                   "algorithm": "TruncatedNewton",
-                   "parameters": {
-                       "EnergyDifference": 1,
-                       "MaximumMinimizationIterations": 1,
-                       "MaximumNewtonIterations": 100,
-                       "MinimumRMS": 0.01,
-                       "nonBondingListUpdatedEachMinStep": false,
-                       "alphaUpdated": false,
-                       "sgbUpdated": false
-                   }
-               }
-           }
-           ...
-           ]
-       }
-   ]
 
 Inside a PeleTask block
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -162,6 +158,31 @@ Possible options:
    (see "nodes").
 -  "ALPHACARBONS" Special case of "CARTESIANS" algorithm where the nodes
    are only Cα.
+-  "NULL" Option to disable ANM, so PELE can be used with a ligand and no protein, for example. When using ``NULL``, any other parameters can be ignored, for example:
+
+
+.. code-block:: json
+
+   ...
+   "commands":
+   [
+       {
+           "commandType": "peleSimulation",
+           ....
+           ....
+           "PeleTasks": [
+               {
+             ....
+                   ....
+                   "ANM": {
+                       "algorithm": "NULL"
+		   }
+             ...
+             ...
+               }
+           ]
+       }
+   ]
 
 When using either ``CARTESIANS`` or ``ALPHACARBONS`` options, you can specify to
 load the eigenvalues and eigenvectors from a file. See "Modes

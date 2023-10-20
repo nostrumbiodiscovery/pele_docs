@@ -1,20 +1,16 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>RoRγ: Dissociation Pathway to guide unbiased binding simulation &#8212; PELE 1.7.0 documentation</title>
-    <link rel="stylesheet" href="../../_static/naturemodified.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=217710be"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Hemagglutinin: Pocket Detection" href="../Hemagglutinin/Hemagglutinin.html" />
@@ -54,7 +50,7 @@
           <div class="body" role="main">
             
   <section id="ror-dissociation-pathway-to-guide-unbiased-binding-simulation">
-<h1>RoRγ: Dissociation Pathway to guide unbiased binding simulation<a class="headerlink" href="#ror-dissociation-pathway-to-guide-unbiased-binding-simulation" title="Permalink to this headline">¶</a></h1>
+<h1>RoRγ: Dissociation Pathway to guide unbiased binding simulation<a class="headerlink" href="#ror-dissociation-pathway-to-guide-unbiased-binding-simulation" title="Permalink to this heading">¶</a></h1>
 <dl class="simple">
 <dt>The Retinoic-acid related-orphan-receptor-C (RORC or RORγ) belongs to the nuclear hormone receptor (NHR) superfamily. It plays a fundamental role in the maturation of IL-17 producing Th17 cells is thus an attractive target for a variety of autoimmune diseases such as psoriasis and rheumatoid arthritis. RORγ features a multidomain structure characterized by an N-terminal DNA binding domain (DBD) and a C-terminal ligand-binding domain (LBD) capable of binding ligands and recruiting co-activator or co-repressor proteins. The LBD is a compact globular structure rich in α-helices. Its ligand-binding site is located deeply at the core of the domain. Inspection of all co-crystal structures does not reveal an obvious entry path into this deep buried site. An interesting and unresolved question remains related to how compounds active on RORγ-LBD</dt><dd><p>diffuse in and out of the binding site, which is at the core of the LBD.</p>
 </dd>
@@ -66,21 +62,21 @@
 </figcaption>
 </figure>
 <section id="objective">
-<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this heading">¶</a></h2>
 <p>To explore the exit pathway of ligand from the protein-ligand bound complex.</p>
 </section>
 <section id="preparation">
-<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<h2>Preparation<a class="headerlink" href="#preparation" title="Permalink to this heading">¶</a></h2>
 <p>To start the simulation, we need the complex.pdb an the input.yaml</p>
 <section id="receptor">
-<h3>Receptor<a class="headerlink" href="#receptor" title="Permalink to this headline">¶</a></h3>
+<h3>Receptor<a class="headerlink" href="#receptor" title="Permalink to this heading">¶</a></h3>
 <p>Process the protein complex (PDB id: 5VB7) with Protein Preparation Wizard (Schrodinger Program Suite) at pH 7.4 ± 0.5 to assign the protonation state to all ionizable residue as well as optimize the H-bond network.</p>
 </section>
 </section>
 <section id="procedure-part-1-pele-exit-path">
-<h2>Procedure-Part 1: PELE Exit Path<a class="headerlink" href="#procedure-part-1-pele-exit-path" title="Permalink to this headline">¶</a></h2>
+<h2>Procedure-Part 1: PELE Exit Path<a class="headerlink" href="#procedure-part-1-pele-exit-path" title="Permalink to this heading">¶</a></h2>
 <section id="main-characteristics-of-the-simulation">
-<h3>Main characteristics of the simulation<a class="headerlink" href="#main-characteristics-of-the-simulation" title="Permalink to this headline">¶</a></h3>
+<h3>Main characteristics of the simulation<a class="headerlink" href="#main-characteristics-of-the-simulation" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>Using the starting structure from protein-ligand crystal complex.</p></li>
 <li><p>AdaptivePELE mode: “Unbinding”. This will move the ligand towards the bulk little by little.</p></li>
@@ -89,24 +85,24 @@
 </ul>
 </section>
 <section id="control-file-specifics">
-<h3>Control File Specifics<a class="headerlink" href="#control-file-specifics" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">system</span><span class="p">:</span> <span class="s">&#39;5vb7_prw.pdb&#39;</span> <span class="c1"># Complex input</span>
-<span class="nt">chain</span><span class="p">:</span> <span class="s">&#39;Z&#39;</span> <span class="c1">#Ligand chain</span>
-<span class="nt">resname</span><span class="p">:</span> <span class="s">&#39;AGO&#39;</span> <span class="c1">#Ligand resname</span>
-<span class="nt">seed</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12345</span> <span class="c1">#Seed</span>
-<span class="nt">in_out</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span> <span class="c1">#  This will set the box on the COM of the ligand and make small succesive simulations that start from the outputs with biggest SASA of the previous simulation</span>
-<span class="nt">cpus</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">20</span> <span class="c1">#Number of CPUS. You will obtain cpus-1 montecarlo trajectories</span>
+<h3>Control File Specifics<a class="headerlink" href="#control-file-specifics" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">system</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;5vb7_prw.pdb&#39;</span><span class="w"> </span><span class="c1"># Complex input</span>
+<span class="nt">chain</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Z&#39;</span><span class="w"> </span><span class="c1">#Ligand chain</span>
+<span class="nt">resname</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;AGO&#39;</span><span class="w"> </span><span class="c1">#Ligand resname</span>
+<span class="nt">seed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12345</span><span class="w"> </span><span class="c1">#Seed</span>
+<span class="nt">in_out</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1">#  This will set the box on the COM of the ligand and make small succesive simulations that start from the outputs with biggest SASA of the previous simulation</span>
+<span class="nt">cpus</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"> </span><span class="c1">#Number of CPUS. You will obtain cpus-1 montecarlo trajectories</span>
 </pre></div>
 </div>
 </section>
 <section id="launch-command">
-<h3>Launch Command<a class="headerlink" href="#launch-command" title="Permalink to this headline">¶</a></h3>
+<h3>Launch Command<a class="headerlink" href="#launch-command" title="Permalink to this heading">¶</a></h3>
 <p>python -m pele_platform.main input.yaml</p>
 </section>
 <section id="results">
-<h3>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
+<h3>Results<a class="headerlink" href="#results" title="Permalink to this heading">¶</a></h3>
 <section id="exit-plot">
-<h4>Exit Plot<a class="headerlink" href="#exit-plot" title="Permalink to this headline">¶</a></h4>
+<h4>Exit Plot<a class="headerlink" href="#exit-plot" title="Permalink to this heading">¶</a></h4>
 <p>To monitor the exit path we plot the SASA vs the number of steps</p>
 <figure class="align-center" id="id2">
 <img alt="../../_images/exit_plot.png" src="../../_images/exit_plot.png" />
@@ -116,7 +112,7 @@
 </figure>
 </section>
 <section id="important-residues-in-exit-path">
-<h4>Important residues in exit path<a class="headerlink" href="#important-residues-in-exit-path" title="Permalink to this headline">¶</a></h4>
+<h4>Important residues in exit path<a class="headerlink" href="#important-residues-in-exit-path" title="Permalink to this heading">¶</a></h4>
 <p>To map the residues movement along the ligand exit pathway from the trajectory
 make the movie as described <a class="reference external" href="../../intro/AdaptiveMethodology/GeneralAnalysis/GeneralAnalysis.html#extract-the-movie-of-your-best-snapshot">here</a> and plot all the residues close to the ligand of all snapshots together to see their fluctuation as seen in the Figure below.</p>
 <p>To map the movement of residues along the ligand exit pathway, make a movie as described <a class="reference external" href="../../intro/AdaptiveMethodology/GeneralAnalysis/GeneralAnalysis.html#extract-the-movie-of-your-best-snapshot">here</a> and display all the residues close to the ligand in one Figure to see their fluctuations (see below).</p>
@@ -138,8 +134,9 @@ make the movie as described <a class="reference external" href="../../intro/Adap
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">RoRγ: Dissociation Pathway to guide unbiased binding simulation</a><ul>
 <li><a class="reference internal" href="#objective">Objective</a></li>
 <li><a class="reference internal" href="#preparation">Preparation</a><ul>
@@ -161,12 +158,17 @@ make the movie as described <a class="reference external" href="../../intro/Adap
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../tutorial.html"
-                        title="previous chapter">Tutorial</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../Hemagglutinin/Hemagglutinin.html"
-                        title="next chapter">Hemagglutinin: Pocket Detection</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../tutorial.html"
+                          title="previous chapter">Tutorial</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../Hemagglutinin/Hemagglutinin.html"
+                          title="next chapter">Hemagglutinin: Pocket Detection</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -178,12 +180,12 @@ make the movie as described <a class="reference external" href="../../intro/Adap
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -207,7 +209,7 @@ make the movie as described <a class="reference external" href="../../intro/Adap
     </div>
     <div class="footer">
         &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../../index.html#license">License</a>.
     </div>
   </body>

@@ -139,6 +139,9 @@ The currently available metrics are:
 -  :ref:`Random number <sec-metricTypes-randomNumber>`
 -  :ref:`RMSD <sec-metricTypes-RMSD>`
 -  :ref:`Local non-bonding energy <sec-metricTypes-localNonBondingEnergy>`
+-  :ref:`Internal energy <sec-metricTypes-internalEnergy>`
+-  :ref:`Non-bonding energy by selection <sec-metricTypes-NonBondingEnergyBySelection>`
+
 
 .. _sec-metricTypes-bindingEnergy:
 
@@ -167,7 +170,21 @@ examples of selection blocks. The calculation is done by dividing the
 system into two parts: that selected by the "boundPartSelection"
 selection, and the rest. The "boundPartSelection" must be a single
 chain, and it should correspond to the ligand, though it does not have
-to.
+to. If that chain is a protein with several components, flag 
+allowMultipleBindingSelection must be set to true.
+
+Example 2
+"""""""""
+
+.. code-block:: json
+
+   {
+       "type":"bindingEnergy",
+       "boundPartSelection": {
+           "chains": { "names": [ "L" ] }
+           },
+        "allowMultipleBindingSelection" : true
+   }
 
 .. _sec-metricTypes-comDistance:
 
@@ -464,7 +481,6 @@ Example 1
 """""""""
 
 .. code-block:: json
-
    {
        "type": "localNonBondingEnergy",
        "selection": { "links": { "ids": ["L:1"] } },
@@ -477,6 +493,135 @@ The algorithm requires two parameters, the selection of the link and the radius 
 examples of selection blocks. However, the algorithm will complain when any atomset different from a link is selected as it is designed to work only with a single link.
 
 When the link is covalently linked to other atoms that belong to a different link, the algorithm ignores the non-bonding interaction between atoms that are within a 2-bond distance. Moreover, any inner interaction between two atoms from the link is ignored as we are only interested on computing the interaction between the link and its surroundings. The algorithm also ignores covalent contributions between the selected link and any external atom.
+
+
+.. _sec-metricTypes-internalEnergy:
+
+Internal energy
+^^^^^^^^^^^^^^^
+
+It computes the internal energy of a ligand. 
+
+Example
+"""""""
+
+.. code-block:: json
+
+    {
+        "type":"internalEnergy",
+        "atomSetSelection": {
+            "chains": { "names": [ "L" ] }
+        }
+    }
+
+Basically it only considers the Ligand in the system, thus the energy calculated is the energy of the ligand alone.
+
+
+.. _sec-metricTypes-NonBondingEnergyBySelection:
+
+Non-bonding energy by selection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Example 1
+"""""""""
+
+.. code-block:: json
+
+    {
+        "type":"nonBondingEnergyBySelection",
+        "tag":"E_by_sel",
+        "typeOfContribution": "all",
+        "selection_group_1":{
+            "links": { "ids":["L:1"]}
+        },
+        "selection_group_2":{
+            "links": { "ids":["A:76"]}
+        }
+    }
+
+In this example, we are are calculating the non-bonding energy by selection instead of radius. This means that this method is able to calculate the contributions from any selection that we can do with :ref:`Selections <sec-selectionExamples>`.
+
+This enable a complete freedom of selection for calculating non-bonding energy contribution between any group of atoms.
+
+Also, the energy calculation can be splitted. As PELE report system only enables to write a value instead seveal ones per column, you need to stablish several metrics.
+
+Still, if you want to know separately the Lennard-Jones, Electrostatic or SGB (and penalties) contributions, they can be selected under the ``typeOfContribution`` flag,
+with ``lennard_jones``, ``electrostatic`` or ``sgb`` options.
+
+An example of all different calculations you can do can be the following one: 
+
+Example 2
+"""""""""
+
+.. code-block:: json
+    
+    {
+        "metrics":[
+            {
+                "type":"nonBondingEnergyBySelection",
+                "tag":"enBySel",
+                "typeOfContribution":"all",
+                "selection_group_1":{
+                    "links":{
+                        "ids":["L:1"]
+                    }
+                },
+                "selection_group_2":{
+                    "links":{
+                        "ids":["A:76"]
+                    }
+                }
+            },
+            {
+                "type":"nonBondingEnergyBySelection",
+                "tag":"Lennard",
+                "typeOfContribution":"lennard_jones",
+                "selection_group_1":{
+                    "links":{
+                        "ids":["L:1"]
+                    }
+                },
+                "selection_group_2":{
+                    "links":{
+                        "ids":["A:76"]
+                    }
+                }
+            },
+            {
+                "type":"nonBondingEnergyBySelection",
+                "tag":"Electrostatic",
+                "typeOfContribution":"electrostatic",
+                "selection_group_1":{
+                    "links":{
+                        "ids":["L:1"]
+                    }
+                },
+                "selection_group_2":{
+                    "links":{
+                        "ids":["A:76"]
+                    }
+                }
+            },
+            {
+                "type":"nonBondingEnergyBySelection",
+                "tag":"SGB",
+                "typeOfContribution":"sgb",
+                "selection_group_1":{
+                    "links":{
+                        "ids":["L:1"]
+                    }
+                },
+                "selection_group_2":{
+                    "links":{
+                        "ids":["A:76"]
+                    }
+                }
+            }
+        ]
+    }
+
+
+Since this can be even computed atom by atom, if it is desired to get many different metrics, it is recomended to use a Python script to set all of those in the JSON control file.
 
 
 .. _sec-metricTypes-atomsAngle:
@@ -510,3 +655,25 @@ Example
 
 In this example, we are indicating that we want to compute the angle
 between three atoms from chain A.
+
+
+.. _sec-metricTypes-atomsDihedral:
+
+Dihedral between four atoms
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+It computes the dihedral between four atoms. Atoms can be defined in a selection block. The selection block must contain four atoms, see
+:ref:`Selections By Example <sec-selectionExamples>` to see different examples of selection blocks.
+
+Example
+"""""""
+
+.. code-block:: json
+
+	{
+	  "type": "atomsDihedral",
+	  "tag": "dihedral",
+	  "selection_group_1":{"atoms": { "ids":["L:1:_C5_", "L:1:_O3_", "L:1:_C4_", "L:1:_C3_"]}}
+	}
+
