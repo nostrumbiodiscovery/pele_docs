@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>General Structure of a control file in Pele++ &#8212; PELE 1.7.0 documentation</title>
+    <title>General Structure of a control file in Pele++ &#8212; PELE 1.8.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=331c3b23"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -38,7 +38,7 @@
         <li class="right" >
           <a href="../referenceManual.html" title="Reference Manual"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.8.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" accesskey="U">Reference Manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">General Structure of a control file in Pele++</a></li> 
       </ul>
@@ -105,6 +105,15 @@ document</span></a>.</p>
 simulation. To read more, check the <a class="reference internal" href="../Commands/commands.html#sec-commands"><span class="std std-ref">commands
 document</span></a>.</p>
 </section>
+<section id="verbose">
+<h2>Verbose<a class="headerlink" href="#verbose" title="Permalink to this heading">¶</a></h2>
+<p>Requires:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;verboseMode&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="nt">&quot;simulationLogPath&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;logs/log&quot;</span>
+</pre></div>
+</div>
+<p>If verboseMode is true, the application will print the output of the given simulationLogPath. The default verboseMode value is false.</p>
+</section>
 </section>
 
 
@@ -128,6 +137,7 @@ document</span></a>.</p>
 </li>
 <li><a class="reference internal" href="#initialization">Initialization</a></li>
 <li><a class="reference internal" href="#commands">commands</a></li>
+<li><a class="reference internal" href="#verbose">Verbose</a></li>
 </ul>
 </li>
 </ul>
@@ -176,13 +186,13 @@ document</span></a>.</p>
         <li class="right" >
           <a href="../referenceManual.html" title="Reference Manual"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.8.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">General Structure of a control file in Pele++</a></li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
+        &copy; Copyright 2010-2024 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>

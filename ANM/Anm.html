@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ANM Block in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
+    <title>ANM Block in Pele++ control file &#8212; PELE 1.8.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=331c3b23"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="../ConformationPerturbation/ConformationPerturbation.html" title="Conformation Perturbation Block in Pele++ control file"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.8.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">ANM Block in Pele++ control file</a></li> 
@@ -808,7 +808,7 @@ ExponentialConstForceCalculator::calculateConstForce.</p>
 <li><p>“iterationsBetweenNBlistLongUpdate”: 2</p></li>
 </ul>
 <p>The same atoms as those shown in the minimization block documentation are considered for minimization, except that the top side links and nearby links are not added to the list of atoms/links to minimize.</p>
-<p>This minimization makes the actual ANM movement by constraining the ANM nodes to target coordinates (see <a class="reference internal" href="#sec-anm-constraints"><span class="std std-ref">Constraints</span></a>). If the perturbation is active, also the perturbation constraints will be on (see <a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-perturbationcomconstraintconstant"><span class="std std-ref">perturbationCOMConstraintConstant</span></a>). The permanent constraints (<a class="reference internal" href="../PermanentConstraints/PermanentConstraints.html#sec-permanentconstraints"><span class="std std-ref">Permanent constraints in Pele++ control file</span></a>) are also on.</p>
+<p>This minimization makes the actual ANM movement by constraining the ANM nodes to target coordinates (see <a class="reference internal" href="#sec-anm-constraints"><span class="std std-ref">Constraints</span></a>). If the perturbation is active, also the perturbation constraints will be on (see <a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-perturbationcomconstraintconstant"><span class="std std-ref">removeBulkMovement</span></a>). The permanent constraints (<a class="reference internal" href="../PermanentConstraints/PermanentConstraints.html#sec-permanentconstraints"><span class="std std-ref">Permanent constraints in Pele++ control file</span></a>) are also on.</p>
 </section>
 </section>
 
@@ -953,14 +953,14 @@ ExponentialConstForceCalculator::calculateConstForce.</p>
         <li class="right" >
           <a href="../ConformationPerturbation/ConformationPerturbation.html" title="Conformation Perturbation Block in Pele++ control file"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.8.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">ANM Block in Pele++ control file</a></li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
+        &copy; Copyright 2010-2024 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>

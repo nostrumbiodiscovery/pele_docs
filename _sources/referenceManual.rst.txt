@@ -9,7 +9,7 @@ Contents:
 
     GeneralStructure/GeneralStructure
     Initialization/Initialization
-    Commands/commands
+    Commands/commands_index
     PELE/PELESimulation_index
     LogicalConditions/ConditionsByExample
     Selections/SelectionExamples

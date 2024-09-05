@@ -1,0 +1,156 @@
+.. _sec-side_chain_perturbation:
+
+Side Chain Perturbation Block in Pele++ control file
+====================================================
+
+.. warning::
+
+  You can skip the side chain perturbation phase in your PELE simulation by not including the ``"SideChainPerturbation"`` block in your simulation. However, if you do so, remember not to include any configuration related to it.
+
+
+Example
+-------
+
+.. code-block:: json
+
+    "SideChainPerturbation": {
+       "sideChainsToPerturb": {
+          "chains": {
+             "names": [
+                "L"
+             ]
+          }
+       },
+       "parameters": {
+          "overlapFactor": 0.75,
+          "numberOfTrials": 10,
+          "numberOfStericTrials": 5000,
+          "atLeastOneSelectedTrial": true,
+          "maxTrialsForAtLeastOne": 50
+       }
+    }
+
+How side chain perturbation of the ligand works
+-----------------------------------------------
+
+The side chain perturbation can be performed to perturb any sidechain in the protein. It can perturb non standard residues
+like covalent ligands attached to a protein residue or ligands completely dettached. As contrary to the standard perturbation,
+in this algorithm, clashes with side chains will be ignored. This will allow the desired side chain to push the neigbours side chains,
+perturbing the system. Also, since a side chain
+cannot have a translation and rotation, there is no use of steric trials.
+
+The side chain perturbation applies random dihedral angles to any rotatable bond defined in the structure.
+So, every trial will be a random pose of the side chain. To obtain a smoother perturbation of the dihedral angles, one can
+use the refinement angle parameter. If it is enabled, the side chain perturbation will perform a very soft perturbation of a random angle between [-refinementAngle, +refinementAngle]
+on the previous geometrical situation of the side chain to all the rotamers, so the side chain will have very little movements. This is ideal if you want to explore better an already found minima. 
+This is not expected to work properly with high angles.
+
+
+.. _sec-side_chain_perturbation-parameters:
+
+Parameters
+----------
+
+.. _sec-side_chain_perturbation-overlapFactor:
+
+overlapFactor
+^^^^^^^^^^^^^
+
+Parameter: double overlapFactor.
+
+Use: See side chain section for more information.
+
+Note for developers: Used to find and relieve ligand side chain clashes
+in ClashesReliever and SideChainPerturbation.
+
+Range: [0,inf)
+
+Units: Dimensionless.
+
+Default value: 0.6
+
+Plop info: Plop uses the same overlap factor that uses for the proteins.
+
+
+.. _sec-side_chain_perturbation-numberOfTrials:
+
+numberOfTrials
+^^^^^^^^^^^^^^
+
+Parameter: unsigned int numberOfTrials.
+
+Use: Number of iterations in the 'naive' algorithm.
+
+Range: An integer in [1,inf).
+
+Units: Dimensionless.
+
+Default value: 10
+
+
+.. _sec-side_chain_perturbation-numberOfStericTrials:
+
+numberOfStericTrials
+^^^^^^^^^^^^^^^^^^^^
+
+Parameter: unsigned int numberOfStericTries.
+
+Use: Number of tries to get a non-clashing conformation for each trial
+in 'numberOfTrials'.
+
+Note for developers: Used in LigandPerturbationNaive::perturbLigand.
+
+Range: An integer in [1,inf).
+
+Units: Dimensionless.
+
+Default value: 500
+
+
+.. _sec-side_chain_perturbation-atLeastOneSelectedTrial:
+
+atLeastOneSelectedTrial
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Parameter: boolean atLeastOneSelectedTrial.
+
+Use: Whether to do the side chain perturbation phase to last until, at least, one
+trial has been selected. However, at most maxTrialsForAtLeastOne trials
+would ever be done.
+
+Default value: false
+
+
+.. _sec-side_chain_perturbation-maxTrialsForAtLeastOne:
+
+maxTrialsForAtLeastOne
+^^^^^^^^^^^^^^^^^^^^^^
+
+Parameter: unsigned int numberOfStericTries.
+
+Use: Only considered if atLeastOneSelectedTrial is true. In such a case,
+it is the maximum number of iterations/steps done in the perturbation.
+
+Range: An integer in [1,inf).
+
+Units: Dimensionless.
+
+Default value: 1000
+
+
+.. _sec-side_chain_perturbation-refinementAngle:
+
+refinementAngle
+^^^^^^^^^^^^^^^
+
+Parameter: double refinementAngle.
+
+Use: When it has a value higher than 0.0, the refinement angle option is enabled.
+When enabled, the side chain perturbation will perform a very soft perturbation of a random angle between [-refinementAngle, +refinementAngle]
+on the previous geometrical situation of the side chain to all the rotamers, so the side chain will have very little movements
+
+Range: [0,inf)
+
+Units: Dimensionless.
+
+Default value: 0.0

@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PELE parameters in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
+    <title>PELE parameters in Pele++ control file &#8212; PELE 1.8.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=331c3b23"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="PeleOutput.html" title="PELE output parameters in Pele++ control file"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.8.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">PELE parameters in Pele++ control file</a></li> 
@@ -111,6 +111,16 @@
 <p>Range: [0, inf)</p>
 <p>Default value: 0</p>
 <p>Note: If conformationPerturbationFrequency = 0, the conformation perturbation will never be performed.</p>
+</section>
+<section id="sidechainperturbationfrequency">
+<span id="sec-peleparameters-sidechainperturbationfrequency"></span><h3>sideChainPerturbationFrequency<a class="headerlink" href="#sidechainperturbationfrequency" title="Permalink to this heading">¶</a></h3>
+<p>Parameter: unsigned int sideChainPerturbationFrequency</p>
+<p>Use: Period to perform side chain perturbation</p>
+<p>Note for developers: Used in PeleParameters::testIsTimeToRunSideChainPerturbation</p>
+<p>Units: Dimensionless (# of steps)</p>
+<p>Range: [0, inf)</p>
+<p>Default value: 2</p>
+<p>Note: If sideChainPerturbationFrequency = 0, the side chain perturbation will never be performed.</p>
 </section>
 <section id="anmfrequency">
 <span id="sec-peleparameters-anmfrequency"></span><h3>anmFrequency<a class="headerlink" href="#anmfrequency" title="Permalink to this heading">¶</a></h3>
@@ -249,8 +259,18 @@ Side Chain Prediction, Minimization and solvent updates.</p>
 <p>Range: True or False</p>
 <p>Default value: true.</p>
 </section>
+<section id="removebulkmovement">
+<span id="sec-peleparameters-perturbationcomconstraintconstant"></span><h3>removeBulkMovement<a class="headerlink" href="#removebulkmovement" title="Permalink to this heading">¶</a></h3>
+<p>Parameter: bool removeBulkMovement</p>
+<p>Use: It removes the bulk movement to keep the Complex in the same area during the whole simulation.
+Whenever the perturbed atomset is a significant fraction of the whole system, the sum of the perturbation
+of the atomset and the removal of the bulk movement can lead to an apparent movement of the unperturbed region.
+To avoid this, set the removeBulkMovement to false.</p>
+<p>Range: True or False</p>
+<p>Default value: true.</p>
+</section>
 <section id="perturbationcomconstraintconstant">
-<span id="sec-peleparameters-perturbationcomconstraintconstant"></span><h3>perturbationCOMConstraintConstant<a class="headerlink" href="#perturbationcomconstraintconstant" title="Permalink to this heading">¶</a></h3>
+<h3>perturbationCOMConstraintConstant<a class="headerlink" href="#perturbationcomconstraintconstant" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: double perturbationCOMConstraintConstant</p>
 <p>Use: Adds a constraint to the center of mass of the perturbed atom set
 after the perturbation. This will affect the ANM, Side Chain prediction, and the minimization phases. The constraint will be removed before the Metropolis test.</p>
@@ -288,6 +308,7 @@ energy increases just when the perturbed backbone is moved.</p>
 <li><a class="reference internal" href="#activateminimumsteps">activateMinimumSteps</a></li>
 <li><a class="reference internal" href="#waterperturbationfrequency">waterPerturbationFrequency</a></li>
 <li><a class="reference internal" href="#conformationperturbationfrequency">conformationPerturbationFrequency</a></li>
+<li><a class="reference internal" href="#sidechainperturbationfrequency">sideChainPerturbationFrequency</a></li>
 <li><a class="reference internal" href="#anmfrequency">anmFrequency</a></li>
 <li><a class="reference internal" href="#minimizationfrequency">minimizationFrequency</a></li>
 <li><a class="reference internal" href="#sidechainpredictionfrequency">sideChainPredictionFrequency</a></li>
@@ -297,6 +318,7 @@ energy increases just when the perturbed backbone is moved.</p>
 <li><a class="reference internal" href="#sidechainpredictionregionradius">sideChainPredictionRegionRadius</a></li>
 <li><a class="reference internal" href="#proximitydistance">proximityDistance</a></li>
 <li><a class="reference internal" href="#activateproximitydetection">activateProximityDetection</a></li>
+<li><a class="reference internal" href="#removebulkmovement">removeBulkMovement</a></li>
 <li><a class="reference internal" href="#perturbationcomconstraintconstant">perturbationCOMConstraintConstant</a></li>
 </ul>
 </li>
@@ -348,14 +370,14 @@ energy increases just when the perturbed backbone is moved.</p>
         <li class="right" >
           <a href="PeleOutput.html" title="PELE output parameters in Pele++ control file"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.8.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">PELE parameters in Pele++ control file</a></li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
+        &copy; Copyright 2010-2024 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>

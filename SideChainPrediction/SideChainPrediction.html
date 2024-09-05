@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SideChainPrediction Block in Pele++ control file &#8212; PELE 1.7.0 documentation</title>
+    <title>SideChainPrediction Block in Pele++ control file &#8212; PELE 1.8.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=217710be"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=331c3b23"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -39,7 +39,7 @@
         <li class="right" >
           <a href="../ANM/EigenvectorsAndEigenvalues.html" title="Treatment of eigenvector and eigenvalues by the PELE ANM module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.8.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">SideChainPrediction Block in Pele++ control file</a></li> 
@@ -272,7 +272,7 @@ PeleStep::relax</p>
 <li><p>“sgbUpdated”: true</p></li>
 <li><p>“iterationsBetweenNBlistLongUpdate”: 2</p></li>
 </ul>
-<p>If the perturbation is active, also the perturbation constraints will be on (see <a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-perturbationcomconstraintconstant"><span class="std std-ref">perturbationCOMConstraintConstant</span></a>). The permanent constraints (<a class="reference internal" href="../PermanentConstraints/PermanentConstraints.html#sec-permanentconstraints"><span class="std std-ref">Permanent constraints in Pele++ control file</span></a>) are also on.</p>
+<p>If the perturbation is active, also the perturbation constraints will be on (see <a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-perturbationcomconstraintconstant"><span class="std std-ref">removeBulkMovement</span></a>). The permanent constraints (<a class="reference internal" href="../PermanentConstraints/PermanentConstraints.html#sec-permanentconstraints"><span class="std std-ref">Permanent constraints in Pele++ control file</span></a>) are also on.</p>
 <p>By default, a final relaxation minimization is executed at the end of the side chain prediction phase in a PELE simulation, but this is configured in the <code class="docutils literal notranslate"><span class="pre">&quot;Minimizer&quot;</span></code> section of such command (see <a class="reference internal" href="../Minimization/Minimization.html#sec-minimization"><span class="std std-ref">Minimization in Pele++ control file</span></a>). This behaviour can be changed with the flag skipGlobalMinimization.</p>
 </section>
 </section>
@@ -359,14 +359,14 @@ PeleStep::relax</p>
         <li class="right" >
           <a href="../ANM/EigenvectorsAndEigenvalues.html" title="Treatment of eigenvector and eigenvalues by the PELE ANM module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.8.1 documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">SideChainPrediction Block in Pele++ control file</a></li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
+        &copy; Copyright 2010-2024 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="../index.html#license">License</a>.
     </div>

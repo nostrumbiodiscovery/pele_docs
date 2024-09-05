@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Release notes &#8212; PELE 1.7.0 documentation</title>
+    <title>Release notes &#8212; PELE 1.8.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/naturemodified.css?v=f71c5e4e" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=217710be"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=331c3b23"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -34,7 +34,7 @@
         <li class="right" >
           <a href="references.html" title="References"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.8.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Release notes</a></li> 
       </ul>
     </div>  
@@ -46,6 +46,32 @@
             
   <section id="release-notes">
 <h1>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
+<section id="version-1-8-1">
+<h2>Version 1.8.1<a class="headerlink" href="#version-1-8-1" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>New <strong>removeBulkMovement</strong> flag in <strong>PeleParameters</strong> to activate/deactivate the removal of the bulk movement of the system.</p></li>
+<li><p>Optimized the interface region definition whenever <strong>perturbAllAtOnce</strong> is true. Now the interface region should not include side chains located at the interface of atomsets that are being moved together with perturbAllAtOnce.</p></li>
+<li><p>Improvements for the side chain perturbation refinement algorithm.</p></li>
+<li><dl class="simple">
+<dt>New parameters to control side chain perturbation:</dt><dd><ul>
+<li><p><strong>sideChainPerturbationFrequency</strong></p></li>
+<li><p><strong>numberOfStericTrials</strong></p></li>
+<li><p><strong>overlapFactor</strong></p></li>
+<li><p><strong>numberOfTrials</strong></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Support for trajectories in the EnergyCalculator command. Two new parameters are added accordingly:</dt><dd><ul>
+<li><p><strong>trajectoryPath</strong></p></li>
+<li><p><strong>energyReportPath</strong></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
 <section id="version-1-8-0">
 <h2>Version 1.8.0<a class="headerlink" href="#version-1-8-0" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
@@ -347,6 +373,7 @@
     <h3><a href="index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Release notes</a><ul>
+<li><a class="reference internal" href="#version-1-8-1">Version 1.8.1</a></li>
 <li><a class="reference internal" href="#version-1-8-0">Version 1.8.0</a></li>
 <li><a class="reference internal" href="#version-1-7-1">Version 1.7.1</a></li>
 <li><a class="reference internal" href="#version-1-7">Version 1.7</a></li>
@@ -412,12 +439,12 @@
         <li class="right" >
           <a href="references.html" title="References"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.7.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.8.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Release notes</a></li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2010-2016 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
+        &copy; Copyright 2010-2024 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
     <a href="index.html#license">License</a>.
     </div>

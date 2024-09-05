@@ -82,38 +82,6 @@ This is not ideal if you want to perform a protein-protein simulation, as one of
 ligands, those will remain in place, causing clashes and problems. In order to fix this, you need to set up in the parameters of the pertrubation the flag
 :ref:`sec-perturbation-parameters-perturbAllAtOnce`.  
 
-.. _sec-side_chain_perturbation:
-
-Side Chain Perturbation Block in Pele++ control file
-====================================================
-
-
-Example
--------
-
-.. code-block:: json
-
-    "SideChainPerturbation": {
-        "sideChainsToPerturb": { "links": {"ids": ["A:145"] } },
-            "parameters":{                                      
-                    "overlapFactor": 0.5,                                         
-                    "numberOfTrials": 20,                        
-                    "atLeastOneSelectedTrial": true,
-                    "maxTrialsForAtLeastOne": 50,
-                    "refinementAngle": 10
-            }     
-    }
-
-    
-The side chain perturbation can be performed to perturb any sidechain in the protein. This was though to perform perturbations of a covalent ligand. As contrary as the standard perturbation,
-in this algorithm, clashes with side chains will be ignored. This will allow the desired side chain to push the neigbours side chains, perturbing the system. Also, since a side chain
-cant have a translation and rotation, there is no use of steric trials. Every trial will be a random pose of the side chain.
-
-The refinement angle is an optional parameter. If it is enabled, the side chain perturbation will perform a very soft perturbation of a random angle between [-refinementAngle, +refinementAngle]
-on the previous geometrical situation of the side chain to all the rotamers, so the side chain will have very little movements. This is ideal if you want to explore better an already found minima. 
-This is not expected to work properly with high angles.
-
-The rest of the parameters works exactly in the same way than in the standard perturbation.
 
 .. _sec-perturbation-steering:
 

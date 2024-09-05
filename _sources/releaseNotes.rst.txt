@@ -3,6 +3,22 @@ Release notes
 #############
 
 *******************************
+Version 1.8.1
+*******************************
+
+- New **removeBulkMovement** flag in **PeleParameters** to activate/deactivate the removal of the bulk movement of the system.
+- Optimized the interface region definition whenever **perturbAllAtOnce** is true. Now the interface region should not include side chains located at the interface of atomsets that are being moved together with perturbAllAtOnce. 
+- Improvements for the side chain perturbation refinement algorithm.
+- New parameters to control side chain perturbation:
+    - **sideChainPerturbationFrequency**
+    - **numberOfStericTrials**
+    - **overlapFactor**
+    - **numberOfTrials**
+- Support for trajectories in the EnergyCalculator command. Two new parameters are added accordingly:
+    - **trajectoryPath**
+    - **energyReportPath**
+
+*******************************
 Version 1.8.0
 *******************************
 

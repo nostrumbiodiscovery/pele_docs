@@ -82,3 +82,15 @@ commands
 Array containing the set of commands to perform throughout the
 simulation. To read more, check the :ref:`commands
 document <sec-commands>`.
+
+Verbose
+=======
+
+Requires:
+
+.. code-block:: json
+
+  "verboseMode" : true
+  "simulationLogPath" : "logs/log"
+
+If verboseMode is true, the application will print the output of the given simulationLogPath. The default verboseMode value is false.

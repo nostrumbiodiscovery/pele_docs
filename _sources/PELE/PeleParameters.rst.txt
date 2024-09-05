@@ -101,6 +101,27 @@ Default value: 0
 
 Note: If conformationPerturbationFrequency = 0, the conformation perturbation will never be performed.
 
+
+.. _sec-peleParameters-sideChainPerturbationFrequency:
+
+sideChainPerturbationFrequency
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Parameter: unsigned int sideChainPerturbationFrequency
+
+Use: Period to perform side chain perturbation
+
+Note for developers: Used in PeleParameters::testIsTimeToRunSideChainPerturbation
+
+Units: Dimensionless (# of steps)
+
+Range: [0, inf)
+
+Default value: 2
+
+Note: If sideChainPerturbationFrequency = 0, the side chain perturbation will never be performed.
+
+
 .. _sec-peleParameters-anmFrequency:
 
 anmFrequency
@@ -125,6 +146,7 @@ Plop info:
 -  Plop default value: 0
 
 Note: If anmStepFrequency = 0, the ANM will never be performed.
+
 
 .. _sec-peleParameters-minimizationFrequency:
 
@@ -310,6 +332,20 @@ Range: True or False
 Default value: true.
 
 .. _sec-peleParameters-perturbationCOMConstraintConstant:
+
+removeBulkMovement
+^^^^^^^^^^^^^^^^^^
+
+Parameter: bool removeBulkMovement
+
+Use: It removes the bulk movement to keep the Complex in the same area during the whole simulation.
+Whenever the perturbed atomset is a significant fraction of the whole system, the sum of the perturbation
+of the atomset and the removal of the bulk movement can lead to an apparent movement of the unperturbed region.
+To avoid this, set the removeBulkMovement to false.
+
+Range: True or False
+
+Default value: true.
 
 perturbationCOMConstraintConstant
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
