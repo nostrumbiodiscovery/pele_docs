@@ -138,6 +138,26 @@
 </ul>
 <p>Note: If anmStepFrequency = 0, the ANM will never be performed.</p>
 </section>
+<section id="loopclosurefrequency">
+<span id="sec-peleparameters-loopclosurefrequency"></span><h3>loopClosureFrequency<a class="headerlink" href="#loopclosurefrequency" title="Permalink to this heading">¶</a></h3>
+<p>Parameter: unsigned int loopClosureStepFrequency</p>
+<p>Use: Period to perform Loop Closure</p>
+<p>Note for developers: Used in PeleParameters::isTimeToRunLoopClosure</p>
+<p>Units: Dimensionless (# of steps)</p>
+<p>Range: [0, inf)</p>
+<p>Default value: 1</p>
+<p>Note: If loopClosureStepFrequency = 0, the Loop Closure will never be performed.</p>
+</section>
+<section id="id1">
+<span id="id2"></span><h3>sideChainPerturbationFrequency<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<p>Parameter: unsigned int sideChainPerturbationFrequency</p>
+<p>Use: Period to Side Chain Perturbation</p>
+<p>Note for developers: Used in PeleParameters::isTimeToRunTheSideChainPerturbation</p>
+<p>Units: Dimensionless (# of steps)</p>
+<p>Range: [0, inf)</p>
+<p>Default value: 2</p>
+<p>Note: If sideChainPerturbationFrequency = 0, the Side Chain Perturbation will never be performed.</p>
+</section>
 <section id="minimizationfrequency">
 <span id="sec-peleparameters-minimizationfrequency"></span><h3>minimizationFrequency<a class="headerlink" href="#minimizationfrequency" title="Permalink to this heading">¶</a></h3>
 <p>Parameter: unsigned int constrainedMinimizationStepFrequency</p>
@@ -310,6 +330,8 @@ energy increases just when the perturbed backbone is moved.</p>
 <li><a class="reference internal" href="#conformationperturbationfrequency">conformationPerturbationFrequency</a></li>
 <li><a class="reference internal" href="#sidechainperturbationfrequency">sideChainPerturbationFrequency</a></li>
 <li><a class="reference internal" href="#anmfrequency">anmFrequency</a></li>
+<li><a class="reference internal" href="#loopclosurefrequency">loopClosureFrequency</a></li>
+<li><a class="reference internal" href="#id1">sideChainPerturbationFrequency</a></li>
 <li><a class="reference internal" href="#minimizationfrequency">minimizationFrequency</a></li>
 <li><a class="reference internal" href="#sidechainpredictionfrequency">sideChainPredictionFrequency</a></li>
 <li><a class="reference internal" href="#numberoftopsideselectedlinks">numberOfTopSideSelectedLinks</a></li>

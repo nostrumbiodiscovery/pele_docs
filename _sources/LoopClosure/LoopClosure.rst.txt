@@ -1,0 +1,184 @@
+.. _sec-loopClosure:
+
+Loop Closure Block in Pele++ control file
+=========================================
+
+This block configures the LoopClosure phase in a ``peleSimulation`` command. This phase will be active depending on the ``loopClosureFrequency`` PELE parameter (:ref:`sec-peleParameters-loopClosureFrequency`).
+
+Loop Closure aims to perturb intrinsically disordered loops which cannot be moved efficiently using only Normal Mode Analysis. 
+This block implements the methodology explained in [mak:2011]_, where an inverse kinematic solver is applied in order to propose new loop conformations.
+This conformations are analyzed and filtered, so the proposed ones are suitable.
+
+.. _sec-loopClosure-Location:
+
+Location
+--------
+
+The Loop Closure block can be defined inside the PeleSimulation command block.
+
+An example:
+
+.. code-block:: json
+
+  {
+    "commands": [
+    {
+      "commandType": "peleSimulation",
+      ...
+      "LoopClosure": {
+                "flexibleLoops": {
+                    "links": {
+                        "ranges": ["_:20 _:30"]
+                    }
+                },
+                "parameters": {
+                    "maxNumberTrials": 20,
+                    "backboneOverlapFactor": 0.3,
+                    "sideChainOverlapFactor": 0.4,
+                    "minDistanceBetweenSolutions": 0.5,
+                    "manDistanceBetweenSolutions": 15
+                },
+                "Minimizer": {
+                    "algorithm": "TruncatedNewton",
+                    "parameters": {
+                        "EnergyDifference": 1,
+                        "MaximumMinimizationIterations": 1,
+                        "MaximumNewtonIterations": 65,
+                        "MinimumRMS": 0.01,
+                        "nonBondingListUpdatedEachMinStep": true,
+                        "alphaUpdated": false,
+                        "sgbUpdated": false
+                    }
+                }
+            }
+    }
+    ]
+  }
+
+.. _sec-loopClosure-loopSelection:
+
+Loop selection
+--------------
+
+flexibleLoops
+^^^^^^^^^^^^^
+Selection of the links to include in the Loop Closure algorithm (see :ref:`sec-selectionExamples`).
+
+Multiple groups of links (loops) can be selected. The algorithm will be applied to a single group in each Pelestep.
+
+.. warning::
+
+  At least three consecutive links must be selected.
+
+Example:
+
+.. code-block:: json
+
+   "LoopClosure": {
+        "flexibleLoops": {
+            "links": {
+                "ranges": ["_:20 _:30"]
+            }
+        },
+        "parameters": {
+        ...
+        },
+        ...
+    }
+
+.. _sec-loopClosure-parameters:
+
+Parameters
+----------
+
+Control of the perturbation magnitude
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+With these two parameters the level of perturbation applied by Loop Closure can be controlled. Loop Closure change six different dihedral angles 
+along the backbone of a molecule at the same time, such that both ends are maintained fixed. The minimum and maximum distance
+between solutions controls which is the threshold difference between the original and proposed dihedrals that can be applied.
+In this way, if the maximum distance between solutions is low, smaller changes in the dihedrals are going to be considered. In the same way,
+if the minimum distance is increased, larger changes are applied. If one wants a refinement, the maximum distance should be limited. Also,
+if one wants an extense exploration, the minimum distance should be increased.
+
+minDistanceBetweenSolutions
+"""""""""""""""""""""""""""
+
+- Parameter: double minDistanceBetweenSolutions
+
+- Use: Minimum distance in the dihedral space that the perturbation must fulfill to consider a certain loop conformation.
+
+Note for developers: Used in LoopClosureCalculator::thisSolutionIsNew().
+
+- Units: Rad
+
+- Default value: 0.3
+
+- Range: (0, inf)
+
+
+maxDistanceBetweenSolutions
+"""""""""""""""""""""""""""
+
+- Parameter: double minDistanceBetweenSolutions
+- Use: Maximum distance in the dihedral space that the perturbation can add to consider a certain loop conformation.
+Note for developers: Used in
+LoopClosureCalculator::thisSolutionIsNew().
+
+- Units: Rad
+- Default value: 1000
+- Range: (0, inf)
+
+
+backboneOverlapFactor
+^^^^^^^^^^^^^^^^^^^^^
+The overlap factor that is used when looking for steric clashes of the resulting 
+conformation. When this factor gets lower, a higher steric overlap
+is accepted. See :ref:`sec-sideChainPrediction-parameters-overlapfactor`
+for more information about this parameter.
+
+- Parameter: double backboneOverlapFactor
+- Use: It controls the steric overlap at which a clash between backbone atoms is considered.
+- Default: 0.3
+- Units: dimensionless
+- Range: [0, 1]
+
+
+sideChainOverlapFactor
+^^^^^^^^^^^^^^^^^^^^^^
+- Parameter: double sideChainOverlapFactor
+- Use: It controls the steric overlap at which a clash between sideChain atoms is considered.
+- Default: 0.4
+- Units: dimensionless
+- Range: [0, 1]
+
+
+maxNumberTrials
+^^^^^^^^^^^^^^^
+- Parameter: unsigned int maxNumberTrials
+- Use: It defines the maximum number of partitions of the loop considered to propose new conformation
+- Default: 1000
+- Units: dimensionless
+- Range: [1, inf)
+
+.. _sec-loopClosure-loopClosureMinimizer:
+
+loopClosureMinimizer
+--------------------
+
+Minimizer block.
+
+Check the minimization block documentation (:ref:`sec-minimization`) for more information.
+
+The default minimization type is "TruncatedNewton", with the following default parameters (other parameters have the same default as shown in the minimization block documentation):
+
+- maximumMinimizationIterations: 2
+- maximumNewtonIterations:40
+- energyTolerance:1.0
+- rmsTolerance: 0.1
+- iterationsBetweenNonBondingLongUpdate: 2
+- updateSgb: false
+- updateAlpha: false
+- updateNblist: false
+
+The minimization process inside the LoopClosure algorithm is local. It considers only the loop residues or nucleotides and their neighbours (considering as neighbours all the resiudes with one atom below 5 amstrongs).
+In this minimization, a constraint over the alpha carbons or phosphorous is applied to maintain the new proposed conformation.

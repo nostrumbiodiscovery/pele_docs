@@ -19,6 +19,7 @@ Contents:
     ../ConformationPerturbation/ConformationPerturbation
     ../ANM/Anm
     ../ANM/EigenvectorsAndEigenvalues
+    ../LoopClosure/LoopClosure
     ../SideChainPrediction/SideChainPrediction
     ../Minimization/Minimization
     ../PermanentConstraints/PermanentConstraints

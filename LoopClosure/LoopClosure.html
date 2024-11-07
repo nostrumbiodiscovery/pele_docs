@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Loop Closure Block in Pele++ control file &#8212; PELE 1.8.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/naturemodified.css?v=f71c5e4e" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=331c3b23"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SideChainPrediction Block in Pele++ control file" href="../SideChainPrediction/SideChainPrediction.html" />
+    <link rel="prev" title="Treatment of eigenvector and eigenvalues by the PELE ANM module" href="../ANM/EigenvectorsAndEigenvalues.html" /> 
+    <script type="text/javascript" >
+    MathJax.Hub.Config({
+        TeX: { 
+	  Macros: {
+	    AA: '{\\unicode{xC5}}'
+	  }
+	}
+    });
+    </script>
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../SideChainPrediction/SideChainPrediction.html" title="SideChainPrediction Block in Pele++ control file"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ANM/EigenvectorsAndEigenvalues.html" title="Treatment of eigenvector and eigenvalues by the PELE ANM module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.8.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" accesskey="U">PELESimulation command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Loop Closure Block in Pele++ control file</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="loop-closure-block-in-pele-control-file">
+<span id="sec-loopclosure"></span><h1>Loop Closure Block in Pele++ control file<a class="headerlink" href="#loop-closure-block-in-pele-control-file" title="Permalink to this heading">¶</a></h1>
+<p>This block configures the LoopClosure phase in a <code class="docutils literal notranslate"><span class="pre">peleSimulation</span></code> command. This phase will be active depending on the <code class="docutils literal notranslate"><span class="pre">loopClosureFrequency</span></code> PELE parameter (<a class="reference internal" href="../PELE/PeleParameters.html#sec-peleparameters-loopclosurefrequency"><span class="std std-ref">loopClosureFrequency</span></a>).</p>
+<p>Loop Closure aims to perturb intrinsically disordered loops which cannot be moved efficiently using only Normal Mode Analysis.
+This block implements the methodology explained in <a class="reference internal" href="../references.html#mak-2011" id="id1"><span>[mak:2011]</span></a>, where an inverse kinematic solver is applied in order to propose new loop conformations.
+This conformations are analyzed and filtered, so the proposed ones are suitable.</p>
+<section id="location">
+<span id="sec-loopclosure-location"></span><h2>Location<a class="headerlink" href="#location" title="Permalink to this heading">¶</a></h2>
+<p>The Loop Closure block can be defined inside the PeleSimulation command block.</p>
+<p>An example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;commands&quot;: [
+  {
+    &quot;commandType&quot;: &quot;peleSimulation&quot;,
+    ...
+    &quot;LoopClosure&quot;: {
+              &quot;flexibleLoops&quot;: {
+                  &quot;links&quot;: {
+                      &quot;ranges&quot;: [&quot;_:20 _:30&quot;]
+                  }
+              },
+              &quot;parameters&quot;: {
+                  &quot;maxNumberTrials&quot;: 20,
+                  &quot;backboneOverlapFactor&quot;: 0.3,
+                  &quot;sideChainOverlapFactor&quot;: 0.4,
+                  &quot;minDistanceBetweenSolutions&quot;: 0.5,
+                  &quot;manDistanceBetweenSolutions&quot;: 15
+              },
+              &quot;Minimizer&quot;: {
+                  &quot;algorithm&quot;: &quot;TruncatedNewton&quot;,
+                  &quot;parameters&quot;: {
+                      &quot;EnergyDifference&quot;: 1,
+                      &quot;MaximumMinimizationIterations&quot;: 1,
+                      &quot;MaximumNewtonIterations&quot;: 65,
+                      &quot;MinimumRMS&quot;: 0.01,
+                      &quot;nonBondingListUpdatedEachMinStep&quot;: true,
+                      &quot;alphaUpdated&quot;: false,
+                      &quot;sgbUpdated&quot;: false
+                  }
+              }
+          }
+  }
+  ]
+}
+</pre></div>
+</div>
+</section>
+<section id="loop-selection">
+<span id="sec-loopclosure-loopselection"></span><h2>Loop selection<a class="headerlink" href="#loop-selection" title="Permalink to this heading">¶</a></h2>
+<section id="flexibleloops">
+<h3>flexibleLoops<a class="headerlink" href="#flexibleloops" title="Permalink to this heading">¶</a></h3>
+<p>Selection of the links to include in the Loop Closure algorithm (see <a class="reference internal" href="../Selections/SelectionExamples.html#sec-selectionexamples"><span class="std std-ref">Selections By Example</span></a>).</p>
+<p>Multiple groups of links (loops) can be selected. The algorithm will be applied to a single group in each Pelestep.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>At least three consecutive links must be selected.</p>
+</div>
+<p>Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;LoopClosure&quot;: {
+     &quot;flexibleLoops&quot;: {
+         &quot;links&quot;: {
+             &quot;ranges&quot;: [&quot;_:20 _:30&quot;]
+         }
+     },
+     &quot;parameters&quot;: {
+     ...
+     },
+     ...
+ }
+</pre></div>
+</div>
+</section>
+</section>
+<section id="parameters">
+<span id="sec-loopclosure-parameters"></span><h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading">¶</a></h2>
+<section id="control-of-the-perturbation-magnitude">
+<h3>Control of the perturbation magnitude<a class="headerlink" href="#control-of-the-perturbation-magnitude" title="Permalink to this heading">¶</a></h3>
+<p>With these two parameters the level of perturbation applied by Loop Closure can be controlled. Loop Closure change six different dihedral angles
+along the backbone of a molecule at the same time, such that both ends are maintained fixed. The minimum and maximum distance
+between solutions controls which is the threshold difference between the original and proposed dihedrals that can be applied.
+In this way, if the maximum distance between solutions is low, smaller changes in the dihedrals are going to be considered. In the same way,
+if the minimum distance is increased, larger changes are applied. If one wants a refinement, the maximum distance should be limited. Also,
+if one wants an extense exploration, the minimum distance should be increased.</p>
+<section id="mindistancebetweensolutions">
+<h4>minDistanceBetweenSolutions<a class="headerlink" href="#mindistancebetweensolutions" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Parameter: double minDistanceBetweenSolutions</p></li>
+<li><p>Use: Minimum distance in the dihedral space that the perturbation must fulfill to consider a certain loop conformation.</p></li>
+</ul>
+<p>Note for developers: Used in LoopClosureCalculator::thisSolutionIsNew().</p>
+<ul class="simple">
+<li><p>Units: Rad</p></li>
+<li><p>Default value: 0.3</p></li>
+<li><p>Range: (0, inf)</p></li>
+</ul>
+</section>
+<section id="maxdistancebetweensolutions">
+<h4>maxDistanceBetweenSolutions<a class="headerlink" href="#maxdistancebetweensolutions" title="Permalink to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>Parameter: double minDistanceBetweenSolutions</p></li>
+<li><p>Use: Maximum distance in the dihedral space that the perturbation can add to consider a certain loop conformation.</p></li>
+</ul>
+<p>Note for developers: Used in
+LoopClosureCalculator::thisSolutionIsNew().</p>
+<ul class="simple">
+<li><p>Units: Rad</p></li>
+<li><p>Default value: 1000</p></li>
+<li><p>Range: (0, inf)</p></li>
+</ul>
+</section>
+</section>
+<section id="backboneoverlapfactor">
+<h3>backboneOverlapFactor<a class="headerlink" href="#backboneoverlapfactor" title="Permalink to this heading">¶</a></h3>
+<p>The overlap factor that is used when looking for steric clashes of the resulting
+conformation. When this factor gets lower, a higher steric overlap
+is accepted. See <a class="reference internal" href="../SideChainPrediction/SideChainPrediction.html#sec-sidechainprediction-parameters-overlapfactor"><span class="std std-ref">Overlap factor</span></a>
+for more information about this parameter.</p>
+<ul class="simple">
+<li><p>Parameter: double backboneOverlapFactor</p></li>
+<li><p>Use: It controls the steric overlap at which a clash between backbone atoms is considered.</p></li>
+<li><p>Default: 0.3</p></li>
+<li><p>Units: dimensionless</p></li>
+<li><p>Range: [0, 1]</p></li>
+</ul>
+</section>
+<section id="sidechainoverlapfactor">
+<h3>sideChainOverlapFactor<a class="headerlink" href="#sidechainoverlapfactor" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Parameter: double sideChainOverlapFactor</p></li>
+<li><p>Use: It controls the steric overlap at which a clash between sideChain atoms is considered.</p></li>
+<li><p>Default: 0.4</p></li>
+<li><p>Units: dimensionless</p></li>
+<li><p>Range: [0, 1]</p></li>
+</ul>
+</section>
+<section id="maxnumbertrials">
+<h3>maxNumberTrials<a class="headerlink" href="#maxnumbertrials" title="Permalink to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Parameter: unsigned int maxNumberTrials</p></li>
+<li><p>Use: It defines the maximum number of partitions of the loop considered to propose new conformation</p></li>
+<li><p>Default: 1000</p></li>
+<li><p>Units: dimensionless</p></li>
+<li><p>Range: [1, inf)</p></li>
+</ul>
+</section>
+</section>
+<section id="loopclosureminimizer">
+<span id="sec-loopclosure-loopclosureminimizer"></span><h2>loopClosureMinimizer<a class="headerlink" href="#loopclosureminimizer" title="Permalink to this heading">¶</a></h2>
+<p>Minimizer block.</p>
+<p>Check the minimization block documentation (<a class="reference internal" href="../Minimization/Minimization.html#sec-minimization"><span class="std std-ref">Minimization in Pele++ control file</span></a>) for more information.</p>
+<p>The default minimization type is “TruncatedNewton”, with the following default parameters (other parameters have the same default as shown in the minimization block documentation):</p>
+<ul class="simple">
+<li><p>maximumMinimizationIterations: 2</p></li>
+<li><p>maximumNewtonIterations:40</p></li>
+<li><p>energyTolerance:1.0</p></li>
+<li><p>rmsTolerance: 0.1</p></li>
+<li><p>iterationsBetweenNonBondingLongUpdate: 2</p></li>
+<li><p>updateSgb: false</p></li>
+<li><p>updateAlpha: false</p></li>
+<li><p>updateNblist: false</p></li>
+</ul>
+<p>The minimization process inside the LoopClosure algorithm is local. It considers only the loop residues or nucleotides and their neighbours (considering as neighbours all the resiudes with one atom below 5 amstrongs).
+In this minimization, a constraint over the alpha carbons or phosphorous is applied to maintain the new proposed conformation.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Loop Closure Block in Pele++ control file</a><ul>
+<li><a class="reference internal" href="#location">Location</a></li>
+<li><a class="reference internal" href="#loop-selection">Loop selection</a><ul>
+<li><a class="reference internal" href="#flexibleloops">flexibleLoops</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#parameters">Parameters</a><ul>
+<li><a class="reference internal" href="#control-of-the-perturbation-magnitude">Control of the perturbation magnitude</a><ul>
+<li><a class="reference internal" href="#mindistancebetweensolutions">minDistanceBetweenSolutions</a></li>
+<li><a class="reference internal" href="#maxdistancebetweensolutions">maxDistanceBetweenSolutions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#backboneoverlapfactor">backboneOverlapFactor</a></li>
+<li><a class="reference internal" href="#sidechainoverlapfactor">sideChainOverlapFactor</a></li>
+<li><a class="reference internal" href="#maxnumbertrials">maxNumberTrials</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#loopclosureminimizer">loopClosureMinimizer</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../ANM/EigenvectorsAndEigenvalues.html"
+                          title="previous chapter">Treatment of eigenvector and eigenvalues by the PELE ANM module</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../SideChainPrediction/SideChainPrediction.html"
+                          title="next chapter">SideChainPrediction Block in Pele++ control file</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/LoopClosure/LoopClosure.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../SideChainPrediction/SideChainPrediction.html" title="SideChainPrediction Block in Pele++ control file"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ANM/EigenvectorsAndEigenvalues.html" title="Treatment of eigenvector and eigenvalues by the PELE ANM module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">PELE 1.8.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../referenceManual.html" >Reference Manual</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../PELE/PELESimulation_index.html" >PELESimulation command</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Loop Closure Block in Pele++ control file</a></li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2024 BARCELONA SUPERCOMPUTING CENTER. See the COPYRIGHT file at the top-level directory of this distribution. 
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 7.1.2.
+    <a href="../index.html#license">License</a>.
+    </div>
+  </body>
+</html>

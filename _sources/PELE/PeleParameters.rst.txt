@@ -85,7 +85,7 @@ Note: If waterPerturbationFrequency = 0, the water perturbation will never be pe
 .. _sec-peleParameters-conformationPerturbationFrequency:
 
 conformationPerturbationFrequency
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Parameter: unsigned int conformationPerturbationFrequency
 
@@ -147,6 +147,43 @@ Plop info:
 
 Note: If anmStepFrequency = 0, the ANM will never be performed.
 
+.. _sec-peleParameters-loopClosureFrequency:
+
+loopClosureFrequency
+^^^^^^^^^^^^^^^^^^^^
+
+Parameter: unsigned int loopClosureStepFrequency
+
+Use: Period to perform Loop Closure
+
+Note for developers: Used in PeleParameters::isTimeToRunLoopClosure
+
+Units: Dimensionless (# of steps)
+
+Range: [0, inf)
+
+Default value: 1
+
+Note: If loopClosureStepFrequency = 0, the Loop Closure will never be performed.
+
+.. _sec-peleParameters-sideChainPerturbationFrequency:
+
+sideChainPerturbationFrequency
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Parameter: unsigned int sideChainPerturbationFrequency
+
+Use: Period to Side Chain Perturbation
+
+Note for developers: Used in PeleParameters::isTimeToRunTheSideChainPerturbation
+
+Units: Dimensionless (# of steps)
+
+Range: [0, inf)
+
+Default value: 2
+
+Note: If sideChainPerturbationFrequency = 0, the Side Chain Perturbation will never be performed.
 
 .. _sec-peleParameters-minimizationFrequency:
 

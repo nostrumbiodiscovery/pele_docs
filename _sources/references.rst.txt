@@ -28,6 +28,8 @@ References
 
 .. [kaminski:2001] Kaminski, George A. and Friesner, Richard A. and Tirado-Rives, Julian and Jorgensen, William L. "Evaluation and Reparametrization of the OPLS-AA Force Field for Proteins via Comparison with Accurate Quantum Chemical Calculations on Peptides" *J. Phys. Chem. B*, 105(28) pp. 6474-6487, 2001. http://dx.doi.org/10.1021/jp003919d
 
+.. [mak:2011] Mak, C. H. (2011). Loops MC: an all-atom Monte Carlo simulation program for RNAs based on inverse kinematic loop closure. Molecular Simulation, 37(7), 537–556. https://doi.org/10.1080/08927022.2011.565761
+
 .. [onufriev:2004] Onufriev, A., D. Bashford and D. A. Case, "Exploring Protein Native States and Large-Scale Conformational Changes with a Modified Generalized Born Model", *PROTEINS*, 55, pp. 383--394, 2004. http://onlinelibrary.wiley.com/doi/10.1002/prot.20033/abstract
 
 .. [perez:2007] Alberto Pérez and Iván Marchán and Daniel Svozil and Jiri Sponer and Thomas E Cheatham and Charles A Laughton and Modesto Orozco "Refinement of the AMBER force field for nucleic acids: improving the description of alpha/gamma conformers" *Biophys J.* 92, pp. 3817-3829, 2007. http://dx.doi.org/10.1529/biophysj.106.097782

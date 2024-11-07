@@ -46,6 +46,17 @@
             
   <section id="release-notes">
 <h1>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">¶</a></h1>
+<section id="version-1-9-0">
+<h2>Version 1.9.0<a class="headerlink" href="#version-1-9-0" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>New <strong>LoopClosure</strong> step is included in the PELE algorithm to explore intrinsically disordered loop conformations which are not accessible with ANM. It applies for RNA too.</p></li>
+<li><p>Rotamer libraries are modified. When applying clash relieve in the side chains, cyclic links (proline and nucleotides) where broken.
+Now, there are extra rotamer libraries suitable with side chain relocation (only sampling dihedrals that are not part of a cycle), and the general ones
+for side chain prediction. Now rotamer libraries are able in RNA, so the exploration is enhanced.</p></li>
+<li><p>Fixed bug regarding the selection for LocalNonBondingEnergy metric.</p></li>
+<li><p>Add OBC parameters for Zn2+.</p></li>
+</ul>
+</section>
 <section id="version-1-8-1">
 <h2>Version 1.8.1<a class="headerlink" href="#version-1-8-1" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
@@ -373,6 +384,7 @@
     <h3><a href="index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Release notes</a><ul>
+<li><a class="reference internal" href="#version-1-9-0">Version 1.9.0</a></li>
 <li><a class="reference internal" href="#version-1-8-1">Version 1.8.1</a></li>
 <li><a class="reference internal" href="#version-1-8-0">Version 1.8.0</a></li>
 <li><a class="reference internal" href="#version-1-7-1">Version 1.7.1</a></li>
