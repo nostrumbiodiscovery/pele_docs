@@ -12,6 +12,8 @@ Version 1.9.0
   for side chain prediction. Now rotamer libraries are able in RNA, so the exploration is enhanced.
 - Fixed bug regarding the selection for LocalNonBondingEnergy metric.
 - Add OBC parameters for Zn2+.
+- Added fix for local minimizations including just one of the two distance constrainted atoms. Before the minimization failed when the other atom was not included. Now
+  a check is performed at the start of any minimization to make sure both atoms are included.
 
 *******************************
 Version 1.8.1

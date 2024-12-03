@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Release notes &#8212; PELE 1.8.1 documentation</title>
+    <title>Release notes &#8212; PELE 1.9.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/naturemodified.css?v=f71c5e4e" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=331c3b23"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=42c9717a"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -34,7 +34,7 @@
         <li class="right" >
           <a href="references.html" title="References"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.8.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.9.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Release notes</a></li> 
       </ul>
     </div>  
@@ -55,6 +55,8 @@ Now, there are extra rotamer libraries suitable with side chain relocation (only
 for side chain prediction. Now rotamer libraries are able in RNA, so the exploration is enhanced.</p></li>
 <li><p>Fixed bug regarding the selection for LocalNonBondingEnergy metric.</p></li>
 <li><p>Add OBC parameters for Zn2+.</p></li>
+<li><p>Added fix for local minimizations including just one of the two distance constrainted atoms. Before the minimization failed when the other atom was not included. Now
+a check is performed at the start of any minimization to make sure both atoms are included.</p></li>
 </ul>
 </section>
 <section id="version-1-8-1">
@@ -451,7 +453,7 @@ for side chain prediction. Now rotamer libraries are able in RNA, so the explora
         <li class="right" >
           <a href="references.html" title="References"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.8.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PELE 1.9.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Release notes</a></li> 
       </ul>
     </div>
