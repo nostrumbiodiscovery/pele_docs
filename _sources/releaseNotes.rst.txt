@@ -14,6 +14,7 @@ Version 1.9.0
 - Add OBC parameters for Zn2+.
 - Added fix for local minimizations including just one of the two distance constrainted atoms. Before the minimization failed when the other atom was not included. Now
   a check is performed at the start of any minimization to make sure both atoms are included.
+- Fixed bug regarding ANM deactivation. If the algorithm is set to NULL, automatically the anmFrequency will be 0.
 
 *******************************
 Version 1.8.1
